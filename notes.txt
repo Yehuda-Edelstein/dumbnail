@@ -1,0 +1,12 @@
+- save local storage
+- make max and mins for input fields
+- have famous channel pictures as templates
+- create mr beast template
+- have classic images
+- have popular channels for channel pics
+- get random thumbnail from youtube api
+- add a random button for time and views (and customize window for random)
+- add advice on making realistic thumbnail
+- have a dark mode switch
+- add multiple ways to download image, also have a share option directly with twitter
+- add contributions footer - <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by kmg design - Flaticon</a>
