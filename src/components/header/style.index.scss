@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ced4da;
+
+  .logo {
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 35px;
+    align-items: center;
+  }
+}

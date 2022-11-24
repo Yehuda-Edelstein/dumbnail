@@ -1,8 +1,11 @@
 - save local storage
+- have a way to send picture to socials without having to download and maually upload
+- have a way to clear fields with simple click
 - make max and mins for input fields
 - have famous channel pictures as templates
 - create mr beast template
 - have classic images
+- add an option to make more realistic by adding apple or andrioid top bar with battery life and time
 - have popular channels for channel pics
 - get random thumbnail from youtube api
 - add a random button for time and views (and customize window for random)
