@@ -1,0 +1,10 @@
+.about {
+  min-width: 753px;
+  max-width: 753px;
+}
+
+@media screen and (max-width: 770px) {
+  .about {
+    min-width: 434px;
+  }
+}

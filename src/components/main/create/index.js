@@ -6,8 +6,16 @@ import Download from "./download/index.js";
 import Switch from "./switch/index.js";
 import MobilePreview from "./preview/mobile/index.js";
 import "./style.index.scss";
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import UploadThumb from "./upload/thumb/index.js";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
+import UploadChannel from "./upload/channel/index.js";
 
 function Create() {
+  // is preview active
+  const [isActive, setIsActive] = useState(false);
   const [timestamp, setTimestamp] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
@@ -21,8 +29,18 @@ function Create() {
   const [previewThumb, setPreviewThumb] = useState();
   const [selectedChannelPic, setSelectedChannelPic] = useState();
   const [previewChannelPic, setPreviewChannelPic] = useState();
+  // change mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
   // switch
   const [switchDevice, setSwitchDevice] = useState(false);
+  // crop
+  const [thumbZoom, setThumbZoom] = useState(100);
+  const [thumbX, setThumbX] = useState(0);
+  const [thumbY, setThumbY] = useState(0);
+  // templates
+  const [isTemplate, setIsTemplate] = useState(false);
+  const [template, setTemplate] = useState();
+  const [channelTemp, setChannelTemp] = useState();
 
   useEffect(() => {
     if (!selectedThumb) {
@@ -40,8 +58,9 @@ function Create() {
       setSelectedThumb(undefined);
       return;
     }
+    setIsActive(true);
     setSelectedThumb(ev.target.files[0]);
-    localStorage.setItem("selectedThumb", ev.target.value[0]);
+    // localStorage.setItem("selectedThumb", ev.target.value[0]);
   }
 
   useEffect(() => {
@@ -60,8 +79,9 @@ function Create() {
       setSelectedChannelPic(undefined);
       return;
     }
+    setIsActive(true);
     setSelectedChannelPic(ev.target.files[0]);
-    localStorage.setItem("selectedChannelPic", ev.target.value[0]);
+    // localStorage.setItem("selectedChannelPic", ev.target.value[0]);
   }
 
   // convert html into png file
@@ -71,15 +91,19 @@ function Create() {
   const downloadImageMobile = async () => {
     // checks if dark mode is true
     // backgroundColor: "#0f0f0f",
-    const dataUrl = await htmlToImage.toPng(mobileRef.current, {
-      backgroundColor: "white",
-    });
-
-    // download image
-    const link = document.createElement("a");
-    link.download = "dumbnail.png";
-    link.href = dataUrl;
-    link.click();
+    try {
+      const dataUrl = await htmlToImage.toPng(mobileRef.current, {
+        backgroundColor: "white",
+      });
+      // download image
+      const link = document.createElement("a");
+      link.download = "dumbnail.png";
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.log("Ohhhh nooo!");
+      console.log(err);
+    }
   };
 
   const downloadImageDesktop = async () => {
@@ -97,81 +121,42 @@ function Create() {
   };
 
   return (
-    <div className="create">
-      <div className="container">
-        {/* short about section here */}
-        <div className="d-flex form-control p-4">
-          <div className="p-2">
-            <div className="preview-header">
-              <div className="switch">
-                <Switch
-                  isOn={switchDevice}
-                  handleToggle={() => setSwitchDevice(!switchDevice)}
-                />
-              </div>
-              {switchDevice ? <h4>[ Desktop ]</h4> : <h4>[ Mobile ]</h4>}
-            </div>
-            {switchDevice ? (
-              <div className="">
-                <div
-                  className="desktop-preview border border-bottom-0"
-                  ref={desktopRef}
-                >
-                  <DesktopPreview
-                    timestamp={timestamp}
-                    title={title}
-                    channelName={channelName}
-                    views={views}
-                    timeAgo={timeAgo}
-                    increment={increment}
-                    // to display images
-                    uploadThumbnail={uploadThumbnail}
-                    uploadChannelPic={uploadChannelPic}
-                    selectedThumb={selectedThumb}
-                    previewThumb={previewThumb}
-                    selectedChannelPic={selectedChannelPic}
-                    previewChannelPic={previewChannelPic}
-                  />
-                </div>
-                {/* <Download downloadImage={downloadImageDesktop} /> */}
-              </div>
-            ) : (
-              <div className="">
-                <div
-                  className="mobile-preview border border-bottom-0"
-                  ref={mobileRef}
-                >
-                  <MobilePreview
-                    timestamp={timestamp}
-                    title={title}
-                    channelName={channelName}
-                    views={views}
-                    timeAgo={timeAgo}
-                    increment={increment}
-                    // to display images
-                    uploadThumbnail={uploadThumbnail}
-                    uploadChannelPic={uploadChannelPic}
-                    selectedThumb={selectedThumb}
-                    previewThumb={previewThumb}
-                    selectedChannelPic={selectedChannelPic}
-                    previewChannelPic={previewChannelPic}
-                  />
-                </div>
-                {/* <Download downloadImage={downloadImageMobile} /> */}
-              </div>
-            )}
-            <div className="d-flex">
-              <div>
-                {switchDevice ? (
-                  <Download downloadImage={downloadImageDesktop} />
-                ) : (
-                  <Download downloadImage={downloadImageMobile} />
-                )}
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="p-2">
+    <div className="content p-3">
+      <div className="upload-content-container">
+        <div className="d-grid">
+          <Tabs
+            defaultActiveKey="thumbnail"
+            id="uncontrolled-tab-example"
+            className="mb-3"
+          >
+            <Tab eventKey="thumbnail" title="Thumbnail">
+              <UploadThumb
+                uploadThumbnail={uploadThumbnail}
+                previewThumb={previewThumb}
+                selectedThumb={selectedThumb}
+                // for cropping
+                thumbZoom={thumbZoom}
+                setThumbZoom={setThumbZoom}
+                thumbX={thumbX}
+                thumbY={thumbY}
+                setThumbX={setThumbX}
+                setThumbY={setThumbY}
+                //
+                setIsTemplate={setIsTemplate}
+                setTemplate={setTemplate}
+                setPreviewThumb={setPreviewThumb}
+                setPreviewChannelPic={setPreviewChannelPic}
+                setChannelName={setChannelName}
+                uploadChannelPic={uploadChannelPic}
+                setSelectedThumb={setSelectedThumb}
+                setIsActive={setIsActive}
+                setChannelTemp={setChannelTemp}
+              />
+            </Tab>
+            <Tab eventKey="channel" title="Channel">
+              <UploadChannel uploadChannelPic={uploadChannelPic} />
+            </Tab>
+            <Tab eventKey="info" title="Info">
               <Info
                 setTimestamp={setTimestamp}
                 setTitle={setTitle}
@@ -181,10 +166,151 @@ function Create() {
                 setExactViews={setExactViews}
                 setTimeAgo={setTimeAgo}
                 setIncrement={setIncrement}
-                uploadThumbnail={uploadThumbnail}
-                uploadChannelPic={uploadChannelPic}
+              />
+            </Tab>
+          </Tabs>
+        </div>
+      </div>
+      <div className="p-3">
+        <h4>Preview</h4>
+        <div className="preview-header">
+          <OverlayTrigger
+            key={"left"}
+            placement={"left"}
+            delay={{ show: "700", hide: "100" }}
+            overlay={<Tooltip id={"tooltip-left"}>Toggle mode</Tooltip>}
+          >
+            <div className="switch">
+              <Switch
+                isOn={switchDevice}
+                handleToggle={() => {
+                  setSwitchDevice(!switchDevice);
+                  setIsDarkMode(!isDarkMode);
+                }}
               />
             </div>
+          </OverlayTrigger>
+          {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
+        </div>
+        <div className="preview-container">
+          {/* {switchDevice && ( */}
+          <div
+            className={
+              isDarkMode
+                ? "border border-dark border-bottom-0"
+                : "border  border-dark border-bottom-0"
+            }
+          >
+            {" "}
+            <div ref={mobileRef}>
+              <MobilePreview
+                timestamp={timestamp}
+                title={title}
+                channelName={channelName}
+                views={views}
+                timeAgo={timeAgo}
+                increment={increment}
+                // to display images
+                uploadThumbnail={uploadThumbnail}
+                uploadChannelPic={uploadChannelPic}
+                selectedThumb={selectedThumb}
+                previewThumb={previewThumb}
+                selectedChannelPic={selectedChannelPic}
+                previewChannelPic={previewChannelPic}
+                // change mode
+                isDarkMode={isDarkMode}
+                // for cropping
+                thumbZoom={thumbZoom}
+                setThumbZoom={setThumbZoom}
+                thumbX={thumbX}
+                thumbY={thumbY}
+                setThumbX={setThumbX}
+                setThumbY={setThumbY}
+                // templates
+                isTemplate={isTemplate}
+                template={template}
+                channelTemp={channelTemp}
+              />
+            </div>
+          </div>
+          {/*) : (
+            // <div className="border border-bottom-0">
+            //   <div className="desktop-preview" ref={desktopRef}>
+            //     <DesktopPreview
+            //       timestamp={timestamp}
+            //       title={title}
+            //       channelName={channelName}
+            //       views={views}
+            //       timeAgo={timeAgo}
+            //       increment={increment}
+            //       // to display images
+            //       uploadThumbnail={uploadThumbnail}
+            //       uploadChannelPic={uploadChannelPic}
+            //       selectedThumb={selectedThumb}
+            //       previewThumb={previewThumb}
+            //       selectedChannelPic={selectedChannelPic}
+            //       previewChannelPic={previewChannelPic}
+            //       // for cropping
+            //       thumbZoom={thumbZoom}
+            //       setThumbZoom={setThumbZoom}
+            //       thumbX={thumbX}
+            //       thumbY={thumbY}
+            //       setThumbX={setThumbX}
+            //       setThumbY={setThumbY}
+            //       // templates
+            //       isTemplate={isTemplate}
+            //       template={template}
+            //       channelTemp={channelTemp}
+            //     />
+            //   </div>
+            // </div>
+            // <div className="border border-bottom-0">
+            //   <div className="mobile-preview" ref={mobileRef}>
+            //     <MobilePreview
+            //       timestamp={timestamp}
+            //       title={title}
+            //       channelName={channelName}
+            //       views={views}
+            //       timeAgo={timeAgo}
+            //       increment={increment}
+            //       // to display images
+            //       uploadThumbnail={uploadThumbnail}
+            //       uploadChannelPic={uploadChannelPic}
+            //       selectedThumb={selectedThumb}
+            //       previewThumb={previewThumb}
+            //       selectedChannelPic={selectedChannelPic}
+            //       previewChannelPic={previewChannelPic}
+            //       // for cropping
+            //       thumbZoom={thumbZoom}
+            //       setThumbZoom={setThumbZoom}
+            //       thumbX={thumbX}
+            //       thumbY={thumbY}
+            //       setThumbX={setThumbX}
+            //       setThumbY={setThumbY}
+            //       // templates
+            //       isTemplate={isTemplate}
+            //       template={template}
+            //       channelTemp={channelTemp}
+            //     />
+            //   </div>
+            // </div>
+             // )} */}
+        </div>
+        <div className="d-flex">
+          <div>
+            {/* {switchDevice ? ( */}
+            {/* <Download
+                className="download-desktop"
+                isActive={isActive}
+                downloadImage={downloadImageDesktop}
+              /> */}
+            {/* ) : ( */}
+            <Download
+              className="download-mobile"
+              isActive={isActive}
+              downloadImage={downloadImageMobile}
+            />
+            {/* )} */}
           </div>
         </div>
       </div>

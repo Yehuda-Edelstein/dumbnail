@@ -5,12 +5,13 @@ $channel-pic-height: 38px;
 $title-font: 14px;
 $desc-font: 12.5px;
 
-.mobile-preview {
+.mobile-preview-dark {
   height: fit-content;
   min-width: 370px;
   max-width: 370px;
+  background-color: black;
 
-  .mobile {
+  .dark {
     .thumbnail-border {
       border-bottom: 1px dashed rgba(255, 0, 0, 0.503);
     }
@@ -25,10 +26,10 @@ $desc-font: 12.5px;
       background-size: contain;
       position: relative;
 
-      &:hover {
-        background-color: rgba(255, 0, 0, 0.25);
-        font-size: 16.48px;
-        cursor: pointer;
+      .template {
+        width: 100%;
+        z-index: 1;
+        position: absolute;
       }
 
       .hidden-input {
@@ -75,8 +76,40 @@ $desc-font: 12.5px;
       background-size: contain;
       position: relative;
 
+      .hidden-input {
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hidden-upload-icon {
+        cursor: pointer;
+        color: rgba(255, 0, 0, 0.75);
+        opacity: 1;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto 0;
+        width: 100%;
+      }
+
       .pic {
         width: 100%;
+      }
+
+      .template {
+        width: 100%;
+        z-index: 1;
+        position: absolute;
       }
 
       .time-stamp {
@@ -93,6 +126,7 @@ $desc-font: 12.5px;
         margin-top: auto;
         margin-bottom: 4px;
         margin-right: 4px;
+        z-index: 9999;
       }
     }
 
@@ -108,12 +142,6 @@ $desc-font: 12.5px;
       overflow: hidden;
       background-size: contain;
       position: relative;
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(255, 0, 0, 0.25);
-        transform: scale(107%);
-      }
 
       .hidden-input {
         cursor: pointer;
@@ -139,6 +167,14 @@ $desc-font: 12.5px;
       width: calc($channel-pic-width);
       height: calc($channel-pic-height);
       margin: 10px 10px 40px 10px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        max-height: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
     }
 
     .info {
@@ -152,13 +188,13 @@ $desc-font: 12.5px;
         float: right;
         margin: 15px 0 0 0;
         font-size: 13px;
-        color: #575757;
+        color: #f1f1f1;
       }
 
       .title {
         font-family: "Roboto", "Arial", sans-serif;
         font-size: calc($title-font * 1.2);
-        color: #0f0f0f;
+        color: #f1f1f1;
         margin: 12px 0 0 0;
         line-height: normal;
         max-height: 4rem;
@@ -176,7 +212,7 @@ $desc-font: 12.5px;
       .views,
       .time-ago {
         font-family: "Roboto", "Arial", sans-serif;
-        color: #575757;
+        color: #aaaaaa;
         font-size: calc($desc-font * 1.1);
         overflow: hidden;
         text-overflow: ellipsis;
@@ -184,7 +220,7 @@ $desc-font: 12.5px;
       }
 
       .bullet {
-        background-color: #575757;
+        background-color: #aaaaaa;
         width: 2px;
         height: 2px;
         margin: auto 4px;

@@ -1,5 +1,6 @@
 import React from "react";
-import "./style.index.scss";
+import "./light.scss";
+import "./dark.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 
@@ -14,55 +15,57 @@ function MobilePreview({
   previewThumb,
   selectedChannelPic,
   previewChannelPic,
-  uploadThumbnail,
-  uploadChannelPic,
+  // for cropping
+  thumbZoom,
+  thumbX,
+  thumbY,
+  setThumbX,
+  setThumbY,
+  //
+  isTemplate,
+  template,
+  channelTemp,
+  isDarkMode,
 }) {
   return (
-    <div>
-      <div className="mobile">
+    <div className={isDarkMode ? "mobile-preview-dark" : "mobile-preview"}>
+      <div className={isDarkMode ? "dark" : "mobile"}>
         <div
           className={
             selectedThumb ? "thumbnail" : "upload-thumbnail thumbnail-border"
           }
         >
-          {!selectedThumb && (
-            <div className="upload">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={uploadThumbnail}
-                className="hidden-input"
+          <span className="time-stamp">{timestamp}</span>
+          {selectedThumb && (
+            <div className="cover-this">
+              <img
+                className="pic"
+                src={previewThumb}
+                alt=""
+                style={{
+                  transform: `scale(${thumbZoom}%) translate(${thumbX}px, ${thumbY}px)`,
+                }}
               />
-              <span>Upload Thumbnail</span>
-              <div>
-                <FontAwesomeIcon
-                  icon={icon({ name: "upload", style: "solid" })}
-                />
-              </div>
             </div>
           )}
-          <span className="time-stamp">{timestamp}</span>
-          {selectedThumb && <img className="pic" src={previewThumb} alt="" />}
+          {isTemplate && (
+            <img className="template" alt="" src={template} style={{}} />
+          )}
         </div>
-
         <div className="d-flex">
           <div className="d-flex">
-            {selectedChannelPic ? (
-              <img className="channel-pic" src={previewChannelPic} alt="" />
-            ) : (
-              // <img className="channel-pic" src={user} alt="" />
-              <div className="upload-channel-pic">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={uploadChannelPic}
-                  className="hidden-input"
-                />
-                <FontAwesomeIcon
-                  className="user-plus-icon"
-                  icon={icon({ name: "user-plus", style: "solid" })}
-                />
+            {selectedChannelPic && !isTemplate && (
+              <div className="channel-pic">
+                <img src={previewChannelPic} alt="" />
               </div>
+            )}
+            {!selectedChannelPic && isTemplate && (
+              <div className="channel-pic">
+                <img src={channelTemp} alt="" />
+              </div>
+            )}
+            {!selectedChannelPic && !isTemplate && (
+              <div className="upload-channel-pic"></div>
             )}
           </div>
           <div className="info">

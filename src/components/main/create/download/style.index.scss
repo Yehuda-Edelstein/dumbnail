@@ -1,6 +1,23 @@
 .download {
-  width: 370px;
+  width: 372px;
+  border: 1px solid black;
   background-color: red;
   color: white;
-  border: none;
+  padding: 10px;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.not-active {
+  cursor: default;
+  text-align: center;
+  align-items: center;
+  width: 372px;
+  border: 1px solid black;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  opacity: 0.75;
 }

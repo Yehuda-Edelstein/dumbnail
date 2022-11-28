@@ -1,26 +1,22 @@
 $width: 254.98px;
 $height: 143.42px;
-$channel-pic-width: 48px;
-$channel-pic-height: 48px;
+$channel-pic-width: 38px;
+$channel-pic-height: 38px;
 $title-font: 14px;
-$desc-font: 12px;
+$desc-font: 12.5px;
 
-.desktop-preview {
+.mobile-preview {
   height: fit-content;
   min-width: 370px;
   max-width: 370px;
 
-  .desktop {
-    padding: 10px;
-
+  .mobile {
     .thumbnail-border {
-      border: 1px dashed rgba(255, 0, 0, 0.5);
-      border-radius: 12px;
+      border-bottom: 1px dashed rgba(255, 0, 0, 0.503);
     }
 
     .upload-thumbnail {
       background-color: rgba(255, 0, 0, 0.1);
-      border-radius: 12px;
       aspect-ratio: $width / $height;
       display: flex;
       flex-direction: column;
@@ -62,7 +58,6 @@ $desc-font: 12px;
         opacity: 0.9;
         padding: 0 4px;
         width: fit-content;
-        font-weight: Bold;
         position: absolute;
         bottom: 0;
         margin-top: auto;
@@ -72,7 +67,6 @@ $desc-font: 12px;
     }
 
     .thumbnail {
-      border-radius: 12px;
       aspect-ratio: $width / $height;
       display: flex;
       flex-direction: column;
@@ -126,7 +120,6 @@ $desc-font: 12px;
         opacity: 0.9;
         padding: 0 4px;
         width: fit-content;
-        font-weight: Bold;
         position: absolute;
         bottom: 0;
         margin-top: auto;
@@ -136,14 +129,19 @@ $desc-font: 12px;
       }
     }
 
+    .cover-this {
+      background-color: black;
+    }
+
     .upload-channel-pic {
       border-radius: 50%;
-      font-size: 21px;
+      font-size: 18px;
       border: 1px dashed rgba(255, 0, 0, 0.5);
       width: calc($channel-pic-width);
       height: calc($channel-pic-height);
       background-color: rgba(255, 0, 0, 0.1);
-      margin: 12px 12px 0 0;
+      margin: 10px 10px 40px 10px;
+
       overflow: hidden;
       background-size: contain;
       position: relative;
@@ -161,8 +159,8 @@ $desc-font: 12px;
       }
 
       .user-plus-icon {
+        margin: 9px 9px;
         align-items: center;
-        margin: 12px 12px;
         color: rgba(255, 0, 0, 0.5);
       }
     }
@@ -171,7 +169,7 @@ $desc-font: 12px;
       border-radius: 50%;
       width: calc($channel-pic-width);
       height: calc($channel-pic-height);
-      margin: 12px 12px 0 0;
+      margin: 10px 10px 40px 10px;
       overflow: hidden;
       position: relative;
 
@@ -185,15 +183,23 @@ $desc-font: 12px;
     .info {
       padding: 0 24px 0 0;
       overflow-x: hidden;
-      max-width: 350px;
+      max-width: 370px;
       word-wrap: break-word;
+      min-width: 325px;
+
+      .mobile-options {
+        float: right;
+        margin: 15px 0 0 0;
+        font-size: 13px;
+        color: #575757;
+      }
 
       .title {
         font-family: "Roboto", "Arial", sans-serif;
-        font-size: calc($title-font * 1.3);
+        font-size: calc($title-font * 1.2);
         color: #0f0f0f;
-        margin: 10px 0 4px 0;
-        font-weight: Bold;
+        margin: 12px 0 0 0;
+        line-height: normal;
         max-height: 4rem;
         overflow: hidden;
         display: block;
@@ -209,17 +215,17 @@ $desc-font: 12px;
       .views,
       .time-ago {
         font-family: "Roboto", "Arial", sans-serif;
-        color: #606060;
-        font-size: calc($desc-font * 1.2);
+        color: #575757;
+        font-size: calc($desc-font * 1.1);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: wrap;
       }
 
       .bullet {
-        background-color: #606060;
-        width: 3px;
-        height: 3px;
+        background-color: #575757;
+        width: 2px;
+        height: 2px;
         margin: auto 4px;
         border-radius: 100%;
       }

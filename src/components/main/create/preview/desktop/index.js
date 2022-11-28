@@ -14,8 +14,10 @@ function DesktopPreview({
   previewThumb,
   selectedChannelPic,
   previewChannelPic,
-  uploadThumbnail,
-  uploadChannelPic,
+  thumbZoom,
+  isTemplate,
+  template,
+  channelTemp,
 }) {
   return (
     <div className="desktop">
@@ -24,45 +26,35 @@ function DesktopPreview({
           selectedThumb ? "thumbnail" : "upload-thumbnail thumbnail-border"
         }
       >
-        {!selectedThumb && (
-          <div className="upload">
-            <input
-              type="file"
-              accept="image/*"
-              onChange={uploadThumbnail}
-              className="hidden-input"
+        <span className="time-stamp">{timestamp}</span>
+        {selectedThumb && (
+          <div>
+            <img
+              className="pic"
+              src={previewThumb}
+              alt=""
+              style={{ transform: `scale(${thumbZoom}%)` }}
             />
-            <span>Upload Thumbnail</span>
-            <div>
-              <FontAwesomeIcon
-                icon={icon({ name: "upload", style: "solid" })}
-              />
-            </div>
           </div>
         )}
-
-        <span className="time-stamp">{timestamp}</span>
-        {selectedThumb && <img className="pic" src={previewThumb} alt="" />}
+        {isTemplate && (
+          <img className="template" alt="" src={template} style={{}} />
+        )}
       </div>
-
       <div className="d-flex">
         <div className="d-flex">
-          {selectedChannelPic ? (
-            <img className="channel-pic" src={previewChannelPic} alt="" />
-          ) : (
-            // <img className="channel-pic" src={user} alt="" />
-            <div className="upload-channel-pic">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={uploadChannelPic}
-                className="hidden-input"
-              />
-              <FontAwesomeIcon
-                className="user-plus-icon"
-                icon={icon({ name: "user-plus", style: "solid" })}
-              />
+          {selectedChannelPic && !isTemplate && (
+            <div className="channel-pic">
+              <img src={previewChannelPic} alt="" />
             </div>
+          )}
+          {!selectedChannelPic && isTemplate && (
+            <div className="channel-pic">
+              <img src={channelTemp} alt="" />
+            </div>
+          )}
+          {!selectedChannelPic && !isTemplate && (
+            <div className="upload-channel-pic"></div>
           )}
         </div>
         <div className="info">

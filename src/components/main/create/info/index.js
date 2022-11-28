@@ -11,8 +11,6 @@ function Info({
   setIncrement,
   // setDark,
   // dark,
-  uploadThumbnail,
-  uploadChannelPic,
 }) {
   // convert views to youtube style
   function nFormatter(num, digits) {
@@ -55,17 +53,6 @@ function Info({
 
   return (
     <div className="info-content">
-      <div className="d-flex">{/* random button here for everything */}</div>
-      <div className="d-grid">
-        <label>Thumbnail</label>
-        {/* template here (mr. beast) */}
-        <input type="file" accept="image/*" onChange={uploadThumbnail} />
-      </div>
-      <div className="d-grid">
-        <label>Channel image</label>
-        <div>{/* popular images */}</div>
-        <input type="file" accept="image/*" onChange={uploadChannelPic} />
-      </div>
       <div className="d-grid">
         <label>Title</label>
         <input
@@ -96,7 +83,7 @@ function Info({
           ></input>
         </div> */}
       </div>
-      <h4>Posted</h4>
+      <h5>Posted</h5>
       <div className="d-flex">
         <div className="d-grid">
           <label>Amount</label>
@@ -117,7 +104,7 @@ function Info({
         </div>
         {/* random button here */}
       </div>
-      <h4>Timestamp</h4>
+      <h5>Timestamp</h5>
       <span></span>
       <input type="number" onChange={calcTimestamp}></input>
     </div>

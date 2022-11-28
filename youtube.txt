@@ -1,0 +1,40 @@
+- save local storage
+- have a way to send picture to socials without having to download and maually upload
+- have a way to clear fields with simple click
+- make max and mins for input fields
+- have famous channel pictures as templates
+- create mr beast template
+- have classic images
+- add an option to make more realistic by adding apple or andrioid top bar with battery life and time
+- have popular channels for channel pics
+- get random thumbnail from youtube api
+- add a random button for time and views (and customize window for random)
+- add a randomzie button on the content header somewhere
+- add advice on making realistic thumbnail
+- have a dark mode switch
+- add multiple ways to download image, also have a share option directly with twitter
+- add a screenshot optionn within mobile where you're watching the video and can move the time scroller around
+- add tooltip to explain that you can edit preview directly
+- add loading animation to download function
+- add more types other than just PNG
+- maybe disable button until picture(s) has been uploaded
+- add a clear button to templates
+- add flash for when you download like screenshot
+- add also viewed this channel
+- add rotate button for picture cropping
+
+
+Popular Channels:
+- Hot Ones
+- Ben Shapiro
+- NBA, MLB, NFL, NHL
+- CNN, FOX, CBS, NBC, MSNBC
+- Pewdiepie
+- Vevo
+- JRE
+
+Templates:
+- Mr. Beast
+- Hot Ones
+- Vevo music video
+- JRE
