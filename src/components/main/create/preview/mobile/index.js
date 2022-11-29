@@ -22,7 +22,6 @@ function MobilePreview({
   channelPicZoom,
   channelPicX,
   channelPicY,
-  //
   isTemplate,
   template,
   channelTemp,

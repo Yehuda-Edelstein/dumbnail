@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import DesktopPreview from "./preview/desktop/index.js";
+// import DesktopPreview from "./preview/desktop/index.js";
 import Info from "./info/index.js";
 import * as htmlToImage from "html-to-image";
 import Download from "./download/index.js";
@@ -23,7 +23,7 @@ function Create() {
   const [exactViews, setExactViews] = useState(false);
   const [timeAgo, setTimeAgo] = useState("23");
   const [increment, setIncrement] = useState("minute");
-  const [verified, setVerified] = useState(false);
+  // const [verified, setVerified] = useState(false);
   //   to display images
   const [selectedThumb, setSelectedThumb] = useState();
   const [previewThumb, setPreviewThumb] = useState();
@@ -64,7 +64,6 @@ function Create() {
     }
     setIsActive(true);
     setSelectedThumb(ev.target.files[0]);
-    // localStorage.setItem("selectedThumb", ev.target.value[0]);
   }
 
   useEffect(() => {
@@ -87,12 +86,11 @@ function Create() {
     }
     setIsActive(true);
     setSelectedChannelPic(ev.target.files[0]);
-    // localStorage.setItem("selectedChannelPic", ev.target.value[0]);
   }
 
   // convert html into png file
   const mobileRef = useRef(null);
-  const desktopRef = useRef(null);
+  // const desktopRef = useRef(null);
 
   const downloadImageMobile = async () => {
     // checks if dark mode is true
@@ -112,19 +110,19 @@ function Create() {
     }
   };
 
-  const downloadImageDesktop = async () => {
-    // checks if dark mode is true
-    // backgroundColor: "#0f0f0f",
-    const dataUrl = await htmlToImage.toPng(desktopRef.current, {
-      backgroundColor: "white",
-    });
+  // const downloadImageDesktop = async () => {
+  //   // checks if dark mode is true
+  //   // backgroundColor: "#0f0f0f",
+  //   const dataUrl = await htmlToImage.toPng(desktopRef.current, {
+  //     backgroundColor: "white",
+  //   });
 
-    // download image
-    const link = document.createElement("a");
-    link.download = "dumbnail.png";
-    link.href = dataUrl;
-    link.click();
-  };
+  //   // download image
+  //   const link = document.createElement("a");
+  //   link.download = "dumbnail.png";
+  //   link.href = dataUrl;
+  //   link.click();
+  // };
 
   return (
     <div className="content p-3 pt-0">
@@ -201,15 +199,14 @@ function Create() {
           </Tabs>
         </div>
       </div>
-
       <div className="preview">
         <h5>Preview</h5>
         <div className="preview-header">
           <OverlayTrigger
-            key={"left"}
-            placement={"left"}
+            key={"right"}
+            placement={"right"}
             delay={{ show: "700", hide: "100" }}
-            overlay={<Tooltip id={"tooltip-left"}>Toggle mode</Tooltip>}
+            overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
           >
             <div className="switch">
               <Switch

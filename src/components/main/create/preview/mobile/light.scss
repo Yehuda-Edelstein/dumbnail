@@ -17,7 +17,7 @@ $desc-font: 12.5px;
 
     .upload-thumbnail {
       background-color: rgba(255, 0, 0, 0.1);
-      aspect-ratio: $width / $height;
+      aspect-ratio: calc($width / $height);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap-reverse;
@@ -67,7 +67,7 @@ $desc-font: 12.5px;
     }
 
     .thumbnail {
-      aspect-ratio: $width / $height;
+      aspect-ratio: calc($width / $height);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap-reverse;
@@ -226,9 +226,6 @@ $desc-font: 12.5px;
         overflow: hidden;
         display: block;
         -webkit-line-clamp: 2;
-        display: box;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         white-space: wrap;
       }

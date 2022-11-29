@@ -69,18 +69,6 @@ function Popular({
         })}
         <div className="overlay"></div>
       </div>
-
-      {/* <div className="d-flex">
-        turn this into some kind of map later
-        <div className="blank-pop d-grid me-3">
-          <div className="blank-pop-label">Blank</div>
-        </div>
-
-        <div className="pop d-grid">
-          <div className="pop-label">MrBeast</div>
-          <img className="border-top-0" src={example} alt="" />
-        </div>
-      </div> */}
     </div>
   );
 }

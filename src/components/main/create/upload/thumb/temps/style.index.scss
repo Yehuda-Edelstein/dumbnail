@@ -6,10 +6,9 @@ $title-font: 14px;
 $desc-font: 12px;
 
 .temp-container {
-  position: absolute;
-  // margin-top: 35px;
+  // position: absolute;
   min-height: 100px;
-  bottom: 16px;
+  // bottom: 16px;
 
   label {
     margin-bottom: 0.25em;
@@ -63,6 +62,5 @@ $desc-font: 12px;
     padding: 10px 0;
     width: 100%;
     position: relative;
-    // transform: scale(80%);
   }
 }

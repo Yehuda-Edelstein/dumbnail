@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Temps from "./temps";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import Collapse from "react-bootstrap/Collapse";
 
 function UploadThumb({
   uploadThumbnail,
@@ -30,8 +29,6 @@ function UploadThumb({
   setChannelTemp,
   setIsChannelTemp,
 }) {
-  const [open, setOpen] = useState(false);
-
   function reset() {
     setPreviewThumb();
     setPreviewChannelPic();
@@ -194,33 +191,13 @@ function UploadThumb({
         </ul>
       </div>
       <Temps
-        // uploadThumbnail={uploadThumbnail}
-        // uploadChannelPic={uploadChannelPic}
         setChannelName={setChannelName}
         setIsTemplate={setIsTemplate}
         setTemplate={setTemplate}
-        // setPreviewThumb={setPreviewThumb}
-        // setPreviewChannelPic={setPreviewChannelPic}
         setIsActive={setIsActive}
         setChannelTemp={setChannelTemp}
         setIsChannelTemp={setIsChannelTemp}
       />
-      <Collapse in={open}>
-        <div className="temp-container-collapse" id="example-collapse-text">
-          <Temps
-            // uploadThumbnail={uploadThumbnail}
-            // uploadChannelPic={uploadChannelPic}
-            setChannelName={setChannelName}
-            setIsTemplate={setIsTemplate}
-            setTemplate={setTemplate}
-            // setPreviewThumb={setPreviewThumb}
-            // setPreviewChannelPic={setPreviewChannelPic}
-            setIsActive={setIsActive}
-            setChannelTemp={setChannelTemp}
-            setIsChannelTemp={setIsChannelTemp}
-          />
-        </div>
-      </Collapse>
     </div>
   );
 }

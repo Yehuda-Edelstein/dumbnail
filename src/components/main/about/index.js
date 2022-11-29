@@ -5,7 +5,6 @@ function About(props) {
   return (
     <div className="about">
       <div className="">
-        {/* short about section here */}
         <div className="content p-3">
           <div className="p-3">
             <p>

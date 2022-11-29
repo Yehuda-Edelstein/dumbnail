@@ -5,7 +5,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import "./style.index.scss";
 
-function Main(props) {
+function Main() {
   return (
     <div className="main">
       <div className="create">

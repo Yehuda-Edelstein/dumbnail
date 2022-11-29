@@ -7,11 +7,8 @@ function Info({
   setChannelName,
   setViews,
   exactViews,
-  // setExactViews,
   setTimeAgo,
   setIncrement,
-  // setDark,
-  // dark,
 }) {
   // convert views to youtube style
   function nFormatter(num, digits) {

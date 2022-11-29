@@ -9,8 +9,7 @@ $desc-font: 12.5px;
   height: fit-content;
   min-width: 370px;
   max-width: 370px;
-  background-color: rgba(1, 0, 0, 1);
-
+  background-color: #161616;
   .dark {
     .thumbnail-border {
       border-bottom: 1px dashed rgba(255, 0, 0, 0.503);
@@ -18,7 +17,7 @@ $desc-font: 12.5px;
 
     .upload-thumbnail {
       background-color: rgba(255, 0, 0, 0.1);
-      aspect-ratio: $width / $height;
+      aspect-ratio: calc($width / $height);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap-reverse;
@@ -68,7 +67,7 @@ $desc-font: 12.5px;
     }
 
     .thumbnail {
-      aspect-ratio: $width / $height;
+      aspect-ratio: calc($width / $height);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap-reverse;
@@ -227,9 +226,6 @@ $desc-font: 12.5px;
         overflow: hidden;
         display: block;
         -webkit-line-clamp: 2;
-        display: box;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         white-space: wrap;
       }

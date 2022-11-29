@@ -6,9 +6,9 @@ $title-font: 14px;
 $desc-font: 12px;
 
 .popular-container {
-  position: absolute;
+  // position: absolute;
   min-height: 100px;
-  bottom: 16px;
+  // bottom: 16px;
 
   .scroll {
     overflow-x: scroll;
@@ -20,8 +20,8 @@ $desc-font: 12px;
       content: "";
       position: absolute;
       z-index: 1;
-      bottom: 0;
-      left: -1px;
+      bottom: 30px;
+      left: -5px;
       height: 85px;
       pointer-events: none;
       background-image: linear-gradient(to left, rgba(255, 255, 255, 0), white);
@@ -32,8 +32,8 @@ $desc-font: 12px;
       content: "";
       position: absolute;
       z-index: 1;
-      bottom: 0;
-      right: -1px;
+      bottom: 30px;
+      right: 10px;
       height: 85px;
       pointer-events: none;
       background-image: linear-gradient(
@@ -94,11 +94,8 @@ $desc-font: 12px;
 
 @media screen and (max-width: 1023px) {
   .popular-container {
-    // height: 120px;
-    // width: 100%;
-    // position: relative;
     .scroll {
-      width: 380px;
+      width: 370px;
     }
   }
 }
@@ -112,6 +109,25 @@ $desc-font: 12px;
     position: relative;
     .scroll {
       width: 370px;
+      .overlay {
+        bottom: -10px;
+        right: -10px;
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          white
+        );
+      }
+      .before-overlay {
+        bottom: -10px;
+
+        left: -20px;
+        background-image: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0),
+          white
+        );
+      }
     }
   }
 }

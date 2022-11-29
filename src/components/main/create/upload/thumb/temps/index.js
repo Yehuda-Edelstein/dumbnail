@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import beastThumb from "../../../../../../static/temps/mrbeast/thumb.png";
 
 import "./style.index.scss";
@@ -11,9 +11,6 @@ function Temps({
   setChannelTemp,
   setIsChannelTemp,
 }) {
-  // add a check to the temp picked and a clear button to get rid of the temp
-  // const [beastChecked, setBeastChecked] = useState(false);
-
   function clearTemp() {
     setIsTemplate(false);
     setIsChannelTemp(false);
@@ -27,8 +24,6 @@ function Temps({
     setTemplate(beastThumb);
     setChannelTemp("Mr_Beast.png");
     setChannelName("MrBeast");
-
-    // setBeastChecked(true);
   }
 
   return (
