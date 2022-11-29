@@ -7,13 +7,13 @@ import "./style.index.scss";
 
 function Main(props) {
   return (
-    <div>
+    <div className="main">
       <div className="create">
-        <div className="container">
+        <div className="content-container">
           <Tabs
             defaultActiveKey="create"
             id="uncontrolled-tab-example"
-            className="mb-3"
+            className=""
           >
             <Tab eventKey="create" title="Create">
               <Create />

@@ -19,14 +19,19 @@ function MobilePreview({
   thumbZoom,
   thumbX,
   thumbY,
-  setThumbX,
-  setThumbY,
+  channelPicZoom,
+  channelPicX,
+  channelPicY,
   //
   isTemplate,
   template,
   channelTemp,
   isDarkMode,
+  isChannelTemp,
 }) {
+  const x = channelPicX * 0.1;
+  const y = channelPicY * 0.1;
+
   return (
     <div className={isDarkMode ? "mobile-preview-dark" : "mobile-preview"}>
       <div className={isDarkMode ? "dark" : "mobile"}>
@@ -54,17 +59,26 @@ function MobilePreview({
         </div>
         <div className="d-flex">
           <div className="d-flex">
-            {selectedChannelPic && !isTemplate && (
+            {selectedChannelPic && !isChannelTemp && (
               <div className="channel-pic">
-                <img src={previewChannelPic} alt="" />
+                <img
+                  src={previewChannelPic}
+                  alt=""
+                  style={{
+                    transform: `scale(${channelPicZoom}%) translate(${x}px, ${y}px)`,
+                  }}
+                />
               </div>
             )}
-            {!selectedChannelPic && isTemplate && (
-              <div className="channel-pic">
-                <img src={channelTemp} alt="" />
+            {!selectedChannelPic && isChannelTemp && (
+              <div className="channel-temp">
+                <img
+                  src={require(`../../../../../static/popular/${channelTemp}`)}
+                  alt=""
+                />
               </div>
             )}
-            {!selectedChannelPic && !isTemplate && (
+            {!selectedChannelPic && !isTemplate && !isChannelTemp && (
               <div className="upload-channel-pic"></div>
             )}
           </div>
@@ -76,7 +90,7 @@ function MobilePreview({
                 icon={icon({ name: "ellipsis-vertical", style: "solid" })}
               />
             </div>
-            <div className="d-flex">
+            <div className="details">
               <div className="channel-name">{channelName}</div>
               <span className="bullet"></span>
               <div className="views">{views} views</div>

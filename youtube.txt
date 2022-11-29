@@ -22,6 +22,7 @@
 - add flash for when you download like screenshot
 - add also viewed this channel
 - add rotate button for picture cropping
+- maybe add a increment dropdown for amount of views (k, m, b)
 
 
 Popular Channels:
@@ -32,6 +33,8 @@ Popular Channels:
 - Pewdiepie
 - Vevo
 - JRE
+    - notes: add tags to find diff kinds of popular channels
+    - mabe randomize the popular channels
 
 Templates:
 - Mr. Beast

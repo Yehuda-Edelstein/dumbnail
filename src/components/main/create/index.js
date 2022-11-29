@@ -37,9 +37,13 @@ function Create() {
   const [thumbZoom, setThumbZoom] = useState(100);
   const [thumbX, setThumbX] = useState(0);
   const [thumbY, setThumbY] = useState(0);
+  const [channelPicZoom, setChannelPicZoom] = useState(100);
+  const [channelPicX, setChannelPicX] = useState(0);
+  const [channelPicY, setChannelPicY] = useState(0);
   // templates
   const [isTemplate, setIsTemplate] = useState(false);
   const [template, setTemplate] = useState();
+  const [isChannelTemp, setIsChannelTemp] = useState(false);
   const [channelTemp, setChannelTemp] = useState();
 
   useEffect(() => {
@@ -75,6 +79,8 @@ function Create() {
   }, [selectedChannelPic]);
 
   function uploadChannelPic(ev) {
+    setIsChannelTemp(false);
+    setChannelTemp();
     if (!ev.target.files || ev.target.files.length === 0) {
       setSelectedChannelPic(undefined);
       return;
@@ -121,9 +127,9 @@ function Create() {
   };
 
   return (
-    <div className="content p-3">
+    <div className="content p-3 pt-0">
       <div className="upload-content-container">
-        <div className="d-grid">
+        <div className="d-grid" style={{ maxWidth: "fit-content" }}>
           <Tabs
             defaultActiveKey="thumbnail"
             id="uncontrolled-tab-example"
@@ -151,11 +157,35 @@ function Create() {
                 setSelectedThumb={setSelectedThumb}
                 setIsActive={setIsActive}
                 setChannelTemp={setChannelTemp}
+                setIsChannelTemp={setIsChannelTemp}
               />
+              {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
             </Tab>
             <Tab eventKey="channel" title="Channel">
-              <UploadChannel uploadChannelPic={uploadChannelPic} />
+              <UploadChannel
+                setPreviewChannelPic={setPreviewChannelPic}
+                setSelectedChannelPic={setSelectedChannelPic}
+                uploadChannelPic={uploadChannelPic}
+                previewChannelPic={previewChannelPic}
+                selectedChannelPic={selectedChannelPic}
+                // for cropping
+                channelPicZoom={channelPicZoom}
+                setChannelPicZoom={setChannelPicZoom}
+                channelPicX={channelPicX}
+                channelPicY={channelPicY}
+                setChannelPicX={setChannelPicX}
+                setChannelPicY={setChannelPicY}
+                // for popular channels
+                setChannelName={setChannelName}
+                setIsTemplate={setIsTemplate}
+                setTemplate={setTemplate}
+                setIsActive={setIsActive}
+                setChannelTemp={setChannelTemp}
+                setIsChannelTemp={setIsChannelTemp}
+              />
+              {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
             </Tab>
+
             <Tab eventKey="info" title="Info">
               <Info
                 setTimestamp={setTimestamp}
@@ -171,8 +201,9 @@ function Create() {
           </Tabs>
         </div>
       </div>
-      <div className="p-3">
-        <h4>Preview</h4>
+
+      <div className="preview">
+        <h5>Preview</h5>
         <div className="preview-header">
           <OverlayTrigger
             key={"left"}
@@ -224,16 +255,17 @@ function Create() {
                 setThumbZoom={setThumbZoom}
                 thumbX={thumbX}
                 thumbY={thumbY}
-                setThumbX={setThumbX}
-                setThumbY={setThumbY}
+                channelPicZoom={channelPicZoom}
+                channelPicX={channelPicX}
+                channelPicY={channelPicY}
                 // templates
                 isTemplate={isTemplate}
                 template={template}
                 channelTemp={channelTemp}
+                isChannelTemp={isChannelTemp}
               />
             </div>
-          </div>
-          {/*) : (
+            {/*) : (
             // <div className="border border-bottom-0">
             //   <div className="desktop-preview" ref={desktopRef}>
             //     <DesktopPreview
@@ -295,23 +327,25 @@ function Create() {
             //   </div>
             // </div>
              // )} */}
-        </div>
-        <div className="d-flex">
-          <div>
-            {/* {switchDevice ? ( */}
-            {/* <Download
+          </div>
+          <div className="d-flex">
+            <div>
+              {/* {switchDevice ? ( */}
+              {/* <Download
                 className="download-desktop"
                 isActive={isActive}
                 downloadImage={downloadImageDesktop}
               /> */}
-            {/* ) : ( */}
-            <Download
-              className="download-mobile"
-              isActive={isActive}
-              downloadImage={downloadImageMobile}
-            />
-            {/* )} */}
+              {/* ) : ( */}
+              <Download
+                className="download-mobile"
+                isActive={isActive}
+                downloadImage={downloadImageMobile}
+              />
+              {/* )} */}
+            </div>
           </div>
+          {/* <div className="preview-ad-box">AD BOX #1</div> */}
         </div>
       </div>
     </div>

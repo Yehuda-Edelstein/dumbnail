@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.index.scss";
 
 function Info({
   setTimestamp,
@@ -52,61 +53,58 @@ function Info({
   }
 
   return (
-    <div className="info-content">
-      <div className="d-grid">
-        <label>Title</label>
-        <input
-          onChange={(ev) => setTitle(ev.target.value)}
-          maxLength="100"
-        ></input>
-      </div>
-      <div className="d-grid">
-        <label>Channel name</label>
-        <input
-          onChange={(ev) => setChannelName(ev.target.value)}
-          maxLength="60"
-        ></input>
-      </div>
-      <div className="d-flex">
-        <div className="d-grid">
-          <label>Views</label>
-          <div>
-            <input type="number" onChange={calcViews}></input>
-            {/* random button here */}
+    <div>
+      <div className="info-content">
+        <div className="input-container d-grid">
+          <label>Title</label>
+          <input
+            onChange={(ev) => setTitle(ev.target.value)}
+            maxLength="100"
+          ></input>
+        </div>
+        <div className="input-container d-grid">
+          <label>Channel name</label>
+          <input
+            onChange={(ev) => setChannelName(ev.target.value)}
+            maxLength="60"
+          ></input>
+        </div>
+        <div className="d-flex justify-content-between">
+          <div className="input-container d-grid">
+            <label>Views</label>
+            <div>
+              <input
+                className="views-input"
+                type="number"
+                onChange={calcViews}
+              ></input>
+            </div>
+          </div>
+          <div className="input-container d-grid">
+            <label>Posted</label>
+            <input
+              className="posted-input"
+              type="number"
+              onChange={(ev) => setTimeAgo(ev.target.value)}
+            ></input>
+          </div>
+          <div className="input-container">
+            <label>Ago</label>
+            <select onChange={(ev) => setIncrement(ev.target.value)}>
+              <option value="minute">minutes</option>
+              <option value="hour">hours</option>
+              <option value="day">days</option>
+              <option value="month">months</option>
+              <option value="year">years</option>
+            </select>
           </div>
         </div>
-        {/* <div className="d-grid">
-          <label>Exact views</label>
-          <input
-            type="checkbox"
-            onClick={(ev) => setExactViews(!ev.target.checked)}
-          ></input>
-        </div> */}
-      </div>
-      <h5>Posted</h5>
-      <div className="d-flex">
-        <div className="d-grid">
-          <label>Amount</label>
-          <input
-            type="number"
-            onChange={(ev) => setTimeAgo(ev.target.value)}
-          ></input>
+        <div className="input-container d-grid">
+          <label>Timestamp</label>
+          <input type="number" onChange={calcTimestamp}></input>
         </div>
-        <div className="d-grid">
-          <label>Increment</label>
-          <select onChange={(ev) => setIncrement(ev.target.value)}>
-            <option value="minute">minutes</option>
-            <option value="hour">hours</option>
-            <option value="day">days</option>
-            <option value="month">months</option>
-            <option value="year">years</option>
-          </select>
-        </div>
-        {/* random button here */}
       </div>
-      <h5>Timestamp</h5>
-      <span></span>
-      <input type="number" onChange={calcTimestamp}></input>
+      {/* <div className="info-ad-box">AD BOX #2</div> */}
     </div>
   );
 }

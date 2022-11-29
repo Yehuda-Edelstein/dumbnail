@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Temps from "./temps";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Collapse from "react-bootstrap/Collapse";
 
 function UploadThumb({
   uploadThumbnail,
@@ -27,7 +28,10 @@ function UploadThumb({
   setSelectedThumb,
   setIsActive,
   setChannelTemp,
+  setIsChannelTemp,
 }) {
+  const [open, setOpen] = useState(false);
+
   function reset() {
     setPreviewThumb();
     setPreviewChannelPic();
@@ -38,6 +42,7 @@ function UploadThumb({
       <div className="d-grid">
         {selectedThumb ? (
           <div>
+            <h5>Crop</h5>
             <div className="upload-container">
               <div className="crop-border">
                 <div className="vertical">
@@ -175,10 +180,18 @@ function UploadThumb({
             </div>
           </div>
         )}
-        {/* <span>
-          *notes: zoom range maxes out at 200% and cannot be zoomed out past
-          original picture
-        </span> */}
+      </div>
+      <div className="notes">
+        <ul>
+          <li>
+            *zoom range maxes out at 200% and cannot be zoomed out past original
+            picture.
+          </li>
+          <li>
+            **make sure to cover the entire thumbnail window, if you see a red
+            background if you've cropped too far.
+          </li>
+        </ul>
       </div>
       <Temps
         // uploadThumbnail={uploadThumbnail}
@@ -190,7 +203,24 @@ function UploadThumb({
         // setPreviewChannelPic={setPreviewChannelPic}
         setIsActive={setIsActive}
         setChannelTemp={setChannelTemp}
+        setIsChannelTemp={setIsChannelTemp}
       />
+      <Collapse in={open}>
+        <div className="temp-container-collapse" id="example-collapse-text">
+          <Temps
+            // uploadThumbnail={uploadThumbnail}
+            // uploadChannelPic={uploadChannelPic}
+            setChannelName={setChannelName}
+            setIsTemplate={setIsTemplate}
+            setTemplate={setTemplate}
+            // setPreviewThumb={setPreviewThumb}
+            // setPreviewChannelPic={setPreviewChannelPic}
+            setIsActive={setIsActive}
+            setChannelTemp={setChannelTemp}
+            setIsChannelTemp={setIsChannelTemp}
+          />
+        </div>
+      </Collapse>
     </div>
   );
 }

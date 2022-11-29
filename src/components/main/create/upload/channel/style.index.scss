@@ -10,7 +10,7 @@ $channel-pic-height: 38px;
   }
 }
 
-.upload-container {
+.upload-channel-container {
   border: 1px dashed rgba(128, 128, 128, 0.75);
   background-color: rgba(128, 128, 128, 0.1);
   border-radius: 12px;
@@ -144,15 +144,11 @@ $channel-pic-height: 38px;
     list-style: none;
     margin-top: 5px;
     padding-left: 10px;
-
-    li {
-      margin-bottom: 5px;
-    }
   }
 }
 
 @media screen and (max-width: 1023px) {
-  .upload-container {
+  .upload-channel-container {
     width: calc(370px * 1);
     height: calc(208.11px * 1);
 

@@ -9,21 +9,40 @@ function About(props) {
         <div className="content p-3">
           <div className="p-3">
             <p>
-              Although this site was made for the purpose of entertainment, I
-              feel it's important to defend myself against those who think that
-              facilitating the creation of fictious thumbnails (or really{" "}
-              <em>screenshots</em> of thumbnails) is a bad idea, on account of
-              all the fake news out there in the ether already.
+              Dumbnail allows you to produce a screenshot (png) of a fictious
+              YouTube video. It does not let you create and export actual
+              thumbnails.
               <br></br>
               <br></br>
-              ???
+              Imagine you're scrolling through YouTube on a lazy Sunday
+              afternoon and you stumble upon an amusing-looking video. You know
+              you're not going to watch it, your friends surely won't, so
+              instead you snap take a quick screenshot and send it over to your
+              group chat for their enjoyment.
               <br></br>
               <br></br>
-              If you want to contribute go check out the github...
+              <em>"lol"</em>
               <br></br>
               <br></br>
-              There are a lot of ideas already in the notes file so start there
-              if you don't have any particular issues you're dying to fix.{" "}
+              That's all you ever wanted.
+              <br></br>
+              <br></br>
+              This website allows you to create that amusing screenshot yourself
+              before the video ever exists. Endless memes at your disposal.Just
+              think of the possibilities.
+              <br></br>
+              <br></br>
+              If you like the site give us a follow and/or a shoutout on{" "}
+              <a
+                href="https://twitter.com/dumbnail2"
+                rel="noreferrer"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                Twitter
+              </a>
+              <br></br>
+              <br></br>~ Y.E.
             </p>
           </div>
         </div>

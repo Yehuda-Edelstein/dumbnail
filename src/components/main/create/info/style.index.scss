@@ -1,3 +1,51 @@
 .info-content {
-  max-width: fit-content;
+  .input-container {
+    label {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    input,
+    input:focus {
+      margin-bottom: 15.3px;
+      padding-left: 10px;
+      font-size: 25px;
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+    }
+
+    input {
+      background-color: rgba(128, 128, 128, 0.1);
+    }
+
+    input:focus {
+      background-color: rgba(128, 128, 128, 0.25);
+    }
+
+    .views-input,
+    .posted-input {
+      max-width: 220px;
+      margin-right: 25px;
+    }
+
+    select {
+      background-color: rgba(128, 128, 128, 0.1);
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      padding: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .info-content {
+    width: 370px;
+    .input-container {
+      .views-input,
+      .posted-input {
+        max-width: 120px;
+        margin-right: 25px;
+      }
+    }
+  }
 }

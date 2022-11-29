@@ -1,10 +1,14 @@
 .about {
-  min-width: 753px;
-  max-width: 753px;
+  display: flex;
+  width: fit-content;
+  min-width: 420px;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1023px) {
   .about {
-    min-width: 434px;
+    max-width: 838px;
   }
 }

@@ -130,7 +130,7 @@ $desc-font: 12.5px;
     }
 
     .cover-this {
-      background-color: black;
+      background-color: red;
     }
 
     .upload-channel-pic {
@@ -172,10 +172,26 @@ $desc-font: 12.5px;
       margin: 10px 10px 40px 10px;
       overflow: hidden;
       position: relative;
+      background-color: red;
 
       img {
-        max-height: auto;
-        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .channel-temp {
+      border-radius: 50%;
+      width: calc($channel-pic-width);
+      height: calc($channel-pic-height);
+      margin: 10px 10px 40px 10px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
         object-fit: contain;
       }
     }
@@ -192,6 +208,12 @@ $desc-font: 12.5px;
         margin: 15px 0 0 0;
         font-size: 13px;
         color: #575757;
+      }
+
+      .details {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
       }
 
       .title {
@@ -217,9 +239,7 @@ $desc-font: 12.5px;
         font-family: "Roboto", "Arial", sans-serif;
         color: #575757;
         font-size: calc($desc-font * 1.1);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: wrap;
+        word-wrap: break-word;
       }
 
       .bullet {
