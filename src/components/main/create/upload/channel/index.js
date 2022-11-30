@@ -36,7 +36,6 @@ function UploadChannel({
       <div className="d-grid">
         {selectedChannelPic ? (
           <div>
-            <h5>Crop</h5>
             <div className="upload-channel-container">
               <div className="crop-border">
                 <div className="vertical">
