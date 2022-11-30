@@ -3,7 +3,7 @@
   .input-container {
     .views-input,
     .posted-input {
-      max-width: 155px;
+      width: 157px;
       margin-right: 25px;
     }
   }
@@ -46,15 +46,15 @@
   }
 }
 
-// @media screen and (max-width: 1023px) {
-//   .info-content {
-//     width: 370px;
-//     .input-container {
-//       .views-input,
-//       .posted-input {
-//         max-width: 120px;
-//         margin-right: 25px;
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 1023px) {
+  .info-content {
+    width: 370px;
+    .input-container {
+      .views-input,
+      .posted-input {
+        max-width: 120px;
+        margin-right: 25px;
+      }
+    }
+  }
+}
