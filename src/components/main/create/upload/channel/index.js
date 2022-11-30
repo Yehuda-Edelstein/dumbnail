@@ -44,14 +44,14 @@ function UploadChannel({
                     className="arrow-up"
                     icon={icon({ name: "arrow-up", style: "solid" })}
                     onClick={() => {
-                      setChannelPicY(channelPicY - 10);
+                      setChannelPicY(channelPicY + 10);
                     }}
                   />
                   <FontAwesomeIcon
                     className="arrow-down"
                     icon={icon({ name: "arrow-down", style: "solid" })}
                     onClick={() => {
-                      setChannelPicY(channelPicY + 10);
+                      setChannelPicY(channelPicY - 10);
                     }}
                   />
                 </div>
@@ -60,14 +60,14 @@ function UploadChannel({
                     className="arrow-left"
                     icon={icon({ name: "arrow-left", style: "solid" })}
                     onClick={() => {
-                      setChannelPicX(channelPicX - 10);
+                      setChannelPicX(channelPicX + 10);
                     }}
                   />
                   <FontAwesomeIcon
                     className="arrow-right"
                     icon={icon({ name: "arrow-right", style: "solid" })}
                     onClick={() => {
-                      setChannelPicX(channelPicX + 10);
+                      setChannelPicX(channelPicX - 10);
                     }}
                   />
                 </div>

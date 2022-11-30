@@ -47,14 +47,14 @@ function UploadThumb({
                     className="arrow-up"
                     icon={icon({ name: "arrow-up", style: "solid" })}
                     onClick={() => {
-                      setThumbY(thumbY - 10);
+                      setThumbY(thumbY + 10);
                     }}
                   />
                   <FontAwesomeIcon
                     className="arrow-down"
                     icon={icon({ name: "arrow-down", style: "solid" })}
                     onClick={() => {
-                      setThumbY(thumbY + 10);
+                      setThumbY(thumbY - 10);
                     }}
                   />
                 </div>
@@ -63,14 +63,14 @@ function UploadThumb({
                     className="arrow-left"
                     icon={icon({ name: "arrow-left", style: "solid" })}
                     onClick={() => {
-                      setThumbX(thumbX - 10);
+                      setThumbX(thumbX + 10);
                     }}
                   />
                   <FontAwesomeIcon
                     className="arrow-right"
                     icon={icon({ name: "arrow-right", style: "solid" })}
                     onClick={() => {
-                      setThumbX(thumbX + 10);
+                      setThumbX(thumbX - 10);
                     }}
                   />
                 </div>

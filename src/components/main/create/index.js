@@ -16,7 +16,7 @@ import UploadChannel from "./upload/channel/index.js";
 function Create() {
   // is preview active
   const [isActive, setIsActive] = useState(false);
-  const [timestamp, setTimestamp] = useState("4:20");
+  const [duration, setDuration] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
   const [views, setViews] = useState("69K");
@@ -186,7 +186,7 @@ function Create() {
 
             <Tab eventKey="info" title="Info">
               <Info
-                setTimestamp={setTimestamp}
+                setDuration={setDuration}
                 setTitle={setTitle}
                 setChannelName={setChannelName}
                 setViews={setViews}
@@ -232,7 +232,7 @@ function Create() {
             {" "}
             <div ref={mobileRef}>
               <MobilePreview
-                timestamp={timestamp}
+                duration={duration}
                 title={title}
                 channelName={channelName}
                 views={views}
@@ -266,7 +266,7 @@ function Create() {
             // <div className="border border-bottom-0">
             //   <div className="desktop-preview" ref={desktopRef}>
             //     <DesktopPreview
-            //       timestamp={timestamp}
+            //       Duration={Duration}
             //       title={title}
             //       channelName={channelName}
             //       views={views}
@@ -296,7 +296,7 @@ function Create() {
             // <div className="border border-bottom-0">
             //   <div className="mobile-preview" ref={mobileRef}>
             //     <MobilePreview
-            //       timestamp={timestamp}
+            //       Duration={Duration}
             //       title={title}
             //       channelName={channelName}
             //       views={views}

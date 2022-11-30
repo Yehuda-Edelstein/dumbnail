@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 
 function MobilePreview({
-  timestamp,
+  duration,
   title,
   channelName,
   views,
@@ -39,7 +39,7 @@ function MobilePreview({
             selectedThumb ? "thumbnail" : "upload-thumbnail thumbnail-border"
           }
         >
-          <span className="time-stamp">{timestamp}</span>
+          <span className="time-stamp">{duration}</span>
           {selectedThumb && (
             <div className="cover-this">
               <img

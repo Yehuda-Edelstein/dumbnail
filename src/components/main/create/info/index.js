@@ -2,7 +2,7 @@ import React from "react";
 import "./style.index.scss";
 
 function Info({
-  setTimestamp,
+  setDuration,
   setTitle,
   setChannelName,
   setViews,
@@ -43,8 +43,8 @@ function Info({
     }
   }
 
-  function calcTimestamp(ev) {
-    setTimestamp(
+  function calcDuration(ev) {
+    setDuration(
       ev.target.value.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ":")
     );
   }
@@ -97,8 +97,8 @@ function Info({
           </div>
         </div>
         <div className="input-container d-grid">
-          <label>Timestamp</label>
-          <input type="number" onChange={calcTimestamp}></input>
+          <label>Duration</label>
+          <input type="number" onChange={calcDuration}></input>
         </div>
       </div>
       {/* <div className="info-ad-box">AD BOX #2</div> */}
