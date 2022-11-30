@@ -39,7 +39,6 @@ function UploadThumb({
       <div className="d-grid">
         {selectedThumb ? (
           <div>
-            <h5>Crop</h5>
             <div className="upload-container">
               <div className="crop-border">
                 <div className="vertical">
