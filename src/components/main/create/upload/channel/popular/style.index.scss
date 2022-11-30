@@ -20,8 +20,8 @@ $desc-font: 12px;
       content: "";
       position: absolute;
       z-index: 1;
-      bottom: 30px;
-      left: -5px;
+      bottom: 33px;
+      left: 0px;
       height: 85px;
       pointer-events: none;
       background-image: linear-gradient(to left, rgba(255, 255, 255, 0), white);
@@ -32,8 +32,8 @@ $desc-font: 12px;
       content: "";
       position: absolute;
       z-index: 1;
-      bottom: 30px;
-      right: 10px;
+      bottom: 33px;
+      right: 0;
       height: 85px;
       pointer-events: none;
       background-image: linear-gradient(
@@ -61,7 +61,7 @@ $desc-font: 12px;
     .popular-label {
       text-align: center;
       color: white;
-      background-color: red;
+      background-color: white;
       opacity: 0.75;
       border: 1px solid rgba(0, 0, 0, 0.6);
       font-size: 10px;
@@ -96,6 +96,12 @@ $desc-font: 12px;
   .popular-container {
     .scroll {
       width: 370px;
+      .overlay {
+        bottom: 58px;
+      }
+      .before-overlay {
+        bottom: 58px;
+      }
     }
   }
 }

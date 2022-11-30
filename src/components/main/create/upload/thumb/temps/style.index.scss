@@ -6,9 +6,7 @@ $title-font: 14px;
 $desc-font: 12px;
 
 .temp-container {
-  // position: absolute;
   min-height: 100px;
-  // bottom: 16px;
 
   label {
     margin-bottom: 0.25em;
@@ -40,7 +38,6 @@ $desc-font: 12px;
       background-color: rgba(255, 0, 0, 0.1);
       opacity: 0.75;
       border: 1px dashed rgba(255, 0, 0, 0.5);
-
       font-size: 10px;
     }
 
@@ -58,7 +55,6 @@ $desc-font: 12px;
 
 @media screen and (max-width: 830px) {
   .temp-container {
-    height: 120px;
     padding: 10px 0;
     width: 100%;
     position: relative;
