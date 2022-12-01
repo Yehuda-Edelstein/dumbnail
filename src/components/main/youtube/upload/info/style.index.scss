@@ -3,20 +3,21 @@
   .input-container {
     .views-input,
     .posted-input {
-      width: 157px;
+      width: 101.5px;
       margin-right: 25px;
     }
   }
 
   .input-container {
+    margin-bottom: 3px;
+
     label {
       font-size: 18px;
-      margin-bottom: 5px;
     }
 
     input,
     input:focus {
-      margin-bottom: 15.3px;
+      margin-bottom: 10px;
       padding-left: 10px;
       font-size: 25px;
       outline: none;
@@ -48,12 +49,12 @@
 
 @media screen and (max-width: 1023px) {
   .info-content {
-    width: 370px;
+    // width: 370px;
     .input-container {
       .views-input,
       .posted-input {
-        max-width: 120px;
-        margin-right: 25px;
+        // max-width: 120px;
+        // margin-right: 25px;
       }
     }
   }

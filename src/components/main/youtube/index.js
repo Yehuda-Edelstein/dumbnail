@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
+import AdSense from "react-adsense";
 // import DesktopPreview from "./preview/desktop/index.js";
-import Info from "./info/index.js";
+import Info from "./upload/info/index.js";
 import * as htmlToImage from "html-to-image";
 import Download from "./download/index.js";
 import Switch from "./switch/index.js";
@@ -12,10 +13,16 @@ import UploadThumb from "./upload/thumb/index.js";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import UploadChannel from "./upload/channel/index.js";
+// import PreviewAd from "./ads/preview/index.js";
 
-function Create() {
+function YouTube() {
   // is preview active
   const [isActive, setIsActive] = useState(false);
+  // YouTube
+  const [selectedThumb, setSelectedThumb] = useState();
+  const [previewThumb, setPreviewThumb] = useState();
+  const [selectedChannelPic, setSelectedChannelPic] = useState();
+  const [previewChannelPic, setPreviewChannelPic] = useState();
   const [duration, setDuration] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
@@ -24,11 +31,6 @@ function Create() {
   const [timeAgo, setTimeAgo] = useState("23");
   const [increment, setIncrement] = useState("minute");
   // const [verified, setVerified] = useState(false);
-  //   to display images
-  const [selectedThumb, setSelectedThumb] = useState();
-  const [previewThumb, setPreviewThumb] = useState();
-  const [selectedChannelPic, setSelectedChannelPic] = useState();
-  const [previewChannelPic, setPreviewChannelPic] = useState();
   // change mode
   const [isDarkMode, setIsDarkMode] = useState(false);
   // switch
@@ -118,7 +120,7 @@ function Create() {
   //   });
 
   //   // download image
-  //   const link = document.createElement("a");
+  //   const link = document.YouTubeElement("a");
   //   link.download = "dumbnail.png";
   //   link.href = dataUrl;
   //   link.click();
@@ -131,7 +133,7 @@ function Create() {
           <Tabs
             defaultActiveKey="thumbnail"
             id="uncontrolled-tab-example"
-            className="mb-3"
+            className="upload-header mb-3"
           >
             <Tab eventKey="thumbnail" title="Thumbnail">
               <UploadThumb
@@ -183,7 +185,6 @@ function Create() {
               />
               {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
             </Tab>
-
             <Tab eventKey="info" title="Info">
               <Info
                 setDuration={setDuration}
@@ -342,6 +343,7 @@ function Create() {
               {/* )} */}
             </div>
           </div>
+          <div>{/* <PreviewAd /> */}</div>
           {/* <div className="preview-ad-box">AD BOX #1</div> */}
         </div>
       </div>
@@ -349,4 +351,4 @@ function Create() {
   );
 }
 
-export default Create;
+export default YouTube;

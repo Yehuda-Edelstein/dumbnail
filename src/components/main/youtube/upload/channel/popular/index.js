@@ -20,7 +20,6 @@ function Popular({
   }
 
   function clearChannelTemp() {
-    // setIsTemplate(false);
     setIsChannelTemp(false);
     setChannelName("Channel");
   }
@@ -34,9 +33,9 @@ function Popular({
           key={"blank"}
           placement={"top"}
           delay={{ show: "100", hide: "10" }}
-          overlay={<Tooltip id={"tooltip-top"}>Default</Tooltip>}
+          overlay={<Tooltip id={"tooltip-top"}>Reset</Tooltip>}
         >
-          <div className="popular d-grid me-3" onClick={clearChannelTemp}>
+          <div className="popular d-grid" onClick={clearChannelTemp}>
             <div className="blank-popular"></div>
           </div>
         </OverlayTrigger>

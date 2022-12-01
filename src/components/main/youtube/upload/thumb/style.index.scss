@@ -10,12 +10,12 @@ $channel-pic-height: 38px;
   }
 }
 
-.upload-channel-container {
+.upload-container {
   border: 1px dashed rgba(128, 128, 128, 0.75);
   background-color: rgba(128, 128, 128, 0.1);
   border-radius: 12px;
-  width: calc(370px * 1.2);
-  height: calc(208.11px * 1.2);
+  width: calc(370px * 0.9);
+  height: calc(208.11px * 0.9);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap-reverse;
@@ -36,7 +36,7 @@ $channel-pic-height: 38px;
     z-index: 2;
     height: 100%;
     left: 0;
-    width: 402px;
+    width: 292px;
 
     .vertical {
       height: 100%;
@@ -48,7 +48,7 @@ $channel-pic-height: 38px;
       .arrow-down {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 7.5px 0 7.5px 18px;
-        font-size: 20px;
+        font-size: 18px;
         color: white;
 
         &:hover {
@@ -61,7 +61,7 @@ $channel-pic-height: 38px;
     .horizontal {
       height: 100px;
       width: 100%;
-      margin-top: 35px;
+      margin-top: 33px;
       position: absolute;
       display: flex;
       top: 0;
@@ -70,8 +70,8 @@ $channel-pic-height: 38px;
       .arrow-left,
       .arrow-right {
         background-color: rgba(0, 0, 0, 0.6);
-        padding: 78.75px 7.5px;
-        font-size: 20px;
+        padding: 50.5px 7.5px;
+        font-size: 18px;
         color: white;
 
         &:hover {
@@ -98,7 +98,7 @@ $channel-pic-height: 38px;
     .clear,
     .reset {
       color: white;
-      font-size: 20px;
+      font-size: 18px;
 
       &:hover {
         cursor: pointer;
@@ -144,13 +144,17 @@ $channel-pic-height: 38px;
     list-style: none;
     margin-top: 5px;
     padding-left: 10px;
+
+    li {
+      margin-bottom: 5px;
+    }
   }
 }
 
 @media screen and (max-width: 1023px) {
-  .upload-channel-container {
-    width: calc(370px * 1);
-    height: calc(208.11px * 1);
+  .upload-container {
+    width: calc(370px * 0.9);
+    height: calc(208.11px * 0.9);
 
     .crop-border {
       width: 329px;
@@ -188,5 +192,12 @@ $channel-pic-height: 38px;
   }
   .notes {
     width: 350px;
+  }
+}
+
+.notes-overlay {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 }

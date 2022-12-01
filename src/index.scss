@@ -12,3 +12,11 @@ body {
 code {
   font-family: "Roboto", "Arial", sans-serif;
 }
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  background-color: #dae0e6;
+}

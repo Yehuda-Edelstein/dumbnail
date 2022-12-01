@@ -8,7 +8,7 @@ function About(props) {
         <div className="content p-3">
           <div className="p-3">
             <p>
-              Dumbnail allows you to produce a screenshot (png) of a fictious
+              Dumbnail allows you to produce a screenshot (.png) of a fictious
               YouTube video. It does not let you create and export actual
               thumbnails.
               <br></br>

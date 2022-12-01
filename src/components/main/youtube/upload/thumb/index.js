@@ -5,6 +5,8 @@ import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Temps from "./temps";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Popover from "react-bootstrap/Popover";
+import Button from "react-bootstrap/Button";
 
 function UploadThumb({
   uploadThumbnail,
@@ -77,20 +79,14 @@ function UploadThumb({
               {selectedThumb && (
                 <div className="sidebar">
                   <div>
-                    <OverlayTrigger
-                      key={"right"}
-                      placement={"right"}
-                      overlay={<Tooltip id={"tooltip-right"}>Clear</Tooltip>}
-                    >
-                      <FontAwesomeIcon
-                        className="clear"
-                        icon={icon({
-                          name: "trash",
-                          style: "solid",
-                        })}
-                        onClick={reset}
-                      />
-                    </OverlayTrigger>
+                    <FontAwesomeIcon
+                      className="clear"
+                      icon={icon({
+                        name: "trash",
+                        style: "solid",
+                      })}
+                      onClick={reset}
+                    />
                   </div>
                   <div className="d-grid">
                     <FontAwesomeIcon
@@ -119,24 +115,18 @@ function UploadThumb({
                     />
                   </div>
                   <div>
-                    <OverlayTrigger
-                      key={"right"}
-                      placement={"right"}
-                      overlay={<Tooltip id={"tooltip-right"}>Reset</Tooltip>}
-                    >
-                      <FontAwesomeIcon
-                        className="reset"
-                        icon={icon({
-                          name: "rotate-left",
-                          style: "solid",
-                        })}
-                        onClick={() => {
-                          setThumbX(0);
-                          setThumbY(0);
-                          setThumbZoom(100);
-                        }}
-                      />
-                    </OverlayTrigger>
+                    <FontAwesomeIcon
+                      className="reset"
+                      icon={icon({
+                        name: "rotate-left",
+                        style: "solid",
+                      })}
+                      onClick={() => {
+                        setThumbX(0);
+                        setThumbY(0);
+                        setThumbZoom(100);
+                      }}
+                    />
                   </div>
                 </div>
               )}
@@ -177,7 +167,8 @@ function UploadThumb({
           </div>
         )}
       </div>
-      <div className="notes">
+
+      {/* <div className="notes">
         <ul>
           <li>
             *zoom range maxes out at 200% and cannot be zoomed out past original
@@ -188,7 +179,7 @@ function UploadThumb({
             background if you've cropped too far.
           </li>
         </ul>
-      </div>
+      </div> */}
       <Temps
         setChannelName={setChannelName}
         setIsTemplate={setIsTemplate}

@@ -33,7 +33,7 @@ function Temps({
         <div className="d-flex">
           {/* turn this into some kind of map later */}
           <div className="blank-temp d-grid me-3" onClick={clearTemp}>
-            <div className="blank-temp-label">Blank</div>
+            <div className="blank-temp-label">Reset</div>
           </div>
 
           <div className="temp d-grid" onClick={setBeast}>

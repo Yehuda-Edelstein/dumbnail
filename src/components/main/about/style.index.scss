@@ -1,15 +1,21 @@
+.main {
+  height: calc(100% - 70.77px);
+}
+
 .about {
   display: flex;
-  width: 912px;
+  // width: 912px;
   min-width: 420px;
-  font-size: 18px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15px;
+  // font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
+  max-width: 801px;
+  height: 450px;
 }
 
 @media screen and (max-width: 1023px) {
   .about {
-    max-width: 838px;
+    max-width: 801px;
   }
 }
 
@@ -17,5 +23,6 @@
   .about {
     max-width: 436px;
     min-width: 420px;
+    height: fit-content;
   }
 }

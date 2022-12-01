@@ -74,20 +74,14 @@ function UploadChannel({
               {selectedChannelPic && (
                 <div className="sidebar">
                   <div>
-                    <OverlayTrigger
-                      key={"right"}
-                      placement={"right"}
-                      overlay={<Tooltip id={"tooltip-right"}>Clear</Tooltip>}
-                    >
-                      <FontAwesomeIcon
-                        className="clear"
-                        icon={icon({
-                          name: "trash",
-                          style: "solid",
-                        })}
-                        onClick={reset}
-                      />
-                    </OverlayTrigger>
+                    <FontAwesomeIcon
+                      className="clear"
+                      icon={icon({
+                        name: "trash",
+                        style: "solid",
+                      })}
+                      onClick={reset}
+                    />
                   </div>
                   <div className="d-grid">
                     <FontAwesomeIcon
@@ -116,24 +110,18 @@ function UploadChannel({
                     />
                   </div>
                   <div>
-                    <OverlayTrigger
-                      key={"right"}
-                      placement={"right"}
-                      overlay={<Tooltip id={"tooltip-right"}>Reset</Tooltip>}
-                    >
-                      <FontAwesomeIcon
-                        className="reset"
-                        icon={icon({
-                          name: "rotate-left",
-                          style: "solid",
-                        })}
-                        onClick={() => {
-                          setChannelPicX(0);
-                          setChannelPicY(0);
-                          setChannelPicZoom(100);
-                        }}
-                      />
-                    </OverlayTrigger>
+                    <FontAwesomeIcon
+                      className="reset"
+                      icon={icon({
+                        name: "rotate-left",
+                        style: "solid",
+                      })}
+                      onClick={() => {
+                        setChannelPicX(0);
+                        setChannelPicY(0);
+                        setChannelPicZoom(100);
+                      }}
+                    />
                   </div>
                 </div>
               )}
@@ -175,7 +163,7 @@ function UploadChannel({
         )}
       </div>
       <div>
-        <div className="notes">
+        {/* <div className="notes">
           <ul>
             <li>
               *zoom range maxes out at 200% and cannot be zoomed out past
@@ -186,7 +174,7 @@ function UploadChannel({
               red background if you've cropped too far.
             </li>
           </ul>
-        </div>
+        </div> */}
         <Popular
           setChannelName={setChannelName}
           setIsTemplate={setIsTemplate}
