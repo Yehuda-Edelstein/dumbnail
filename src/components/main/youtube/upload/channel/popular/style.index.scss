@@ -6,13 +6,12 @@ $title-font: 14px;
 $desc-font: 12px;
 
 .popular-container {
-  // position: absolute;
+  margin-top: 20px;
   min-height: 100px;
-  // bottom: 16px;
 
   .scroll {
     overflow-x: scroll;
-    max-width: 440px;
+    max-width: 330px;
     padding: 10px 0 0 0;
     padding-bottom: 20px;
 
@@ -21,11 +20,11 @@ $desc-font: 12px;
       position: absolute;
       z-index: 1;
       bottom: 33px;
-      left: 0px;
+      left: 16px;
       height: 85px;
       pointer-events: none;
       background-image: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-      width: 15%;
+      width: 5%;
     }
 
     .overlay {
@@ -33,7 +32,7 @@ $desc-font: 12px;
       position: absolute;
       z-index: 1;
       bottom: 33px;
-      right: 0;
+      right: 18px;
       height: 85px;
       pointer-events: none;
       background-image: linear-gradient(
@@ -41,7 +40,7 @@ $desc-font: 12px;
         rgba(255, 255, 255, 0),
         white
       );
-      width: 15%;
+      width: 5%;
     }
   }
 
@@ -50,9 +49,9 @@ $desc-font: 12px;
   }
 
   .popular {
-    margin-right: 1em;
-    min-width: 75px;
-    max-width: 75px;
+    margin-right: 1.25em;
+    min-width: 65px;
+    max-width: 65px;
     &:hover {
       cursor: pointer;
       opacity: 0.75;
@@ -108,16 +107,13 @@ $desc-font: 12px;
 
 @media screen and (max-width: 830px) {
   .popular-container {
-    height: 120px;
     padding: 10px 0;
     width: 100%;
-
     position: relative;
     .scroll {
-      width: 370px;
       .overlay {
-        bottom: -10px;
-        right: -10px;
+        bottom: 25px;
+        right: 0px;
         background-image: linear-gradient(
           to right,
           rgba(255, 255, 255, 0),
@@ -125,9 +121,8 @@ $desc-font: 12px;
         );
       }
       .before-overlay {
-        bottom: -10px;
-
-        left: -20px;
+        bottom: 25px;
+        left: -1px;
         background-image: linear-gradient(
           to left,
           rgba(255, 255, 255, 0),

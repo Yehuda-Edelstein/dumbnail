@@ -6,6 +6,10 @@
   background-size: contain;
   position: relative;
 
+  .upload-header {
+    font-size: 13px;
+  }
+
   .nav-link.active {
     color: rgba(255, 0, 0, 0.75) !important;
   }
@@ -91,7 +95,6 @@
 
     .preview {
       border-top: 1px solid rgba(255, 0, 0, 0.25);
-      margin-top: 10px;
     }
   }
 }

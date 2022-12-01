@@ -1,23 +1,22 @@
 .main {
-  background-color: #dae0e6;
-  height: calc(100vh - 71.77px);
-  overflow: auto;
-  // min-width: 420px;
+  height: calc(100% - 70.77px);
 }
 
 .create {
-  height: 600px;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .content-container {
     padding: 0px;
     background-color: white;
     max-width: 1050px;
     margin: 0 auto;
     width: fit-content;
-
+    max-height: fit-content;
     .content {
       display: flex;
-      // justify-content: flex-start;
-      min-height: 575px;
+      justify-content: flex-start;
     }
 
     .preview {
@@ -80,7 +79,6 @@ h3 {
 @media screen and (min-width: 831px) {
   .content-container {
     border: 1px solid rgba(0, 0, 0, 0.6);
-    transform: scale(90%);
 
     .content {
       justify-content: space-between;
@@ -90,8 +88,11 @@ h3 {
 }
 
 @media screen and (max-width: 830px) {
+  .create {
+    display: block;
+  }
+
   .content-container {
-    transform: scale(100%);
     width: fit-content;
     padding-bottom: 10px;
     .content {

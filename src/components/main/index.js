@@ -1,9 +1,9 @@
 import React from "react";
-import Create from "./create";
 import About from "./about";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import "./style.index.scss";
+import YouTube from "./youtube";
 
 function Main() {
   return (
@@ -11,13 +11,16 @@ function Main() {
       <div className="create">
         <div className="content-container">
           <Tabs
-            defaultActiveKey="create"
+            defaultActiveKey="youtube"
             id="uncontrolled-tab-example"
             className=""
           >
-            <Tab eventKey="create" title="Create">
-              <Create />
+            <Tab eventKey="youtube" title="YouTube">
+              <YouTube />
             </Tab>
+            {/* <Tab eventKey="twitter" title="Twitter">
+              twitter
+            </Tab> */}
             <Tab eventKey="about" title="About">
               <About />
             </Tab>
