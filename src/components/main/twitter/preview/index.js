@@ -7,6 +7,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 import TwitterSwitch from "../../twitter/switch";
 import Download from "./download/index";
 import "./style.index.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function TwitterPreview({
   switchDevice,
@@ -125,6 +126,10 @@ function TwitterPreview({
                   </div>
                   <div className="twitter-handle">@{handle}</div>
                 </div>
+                <FontAwesomeIcon
+                  className="twitter-options"
+                  icon={["fa", "ellipsis"]}
+                />
               </div>
             </div>
             <div className="tweet">{tweet}</div>

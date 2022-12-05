@@ -26,6 +26,12 @@ $dark-handle-gray: #717374;
 
   .light {
     background-color: #ffffff;
+
+    .twitter-options {
+      color: $light-gray;
+      opacity: 0.3;
+      font-size: 12px;
+    }
     .twitter-name {
       color: $light-black;
       overflow-wrap: break-word;
@@ -56,6 +62,12 @@ $dark-handle-gray: #717374;
 
   .dark {
     background-color: #000000;
+
+    .twitter-options {
+      color: $dark-gray;
+      opacity: 0.5;
+      font-size: 12px;
+    }
 
     .twitter-name {
       color: #ffffff;
@@ -94,6 +106,13 @@ $dark-handle-gray: #717374;
     .account-info {
       margin-bottom: 4px;
       line-height: 15px;
+
+      .twitter-options {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-top: 7px;
+      }
 
       .twitter-popular-prof {
         width: 48px;

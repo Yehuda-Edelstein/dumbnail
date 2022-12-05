@@ -8,6 +8,7 @@ import {
   faArrowRight,
   faArrowUp,
   faEllipsisVertical,
+  faEllipsis,
   faMagnifyingGlassMinus,
   faMagnifyingGlassPlus,
   faRotateLeft,
@@ -25,7 +26,8 @@ library.add(
   faMagnifyingGlassMinus,
   faRotateLeft,
   faUpload,
-  faEllipsisVertical
+  faEllipsisVertical,
+  faEllipsis
 );
 
 function App() {
