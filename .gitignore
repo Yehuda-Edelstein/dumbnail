@@ -3,6 +3,9 @@
 # text files
 *.txt
 
+# py files
+*.py
+
 # dependencies
 /node_modules
 /.pnp

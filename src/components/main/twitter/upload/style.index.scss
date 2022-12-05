@@ -1,0 +1,29 @@
+.twitter-upload-container {
+  margin-top: 20px;
+  padding: 1em;
+  padding-top: 0;
+  overflow: hidden;
+  background-size: contain;
+  position: relative;
+
+  .twitter-upload-header {
+    font-size: 13px;
+  }
+
+  .nav-link.active {
+    color: rgba(29, 155, 240, 0.75) !important;
+  }
+
+  .nav-link {
+    color: black !important;
+    &:hover {
+      opacity: 1 !important;
+      text-decoration: none;
+    }
+  }
+
+  .nav-tabs {
+    --bs-nav-tabs-border-width: 1px;
+    --bs-nav-tabs-border-radius: 0;
+  }
+}

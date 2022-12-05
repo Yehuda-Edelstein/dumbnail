@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.index.scss";
 
-function Switch({ isOn, handleToggle }) {
+function YouTubeSwitch({ isOn, handleToggle }) {
   return (
     <>
       <input
@@ -24,4 +24,4 @@ function Switch({ isOn, handleToggle }) {
   );
 }
 
-export default Switch;
+export default YouTubeSwitch;

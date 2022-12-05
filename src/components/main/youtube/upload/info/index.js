@@ -85,9 +85,12 @@ function Info({
               onChange={(ev) => setTimeAgo(ev.target.value)}
             ></input>
           </div>
-          <div className="input-container">
+          <div className="input-container d-grid">
             <label>Ago</label>
-            <select onChange={(ev) => setIncrement(ev.target.value)}>
+            <select
+              className="ago-select"
+              onChange={(ev) => setIncrement(ev.target.value)}
+            >
               <option value="minute">minutes</option>
               <option value="hour">hours</option>
               <option value="day">days</option>

@@ -10,7 +10,7 @@
   // font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   max-width: 801px;
-  height: 450px;
+  height: 100%;
 }
 
 @media screen and (max-width: 1023px) {
@@ -23,6 +23,5 @@
   .about {
     max-width: 436px;
     min-width: 420px;
-    height: fit-content;
   }
 }

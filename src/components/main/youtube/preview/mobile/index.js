@@ -2,7 +2,6 @@ import React from "react";
 import "./light.scss";
 import "./dark.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 
 function MobilePreview({
   duration,
@@ -72,7 +71,7 @@ function MobilePreview({
             {!selectedChannelPic && isChannelTemp && (
               <div className="channel-temp">
                 <img
-                  src={require(`../../../../../static/popular/${channelTemp}`)}
+                  src={require(`../../../../../static/popular/youtube/${channelTemp}`)}
                   alt=""
                 />
               </div>
@@ -86,7 +85,7 @@ function MobilePreview({
               <div className="title">{title}</div>
               <FontAwesomeIcon
                 className="mobile-options"
-                icon={icon({ name: "ellipsis-vertical", style: "solid" })}
+                icon={["fa", "ellipsis-vertical"]}
               />
             </div>
             <div className="details">

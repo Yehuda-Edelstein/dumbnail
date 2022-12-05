@@ -9,8 +9,8 @@ function About(props) {
           <div className="p-3">
             <p>
               Dumbnail allows you to produce a screenshot (.png) of a fictious
-              YouTube video. It does not let you create and export actual
-              thumbnails.
+              YouTube video or Tweet. It does not let you create and export
+              actual thumbnails.
               <br></br>
               <br></br>
               Imagine you're scrolling through YouTube on a lazy Sunday
@@ -26,9 +26,14 @@ function About(props) {
               That's all you ever wanted.
               <br></br>
               <br></br>
+              Now, as far as Twitter goes, only psychos or boomers send links to
+              the actual tweet instead of just sending over a picture. At least
+              when a simple screenshot will do the trick. And it usually does.
+              <br></br>
+              <br></br>
               This website allows you to create that amusing screenshot yourself
-              before the video ever exists. Endless memes at your disposal.Just
-              think of the possibilities.
+              before the video or tweet ever exists. Endless memes at your
+              disposal. Just think of the possibilities.
               <br></br>
               <br></br>
               If you like the site give us a follow and/or a shoutout on{" "}

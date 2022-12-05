@@ -31,16 +31,45 @@
 .preview {
   padding: 1em;
   padding-top: 0.5em;
+
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    h4 {
+      font-size: 20px;
+      text-align: center;
+      color: rgba(128, 128, 128, 0.5);
+      margin-bottom: 0;
+    }
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link.active {
+    color: black !important;
+    font-weight: 500;
+    text-decoration: none !important;
+    &:hover {
+      cursor: default;
+      opacity: 1 !important;
+    }
+  }
 }
 
 .preview-ad-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  height: 210px;
-  border: 1px dashed rgba(128, 128, 128, 0.75);
-  background-color: rgba(0, 128, 0, 0.5);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // margin-top: 25px;
+  // height: 210px;
+  // border: 1px dashed rgba(128, 128, 128, 0.75);
+  // background-color: rgba(0, 128, 0, 0.5);
 }
 
 .info-ad-box {
