@@ -10,9 +10,18 @@
 
   .input-container {
     margin-bottom: 3px;
+    height: fit-content;
+
+    .ago-select {
+      background-color: rgba(128, 128, 128, 0.1);
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      padding: 9.5px 0;
+    }
 
     label {
       font-size: 18px;
+      height: fit-content;
     }
 
     input,
@@ -30,32 +39,6 @@
 
     input:focus {
       background-color: rgba(128, 128, 128, 0.25);
-    }
-
-    .views-input,
-    .posted-input {
-      // max-width: 220px;
-      // margin-right: 25px;
-    }
-
-    select {
-      background-color: rgba(128, 128, 128, 0.1);
-      outline: none;
-      border: 1px dashed rgba(128, 128, 128, 0.75);
-      padding: 10px 0;
-    }
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .info-content {
-    // width: 370px;
-    .input-container {
-      .views-input,
-      .posted-input {
-        // max-width: 120px;
-        // margin-right: 25px;
-      }
     }
   }
 }

@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import AdSense from "react-adsense";
 // import DesktopPreview from "./preview/desktop/index.js";
 import Info from "./upload/info/index.js";
 import * as htmlToImage from "html-to-image";
 import Download from "./download/index.js";
-import Switch from "./switch/index.js";
 import MobilePreview from "./preview/mobile/index.js";
 import "./style.index.scss";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -13,7 +11,8 @@ import UploadThumb from "./upload/thumb/index.js";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import UploadChannel from "./upload/channel/index.js";
-// import PreviewAd from "./ads/preview/index.js";
+import YouTubeSwitch from "./switch/index.js";
+// import AdSense from "react-adsense";
 
 function YouTube() {
   // is preview active
@@ -23,6 +22,7 @@ function YouTube() {
   const [previewThumb, setPreviewThumb] = useState();
   const [selectedChannelPic, setSelectedChannelPic] = useState();
   const [previewChannelPic, setPreviewChannelPic] = useState();
+
   const [duration, setDuration] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
@@ -103,7 +103,7 @@ function YouTube() {
       });
       // download image
       const link = document.createElement("a");
-      link.download = "dumbnail.png";
+      link.download = "youtube.png";
       link.href = dataUrl;
       link.click();
     } catch (err) {
@@ -127,7 +127,7 @@ function YouTube() {
   // };
 
   return (
-    <div className="content p-3 pt-0">
+    <div className="content">
       <div className="upload-content-container">
         <div className="d-grid" style={{ maxWidth: "fit-content" }}>
           <Tabs
@@ -210,7 +210,7 @@ function YouTube() {
             overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
           >
             <div className="switch">
-              <Switch
+              <YouTubeSwitch
                 isOn={switchDevice}
                 handleToggle={() => {
                   setSwitchDevice(!switchDevice);
@@ -343,7 +343,16 @@ function YouTube() {
               {/* )} */}
             </div>
           </div>
-          <div>{/* <PreviewAd /> */}</div>
+          {/* <div className="preview-ad-box">
+            <AdSense.Google
+              client="ca-pub-2806029732302260"
+              slot="7316418125"
+              style={{ display: "block" }}
+              format="auto"
+              responsive="true"
+              test="true"
+            />
+          </div> */}
           {/* <div className="preview-ad-box">AD BOX #1</div> */}
         </div>
       </div>

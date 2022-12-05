@@ -1,32 +1,20 @@
 .main {
   height: calc(100% - 70.77px);
-}
+  min-width: 390px;
 
-.create {
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .content-container {
-    padding: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-top: none;
     background-color: white;
-    max-width: 1050px;
     margin: 0 auto;
     width: fit-content;
-    max-height: fit-content;
-    .content {
-      display: flex;
-      justify-content: flex-start;
-    }
+    min-height: 100%;
 
-    .preview {
-      min-height: 350px;
+    .content {
+      padding: 1rem;
+      padding-top: 0em;
     }
   }
-}
-
-h3 {
-  font-size: 25px;
 }
 
 .toggle {
@@ -39,7 +27,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 
   h4 {
     font-size: 20px;
@@ -55,7 +43,8 @@ h3 {
 }
 
 .nav-link.active {
-  color: rgba(255, 0, 0, 0.5) !important;
+  color: black !important;
+  font-weight: 500;
   text-decoration: none !important;
   &:hover {
     cursor: default;
@@ -78,8 +67,6 @@ h3 {
 
 @media screen and (min-width: 831px) {
   .content-container {
-    border: 1px solid rgba(0, 0, 0, 0.6);
-
     .content {
       justify-content: space-between;
       min-height: fit-content;
@@ -105,5 +92,36 @@ h3 {
 @media screen and (max-width: 420px) {
   .content-container {
     // make screen better for mobile
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .main {
+    .content-container {
+      border-top: 0;
+      // min-height: 100%;
+      border-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main {
+    .content-container {
+      margin: 0 auto;
+      width: 100%;
+      border: none;
+      .content {
+        padding: 0px !important;
+
+        .upload-content-container {
+          padding: 0.25em !important;
+          padding-bottom: 1em !important;
+        }
+        .preview {
+          padding: 1em 0px !important;
+        }
+      }
+    }
   }
 }

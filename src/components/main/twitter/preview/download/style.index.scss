@@ -1,0 +1,23 @@
+.twitter-download {
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: rgba(29, 155, 240);
+  color: white;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+}
+
+.twitter-not-active {
+  cursor: default;
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: rgba(29, 155, 240, 0.75);
+  color: white;
+  padding: 10px;
+}

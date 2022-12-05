@@ -1,9 +1,8 @@
 import React from "react";
 import "./style.index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
+// import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+// import Tooltip from "react-bootstrap/Tooltip";
 import Popular from "./popular";
 
 function UploadChannel({
@@ -41,14 +40,14 @@ function UploadChannel({
                 <div className="vertical">
                   <FontAwesomeIcon
                     className="arrow-up"
-                    icon={icon({ name: "arrow-up", style: "solid" })}
+                    icon={["fa", "arrow-up"]}
                     onClick={() => {
                       setChannelPicY(channelPicY + 10);
                     }}
                   />
                   <FontAwesomeIcon
                     className="arrow-down"
-                    icon={icon({ name: "arrow-down", style: "solid" })}
+                    icon={["fa", "arrow-down"]}
                     onClick={() => {
                       setChannelPicY(channelPicY - 10);
                     }}
@@ -57,14 +56,14 @@ function UploadChannel({
                 <div className="horizontal">
                   <FontAwesomeIcon
                     className="arrow-left"
-                    icon={icon({ name: "arrow-left", style: "solid" })}
+                    icon={["fa", "arrow-left"]}
                     onClick={() => {
                       setChannelPicX(channelPicX + 10);
                     }}
                   />
                   <FontAwesomeIcon
                     className="arrow-right"
-                    icon={icon({ name: "arrow-right", style: "solid" })}
+                    icon={["fa", "arrow-right"]}
                     onClick={() => {
                       setChannelPicX(channelPicX - 10);
                     }}
@@ -76,20 +75,14 @@ function UploadChannel({
                   <div>
                     <FontAwesomeIcon
                       className="clear"
-                      icon={icon({
-                        name: "trash",
-                        style: "solid",
-                      })}
+                      icon={["fa", "trash"]}
                       onClick={reset}
                     />
                   </div>
                   <div className="d-grid">
                     <FontAwesomeIcon
                       className="zoom"
-                      icon={icon({
-                        name: "magnifying-glass-plus",
-                        style: "solid",
-                      })}
+                      icon={["fa", "magnifying-glass-plus"]}
                       onClick={() => {
                         if (channelPicZoom < 200) {
                           setChannelPicZoom(channelPicZoom + 10);
@@ -98,10 +91,7 @@ function UploadChannel({
                     />
                     <FontAwesomeIcon
                       className="zoom"
-                      icon={icon({
-                        name: "magnifying-glass-minus",
-                        style: "solid",
-                      })}
+                      icon={["fa", "magnifying-glass-minus"]}
                       onClick={() => {
                         if (channelPicZoom > 100) {
                           setChannelPicZoom(channelPicZoom - 10);
@@ -112,10 +102,7 @@ function UploadChannel({
                   <div>
                     <FontAwesomeIcon
                       className="reset"
-                      icon={icon({
-                        name: "rotate-left",
-                        style: "solid",
-                      })}
+                      icon={["fa", "rotate-left"]}
                       onClick={() => {
                         setChannelPicX(0);
                         setChannelPicY(0);
@@ -153,9 +140,7 @@ function UploadChannel({
                 />
                 <span>Click here to upload channel image</span>
                 <div>
-                  <FontAwesomeIcon
-                    icon={icon({ name: "upload", style: "solid" })}
-                  />
+                  <FontAwesomeIcon icon={["fa", "upload"]} />
                 </div>
               </div>
             </div>
@@ -182,6 +167,7 @@ function UploadChannel({
           setIsActive={setIsActive}
           setChannelTemp={setChannelTemp}
           setIsChannelTemp={setIsChannelTemp}
+          setSelectedChannelPic={setSelectedChannelPic}
         />
       </div>
     </div>

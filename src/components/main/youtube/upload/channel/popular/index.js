@@ -9,8 +9,9 @@ function Popular({
   setTemplate,
   setChannelTemp,
   setIsChannelTemp,
+  setSelectedChannelPic,
 }) {
-  const data = require("../../../../../../static/popular/popular.json");
+  const data = require("../../../../../../static/popular/youtube/popular.json");
 
   function createTooltip(str) {
     if (str.includes("_")) {
@@ -54,12 +55,13 @@ function Popular({
                 key={pic}
                 onClick={() => {
                   setIsChannelTemp(true);
+                  setSelectedChannelPic();
                   setChannelTemp(pic);
                   setChannelName(createTooltip(pic));
                 }}
               >
                 <img
-                  src={require(`../../../../../../static/popular/${pic}`)}
+                  src={require(`../../../../../../static/popular/youtube/${pic}`)}
                   alt=""
                 />
               </div>
