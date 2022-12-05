@@ -18,7 +18,6 @@ function TwitterPreview({
   handle,
   tweet,
   time,
-  meridiem,
   date,
   device,
   isActive,
