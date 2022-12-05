@@ -5,17 +5,12 @@ import "./style.index.scss";
 
 const today = new Date();
 const year = today.getFullYear().toString().slice(-2);
-const hours = today.getHours() % 12;
+const hours = today.getHours();
 const dNow = `${today.getMonth() + 1}/${today.getDate()}/${year}`;
 const tNow =
   today.getMinutes() < 10
     ? `${hours}:0${today.getMinutes()}`
     : `${hours}:${today.getMinutes()}`;
-function getMeridiem() {
-  const hour = today.getHours();
-  var meridiem = hour >= 12 ? "PM" : "AM";
-  return meridiem;
-}
 
 function Twitter(props) {
   // is preview active
@@ -26,7 +21,6 @@ function Twitter(props) {
   const [handle, setHandle] = useState("Handle");
   const [tweet, setTweet] = useState("This is a tweet.");
   const [time, setTime] = useState(tNow);
-  const [meridiem, setMeridiem] = useState(getMeridiem());
   const [date, setDate] = useState(dNow);
   const [device, setDevice] = useState("Twitter For iPhone");
   // const [includeLikes, setIncludeLikes] = useState(false);
@@ -74,7 +68,6 @@ function Twitter(props) {
         setTweet={setTweet}
         setDevice={setDevice}
         setIsActive={setIsActive}
-        setMeridiem={setMeridiem}
         time={time}
         setTime={setTime}
         setDate={setDate}
@@ -104,7 +97,6 @@ function Twitter(props) {
         handle={handle}
         tweet={tweet}
         time={time}
-        meridiem={meridiem}
         date={date}
         device={device}
         isActive={isActive}

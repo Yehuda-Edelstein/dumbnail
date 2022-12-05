@@ -63,13 +63,13 @@
 }
 
 .preview-ad-box {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // margin-top: 25px;
-  // height: 210px;
-  // border: 1px dashed rgba(128, 128, 128, 0.75);
-  // background-color: rgba(0, 128, 0, 0.5);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  padding: 10px 50px;
+  margin: 0 auto;
+  width: 85%;
+  background-color: rgba(0, 128, 0, 0.5);
 }
 
 .info-ad-box {

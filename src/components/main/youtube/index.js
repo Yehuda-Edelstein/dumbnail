@@ -127,143 +127,144 @@ function YouTube() {
   // };
 
   return (
-    <div className="content">
-      <div className="upload-content-container">
-        <div className="d-grid" style={{ maxWidth: "fit-content" }}>
-          <Tabs
-            defaultActiveKey="thumbnail"
-            id="uncontrolled-tab-example"
-            className="upload-header mb-3"
-          >
-            <Tab eventKey="thumbnail" title="Thumbnail">
-              <UploadThumb
-                uploadThumbnail={uploadThumbnail}
-                previewThumb={previewThumb}
-                selectedThumb={selectedThumb}
-                // for cropping
-                thumbZoom={thumbZoom}
-                setThumbZoom={setThumbZoom}
-                thumbX={thumbX}
-                thumbY={thumbY}
-                setThumbX={setThumbX}
-                setThumbY={setThumbY}
-                //
-                setIsTemplate={setIsTemplate}
-                setTemplate={setTemplate}
-                setPreviewThumb={setPreviewThumb}
-                setPreviewChannelPic={setPreviewChannelPic}
-                setChannelName={setChannelName}
-                uploadChannelPic={uploadChannelPic}
-                setSelectedThumb={setSelectedThumb}
-                setIsActive={setIsActive}
-                setChannelTemp={setChannelTemp}
-                setIsChannelTemp={setIsChannelTemp}
-              />
-              {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
-            </Tab>
-            <Tab eventKey="channel" title="Channel">
-              <UploadChannel
-                setPreviewChannelPic={setPreviewChannelPic}
-                setSelectedChannelPic={setSelectedChannelPic}
-                uploadChannelPic={uploadChannelPic}
-                previewChannelPic={previewChannelPic}
-                selectedChannelPic={selectedChannelPic}
-                // for cropping
-                channelPicZoom={channelPicZoom}
-                setChannelPicZoom={setChannelPicZoom}
-                channelPicX={channelPicX}
-                channelPicY={channelPicY}
-                setChannelPicX={setChannelPicX}
-                setChannelPicY={setChannelPicY}
-                // for popular channels
-                setChannelName={setChannelName}
-                setIsTemplate={setIsTemplate}
-                setTemplate={setTemplate}
-                setIsActive={setIsActive}
-                setChannelTemp={setChannelTemp}
-                setIsChannelTemp={setIsChannelTemp}
-              />
-              {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
-            </Tab>
-            <Tab eventKey="info" title="Info">
-              <Info
-                setDuration={setDuration}
-                setTitle={setTitle}
-                setChannelName={setChannelName}
-                setViews={setViews}
-                exactViews={exactViews}
-                setExactViews={setExactViews}
-                setTimeAgo={setTimeAgo}
-                setIncrement={setIncrement}
-              />
-            </Tab>
-          </Tabs>
+    <div>
+      <div className="content">
+        <div className="upload-content-container">
+          <div className="d-grid" style={{ maxWidth: "fit-content" }}>
+            <Tabs
+              defaultActiveKey="thumbnail"
+              id="uncontrolled-tab-example"
+              className="upload-header mb-3"
+            >
+              <Tab eventKey="thumbnail" title="Thumbnail">
+                <UploadThumb
+                  uploadThumbnail={uploadThumbnail}
+                  previewThumb={previewThumb}
+                  selectedThumb={selectedThumb}
+                  // for cropping
+                  thumbZoom={thumbZoom}
+                  setThumbZoom={setThumbZoom}
+                  thumbX={thumbX}
+                  thumbY={thumbY}
+                  setThumbX={setThumbX}
+                  setThumbY={setThumbY}
+                  //
+                  setIsTemplate={setIsTemplate}
+                  setTemplate={setTemplate}
+                  setPreviewThumb={setPreviewThumb}
+                  setPreviewChannelPic={setPreviewChannelPic}
+                  setChannelName={setChannelName}
+                  uploadChannelPic={uploadChannelPic}
+                  setSelectedThumb={setSelectedThumb}
+                  setIsActive={setIsActive}
+                  setChannelTemp={setChannelTemp}
+                  setIsChannelTemp={setIsChannelTemp}
+                />
+                {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
+              </Tab>
+              <Tab eventKey="channel" title="Channel">
+                <UploadChannel
+                  setPreviewChannelPic={setPreviewChannelPic}
+                  setSelectedChannelPic={setSelectedChannelPic}
+                  uploadChannelPic={uploadChannelPic}
+                  previewChannelPic={previewChannelPic}
+                  selectedChannelPic={selectedChannelPic}
+                  // for cropping
+                  channelPicZoom={channelPicZoom}
+                  setChannelPicZoom={setChannelPicZoom}
+                  channelPicX={channelPicX}
+                  channelPicY={channelPicY}
+                  setChannelPicX={setChannelPicX}
+                  setChannelPicY={setChannelPicY}
+                  // for popular channels
+                  setChannelName={setChannelName}
+                  setIsTemplate={setIsTemplate}
+                  setTemplate={setTemplate}
+                  setIsActive={setIsActive}
+                  setChannelTemp={setChannelTemp}
+                  setIsChannelTemp={setIsChannelTemp}
+                />
+                {/* <div className="sm-thumbnail-ad-box">AD BOX #3</div> */}
+              </Tab>
+              <Tab eventKey="info" title="Info">
+                <Info
+                  setDuration={setDuration}
+                  setTitle={setTitle}
+                  setChannelName={setChannelName}
+                  setViews={setViews}
+                  exactViews={exactViews}
+                  setExactViews={setExactViews}
+                  setTimeAgo={setTimeAgo}
+                  setIncrement={setIncrement}
+                />
+              </Tab>
+            </Tabs>
+          </div>
         </div>
-      </div>
-      <div className="preview">
-        <h5>Preview</h5>
-        <div className="preview-header">
-          <OverlayTrigger
-            key={"right"}
-            placement={"right"}
-            delay={{ show: "700", hide: "100" }}
-            overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
-          >
-            <div className="switch">
-              <YouTubeSwitch
-                isOn={switchDevice}
-                handleToggle={() => {
-                  setSwitchDevice(!switchDevice);
-                  setIsDarkMode(!isDarkMode);
-                }}
-              />
-            </div>
-          </OverlayTrigger>
-          {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
-        </div>
-        <div className="preview-container">
-          {/* {switchDevice && ( */}
-          <div
-            className={
-              isDarkMode
-                ? "border border-dark border-bottom-0"
-                : "border  border-dark border-bottom-0"
-            }
-          >
-            {" "}
-            <div ref={mobileRef}>
-              <MobilePreview
-                duration={duration}
-                title={title}
-                channelName={channelName}
-                views={views}
-                timeAgo={timeAgo}
-                increment={increment}
-                // to display images
-                uploadThumbnail={uploadThumbnail}
-                uploadChannelPic={uploadChannelPic}
-                selectedThumb={selectedThumb}
-                previewThumb={previewThumb}
-                selectedChannelPic={selectedChannelPic}
-                previewChannelPic={previewChannelPic}
-                // change mode
-                isDarkMode={isDarkMode}
-                // for cropping
-                thumbZoom={thumbZoom}
-                setThumbZoom={setThumbZoom}
-                thumbX={thumbX}
-                thumbY={thumbY}
-                channelPicZoom={channelPicZoom}
-                channelPicX={channelPicX}
-                channelPicY={channelPicY}
-                // templates
-                isTemplate={isTemplate}
-                template={template}
-                channelTemp={channelTemp}
-                isChannelTemp={isChannelTemp}
-              />
-            </div>
-            {/*) : (
+        <div className="preview">
+          <h5>Preview</h5>
+          <div className="preview-header">
+            <OverlayTrigger
+              key={"right"}
+              placement={"right"}
+              delay={{ show: "700", hide: "100" }}
+              overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
+            >
+              <div className="switch">
+                <YouTubeSwitch
+                  isOn={switchDevice}
+                  handleToggle={() => {
+                    setSwitchDevice(!switchDevice);
+                    setIsDarkMode(!isDarkMode);
+                  }}
+                />
+              </div>
+            </OverlayTrigger>
+            {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
+          </div>
+          <div className="preview-container">
+            {/* {switchDevice && ( */}
+            <div
+              className={
+                isDarkMode
+                  ? "border border-dark border-bottom-0"
+                  : "border  border-dark border-bottom-0"
+              }
+            >
+              {" "}
+              <div ref={mobileRef}>
+                <MobilePreview
+                  duration={duration}
+                  title={title}
+                  channelName={channelName}
+                  views={views}
+                  timeAgo={timeAgo}
+                  increment={increment}
+                  // to display images
+                  uploadThumbnail={uploadThumbnail}
+                  uploadChannelPic={uploadChannelPic}
+                  selectedThumb={selectedThumb}
+                  previewThumb={previewThumb}
+                  selectedChannelPic={selectedChannelPic}
+                  previewChannelPic={previewChannelPic}
+                  // change mode
+                  isDarkMode={isDarkMode}
+                  // for cropping
+                  thumbZoom={thumbZoom}
+                  setThumbZoom={setThumbZoom}
+                  thumbX={thumbX}
+                  thumbY={thumbY}
+                  channelPicZoom={channelPicZoom}
+                  channelPicX={channelPicX}
+                  channelPicY={channelPicY}
+                  // templates
+                  isTemplate={isTemplate}
+                  template={template}
+                  channelTemp={channelTemp}
+                  isChannelTemp={isChannelTemp}
+                />
+              </div>
+              {/*) : (
             // <div className="border border-bottom-0">
             //   <div className="desktop-preview" ref={desktopRef}>
             //     <DesktopPreview
@@ -325,37 +326,40 @@ function YouTube() {
             //   </div>
             // </div>
              // )} */}
-          </div>
-          <div className="d-flex">
-            <div>
-              {/* {switchDevice ? ( */}
-              {/* <Download
+            </div>
+            <div className="d-flex">
+              <div>
+                {/* {switchDevice ? ( */}
+                {/* <Download
                 className="download-desktop"
                 isActive={isActive}
                 downloadImage={downloadImageDesktop}
               /> */}
-              {/* ) : ( */}
-              <Download
-                className="download-mobile"
-                isActive={isActive}
-                downloadImage={downloadImageMobile}
-              />
-              {/* )} */}
+                {/* ) : ( */}
+                <Download
+                  className="download-mobile"
+                  isActive={isActive}
+                  downloadImage={downloadImageMobile}
+                />
+                {/* )} */}
+              </div>
             </div>
+
+            {/* <div className="preview-ad-box">AD BOX #1</div> */}
           </div>
-          {/* <div className="preview-ad-box">
-            <AdSense.Google
-              client="ca-pub-2806029732302260"
-              slot="7316418125"
-              style={{ display: "block" }}
-              format="auto"
-              responsive="true"
-              test="true"
-            />
-          </div> */}
-          {/* <div className="preview-ad-box">AD BOX #1</div> */}
         </div>
       </div>
+      {/* <div className="preview-ad-box mt-3">
+        hello
+        <AdSense.Google
+          client="ca-pub-2806029732302260"
+          slot="7316418125"
+          style={{ display: "block" }}
+          format="auto"
+          responsive="true"
+          test="true"
+        />
+      </div> */}
     </div>
   );
 }

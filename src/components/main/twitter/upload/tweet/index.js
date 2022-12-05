@@ -9,6 +9,8 @@ const today =
     ? `${d.getFullYear()}-${d.getMonth() + 1}-0${d.getDate()}`
     : `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 
+const time = `${d.getHours()}:${d.getMinutes()}`;
+
 function TweetUpload({
   setName,
   setHandle,
@@ -17,16 +19,14 @@ function TweetUpload({
   setTweet,
   setDevice,
   setIsActive,
-  time,
   setTime,
-  setMeridiem,
   setDate,
-  date,
   setIsPopular,
   setPopular,
   setSelectedProf,
 }) {
   const [picker, setPicker] = useState(today);
+  const [timepicker, setTimepicker] = useState(time);
 
   function underscore(str) {
     let noSpaces = str.replace(/ /g, "_");
@@ -40,6 +40,8 @@ function TweetUpload({
     let year = arr[0].slice(2);
     setDate(`${month}/${day}/${year}`);
   }
+
+  // function hashtags(str) {}
 
   return (
     <div>
@@ -112,9 +114,11 @@ function TweetUpload({
             className="twitter-timepicker"
             type="time"
             onChange={(ev) => {
+              setIsActive(true);
+              setTimepicker(ev.target.value);
               setTime(ev.target.value);
             }}
-            value={time}
+            value={timepicker}
           />
         </div>
         <div className="d-grid">
@@ -125,6 +129,7 @@ function TweetUpload({
             type="date"
             value={picker}
             onChange={(ev) => {
+              setIsActive(true);
               setPicker(ev.target.value);
               format(ev.target.value);
             }}
