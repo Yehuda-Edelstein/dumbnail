@@ -12,7 +12,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import UploadChannel from "./upload/channel/index.js";
 import YouTubeSwitch from "./switch/index.js";
-// import AdSense from "react-adsense";
+import AdSense from "react-adsense";
 
 function YouTube() {
   // is preview active
@@ -349,17 +349,19 @@ function YouTube() {
           </div>
         </div>
       </div>
-      {/* <div className="preview-ad-box mt-3">
-        hello
+      {/* <div className="preview-ad-box mt-3"> */}
+      <div>
         <AdSense.Google
           client="ca-pub-2806029732302260"
           slot="7316418125"
           style={{ display: "block" }}
           format="auto"
           responsive="true"
-          test="true"
-        />
-      </div> */}
+        >
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </AdSense.Google>
+      </div>
+      {/* </div> */}
     </div>
   );
 }
