@@ -1,6 +1,5 @@
 import React from "react";
 import beastThumb from "../../../../../../static/temps/mrbeast/thumb.png";
-
 import "./style.index.scss";
 
 function Temps({
