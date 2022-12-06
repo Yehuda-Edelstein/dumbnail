@@ -15,6 +15,10 @@ import YouTubeSwitch from "./switch/index.js";
 import AdSense from "react-adsense";
 
 function YouTube() {
+  useEffect(() => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
+
   // is preview active
   const [isActive, setIsActive] = useState(false);
   // YouTube
@@ -22,7 +26,6 @@ function YouTube() {
   const [previewThumb, setPreviewThumb] = useState();
   const [selectedChannelPic, setSelectedChannelPic] = useState();
   const [previewChannelPic, setPreviewChannelPic] = useState();
-
   const [duration, setDuration] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
@@ -352,14 +355,13 @@ function YouTube() {
       {/* <div className="preview-ad-box mt-3"> */}
       <div>
         <AdSense.Google
+          key={window.location.href}
           client="ca-pub-2806029732302260"
           slot="7316418125"
           style={{ display: "block" }}
           format="auto"
           responsive="true"
-        >
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </AdSense.Google>
+        />
       </div>
       {/* </div> */}
     </div>

@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core";
 import "./style.index.scss";
 import { OverlayTrigger } from "react-bootstrap";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -12,7 +10,6 @@ function Download({ isActive, downloadTweet }) {
       {isActive ? (
         <div className={"twitter-download"} onClick={downloadTweet}>
           DOWNLOAD{" "}
-          <FontAwesomeIcon icon={icon({ name: "download", style: "solid" })} />
         </div>
       ) : (
         <OverlayTrigger
@@ -25,12 +22,7 @@ function Download({ isActive, downloadTweet }) {
             </Tooltip>
           }
         >
-          <div className={"twitter-not-active"}>
-            DOWNLOAD{" "}
-            <FontAwesomeIcon
-              icon={icon({ name: "download", style: "solid" })}
-            />
-          </div>
+          <div className={"twitter-not-active"}></div>
         </OverlayTrigger>
       )}
     </div>
