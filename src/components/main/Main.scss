@@ -84,6 +84,7 @@
     width: fit-content;
     padding-bottom: 10px;
     .content {
+      min-width: 436px;
       flex-direction: column;
       align-items: center;
     }
@@ -114,6 +115,7 @@
       border: none;
       .content {
         padding: 0px !important;
+        min-width: 390px;
 
         .upload-content-container {
           padding: 0.25em !important;
