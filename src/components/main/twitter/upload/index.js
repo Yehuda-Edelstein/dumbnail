@@ -1,7 +1,7 @@
 import React from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import TweetUpload from "./tweet";
+import TweetUpload from "./tweet/TweetUpload";
 import "./style.index.scss";
 import TwitterProfilePic from "./profile";
 

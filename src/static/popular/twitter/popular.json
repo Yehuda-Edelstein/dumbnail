@@ -71,6 +71,11 @@
     "img": "Kevin_Durant.png"
   },
   {
+    "name": "Netflix",
+    "handle": "neftlix",
+    "img": "Netflix.png"
+  },
+  {
     "name": "Ian Rapoport",
     "handle": "RapSheet",
     "img": "Ian_Rapoport.png"

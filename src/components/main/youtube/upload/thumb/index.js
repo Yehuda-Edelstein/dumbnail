@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Temps from "./temps";
+import Temps from "./temps/Temps";
 // import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 // import Tooltip from "react-bootstrap/Tooltip";
 // import Popover from "react-bootstrap/Popover";

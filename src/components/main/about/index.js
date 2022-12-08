@@ -9,8 +9,8 @@ function About(props) {
           <div className="p-3">
             <p>
               Dumbnail allows you to produce a screenshot (.png) of a fictious
-              YouTube video or Tweet. It does not let you create and export
-              actual thumbnails.
+              YouTube video, Tweet or iMessage conversation. It does not let you
+              create and export actual thumbnails.
               <br></br>
               <br></br>
               Imagine you're scrolling through YouTube on a lazy Sunday
@@ -29,6 +29,10 @@ function About(props) {
               Now, as far as Twitter goes, only psychos or boomers send links to
               the actual tweet instead of just sending over a picture. At least
               when a simple screenshot will do the trick. And it usually does.
+              <br></br>
+              <br></br>
+              iMessage is pretty self-explanatory; tfw you always have the
+              receipts.
               <br></br>
               <br></br>
               This website allows you to create that amusing screenshot yourself

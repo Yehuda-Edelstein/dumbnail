@@ -1,6 +1,6 @@
 import "./App.scss";
 import Header from "./components/header";
-import Main from "./components/main";
+import Main from "./components/main/Main";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faArrowDown,
@@ -14,6 +14,8 @@ import {
   faRotateLeft,
   faTrash,
   faUpload,
+  faChevronRight,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -27,7 +29,9 @@ library.add(
   faRotateLeft,
   faUpload,
   faEllipsisVertical,
-  faEllipsis
+  faEllipsis,
+  faChevronRight,
+  faChevronLeft
 );
 
 function App() {

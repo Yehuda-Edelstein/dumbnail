@@ -22,7 +22,7 @@ function Download({ isActive, downloadTweet }) {
             </Tooltip>
           }
         >
-          <div className={"twitter-not-active"}></div>
+          <div className={"twitter-not-active"}>DOWNLOAD </div>
         </OverlayTrigger>
       )}
     </div>
