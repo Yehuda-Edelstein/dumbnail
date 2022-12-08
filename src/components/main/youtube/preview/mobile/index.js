@@ -52,7 +52,12 @@ function MobilePreview({
             </div>
           )}
           {isTemplate && (
-            <img className="template" alt="" src={template} style={{}} />
+            <img
+              className="template"
+              alt=""
+              src={require(`../../../../../static/temps/youtube/${template}`)}
+              style={{}}
+            />
           )}
         </div>
         <div className="d-flex">
@@ -82,7 +87,9 @@ function MobilePreview({
           </div>
           <div className="info">
             <div className="d-flex justify-content-between">
-              <div className="title">{title}</div>
+              <div className="title-container">
+                <div className="title">{title}</div>
+              </div>
               <FontAwesomeIcon
                 className="mobile-options"
                 icon={["fa", "ellipsis-vertical"]}

@@ -1,0 +1,42 @@
+.message-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.message-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.message-switch-label .message-switch-button {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22.5px;
+  height: 22.5px;
+  border-radius: 22.5px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgb(29, 155, 240, 0.29);
+}
+
+.message-switch-checkbox:checked
+  + .message-switch-label
+  .message-switch-button {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.message-switch-label:active .message-switch-button {
+  width: 30px;
+}

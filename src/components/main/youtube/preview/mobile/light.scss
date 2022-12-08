@@ -221,12 +221,10 @@ $desc-font: 12.5px;
         color: #0f0f0f;
         margin: 12px 0 0 0;
         line-height: normal;
-        max-height: 4rem;
-        overflow: hidden;
+        max-height: 3.6rem;
         display: block;
-        -webkit-line-clamp: 2;
-        text-overflow: ellipsis;
-        white-space: wrap;
+        max-width: 275px;
+        overflow: hidden;
       }
 
       .channel-name,

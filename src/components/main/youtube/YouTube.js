@@ -4,7 +4,7 @@ import Info from "./upload/info/index.js";
 import * as htmlToImage from "html-to-image";
 import Download from "./download/index.js";
 import MobilePreview from "./preview/mobile/index.js";
-import "./style.index.scss";
+import "./YouTube.scss";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import UploadThumb from "./upload/thumb/index.js";
@@ -12,7 +12,8 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import UploadChannel from "./upload/channel/index.js";
 import YouTubeSwitch from "./switch/index.js";
-import AdSense from "react-adsense";
+// import AdSense from "react-adsense";
+import Ad from "../ad/Ad.js";
 
 function YouTube() {
   useEffect(() => {
@@ -354,14 +355,8 @@ function YouTube() {
       </div>
       {/* <div className="preview-ad-box mt-3"> */}
       <div>
-        <AdSense.Google
-          key={window.location.href}
-          client="ca-pub-2806029732302260"
-          slot="7316418125"
-          style={{ display: "block" }}
-          format="auto"
-          responsive="true"
-        />
+        {/* <h1>Place To show Google AdSense</h1> */}
+        <Ad dataAdSlot={"9875745235"} />
       </div>
       {/* </div> */}
     </div>

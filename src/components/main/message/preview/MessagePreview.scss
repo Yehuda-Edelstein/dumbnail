@@ -1,0 +1,459 @@
+// light mode colors
+$lm-message-text-you: rgb(248, 254, 255);
+$lm-message-text-them: rgb(5, 5, 7);
+$lm-message-header-background: rgb(241, 241, 241);
+$lm-you: rgb(27, 137, 255);
+$lm-them: rgb(233, 233, 235);
+$lm-sub-message: rgb(139, 139, 139);
+$lm-contact-image: rgb(140, 144, 155);
+$lm-background: rgb(255, 255, 255);
+// dark mode colors
+$dm-message-text: rgb(251, 250, 252);
+$dm-message-header-bg: #1f1f1f;
+$dm-you: rgb(28, 138, 254);
+$dm-them: rgb(49, 49, 50);
+$dm-sub-message: rgb(154, 154, 154);
+$dm-contact-image: rgb(160, 165, 178);
+$dm-background: rgb(0, 0, 0);
+
+.message-preview-container {
+  padding: 8px 16px 16px;
+}
+
+.message-preview {
+  min-width: 370px;
+  line-height: 17px;
+
+  .message-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    h4 {
+      font-size: 20px;
+      text-align: center;
+      color: rgba(128, 128, 128, 0.5);
+      margin-bottom: 0;
+    }
+  }
+
+  .light {
+    background-color: $lm-background;
+    .message-header {
+      min-height: 62.5px;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      border-bottom: 0.25px solid $lm-contact-image;
+      background-color: $lm-message-header-background;
+
+      .chevron-left {
+        margin-top: 15px;
+        margin-right: 5px;
+        padding-left: 10px;
+        font-size: 20px;
+        color: $lm-you;
+        opacity: 0.9;
+      }
+
+      .contact-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        font-size: 18px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $lm-contact-image;
+        // font-family: "SF-Compact";
+
+        span {
+          align-self: center;
+          vertical-align: middle;
+        }
+      }
+
+      .video-icon {
+        margin-top: 12px;
+        padding-right: 10px;
+        width: 100%;
+        max-height: 28px;
+        opacity: 0.9;
+      }
+
+      .contact-name {
+        font-size: 10px;
+        margin-bottom: 3px;
+        margin-right: 2px;
+      }
+
+      .chevron-right {
+        color: $lm-contact-image;
+        font-size: 10px;
+        margin-top: 3px;
+        opacity: 0.4;
+      }
+    }
+
+    .message-body {
+      padding: 7px 10px;
+      max-height: 418px;
+      overflow: scroll;
+      // font-family: "SF-Pro";
+
+      .message-text {
+        font-size: 15px;
+        position: relative;
+        word-wrap: break-word;
+
+        .message-from-you {
+          max-width: 220px;
+          float: right;
+          background-color: $lm-you;
+          color: $lm-message-text-you;
+          padding: 7px 14px;
+          border-radius: 20px;
+          margin-bottom: 1px;
+          display: flex;
+        }
+
+        .message-from-you-tail,
+        .message-from-you-blend {
+          display: none;
+        }
+
+        .last-of-you {
+          max-width: 220px;
+          float: right;
+          background-color: $lm-you;
+          color: $lm-message-text-you;
+          padding: 7px 14px;
+          border-radius: 20px;
+          margin-bottom: 7px;
+        }
+
+        .last-of-you-tail {
+          position: absolute;
+          bottom: 7px;
+          right: -4px;
+          justify-content: end;
+          background-color: $lm-you;
+          // background-color: green;
+          border-bottom-left-radius: 12px 10px;
+          padding: 7px 0;
+          height: 16px;
+          width: 14px;
+        }
+
+        .last-of-you-blend {
+          position: absolute;
+          bottom: 7px;
+          right: -10px;
+          justify-content: end;
+          border-bottom-left-radius: 7px;
+          padding: 7px 0;
+          height: 18px;
+          width: 10px;
+
+          background-color: $lm-background;
+          // background-color: red;
+        }
+
+        .message-from-them {
+          max-width: 220px;
+          float: left;
+          background-color: $lm-them;
+          color: $lm-message-text-them;
+          padding: 7px 14px;
+          border-radius: 25px;
+          margin-bottom: 1px;
+        }
+
+        .message-from-them-tail,
+        .message-from-them-blend {
+          display: none;
+        }
+
+        .last-of-them {
+          max-width: 220px;
+          float: left;
+          background-color: $lm-them;
+          color: $lm-message-text-them;
+          padding: 7px 14px;
+          border-radius: 20px;
+          margin-bottom: 7px;
+        }
+
+        .last-of-them-tail {
+          position: absolute;
+          bottom: 7px;
+          left: -4px;
+          justify-content: end;
+          background-color: $lm-them;
+          // background-color: green;
+          border-bottom-right-radius: 22px 10px;
+          padding: 7px 0;
+          height: 16px;
+          width: 14px;
+        }
+
+        .last-of-them-blend {
+          position: absolute;
+          bottom: 7px;
+          left: -10px;
+          justify-content: end;
+          border-bottom-right-radius: 8px;
+          padding: 7px 0;
+          height: 18px;
+          width: 10px;
+
+          background-color: $lm-background;
+          // background-color: red;
+        }
+      }
+
+      .message-time {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 400;
+        color: $lm-sub-message;
+        margin-bottom: 5px;
+        // margin-top: 10px;
+
+        .day {
+          font-weight: 500;
+        }
+      }
+      .time-not-first {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 400;
+        color: $lm-sub-message;
+        margin-top: 6px;
+
+        .day {
+          font-weight: 500;
+        }
+      }
+      .message-status {
+        font-size: 10px;
+        font-weight: 500;
+        color: $lm-sub-message;
+        float: right;
+        margin-top: -3.5px;
+      }
+    }
+  }
+
+  .dark {
+    background-color: $dm-background;
+    .message-header {
+      min-height: 62.5px;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      background-color: $dm-message-header-bg;
+
+      .chevron-left {
+        margin-top: 15px;
+        margin-right: 5px;
+        padding-left: 10px;
+        font-size: 20px;
+        color: $lm-you;
+        opacity: 0.9;
+      }
+
+      .contact-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        font-size: 18px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $dm-contact-image;
+        // font-family: "SF-Compact";
+
+        span {
+          align-self: center;
+          vertical-align: middle;
+        }
+      }
+
+      .video-icon {
+        margin-top: 12px;
+        padding-right: 10px;
+        width: 100%;
+        max-height: 28px;
+        opacity: 0.9;
+      }
+
+      .contact-name {
+        font-size: 10px;
+        color: white;
+        margin-bottom: 3px;
+        margin-right: 2px;
+        // font-family: "SF-Pro";
+      }
+      .chevron-right {
+        color: $dm-contact-image;
+        font-size: 10px;
+        margin-top: 3px;
+        opacity: 0.4;
+      }
+    }
+
+    .message-body {
+      padding: 7px 10px;
+      max-height: 418px;
+      overflow: scroll;
+      // font-family: "SF-Pro";
+
+      .message-text {
+        font-size: 15px;
+        position: relative;
+        word-wrap: break-word;
+
+        .message-from-you {
+          max-width: 220px;
+          float: right;
+          background-color: $dm-you;
+          color: $dm-message-text;
+          padding: 7px 14px;
+          border-radius: 20px;
+          margin-bottom: 1px;
+          display: flex;
+        }
+
+        .message-from-you-tail,
+        .message-from-you-blend {
+          display: none;
+        }
+
+        .last-of-you {
+          max-width: 220px;
+          float: right;
+          background-color: $dm-you;
+          color: $dm-message-text;
+          padding: 7px 14px;
+          border-radius: 20px;
+          margin-bottom: 7px;
+        }
+
+        .last-of-you-tail {
+          position: absolute;
+          bottom: 7px;
+          right: -4px;
+          justify-content: end;
+          background-color: $dm-you;
+          // background-color: green;
+          border-bottom-left-radius: 12px 10px;
+          padding: 7px 0;
+          height: 16px;
+          width: 14px;
+        }
+
+        .last-of-you-blend {
+          position: absolute;
+          bottom: 7px;
+          right: -10px;
+          justify-content: end;
+          border-bottom-left-radius: 7px;
+          padding: 7px 0;
+          height: 18px;
+          width: 10px;
+          background-color: $dm-background;
+          // background-color: red;
+        }
+
+        .message-from-them {
+          max-width: 220px;
+          float: left;
+          background-color: $dm-them;
+          color: $dm-message-text;
+          padding: 7px 14px;
+          border-radius: 25px;
+          margin-bottom: 1px;
+        }
+
+        .message-from-them-tail,
+        .message-from-them-blend {
+          display: none;
+        }
+
+        .last-of-them {
+          max-width: 220px;
+          float: left;
+          background-color: $dm-them;
+          color: $dm-message-text;
+          padding: 7px 14px;
+          border-radius: 20px;
+          margin-bottom: 7px;
+        }
+
+        .last-of-them-tail {
+          position: absolute;
+          bottom: 7px;
+          left: -4px;
+          justify-content: end;
+          background-color: $dm-them;
+          // background-color: green;
+          border-bottom-right-radius: 22px 10px;
+          padding: 7px 0;
+          height: 16px;
+          width: 14px;
+        }
+
+        .last-of-them-blend {
+          position: absolute;
+          bottom: 7px;
+          left: -10px;
+          justify-content: end;
+          border-bottom-right-radius: 8px;
+          padding: 7px 0;
+          height: 18px;
+          width: 10px;
+
+          background-color: $dm-background;
+          // background-color: red;
+        }
+      }
+
+      .message-time {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 400;
+        color: $dm-sub-message;
+        margin-bottom: 5px;
+        // margin-top: 10px;
+
+        .day {
+          font-weight: 500;
+        }
+      }
+      .time-not-first {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 400;
+        color: $dm-sub-message;
+        margin-top: 6px;
+
+        .day {
+          font-weight: 500;
+        }
+      }
+      .message-status {
+        font-size: 10px;
+        font-weight: 500;
+        color: $dm-sub-message;
+        float: right;
+        margin-top: -3.5px;
+      }
+    }
+  }
+}

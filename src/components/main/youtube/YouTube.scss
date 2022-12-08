@@ -1,0 +1,129 @@
+.upload-content-container {
+  margin-top: 20px;
+  padding: 1em;
+  padding-top: 0;
+  overflow: hidden;
+  background-size: contain;
+  position: relative;
+
+  .upload-header {
+    font-size: 13px;
+  }
+
+  .nav-link.active {
+    color: rgba(255, 0, 0, 0.75) !important;
+  }
+
+  .nav-link {
+    color: black !important;
+    &:hover {
+      opacity: 1 !important;
+      text-decoration: none;
+    }
+  }
+
+  .nav-tabs {
+    --bs-nav-tabs-border-width: 1px;
+    --bs-nav-tabs-border-radius: 0;
+  }
+}
+
+.preview {
+  padding: 1em;
+  padding-top: 0.5em;
+
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    h4 {
+      font-size: 20px;
+      text-align: center;
+      color: rgba(128, 128, 128, 0.5);
+      margin-bottom: 0;
+    }
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link.active {
+    color: black !important;
+    font-weight: 500;
+    text-decoration: none !important;
+    &:hover {
+      cursor: default;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.preview-ad-box {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  padding: 10px 50px;
+  margin: 0 auto;
+  width: 85%;
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
+.info-ad-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+  height: 210px;
+  border: 1px dashed rgba(128, 128, 128, 0.75);
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
+.sm-thumbnail-ad-box {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .upload-content-container {
+    width: fit-content;
+    .sm-thumbnail-ad-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 11px;
+      height: 90px;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      background-color: rgba(0, 128, 0, 0.5);
+    }
+  }
+
+  .preview,
+  .preview-container {
+    width: fit-content;
+  }
+
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 830px) {
+    .upload-content-container {
+      min-height: none;
+      .sm-thumbnail-ad-box {
+        display: none;
+      }
+    }
+
+    .info-ad-box {
+      display: none;
+    }
+
+    .preview {
+      border-top: 1px solid rgba(255, 0, 0, 0.25);
+    }
+  }
+}

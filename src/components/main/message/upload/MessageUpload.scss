@@ -1,0 +1,102 @@
+.message-upload-container {
+  padding: 8px 16px 16px;
+  max-width: 365px;
+  min-width: 365px;
+
+  input {
+    background-color: rgba(128, 128, 128, 0.1);
+    // margin-bottom: 10px;
+    padding-left: 10px;
+    padding: 5px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #1f1f1f;
+
+    resize: none;
+  }
+
+  .message-convo-container {
+    overflow: scroll;
+    padding: 10px;
+    padding-bottom: 0;
+    border: 1px solid #1f1f1f;
+    border-top: none;
+    background-color: #dae0e6;
+
+    .delete-message {
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      padding: 6px 10px;
+      background-color: rgba(128, 128, 128, 0.75);
+      font-size: 15px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+
+    .day-select {
+      width: 145px;
+      height: 28.5px;
+    }
+
+    textarea {
+      width: 145px;
+    }
+
+    textarea,
+    input,
+    select {
+      background-color: white;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      padding-left: 10px;
+      font-size: 15px;
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      resize: none;
+    }
+
+    select {
+      width: 110.25px;
+    }
+  }
+
+  .new-message-container {
+    border: 1px solid #1f1f1f;
+    border-top: none;
+    background-color: #1f1f1f;
+    color: #dae0e6;
+    padding: 10px 0;
+  }
+  .new-messages {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    .new-message,
+    .new-delivered,
+    .new-time {
+      padding: 4px 8px;
+      border-radius: 20px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+
+    .new-message {
+      background-color: rgb(27, 137, 255);
+    }
+
+    .new-delivered,
+    .new-time {
+      background-color: rgb(139, 139, 139);
+    }
+
+    .new-delivered {
+      margin-right: 10px;
+    }
+  }
+}
