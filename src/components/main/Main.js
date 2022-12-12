@@ -1,35 +1,23 @@
-import React from "react";
-import About from "./about";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+// import Home from "../main/home/Home";
+import YouTube from "../main/youtube/YouTube";
+import Twitter from "../main/twitter/Twitter";
+import Message from "../main/message/Message";
+import About from "../main/about/About";
 import "./Main.scss";
-import YouTube from "./youtube/YouTube";
-import Twitter from "./twitter";
-import Message from "./message/Message";
 
-function Main() {
+function Main(props) {
   return (
     <div className="main">
-      <div className="content-container">
-        <Tabs
-          defaultActiveKey="youtube"
-          id="uncontrolled-tab-example"
-          className=""
-        >
-          <Tab eventKey="youtube" title="YouTube">
-            <YouTube />
-          </Tab>
-          <Tab eventKey="twitter" title="Twitter">
-            <Twitter />
-          </Tab>
-          <Tab eventKey="message" title="iMessage">
-            <Message />
-          </Tab>
-          <Tab eventKey="about" title="About">
-            <About />
-          </Tab>
-        </Tabs>
-      </div>
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/youtube" element={<YouTube />} />
+        <Route path="/twitter" element={<Twitter />} />
+        <Route path="/messages" element={<Message />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      {/* <div>AD BOX</div> */}
     </div>
   );
 }

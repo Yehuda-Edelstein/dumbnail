@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TwitterPopular from "./popular/TwitterPopular";
+import TwitterPopular from "../popular/TwitterPopular";
 import Form from "react-bootstrap/Form";
 import "./TweetUpload.scss";
 

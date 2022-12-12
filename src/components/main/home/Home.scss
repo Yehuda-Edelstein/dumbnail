@@ -1,0 +1,130 @@
+.home {
+  // height: calc(100% - 70.77px);
+  min-width: 390px;
+
+  .content-container {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-top: none;
+    background-color: white;
+    margin: 0 auto;
+    width: fit-content;
+    min-height: 100%;
+
+    .content {
+      padding: 1rem;
+      padding-top: 0em;
+    }
+  }
+}
+
+.toggle {
+  color: rgba(255, 0, 0, 0.5);
+  margin-left: 5px;
+  padding: 0;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // margin-bottom: 10px;
+
+  h4 {
+    font-size: 20px;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.5);
+    margin-bottom: 0;
+  }
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link.active {
+  color: black !important;
+  font-weight: 500;
+  text-decoration: none !important;
+  &:hover {
+    cursor: default;
+    opacity: 1 !important;
+  }
+}
+
+.nav-link {
+  color: rgba(128, 128, 128, 0.5) !important;
+  &:hover {
+    opacity: 0.75 !important;
+    text-decoration: underline;
+  }
+}
+
+.nav-tabs {
+  --bs-nav-tabs-border-width: 0;
+  --bs-nav-tabs-border-radius: 0;
+}
+
+@media screen and (min-width: 831px) {
+  .content-container {
+    .content {
+      min-width: 801px;
+      justify-content: space-between;
+      min-height: fit-content;
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .create {
+    display: block;
+  }
+
+  .content-container {
+    width: fit-content;
+    padding-bottom: 10px;
+    .content {
+      min-width: 436px;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .content-container {
+    // make screen better for mobile
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .home {
+    .content-container {
+      border-top: 0;
+      // min-height: 100%;
+      border-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .home {
+    .content-container {
+      margin: 0 auto;
+      width: 100%;
+      border: none;
+      .content {
+        padding: 0px !important;
+        min-width: 390px;
+
+        .upload-content-container {
+          padding: 0.25em !important;
+          padding-bottom: 1em !important;
+        }
+        .preview {
+          padding: 1em 0px !important;
+        }
+      }
+    }
+  }
+}
