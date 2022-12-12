@@ -9,12 +9,20 @@ $dark-blue: rgb(33 166 255);
 $dark-handle-gray: #717374;
 
 .twitter-preview {
-  padding: 8px 16px 16px;
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  padding-bottom: 0;
+  margin: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
   .twitter-preview-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px 0;
 
     h4 {
       font-size: 20px;
@@ -22,6 +30,11 @@ $dark-handle-gray: #717374;
       color: rgba(128, 128, 128, 0.5);
       margin-bottom: 0;
     }
+  }
+
+  .light,
+  .dark {
+    border: 1px solid black;
   }
 
   .light {
@@ -100,8 +113,6 @@ $dark-handle-gray: #717374;
 
   .twitter-preview-container {
     padding: 10px 20px 5px 10px;
-    min-width: 370px;
-    max-width: 370px;
 
     .account-info {
       margin-bottom: 4px;
@@ -187,6 +198,177 @@ $dark-handle-gray: #717374;
 
       .tweet-device {
         font-size: 14px;
+      }
+    }
+  }
+
+  .twitter-download {
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+    border-top: none;
+    background-color: rgba(29, 155, 240);
+    width: 100%;
+    margin-right: 40px;
+    color: white;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+  }
+
+  .notes {
+    color: #aaaaaa;
+    font-size: 9px;
+    margin-top: 10px;
+
+    ul {
+      padding-left: 5px;
+      list-style: none;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .twitter-preview {
+    max-width: 413px;
+    width: 413px;
+
+    .twitter-preview-container {
+      min-width: 370px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .twitter-preview {
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    min-width: none;
+    padding-right: 0;
+
+    .twitter-preview-header {
+      padding-right: 20px;
+    }
+
+    .small-screen-margin {
+      margin-right: 20px;
+    }
+    .twitter-preview-container {
+      min-width: none;
+      .account-info {
+        position: relative;
+        .twitter-prof {
+          width: 11vw;
+          height: 11vw;
+        }
+
+        .twitter-name,
+        .twitter-handle {
+          font-size: 3vw;
+        }
+        .twitter-handle {
+          position: absolute;
+          bottom: calc(3vw - 3px);
+        }
+
+        .twitter-options {
+          font-size: 3vw;
+        }
+      }
+      .tweet {
+        font-size: 6vw;
+        margin: 6vw 0 4vw 0;
+      }
+
+      .tweet-info {
+        .tweet-time,
+        .tweet-date,
+        .tweet-device {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .twitter-preview {
+    .twitter-preview-container {
+      .account-info {
+        .twitter-handle {
+          position: absolute;
+          bottom: calc(3vw - 4px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .twitter-preview {
+    .twitter-preview-container {
+      .account-info {
+        .twitter-handle {
+          position: absolute;
+          bottom: calc(3vw - 6px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .twitter-preview {
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    min-width: none;
+    padding-right: 0;
+
+    .twitter-download {
+      min-width: 280px;
+    }
+
+    .twitter-preview-header {
+      padding-right: 20px;
+      min-width: 300px;
+    }
+
+    .small-screen-margin {
+      margin-right: 20px;
+    }
+    .twitter-preview-container {
+      min-width: 280px;
+
+      .account-info {
+        .twitter-prof {
+          width: 35px;
+          height: 35px;
+        }
+
+        .twitter-name,
+        .twitter-handle {
+          font-size: 10px;
+        }
+        .twitter-handle {
+          bottom: 2px;
+        }
+      }
+      .tweet {
+        font-size: 19px;
+        margin: 19px 0 12px 0;
+      }
+
+      .tweet-info {
+        .tweet-time,
+        .tweet-date,
+        .tweet-device {
+          font-size: 11px;
+        }
       }
     }
   }

@@ -8,6 +8,7 @@
   .main-content {
     display: flex;
     justify-content: center;
+    position: absolute;
 
     .upload-content {
       display: flex;
@@ -45,6 +46,7 @@
     .main-content {
       margin: 0;
       width: fit-content;
+      position: relative;
     }
   }
 }

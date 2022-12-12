@@ -4,9 +4,8 @@ import light from "./../../../../static/twitter-verified.png";
 import dark from "./../../../../static/twitter-verified-dark.png";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import TwitterSwitch from "../switch";
-import Download from "./download/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Switch from "../../switch/Switch";
 import "./TwitterPreview.scss";
 
 function TwitterPreview({
@@ -59,95 +58,99 @@ function TwitterPreview({
   }
 
   return (
-    <div>
-      <div className="twitter-preview">
-        <h5>Preview</h5>
-        <div className="twitter-preview-header">
-          <OverlayTrigger
-            key={"right"}
-            placement={"right"}
-            delay={{ show: "700", hide: "100" }}
-            overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
-          >
-            <div className="switch">
-              <TwitterSwitch
-                isOn={switchDevice}
-                handleToggle={() => {
-                  setSwitchDevice(!switchDevice);
-                  setIsDarkMode(!isDarkMode);
-                }}
-              />
-            </div>
-          </OverlayTrigger>
-          {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
-        </div>
-
-        <div className="border border-dark border-bottom-0">
-          <div
-            ref={tweetRef}
-            className={
-              switchDevice
-                ? "twitter-preview-container dark"
-                : "twitter-preview-container light"
-            }
-          >
-            <div className="account-info">
-              <div className="d-flex">
-                {isPopular && !selectedProf && (
+    <div className="twitter-preview">
+      <h5>Preview</h5>
+      <div className="twitter-preview-header">
+        <OverlayTrigger
+          key={"right"}
+          placement={"right"}
+          delay={{ show: "700", hide: "100" }}
+          overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
+        >
+          <div className="switch">
+            <Switch
+              isOn={switchDevice}
+              handleToggle={() => {
+                setSwitchDevice(!switchDevice);
+                setIsDarkMode(!isDarkMode);
+              }}
+              bgOn={"rgba(29, 155, 240, 0.5)"}
+              bgOff={"rgba(29, 155, 240, 0.25)"}
+            />
+          </div>
+        </OverlayTrigger>
+        {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
+      </div>
+      <div className="small-screen-margin">
+        <div
+          ref={tweetRef}
+          className={
+            switchDevice
+              ? "twitter-preview-container dark"
+              : "twitter-preview-container light"
+          }
+        >
+          <div className="account-info">
+            <div className="d-flex">
+              {isPopular && !selectedProf && (
+                <img
+                  className="twitter-popular-prof"
+                  src={require(`./../../../../static/popular/twitter/${popular}`)}
+                  alt=""
+                />
+              )}
+              {!isPopular && selectedProf && (
+                <div className="twitter-custom-prof">
                   <img
-                    className="twitter-popular-prof"
-                    src={require(`./../../../../static/popular/twitter/${popular}`)}
+                    src={previewProf}
+                    style={{
+                      transform: `scale(${profZoom}%) translate(${x}px, ${y}px)`,
+                    }}
                     alt=""
                   />
-                )}
-                {!isPopular && selectedProf && (
-                  <div className="twitter-custom-prof">
-                    <img
-                      src={previewProf}
-                      style={{
-                        transform: `scale(${profZoom}%) translate(${x}px, ${y}px)`,
-                      }}
-                      alt=""
-                    />
-                  </div>
-                )}
-                {!isPopular && !selectedProf && (
-                  <div className="twitter-prof"></div>
-                )}
-                <div className="d-grid indent">
-                  <div className="d-flex">
-                    <div className="twitter-name">{name}</div>
-                    {verified && !switchDevice && (
-                      <img className="verified" src={light} alt="" />
-                    )}
-                    {verified && switchDevice && (
-                      <img className="verified-dark" src={dark} alt="" />
-                    )}
-                    {/* options icon */}
-                  </div>
-                  <div className="twitter-handle">@{handle}</div>
                 </div>
-                <FontAwesomeIcon
-                  className="twitter-options"
-                  icon={["fa", "ellipsis"]}
-                />
+              )}
+              {!isPopular && !selectedProf && (
+                <div className="twitter-prof"></div>
+              )}
+              <div className="d-grid indent">
+                <div className="d-flex">
+                  <div className="twitter-name">{name}</div>
+                  {verified && !switchDevice && (
+                    <img className="verified" src={light} alt="" />
+                  )}
+                  {verified && switchDevice && (
+                    <img className="verified-dark" src={dark} alt="" />
+                  )}
+                </div>
+                <div className="twitter-handle">@{handle}</div>
               </div>
-            </div>
-            <div className="tweet">{tweet}</div>
-            <div className="tweet-info">
-              <div className="tweet-time">{exact(time)}</div>
-              <div className="tweet-bullet"></div>
-              <div className="tweet-date">{date}</div>
-              <div className="tweet-bullet"></div>
-              <div className="tweet-device">{device}</div>
+              <FontAwesomeIcon
+                className="twitter-options"
+                icon={["fa", "ellipsis"]}
+              />
             </div>
           </div>
+          <div className="tweet">{tweet}</div>
+          <div className="tweet-info">
+            <div className="tweet-time">{exact(time)}</div>
+            <div className="tweet-bullet"></div>
+            <div className="tweet-date">{date}</div>
+            <div className="tweet-bullet"></div>
+            <div className="tweet-device">{device}</div>
+          </div>
         </div>
-        <Download
-          className="download-twitter"
-          isActive={isActive}
-          downloadTweet={downloadTweet}
-        />
+        <button className="twitter-download" onClick={downloadTweet}>
+          DOWNLOAD
+        </button>
+      </div>
+      <div className="notes">
+        <ul>
+          <li>1. Max zoom width is 200%</li>
+          <li>
+            2. You <em>can</em> crop the picture out of frame so be careful.
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -1,0 +1,107 @@
+.tweet-container {
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 20px;
+  margin-right: 0;
+  height: fit-content;
+  max-width: 413px;
+  min-width: 290px;
+
+  .tweet-content {
+    margin-top: 10px;
+    .twitter-input-container {
+      min-width: 80px;
+      margin-bottom: 10px;
+    }
+
+    .tweet-details-container {
+      display: flex;
+      justify-content: space-between;
+      .twitter-input-container {
+        max-width: 120px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .twitter-input-container {
+    margin-bottom: 3px;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    // min-width: 320px;
+
+    input,
+    textarea,
+    select {
+      padding-left: 10px;
+      font-size: 15px;
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+    }
+
+    input,
+    textarea {
+      background-color: rgba(128, 128, 128, 0.1);
+      resize: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      background-color: rgba(128, 128, 128, 0.25);
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .form-check-input {
+    height: 26.5px;
+    width: 26.5px;
+    margin-top: 0;
+    border-radius: 0 !important;
+    background-color: rgba(128, 128, 128, 0.1);
+    outline: none;
+    border: 1px dashed rgba(128, 128, 128, 0.75);
+    border-left: 0;
+  }
+
+  .form-check-input:focus {
+    box-shadow: none;
+    border: 1px dashed rgba(128, 128, 128, 0.75);
+    border-left: 0;
+  }
+
+  .form-check-input:checked {
+    background-color: rgb(29, 155, 240);
+  }
+  .twitter-date-input,
+  .twitter-select {
+    padding-left: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px dashed rgba(128, 128, 128, 0.75);
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+  .twitter-select {
+    height: 24.5px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .tweet-content {
+    .tweet-details-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .twitter-input-container {
+        min-width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

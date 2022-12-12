@@ -160,6 +160,14 @@ function YouTubePreview({
           DOWNLOAD
         </button>
       </div>
+      <div className="notes">
+        <ul>
+          <li>1. Max zoom width is 200%</li>
+          <li>
+            2. You <em>can</em> crop the picture out of frame so be careful.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

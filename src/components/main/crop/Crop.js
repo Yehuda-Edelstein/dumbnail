@@ -26,6 +26,9 @@ function Crop({ show, handleClose, img, x, setX, y, setY, zoom, setZoom }) {
           <div
             className="icon-enabled"
             onClick={() => {
+              setX(x);
+              setY(y);
+              setZoom(zoom);
               handleClose();
             }}
           >

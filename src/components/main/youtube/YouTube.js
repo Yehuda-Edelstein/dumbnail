@@ -217,35 +217,37 @@ function YouTube() {
           </Tab>
         </Tabs>
       </div>
-      <YouTubePreview
-        switchDevice={switchDevice}
-        setSwitchDevice={setSwitchDevice}
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
-        duration={duration}
-        title={title}
-        channelName={channelName}
-        views={views}
-        timeAgo={timeAgo}
-        increment={increment}
-        uploadThumbnail={uploadThumbnail}
-        uploadChannelPic={uploadChannelPic}
-        selectedThumb={selectedThumb}
-        previewThumb={previewThumb}
-        selectedChannelPic={selectedChannelPic}
-        previewChannelPic={previewChannelPic}
-        thumbZoom={thumbZoom}
-        setThumbZoom={setThumbZoom}
-        thumbX={thumbX}
-        thumbY={thumbY}
-        channelPicZoom={channelPicZoom}
-        channelPicX={channelPicX}
-        channelPicY={channelPicY}
-        isTemplate={isTemplate}
-        template={template}
-        channelTemp={channelTemp}
-        isChannelTemp={isChannelTemp}
-      />
+      <div>
+        <YouTubePreview
+          switchDevice={switchDevice}
+          setSwitchDevice={setSwitchDevice}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+          duration={duration}
+          title={title}
+          channelName={channelName}
+          views={views}
+          timeAgo={timeAgo}
+          increment={increment}
+          uploadThumbnail={uploadThumbnail}
+          uploadChannelPic={uploadChannelPic}
+          selectedThumb={selectedThumb}
+          previewThumb={previewThumb}
+          selectedChannelPic={selectedChannelPic}
+          previewChannelPic={previewChannelPic}
+          thumbZoom={thumbZoom}
+          setThumbZoom={setThumbZoom}
+          thumbX={thumbX}
+          thumbY={thumbY}
+          channelPicZoom={channelPicZoom}
+          channelPicX={channelPicX}
+          channelPicY={channelPicY}
+          isTemplate={isTemplate}
+          template={template}
+          channelTemp={channelTemp}
+          isChannelTemp={isChannelTemp}
+        />
+      </div>
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Tab, Tabs } from "react-bootstrap";
 import TwitterPreview from "./preview/TwitterPreview";
-import TwitterUpload from "./upload";
 import "./Twitter.scss";
+import TwitterProfile from "./upload/profile/TwitterProfile";
+import Tweet from "./upload/tweet/Tweet";
 
 const today = new Date();
 const year = today.getFullYear().toString().slice(-2);
@@ -34,9 +36,9 @@ function Twitter(props) {
   const [isPopular, setIsPopular] = useState(false);
   const [popular, setPopular] = useState();
   // add likes etc. V.2
-  const [isDarkMode, setIsDarkMode] = useState(false);
   // switch
   const [switchDevice, setSwitchDevice] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     if (!selectedProf) {
@@ -59,56 +61,103 @@ function Twitter(props) {
     setSelectedProf(ev.target.files[0]);
   }
   return (
-    <div className="content p-3 pt-0">
-      <TwitterUpload
-        setName={setName}
-        verified={verified}
-        setVerified={setVerified}
-        setHandle={setHandle}
-        setTweet={setTweet}
-        setDevice={setDevice}
-        setIsActive={setIsActive}
-        time={time}
-        setTime={setTime}
-        setDate={setDate}
-        date={date}
-        setIsPopular={setIsPopular}
-        setPopular={setPopular}
-        // for custom prof pics
-        uploadProf={uploadProf}
-        previewProf={previewProf}
-        setPreviewProf={setPreviewProf}
-        setSelectedProf={setSelectedProf}
-        selectedProf={selectedProf}
-        profZoom={profZoom}
-        profX={profX}
-        profY={profY}
-        setProfX={setProfX}
-        setProfY={setProfY}
-        setProfZoom={setProfZoom}
-      />
-      <TwitterPreview
-        switchDevice={switchDevice}
-        setSwitchDevice={setSwitchDevice}
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
-        name={name}
-        verified={verified}
-        handle={handle}
-        tweet={tweet}
-        time={time}
-        date={date}
-        device={device}
-        isActive={isActive}
-        isPopular={isPopular}
-        popular={popular}
-        // for custom pics
-        previewProf={previewProf}
-        selectedProf={selectedProf}
-        profZoom={profZoom}
-        profX={profX}
-        profY={profY}
-      />
+    <div className="main-content">
+      <div className="upload-content">
+        <TwitterProfile
+          setIsPopular={setIsPopular}
+          isPopular={isPopular}
+          setPopular={setPopular}
+          uploadProf={uploadProf}
+          previewProf={previewProf}
+          setPreviewProf={setPreviewProf}
+          setSelectedProf={setSelectedProf}
+          selectedProf={selectedProf}
+          profZoom={profZoom}
+          profX={profX}
+          profY={profY}
+          setProfX={setProfX}
+          setProfY={setProfY}
+          setProfZoom={setProfZoom}
+        />
+        <Tweet
+          setName={setName}
+          verified={verified}
+          setVerified={setVerified}
+          setHandle={setHandle}
+          setTweet={setTweet}
+          setDevice={setDevice}
+          setIsActive={setIsActive}
+          time={time}
+          setTime={setTime}
+          setDate={setDate}
+          date={date}
+        />
+      </div>
+      <div className="twitter-content-tabs">
+        <Tabs
+          defaultActiveKey="profile"
+          id="uncontrolled-tab-example"
+          className="mb-3"
+        >
+          <Tab eventKey="profile" title="Profile">
+            <TwitterProfile
+              setIsPopular={setIsPopular}
+              isPopular={isPopular}
+              setPopular={setPopular}
+              uploadProf={uploadProf}
+              previewProf={previewProf}
+              setPreviewProf={setPreviewProf}
+              setSelectedProf={setSelectedProf}
+              selectedProf={selectedProf}
+              profZoom={profZoom}
+              profX={profX}
+              profY={profY}
+              setProfX={setProfX}
+              setProfY={setProfY}
+              setProfZoom={setProfZoom}
+            />
+          </Tab>
+
+          <Tab eventKey="tweet" title="Tweet">
+            <Tweet
+              setName={setName}
+              verified={verified}
+              setVerified={setVerified}
+              setHandle={setHandle}
+              setTweet={setTweet}
+              setDevice={setDevice}
+              setIsActive={setIsActive}
+              time={time}
+              setTime={setTime}
+              setDate={setDate}
+              date={date}
+            />
+          </Tab>
+        </Tabs>
+      </div>
+      <div>
+        <TwitterPreview
+          switchDevice={switchDevice}
+          setSwitchDevice={setSwitchDevice}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+          name={name}
+          verified={verified}
+          handle={handle}
+          tweet={tweet}
+          time={time}
+          date={date}
+          device={device}
+          isActive={isActive}
+          isPopular={isPopular}
+          popular={popular}
+          previewProf={previewProf}
+          selectedProf={selectedProf}
+          profZoom={profZoom}
+          profX={profX}
+          profY={profY}
+        />
+      </div>
     </div>
   );
 }

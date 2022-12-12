@@ -1,22 +1,22 @@
 .about {
   display: flex;
   // width: 912px;
-  min-width: 420px;
+  // min-width: 420px;
   font-size: 15px;
   font-weight: bold;
-  max-width: 801px;
+  // max-width: 801px;
   height: 100%;
 }
 
 @media screen and (max-width: 1023px) {
   .about {
-    max-width: 801px;
+    // max-width: 801px;
   }
 }
 
 @media screen and (max-width: 830px) {
   .about {
-    max-width: 436px;
-    min-width: 420px;
+    // max-width: 436px;
+    min-width: 320px;
   }
 }

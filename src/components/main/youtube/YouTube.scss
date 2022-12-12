@@ -2,7 +2,6 @@
   background-color: white;
   padding: 30px;
   margin: 20px 20px 20px 40px;
-  overflow: hidden;
   background-size: contain;
   position: relative;
   border: 0.5px solid rgba(128, 128, 128, 0.75);
@@ -16,6 +15,7 @@
 .preview {
   padding: 1em;
   padding-top: 0.5em;
+  position: fixed;
 
   .preview-container {
     .youtube-download {
@@ -59,30 +59,6 @@
       opacity: 1 !important;
     }
   }
-}
-
-.preview-ad-box {
-  display: flex;
-  justify-self: center;
-  align-items: center;
-  padding: 10px 50px;
-  margin: 0 auto;
-  width: 85%;
-  background-color: rgba(0, 128, 0, 0.5);
-}
-
-.info-ad-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 7px;
-  height: 210px;
-  border: 1px dashed rgba(128, 128, 128, 0.75);
-  background-color: rgba(0, 128, 0, 0.5);
-}
-
-.sm-thumbnail-ad-box {
-  display: none;
 }
 
 .content-tabs {

@@ -1,31 +1,29 @@
-import React, { useState } from "react";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Channel.scss";
+import React, { useState } from "react";
+import { OverlayTrigger } from "react-bootstrap";
+import Tooltip from "react-bootstrap/Tooltip";
 import Crop from "../../../crop/Crop";
+import "./TwitterProfile.scss";
 
-function Channel({
-  setPreviewChannelPic,
-  setSelectedChannelPic,
-  selectedChannelPic,
-  previewChannelPic,
-  uploadChannelPic,
-  channelPicZoom,
-  setChannelPicZoom,
-  channelPicX,
-  channelPicY,
-  setChannelPicX,
-  setChannelPicY,
-  // for popular channels
-  setChannelName,
-  setIsTemplate,
-  setTemplate,
-  setChannelTemp,
-  setIsChannelTemp,
-  isChannelTemp,
+function TwitterProfile({
+  setIsPopular,
+  isPopular,
+  setName,
+  setHandle,
+  setPopular,
+  setSelectedProf,
+  profZoom,
+  profX,
+  profY,
+  setProfX,
+  setProfY,
+  setProfZoom,
+  selectedProf,
+  previewProf,
+  uploadProf,
+  setPreviewProf,
 }) {
-  const data = require("../../../../../static/popular/youtube/popular.json");
+  const data = require("../../../../../static/popular/twitter/popular.json");
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -38,38 +36,33 @@ function Channel({
     return str.split(".png");
   }
 
-  function clearChannelTemp() {
-    setPreviewChannelPic();
-    setSelectedChannelPic();
-    setIsChannelTemp(false);
-    setChannelName("Channel");
-  }
-
   function reset() {
-    setPreviewChannelPic();
-    setSelectedChannelPic();
+    setSelectedProf();
+    setIsPopular(false);
+    setName("Name");
+    setHandle("Handle");
   }
 
   return (
-    <div className="channel-container">
+    <div className="profile-container">
       {show ? (
         <Crop
           show={show}
           handleClose={handleClose}
-          img={previewChannelPic}
-          x={channelPicX}
-          y={channelPicY}
-          setX={setChannelPicX}
-          setY={setChannelPicY}
-          zoom={channelPicZoom}
-          setZoom={setChannelPicZoom}
+          img={previewProf}
+          x={profX}
+          y={profY}
+          setX={setProfX}
+          setY={setProfY}
+          zoom={profZoom}
+          setZoom={setProfZoom}
         />
       ) : (
         <div>
-          <div className="upload-channel-header">
-            <h5>Channel</h5>
+          <div className="upload-profile-header">
+            <h5>Profile</h5>
             <div className="d-flex">
-              {selectedChannelPic && (
+              {selectedProf && (
                 <div>
                   <OverlayTrigger
                     key={"top"}
@@ -94,13 +87,9 @@ function Channel({
                 >
                   <FontAwesomeIcon
                     icon={["fa", "circle-xmark"]}
-                    onClick={
-                      selectedChannelPic || isChannelTemp
-                        ? clearChannelTemp
-                        : null
-                    }
+                    onClick={selectedProf || isPopular ? reset : null}
                     className={
-                      selectedChannelPic || isChannelTemp
+                      selectedProf || isPopular
                         ? "icon-enabled"
                         : "icon-disabled"
                     }
@@ -109,18 +98,17 @@ function Channel({
               </div>
             </div>
           </div>
-          <div className="upload-channel-body d-flex">
+          <div className="upload-profile-body d-flex">
             <div>
-              {" "}
-              {!selectedChannelPic && (
-                <div onChange={uploadChannelPic}>
+              {!selectedProf && (
+                <div onChange={uploadProf}>
                   <div>
-                    <div className="upload-channel-pic">
+                    <div className="upload-profile-pic">
                       <input
                         type="file"
                         accept="image/*"
                         title=""
-                        onChange={uploadChannelPic}
+                        onChange={uploadProf}
                         className="hidden-input"
                       />
                       <div className="upload-channel-label">Upload</div>
@@ -129,15 +117,15 @@ function Channel({
                   </div>
                 </div>
               )}
-              {selectedChannelPic && (
-                <div onChange={uploadChannelPic}>
+              {selectedProf && (
+                <div onChange={uploadProf}>
                   <div>
-                    <div className="upload-channel-pic">
+                    <div className="upload-profile-pic">
                       <input
                         type="file"
                         accept="image/*"
                         title=""
-                        onChange={uploadChannelPic}
+                        onChange={uploadProf}
                         className="hidden-input"
                       />
                       <div className="upload-channel-label">Upload</div>
@@ -150,30 +138,31 @@ function Channel({
             <div className="scroll-container">
               <div className="before-overlay"></div>
               <div className="scroll d-flex">
-                {data.map((pic) => {
+                {data.map((pop) => {
                   return (
                     <OverlayTrigger
-                      key={pic}
+                      key={pop.handle}
                       placement={"top"}
                       delay={{ show: "100", hide: "10" }}
                       overlay={
                         <Tooltip id={"tooltip-top"}>
-                          {createTooltip(pic)}
+                          {createTooltip(pop.img)}
                         </Tooltip>
                       }
                     >
                       <div
-                        className="popular"
-                        key={pic}
+                        className="profile"
+                        key={pop.handle}
                         onClick={() => {
-                          setIsChannelTemp(true);
-                          setSelectedChannelPic();
-                          setChannelTemp(pic);
-                          setChannelName(createTooltip(pic));
+                          setIsPopular(true);
+                          setSelectedProf();
+                          setPopular(pop.img);
+                          setName(pop.name);
+                          setHandle(pop.handle);
                         }}
                       >
                         <img
-                          src={require(`../../../../../static/popular/youtube/${pic}`)}
+                          src={require(`./../../../../../static/popular/twitter/${pop.img}`)}
                           alt=""
                         />
                       </div>
@@ -190,4 +179,4 @@ function Channel({
   );
 }
 
-export default Channel;
+export default TwitterProfile;
