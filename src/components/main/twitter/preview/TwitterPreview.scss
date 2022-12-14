@@ -35,7 +35,7 @@ $dark-handle-gray: #717374;
 
   .light,
   .dark {
-    border: 1px solid black;
+    // border: 1px solid black;
   }
 
   .light {
@@ -206,8 +206,8 @@ $dark-handle-gray: #717374;
   .twitter-download {
     text-align: center;
     align-items: center;
-    border: 1px solid black;
-    border-top: none;
+    border: none;
+    border-top: 1px solid black;
     background-color: rgba(29, 155, 240);
     width: 100%;
     margin-right: 40px;

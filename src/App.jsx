@@ -76,7 +76,7 @@ function App() {
         }}
       >
         <Navbar path={path} setPath={setPath} />
-        <Main />
+        <Main setPath={setPath} />
       </div>
     </div>
   );

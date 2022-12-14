@@ -33,8 +33,13 @@
   .example-pics {
     max-width: 500px;
     img {
+      // border: 1px solid red;
       max-width: 500px;
       min-width: 288px;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
     }
   }
 
