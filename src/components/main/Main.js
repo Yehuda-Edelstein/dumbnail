@@ -9,11 +9,11 @@ import "./Main.scss";
 import Home from "./home/Home";
 // import Ad from "./ad/Ad";
 
-function Main(props) {
+function Main({ setPath }) {
   return (
     <div className="main">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setPath={setPath} />} />
         <Route path="/youtube" element={<YouTube />} />
         <Route path="/twitter" element={<Twitter />} />
         <Route path="/messages" element={<Message />} />

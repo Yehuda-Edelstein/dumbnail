@@ -80,7 +80,7 @@ function TwitterPreview({
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div className="small-screen-margin">
+      <div className="small-screen-margin border border-dark">
         <div
           ref={tweetRef}
           className={

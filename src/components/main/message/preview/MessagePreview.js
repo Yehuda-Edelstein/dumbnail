@@ -90,7 +90,7 @@ function MessagePreview({ messages, contact, isActive }) {
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div className="small-screen-margin">
+      <div className="small-screen-margin border border-dark">
         <div ref={messageRef} className={switchDevice ? "dark" : "light"}>
           <div className="message-header">
             <div className="d-flex justify-content-between">

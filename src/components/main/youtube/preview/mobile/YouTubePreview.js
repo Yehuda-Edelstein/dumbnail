@@ -72,13 +72,16 @@ function YouTubePreview({
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div className="small-screen-margin">
+      <div
+        className="small-screen-margin border border-dark
+"
+      >
         <div
           ref={mobileRef}
           className={
             switchDevice
-              ? "youtube-preview-container dark border border-dark"
-              : "youtube-preview-container light border border-dark"
+              ? "youtube-preview-container dark"
+              : "youtube-preview-container light"
           }
         >
           <div className={selectedThumb ? "thumbnail" : "upload"}>
