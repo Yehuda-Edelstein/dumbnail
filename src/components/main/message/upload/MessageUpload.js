@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MessageUpload.scss";
+import you from "./../../../../static/you-btn.png";
+import them from "./../../../../static/them-btn.png";
 
 function MessageUpload({
   messages,
@@ -103,8 +105,10 @@ function MessageUpload({
 
   return (
     <div className="message-upload-container">
-      <div className="d-grid">
+      <div className="convo-header">
         <h5>Convo</h5>
+      </div>
+      <div className="d-grid">
         <input
           type="text"
           placeholder="Contact..."
@@ -115,52 +119,57 @@ function MessageUpload({
         />
       </div>
       <div className="message-convo-container">
-        <div>
+        <div className="message-container">
           {messages.map((m) => {
             return m.type === "text" ? (
-              <div className="d-flex" key={m.id}>
+              <div className="message" key={m.id}>
                 <textarea
                   rows="1"
-                  placeholder="New Message..."
+                  placeholder="Message..."
                   value={m.msg}
                   onChange={(ev) => {
                     updateMessage(m.id, ev.target.value);
                   }}
                 ></textarea>
-                {m.from === "you" && m.type !== "time" && (
-                  <select
-                    onChange={(ev) => {
-                      updateFrom(m.id, ev.target.value);
+                <div className="message-buttons-container">
+                  <img
+                    className={
+                      m.from === contact
+                        ? "change-them-btn active"
+                        : "change-them-btn"
+                    }
+                    src={them}
+                    alt=""
+                    onClick={(ev) => {
+                      updateFrom(m.id, contact);
                     }}
-                  >
-                    <option value="you">you</option>
-                    <option value={contact}>{contact.match(/[^\s]+/)}</option>
-                  </select>
-                )}
-                {m.from !== "you" && (
-                  <select
-                    onChange={(ev) => {
-                      updateFrom(m.id, ev.target.value);
+                  />
+                  <img
+                    className={
+                      m.from === "you"
+                        ? "change-them-btn active"
+                        : "change-them-btn"
+                    }
+                    src={you}
+                    alt=""
+                    onClick={(ev) => {
+                      updateFrom(m.id, "you");
                     }}
-                  >
-                    <option value={contact}>{contact.match(/[^\s]+/)}</option>
-                    <option value="you">you</option>
-                  </select>
-                )}
-
-                <FontAwesomeIcon
-                  onClick={() => deleteMessage(m.id)}
-                  key={m.id}
-                  className="delete-message"
-                  icon={["fa", "trash"]}
-                />
+                  />
+                  <FontAwesomeIcon
+                    onClick={() => deleteMessage(m.id)}
+                    key={m.id}
+                    className="delete-message"
+                    icon={["fa", "trash"]}
+                  />
+                </div>
               </div>
             ) : (
               <div key={m.id}>
                 {m.type === "time" ? (
                   <div className="d-grid">
                     {/* <label>Time</label> */}
-                    <div className="d-flex">
+                    <div className="message">
                       <select
                         className="day-select"
                         value={m.day}
@@ -200,16 +209,8 @@ function MessageUpload({
                     </div>
                   </div>
                 ) : (
-                  <div key={m.id} className="d-flex">
-                    <select
-                      className="day-select"
-                      onChange={(ev) => {
-                        updateMessage(m.id, ev.target.value);
-                      }}
-                    >
-                      <option value="Delivered">Delivered</option>
-                      {/* <option value="Read">Read</option> */}
-                    </select>
+                  <div key={m.id} className="message justify-content-between">
+                    <div className="delivered">Delivered</div>
                     <FontAwesomeIcon
                       onClick={() => {
                         setIsActive(true);

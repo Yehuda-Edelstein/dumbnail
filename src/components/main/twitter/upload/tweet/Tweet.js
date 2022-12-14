@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TwitterPopular from "../profile/TwitterProfile";
 import Form from "react-bootstrap/Form";
 import "./Tweet.scss";
 

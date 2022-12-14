@@ -12,13 +12,14 @@
   .dumbnail-nav {
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 70px;
 
     label {
       color: gray;
       font-size: 10px;
       margin-left: 10px;
       margin-bottom: 5px;
+      margin-top: 10px;
     }
 
     .dumbnail-nav-link {

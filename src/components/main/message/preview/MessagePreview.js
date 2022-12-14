@@ -1,12 +1,11 @@
 import React, { useState, useRef } from "react";
 import * as htmlToImage from "html-to-image";
-import MessageDownload from "../download/MessageDownload";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import MessageSwitch from "../switch/MessageSwitch";
-import "./MessagePreview.scss";
+import Switch from "./../../switch/Switch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import facetime from "./../../../../static/video-icon.png";
+import "./MessagePreview.scss";
 
 function MessagePreview({ messages, contact, isActive }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -33,7 +32,7 @@ function MessagePreview({ messages, contact, isActive }) {
   function contactImage(str) {
     if (str) {
       const initials = str.match(/\b(\w)/g);
-      return initials.join("");
+      return initials.join("").match(/[\s\S]{0,2}$/);
     }
   }
 
@@ -68,99 +67,97 @@ function MessagePreview({ messages, contact, isActive }) {
   }
 
   return (
-    <div className="message-preview-container">
-      <div className="message-preview">
-        <h5>Preview</h5>
-        <div className="message-preview-header">
-          <OverlayTrigger
-            key={"right"}
-            placement={"right"}
-            delay={{ show: "700", hide: "100" }}
-            overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
-          >
-            <div className="switch">
-              <MessageSwitch
-                isOn={switchDevice}
-                handleToggle={() => {
-                  setSwitchDevice(!switchDevice);
-                  setIsDarkMode(!isDarkMode);
-                }}
-              />
-            </div>
-          </OverlayTrigger>
-          {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
-        </div>
-        <div className="border border-dark border-bottom-0">
-          <div ref={messageRef} className={switchDevice ? "dark" : "light"}>
-            <div className="message-header">
-              <div className="d-flex justify-content-between">
-                <div>
-                  {" "}
-                  <FontAwesomeIcon
-                    className="chevron-left"
-                    icon={["fa", "chevron-left"]}
-                  />
-                </div>
-                <div className="contact-image">
-                  <span>{contactImage(contact)}</span>
-                </div>
-                <div>
-                  <img className="video-icon" src={facetime} alt="" />
-                </div>
-              </div>
-              <div className="d-flex justify-content-center">
-                <div className="contact-name">{contact.match(/[^\s]+/)}</div>
+    <div className="message-preview">
+      <h5>Preview</h5>
+      <div className="message-preview-header">
+        <OverlayTrigger
+          key={"right"}
+          placement={"right"}
+          delay={{ show: "700", hide: "100" }}
+          overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
+        >
+          <div className="switch">
+            <Switch
+              isOn={switchDevice}
+              handleToggle={() => {
+                setSwitchDevice(!switchDevice);
+                setIsDarkMode(!isDarkMode);
+              }}
+              bgOn={"rgba(28, 138, 254, .5)"}
+              bgOff={"rgba(28, 138, 254, 0.25)"}
+            />
+          </div>
+        </OverlayTrigger>
+        {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
+      </div>
+      <div className="small-screen-margin">
+        <div ref={messageRef} className={switchDevice ? "dark" : "light"}>
+          <div className="message-header">
+            <div className="d-flex justify-content-between">
+              <div>
+                {" "}
                 <FontAwesomeIcon
-                  className="chevron-right"
-                  icon={["fa", "chevron-right"]}
+                  className="chevron-left"
+                  icon={["fa", "chevron-left"]}
                 />
               </div>
+              <div className="contact-image">
+                <span>{contactImage(contact)}</span>
+              </div>
+              <div>
+                <img className="video-icon" src={facetime} alt="" />
+              </div>
             </div>
-            <div className="message-body">
-              {messages.map((m) => {
-                return (
-                  <div className="d-grid" key={m.id}>
-                    <div className={`message-${m.type}`}>
-                      {m.from === "you" && (
-                        <div className="d-flex justify-content-end">
-                          <div className={lastOfYou(m.id)}>{m.msg}</div>
-                          <div className={`${lastOfYou(m.id)}-tail`}></div>
-                          <div className={`${lastOfYou(m.id)}-blend`}></div>
-                        </div>
-                      )}
-                      {m.from === contact && (
-                        <div>
-                          <div className={lastOfThem(m.id)}>{m.msg}</div>
-                          <div className={`${lastOfThem(m.id)}-tail`}></div>
-                          <div className={`${lastOfThem(m.id)}-blend`}></div>
-                        </div>
-                      )}
-                      {m.type === "time" && (
-                        <div className={m.id !== 0 ? "time-not-first" : ""}>
-                          <div>
-                            <span className="day">{m.day} </span>
-                            <span>{exact(m.time)}</span>
-                          </div>
-                        </div>
-                      )}
-                      {m.type === "status" && (
-                        <div>
-                          <div className="message-status">{m.msg}</div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="contact-container">
+              <div className="contact-name">{contact.match(/[^\s]+/)}</div>
+              <FontAwesomeIcon
+                className="chevron-right"
+                icon={["fa", "chevron-right"]}
+              />
             </div>
           </div>
+          <div className="message-body">
+            {messages.map((m) => {
+              return (
+                <div className="d-grid" key={m.id}>
+                  <div className={`message-${m.type}`}>
+                    {m.from === "you" && (
+                      <div className="d-flex justify-content-end">
+                        <div className={lastOfYou(m.id)}>{m.msg}</div>
+                        <div className={`${lastOfYou(m.id)}-tail`}></div>
+                        <div className={`${lastOfYou(m.id)}-blend`}></div>
+                      </div>
+                    )}
+                    {m.from === contact && (
+                      <div>
+                        <div className={lastOfThem(m.id)}>{m.msg}</div>
+                        <div className={`${lastOfThem(m.id)}-tail`}></div>
+                        <div className={`${lastOfThem(m.id)}-blend`}></div>
+                      </div>
+                    )}
+                    {m.type === "time" && (
+                      <div className={m.id !== 0 ? "time-not-first" : ""}>
+                        <div>
+                          <span className="day">{m.day} </span>
+                          <span>{exact(m.time)}</span>
+                        </div>
+                      </div>
+                    )}
+                    {m.type === "status" && (
+                      <div>
+                        <div className="message-status">{m.msg}</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <MessageDownload
-          className="download-message"
-          isActive={isActive}
-          downloadMessage={downloadMessage}
-        />
       </div>
+      <button className="message-download" onClick={downloadMessage}>
+        DOWNLOAD
+      </button>
     </div>
   );
 }

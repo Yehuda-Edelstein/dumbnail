@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import TwitterPreview from "./preview/TwitterPreview";
-import "./Twitter.scss";
 import TwitterProfile from "./upload/profile/TwitterProfile";
 import Tweet from "./upload/tweet/Tweet";
+import "./Twitter.scss";
 
 const today = new Date();
 const year = today.getFullYear().toString().slice(-2);

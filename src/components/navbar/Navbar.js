@@ -4,14 +4,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navbar.scss";
 
 function Navbar({ path, setPath }) {
-  const [current, setCurrent] = useState("");
-  useEffect(() => {
-    setCurrent(window.location.pathname);
-  }, []);
+  // const [current, setCurrent] = useState("");
+  // useEffect(() => {
+  //   setCurrent(window.location.pathname);
+  // }, []);
 
   return (
     <div className="dumbnail-nav-container">
       <div className="dumbnail-nav">
+        <Link
+          to="/"
+          onClick={() => {
+            setPath({
+              icon: ["fa", "house"],
+              path: "Home",
+            });
+          }}
+          className="dumbnail-nav-link"
+        >
+          <FontAwesomeIcon className="icon" icon={["fa", "house"]} />
+          <div>Home</div>
+        </Link>
         <label>LAYOUTS</label>
         <Link
           to="youtube"

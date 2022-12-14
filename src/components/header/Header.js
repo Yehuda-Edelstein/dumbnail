@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import logo from "./../../static/logo.png";
 import small from "./../../static/small-screen-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dropdown } from "react-bootstrap";
 
 function Header({ path, setPath, show, setShow, handleShow }) {
   useEffect(() => {
@@ -55,6 +54,20 @@ function Header({ path, setPath, show, setShow, handleShow }) {
             </div>
             {show && (
               <div className="dumbnail-header-nav">
+                <Link
+                  to="/"
+                  onClick={() => {
+                    handleShow();
+                    setPath({
+                      icon: ["fa", "house"],
+                      path: "Home",
+                    });
+                  }}
+                  className="dumbnail-header-nav-link"
+                >
+                  <FontAwesomeIcon className="icon" icon={["fa", "house"]} />
+                  <div>Home</div>
+                </Link>
                 <label>LAYOUTS</label>
                 <Link
                   to="youtube"

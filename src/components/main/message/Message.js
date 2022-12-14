@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import MessagePreview from "./preview/MessagePreview";
 import MessageUpload from "./upload/MessageUpload";
 import "./Message.scss";
-import Ad from "../ad/Ad";
 
 function Message(props) {
   const [contact, setContact] = useState("Contact");
@@ -14,7 +13,7 @@ function Message(props) {
   ]);
   const [isActive, setIsActive] = useState(false);
   return (
-    <div className="content p-3 pt-0">
+    <div className="main-content">
       <MessageUpload
         messages={messages}
         setMessages={setMessages}
@@ -28,7 +27,6 @@ function Message(props) {
         contact={contact}
         isActive={isActive}
       />
-      <Ad dataAdSlot="9875745235" />
     </div>
   );
 }

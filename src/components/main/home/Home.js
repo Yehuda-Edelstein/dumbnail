@@ -11,8 +11,8 @@ import "./Home.scss";
 function Home() {
   return (
     <div className="Home">
-      Home | Add a slide show of funny images and some random notes/coming
-      soon/explanation
+      Home | The Ultimate Memeshot Maker | Add a slide show of funny images and
+      some random notes/coming soon/explanation
     </div>
   );
 }

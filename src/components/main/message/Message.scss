@@ -2,3 +2,38 @@
   display: flex;
   justify-content: flex-start;
 }
+
+@media screen and (max-width: 450px) {
+  .main-content {
+    margin: 0;
+    border-radius: 0;
+    min-width: 100vw;
+    .message-upload-container {
+      min-width: 100%;
+      // min-width: 320px;
+      margin: 0;
+    }
+    .message-preview {
+      margin: 0;
+      margin-top: 20px;
+      border-radius: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main-content {
+    margin: 0;
+    border-radius: 0;
+    min-width: 100vw;
+    .message-upload-container {
+      min-width: 320px;
+      margin: 0;
+    }
+    .message-preview {
+      margin: 0;
+      margin-top: 20px;
+      border-radius: 0;
+    }
+  }
+}

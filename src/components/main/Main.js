@@ -19,9 +19,9 @@ function Main(props) {
         <Route path="/messages" element={<Message />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      <div>
+      {/* <div>
         <Ad />
-      </div>
+      </div> */}
     </div>
   );
 }
