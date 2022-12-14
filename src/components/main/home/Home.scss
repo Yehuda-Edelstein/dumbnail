@@ -2,6 +2,7 @@
   padding: 2rem;
   padding-top: 1em;
   width: 100%;
+  min-width: 320px;
 
   .memeshot {
     text-decoration: none;
@@ -32,10 +33,9 @@
 
   .example-pics {
     max-width: 500px;
+
     img {
-      // border: 1px solid red;
       max-width: 500px;
-      min-width: 288px;
       &:hover {
         cursor: pointer;
         opacity: 0.75;
@@ -62,6 +62,19 @@
   .home {
     .example-pics {
       width: 90vw;
+
+      img {
+        width: inherit;
+        padding-right: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .home {
+    .example-pics {
+      width: 290px;
 
       img {
         width: inherit;
