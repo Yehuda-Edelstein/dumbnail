@@ -26,10 +26,10 @@ function Home({ setPath }) {
       <div>
         <div className="d-grid">
           <div className="example-title">YouTube</div>
-          <div className="example-pics d-grid">
+          <div className=" d-grid">
             <Link
+              className="example-pics"
               to="youtube"
-              className="dumbnail-nav-link"
               onClick={() => {
                 setPath({ icon: ["fa-brands", "youtube"], path: "YouTube" });
               }}
@@ -46,10 +46,10 @@ function Home({ setPath }) {
         <br></br>
         <div>
           <div className="example-title">Twitter</div>
-          <div className="example-pics d-grid">
+          <div className="d-grid">
             <Link
+              className="example-pics"
               to="twitter"
-              className="dumbnail-nav-link"
               onClick={() => {
                 setPath({ icon: ["fa-brands", "twitter"], path: "Twitter" });
               }}
@@ -64,10 +64,10 @@ function Home({ setPath }) {
         <br></br>
         <div>
           <div className="example-title">iMessage</div>
-          <div className="example-pics d-grid">
+          <div className="d-grid">
             <Link
+              className="example-pics"
               to="messages"
-              className="dumbnail-nav-link"
               onClick={() => {
                 setPath({ icon: ["fa", "comment"], path: "iMessage" });
               }}
