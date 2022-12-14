@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MessagePreview from "./preview/MessagePreview";
 import MessageUpload from "./upload/MessageUpload";
+import "./Message.scss";
 
 function Message(props) {
   const [contact, setContact] = useState("Contact");
@@ -8,27 +9,24 @@ function Message(props) {
   const [messages, setMessages] = useState([
     { id: 0, from: "", day: "Today", time: "1:03", type: "time" },
     { id: 1, from: "you", msg: "U up?", type: "text" },
-    { id: 2, from: "contact", msg: "no", type: "text" },
+    { id: 2, from: "Contact", msg: "no", type: "text" },
   ]);
   const [isActive, setIsActive] = useState(false);
   return (
-    <div className="content d-flex p-3 pt-0">
-      <div>
-        <MessageUpload
-          messages={messages}
-          setMessages={setMessages}
-          contact={contact}
-          setContact={setContact}
-          setIsActive={setIsActive}
-        />
-      </div>
-      <div>
-        <MessagePreview
-          messages={messages}
-          contact={contact}
-          isActive={isActive}
-        />
-      </div>
+    <div className="main-content">
+      <MessageUpload
+        messages={messages}
+        setMessages={setMessages}
+        contact={contact}
+        setContact={setContact}
+        setIsActive={setIsActive}
+      />
+
+      <MessagePreview
+        messages={messages}
+        contact={contact}
+        isActive={isActive}
+      />
     </div>
   );
 }

@@ -1,0 +1,132 @@
+$width: 254.98px;
+$height: 143.42px;
+
+.crop-container {
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-size: contain;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .crop-container-body {
+    display: flex;
+    margin-bottom: 10px;
+    .arrow-up,
+    .arrow-down,
+    .arrow-left,
+    .arrow-right {
+      text-align: center;
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 4px;
+      text-decoration: none;
+      font-weight: 300;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+    }
+
+    .arrow-left,
+    .arrow-right {
+      min-width: 32px;
+      display: flex;
+      justify-content: center;
+      margin: 32px 0;
+    }
+    .pic-container {
+      max-width: 400px;
+      aspect-ratio: calc($width / $height);
+      overflow: hidden;
+      background-color: black;
+    }
+  }
+
+  .crop-container-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    .icon-enabled {
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-weight: 300;
+
+      svg {
+        font-size: 1.5em;
+      }
+
+      span {
+        font-size: 1em;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+    }
+
+    .icon-disabled {
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+      opacity: 0.5;
+      svg {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .crop-container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icon-enabled {
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+
+      span {
+        font-size: 0.5em;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+    }
+
+    .icon-disabled {
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+      opacity: 0.5;
+    }
+  }
+}

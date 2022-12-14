@@ -1,0 +1,376 @@
+// light mode colors
+$light-gray: rgb(96, 106, 107);
+$light-blue: rgb(71, 164, 227);
+$light-black: rgb(45, 50, 52);
+$light-handle-gray: rgb(121, 132, 140);
+// dark mode colors
+$dark-gray: #717374;
+$dark-blue: rgb(33 166 255);
+$dark-handle-gray: #717374;
+
+.twitter-preview {
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  padding-bottom: 0;
+  margin: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+
+  .twitter-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+
+    h4 {
+      font-size: 20px;
+      text-align: center;
+      color: rgba(128, 128, 128, 0.5);
+      margin-bottom: 0;
+    }
+  }
+
+  .light,
+  .dark {
+    border: 1px solid black;
+  }
+
+  .light {
+    background-color: #ffffff;
+
+    .twitter-options {
+      color: $light-gray;
+      opacity: 0.3;
+      font-size: 12px;
+    }
+    .twitter-name {
+      color: $light-black;
+      overflow-wrap: break-word;
+    }
+
+    .twitter-handle {
+      color: $light-handle-gray;
+    }
+
+    .tweet {
+      font-weight: 300;
+      overflow-wrap: break-word;
+    }
+
+    .tweet-time,
+    .tweet-date {
+      color: $light-gray;
+    }
+
+    .tweet-bullet {
+      background-color: $light-gray;
+    }
+
+    .tweet-device {
+      color: $light-blue;
+    }
+  }
+
+  .dark {
+    background-color: #000000;
+
+    .twitter-options {
+      color: $dark-gray;
+      opacity: 0.5;
+      font-size: 12px;
+    }
+
+    .twitter-name {
+      color: #ffffff;
+      overflow-wrap: break-word;
+    }
+
+    .twitter-handle {
+      color: $dark-handle-gray;
+    }
+
+    .tweet {
+      color: #ffffff;
+      font-weight: 200;
+      overflow-wrap: break-word;
+    }
+
+    .tweet-time,
+    .tweet-date {
+      color: $dark-gray;
+    }
+
+    .tweet-bullet {
+      background-color: $dark-gray;
+    }
+
+    .tweet-device {
+      color: $dark-blue;
+    }
+  }
+
+  .twitter-preview-container {
+    padding: 10px 20px 5px 10px;
+
+    .account-info {
+      margin-bottom: 4px;
+      line-height: 15px;
+
+      .twitter-options {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-top: 7px;
+      }
+
+      .twitter-popular-prof {
+        width: 48px;
+        height: 48px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 0.25px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .twitter-custom-prof {
+        background-color: rgb(29, 155, 240);
+        width: 48px;
+        height: 48px;
+        margin-right: 5px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .twitter-prof {
+        width: 48px;
+        height: 48px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 1px dashed rgba(29, 155, 240, 0.5);
+        background-color: rgba(29, 155, 240, 0.1);
+      }
+
+      .indent {
+        font-size: 13px;
+        padding-top: 5px;
+        height: 5px;
+      }
+
+      .twitter-name {
+        margin-top: 2px;
+        font-weight: 700;
+      }
+
+      .verified,
+      .verified-dark {
+        width: 15.02px;
+        height: 15.02px;
+        margin-left: 3px;
+        margin-top: 1px;
+      }
+    }
+
+    .tweet {
+      line-height: 28px;
+      font-size: 23px;
+      margin: 30px 0 20px 0;
+    }
+
+    .tweet-info {
+      display: flex;
+      .tweet-time,
+      .tweet-date {
+        font-size: 14px;
+      }
+
+      .tweet-bullet {
+        display: flex;
+        margin: auto 5px;
+        width: 2px;
+        height: 2px;
+        border-radius: 100%;
+      }
+
+      .tweet-device {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .twitter-download {
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+    border-top: none;
+    background-color: rgba(29, 155, 240);
+    width: 100%;
+    margin-right: 40px;
+    color: white;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+  }
+
+  .notes {
+    color: #aaaaaa;
+    font-size: 9px;
+    margin-top: 10px;
+
+    ul {
+      padding-left: 5px;
+      list-style: none;
+    }
+  }
+}
+
+@media screen and (min-width: 451px) {
+  .twitter-preview {
+    max-width: 413px;
+    width: 413px;
+
+    .twitter-preview-container {
+      min-width: 370px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .twitter-preview {
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    min-width: none;
+    padding-right: 0;
+
+    .twitter-preview-header {
+      padding-right: 20px;
+    }
+
+    .small-screen-margin {
+      margin-right: 20px;
+    }
+    .twitter-preview-container {
+      min-width: none;
+      .account-info {
+        position: relative;
+        .twitter-prof {
+          width: 11vw;
+          height: 11vw;
+        }
+
+        .twitter-name,
+        .twitter-handle {
+          font-size: 3vw;
+        }
+        .twitter-handle {
+          position: absolute;
+          bottom: calc(3vw - 3px);
+        }
+
+        .twitter-options {
+          font-size: 3vw;
+        }
+      }
+      .tweet {
+        font-size: 6vw;
+        margin: 6vw 0 4vw 0;
+      }
+
+      .tweet-info {
+        .tweet-time,
+        .tweet-date,
+        .tweet-device {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .twitter-preview {
+    .twitter-preview-container {
+      .account-info {
+        .twitter-handle {
+          position: absolute;
+          bottom: calc(3vw - 4px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .twitter-preview {
+    .twitter-preview-container {
+      .account-info {
+        .twitter-handle {
+          position: absolute;
+          bottom: calc(3vw - 6px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .twitter-preview {
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    min-width: none;
+    padding-right: 0;
+
+    .twitter-download {
+      min-width: 280px;
+    }
+
+    .twitter-preview-header {
+      padding-right: 20px;
+      min-width: 300px;
+    }
+
+    .small-screen-margin {
+      margin-right: 20px;
+    }
+    .twitter-preview-container {
+      min-width: 280px;
+
+      .account-info {
+        .twitter-prof {
+          width: 35px;
+          height: 35px;
+        }
+
+        .twitter-name,
+        .twitter-handle {
+          font-size: 10px;
+        }
+        .twitter-handle {
+          bottom: 2px;
+        }
+      }
+      .tweet {
+        font-size: 19px;
+        margin: 19px 0 12px 0;
+      }
+
+      .tweet-info {
+        .tweet-time,
+        .tweet-date,
+        .tweet-device {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.info-container {
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 20px;
+  margin-right: 0;
+  height: fit-content;
+  max-width: 413px;
+
+  .info-content {
+    margin-top: 10px;
+    .input-container {
+      .views-input,
+      .posted-input {
+        min-width: 80px;
+        margin-right: 10px;
+      }
+    }
+
+    .input-container {
+      margin-bottom: 3px;
+      height: fit-content;
+      display: flex;
+
+      .ago-select {
+        background-color: rgba(128, 128, 128, 0.1);
+        outline: none;
+        border: 1px dashed rgba(128, 128, 128, 0.75);
+        padding: 2px 0;
+      }
+
+      input,
+      input:focus {
+        margin-bottom: 10px;
+        padding-left: 10px;
+        font-size: 15px;
+        outline: none;
+        border: 1px dashed rgba(128, 128, 128, 0.75);
+      }
+
+      input {
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+
+      input:focus {
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info-container {
+    overflow: hidden;
+    width: fit-content;
+
+    .info-content {
+      width: 100vw;
+      padding-right: 40px;
+      min-width: 320px;
+    }
+  }
+}

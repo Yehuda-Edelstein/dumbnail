@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MessageUpload.scss";
+import you from "./../../../../static/you-btn.png";
+import them from "./../../../../static/them-btn.png";
 
 function MessageUpload({
   messages,
@@ -102,53 +104,58 @@ function MessageUpload({
   }
 
   return (
-    <div>
-      <div className="message-upload-container">
-        <div className="d-grid">
-          <h5>Convo</h5>
-          <input
-            type="text"
-            placeholder="Contact"
-            onChange={(ev) => {
-              setIsActive(true);
-              updateContact(contact, ev.target.value);
-            }}
-          />
-        </div>
-        <div className="message-convo-container">
-          <div>
-            {messages.map((m) => {
-              return m.type === "text" ? (
-                <div className="d-flex" key={m.id}>
-                  <textarea
-                    rows="1"
-                    placeholder="New Message"
-                    value={m.msg}
-                    onChange={(ev) => {
-                      updateMessage(m.id, ev.target.value);
+    <div className="message-upload-container">
+      <div className="convo-header">
+        <h5>Convo</h5>
+      </div>
+      <div className="d-grid">
+        <input
+          type="text"
+          placeholder="Contact..."
+          onChange={(ev) => {
+            setIsActive(true);
+            updateContact(contact, ev.target.value);
+          }}
+        />
+      </div>
+      <div className="message-convo-container">
+        <div className="message-container">
+          {messages.map((m) => {
+            return m.type === "text" ? (
+              <div className="message" key={m.id}>
+                <textarea
+                  rows="1"
+                  placeholder="Message..."
+                  value={m.msg}
+                  onChange={(ev) => {
+                    updateMessage(m.id, ev.target.value);
+                  }}
+                ></textarea>
+                <div className="message-buttons-container">
+                  <img
+                    className={
+                      m.from === contact
+                        ? "change-them-btn active"
+                        : "change-them-btn"
+                    }
+                    src={them}
+                    alt=""
+                    onClick={(ev) => {
+                      updateFrom(m.id, contact);
                     }}
-                  ></textarea>
-                  {m.from === "you" && m.type !== "time" && (
-                    <select
-                      onChange={(ev) => {
-                        updateFrom(m.id, ev.target.value);
-                      }}
-                    >
-                      <option value="you">you</option>
-                      <option value={contact}>{contact.match(/[^\s]+/)}</option>
-                    </select>
-                  )}
-                  {m.from !== "you" && (
-                    <select
-                      onChange={(ev) => {
-                        updateFrom(m.id, ev.target.value);
-                      }}
-                    >
-                      <option value={contact}>{contact.match(/[^\s]+/)}</option>
-                      <option value="you">you</option>
-                    </select>
-                  )}
-
+                  />
+                  <img
+                    className={
+                      m.from === "you"
+                        ? "change-them-btn active"
+                        : "change-them-btn"
+                    }
+                    src={you}
+                    alt=""
+                    onClick={(ev) => {
+                      updateFrom(m.id, "you");
+                    }}
+                  />
                   <FontAwesomeIcon
                     onClick={() => deleteMessage(m.id)}
                     key={m.id}
@@ -156,61 +163,40 @@ function MessageUpload({
                     icon={["fa", "trash"]}
                   />
                 </div>
-              ) : (
-                <div key={m.id}>
-                  {m.type === "time" ? (
-                    <div className="d-grid">
-                      {/* <label>Time</label> */}
-                      <div className="d-flex">
-                        <select
-                          className="day-select"
-                          value={m.day}
-                          onChange={(ev) => {
-                            setIsActive(true);
-                            updateDay(m.id, ev.target.value);
-                          }}
-                        >
-                          <option value="Today">Today</option>
-                          <option value="Yesterday">Yesterday</option>
-                          <option value="Sunday">Sunday</option>
-                          <option value="Monday">Monday</option>
-                          <option value="Tuesday">Tuesday</option>
-                          <option value="Wednesday">Wednesday</option>
-                          <option value="Thursday">Thursday</option>
-                          <option value="Friday">Friday</option>
-                          <option value="Saturday">Saturday</option>
-                          {/* <option>Shabbos</option> */}
-                        </select>
-                        <input
-                          type="time"
-                          value={army(m.time)}
-                          onChange={(ev) => {
-                            setIsActive(true);
-                            updateTime(m.id, ev.target.value);
-                          }}
-                        />
-                        <FontAwesomeIcon
-                          onClick={() => {
-                            setIsActive(true);
-                            deleteMessage(m.id);
-                          }}
-                          key={m.id}
-                          className="delete-message"
-                          icon={["fa", "trash"]}
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <div key={m.id} className="d-flex">
+              </div>
+            ) : (
+              <div key={m.id}>
+                {m.type === "time" ? (
+                  <div className="d-grid">
+                    {/* <label>Time</label> */}
+                    <div className="message">
                       <select
                         className="day-select"
+                        value={m.day}
                         onChange={(ev) => {
-                          updateMessage(m.id, ev.target.value);
+                          setIsActive(true);
+                          updateDay(m.id, ev.target.value);
                         }}
                       >
-                        <option value="Delivered">Delivered</option>
-                        {/* <option value="Read">Read</option> */}
+                        <option value="Today">Today</option>
+                        <option value="Yesterday">Yesterday</option>
+                        <option value="Sunday">Sunday</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        {/* <option>Shabbos</option> */}
                       </select>
+                      <input
+                        type="time"
+                        value={army(m.time)}
+                        onChange={(ev) => {
+                          setIsActive(true);
+                          updateTime(m.id, ev.target.value);
+                        }}
+                      />
                       <FontAwesomeIcon
                         onClick={() => {
                           setIsActive(true);
@@ -221,24 +207,37 @@ function MessageUpload({
                         icon={["fa", "trash"]}
                       />
                     </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                  </div>
+                ) : (
+                  <div key={m.id} className="message justify-content-between">
+                    <div className="delivered">Delivered</div>
+                    <FontAwesomeIcon
+                      onClick={() => {
+                        setIsActive(true);
+                        deleteMessage(m.id);
+                      }}
+                      key={m.id}
+                      className="delete-message"
+                      icon={["fa", "trash"]}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-        <div className="new-message-container d-flex">
-          <div className="new-messages">
-            <div className="new-message" onClick={addMessage}>
-              +Message
+      </div>
+      <div className="new-message-container d-flex">
+        <div className="new-messages">
+          <div className="new-message" onClick={addMessage}>
+            +Message
+          </div>
+          <div className="d-flex justify-content-between">
+            <div className="new-delivered" onClick={addStatus}>
+              +Delivered
             </div>
-            <div className="d-flex justify-content-between">
-              <div className="new-delivered" onClick={addStatus}>
-                +Delivered
-              </div>
-              <div className="new-time" onClick={addTime}>
-                +Time
-              </div>
+            <div className="new-time" onClick={addTime}>
+              +Time
             </div>
           </div>
         </div>

@@ -1,3 +1,23 @@
 .App {
   min-height: 100%;
+  min-width: 100%;
+
+  h5 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .site {
+    display: flex;
+    min-height: 100%;
+    // figure out why i need this
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .site {
+    flex-direction: column;
+  }
 }
