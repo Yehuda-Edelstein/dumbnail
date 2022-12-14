@@ -154,6 +154,7 @@ function TwitterProfile({
                         className="profile"
                         key={pop.handle}
                         onClick={() => {
+                          console.log(pop);
                           setIsPopular(true);
                           setSelectedProf();
                           setPopular(pop.img);

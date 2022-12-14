@@ -7,7 +7,7 @@ import Message from "../main/message/Message";
 import About from "../main/about/About";
 import "./Main.scss";
 import Home from "./home/Home";
-import Ad from "./ad/Ad";
+// import Ad from "./ad/Ad";
 
 function Main(props) {
   return (

@@ -64,6 +64,8 @@ function Twitter(props) {
     <div className="main-content">
       <div className="upload-content">
         <TwitterProfile
+          setName={setName}
+          setHandle={setHandle}
           setIsPopular={setIsPopular}
           isPopular={isPopular}
           setPopular={setPopular}
@@ -101,6 +103,8 @@ function Twitter(props) {
         >
           <Tab eventKey="profile" title="Profile">
             <TwitterProfile
+              setName={setName}
+              setHandle={setHandle}
               setIsPopular={setIsPopular}
               isPopular={isPopular}
               setPopular={setPopular}

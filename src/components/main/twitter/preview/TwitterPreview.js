@@ -20,7 +20,6 @@ function TwitterPreview({
   time,
   date,
   device,
-  isActive,
   isPopular,
   popular,
   previewProf,
