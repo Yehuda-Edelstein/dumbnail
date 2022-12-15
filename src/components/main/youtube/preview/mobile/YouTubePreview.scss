@@ -29,6 +29,10 @@ $desc-font: 12.5px;
     }
   }
 
+  .loading {
+    opacity: 0.5;
+  }
+
   .light,
   .dark {
     .time-stamp {
@@ -286,7 +290,10 @@ $desc-font: 12.5px;
       position: relative;
     }
   }
+
   .youtube-download {
+    display: flex;
+    justify-content: center;
     text-align: center;
     align-items: center;
     border: none;

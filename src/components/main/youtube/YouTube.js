@@ -34,6 +34,8 @@ function YouTube() {
   const [template, setTemplate] = useState();
   const [isChannelTemp, setIsChannelTemp] = useState(false);
   const [channelTemp, setChannelTemp] = useState();
+  // loading
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!selectedThumb) {
@@ -47,11 +49,13 @@ function YouTube() {
   }, [selectedThumb]);
 
   function uploadThumbnail(ev) {
+    setIsLoading(true);
     if (!ev.target.files || ev.target.files.length === 0) {
       setSelectedThumb(undefined);
       return;
     }
     setSelectedThumb(ev.target.files[0]);
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -246,6 +250,8 @@ function YouTube() {
           template={template}
           channelTemp={channelTemp}
           isChannelTemp={isChannelTemp}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
         />
       </div>
     </div>

@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
-import * as htmlToImage from "html-to-image";
+import { toPng } from "html-to-image";
 import "./YouTubePreview.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Switch from "../../../switch/Switch";
+import Spinner from "react-bootstrap/Spinner";
 
 function YouTubePreview({
   switchDevice,
@@ -30,19 +31,23 @@ function YouTubePreview({
   template,
   channelTemp,
   isChannelTemp,
+  isLoading,
+  setIsLoading,
 }) {
   const mobileRef = useRef(null);
-  const download = async () => {
-    try {
-      const dataUrl = await htmlToImage.toPng(mobileRef.current, {});
-      const link = document.createElement("a");
-      link.download = "youtube.png";
-      link.href = dataUrl;
-      link.click();
-    } catch (err) {
-      console.log("Ohhhh nooo!");
-      console.log(err);
-    }
+  const download = () => {
+    setIsLoading(true);
+    toPng(mobileRef.current, {})
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "youtube.png";
+        link.href = dataUrl;
+        link.click();
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const x = channelPicX * 0.1;
@@ -73,8 +78,11 @@ function YouTubePreview({
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
       <div
-        className="small-screen-margin border border-dark
-"
+        className={
+          isLoading
+            ? "small-screen-margin border border-dark loading"
+            : "small-screen-margin border border-dark"
+        }
       >
         <div
           ref={mobileRef}
@@ -159,9 +167,15 @@ function YouTubePreview({
             </div>
           </div>
         </div>
-        <button className="youtube-download" onClick={download}>
-          DOWNLOAD
-        </button>
+        <div className="youtube-download" onClick={download}>
+          {isLoading ? (
+            <div className="spinner">
+              <Spinner size="sm" />
+            </div>
+          ) : (
+            <div className="download">DOWNLOAD</div>
+          )}
+        </div>
       </div>
       <div className="notes">
         <ul>
