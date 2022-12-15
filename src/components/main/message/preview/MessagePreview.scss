@@ -116,7 +116,9 @@ $dm-background: rgb(0, 0, 0);
     .message-body {
       padding: 7px 10px;
       max-height: 418px;
-      overflow: scroll;
+      overflow: hidden;
+      max-height: 395px;
+
       // font-family: "SF-Pro";
 
       .message-text {

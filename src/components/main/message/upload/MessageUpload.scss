@@ -189,6 +189,13 @@ $them: rgb(49, 49, 50);
   }
 }
 
+@media screen and (min-width: 881px) {
+  .message-upload-container {
+    min-width: 413px;
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (min-width: 451px) {
   .message-upload-container {
     min-width: 413px;
