@@ -53,7 +53,6 @@ function MessageUpload({
   }
 
   function addMessage() {
-    setIsActive(true);
     const arr = [...messages];
     const n = { id: arr.length, from: "you", msg: "", type: "text" };
     arr.push(n);
@@ -61,7 +60,6 @@ function MessageUpload({
   }
 
   function addStatus() {
-    setIsActive(true);
     const arr = [...messages];
     const n = { id: arr.length, from: "", msg: "Delivered", type: "status" };
     arr.push(n);
@@ -140,7 +138,7 @@ function MessageUpload({
                     }
                     src={them}
                     alt=""
-                    onClick={(ev) => {
+                    onClick={() => {
                       updateFrom(m.id, contact);
                     }}
                   />

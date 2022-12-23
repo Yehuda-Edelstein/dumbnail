@@ -9,8 +9,31 @@
   height: fit-content;
   max-width: 413px;
 
+  .info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon-enabled {
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+    }
+  }
+
   .info-content {
     margin-top: 10px;
+
     .input-container {
       .views-input,
       .posted-input {

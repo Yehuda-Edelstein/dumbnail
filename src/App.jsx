@@ -1,7 +1,11 @@
 import "./App.scss";
 import Header from "./components/header/Header";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faInstagram,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faHouse,
   faArrowDown,
@@ -33,6 +37,7 @@ library.add(
   faHouse,
   faYoutube,
   faTwitter,
+  faInstagram,
   faComment,
   faArrowUp,
   faArrowDown,
@@ -56,7 +61,11 @@ library.add(
 );
 
 function App() {
-  const [path, setPath] = useState({ icon: ["fa", "home"], path: "Home" });
+  const [path, setPath] = useState({
+    icon: ["fa", "home"],
+    path: "Home",
+    img: null,
+  });
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
 

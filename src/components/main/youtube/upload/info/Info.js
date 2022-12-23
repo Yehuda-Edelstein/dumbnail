@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./Info.scss";
 
 function Info({
@@ -49,63 +51,92 @@ function Info({
     );
   }
 
+  function reset() {
+    const f = document.getElementById("clear-form");
+    f.value = "";
+    setTitle("Title");
+    setChannelName("Channel");
+    setViews("69K");
+    setTimeAgo("23");
+    setIncrement("minute");
+    setDuration("4:20");
+  }
+
   return (
     <div className="info-container">
       <div className="info-header">
         <h5>Info</h5>
+        <div className="d-flex">
+          <div>
+            <OverlayTrigger
+              key={"top"}
+              placement={"top"}
+              delay={{ show: "700", hide: "100" }}
+              overlay={<Tooltip id={"tooltip-top"}>Reset</Tooltip>}
+            >
+              <FontAwesomeIcon
+                icon={["fa", "rotate-left"]}
+                onClick={reset}
+                className={"icon-enabled"}
+              />
+            </OverlayTrigger>
+          </div>
+        </div>
       </div>
       <div className="info-content">
-        <div className="input-container d-grid">
-          <input
-            placeholder="Title..."
-            onChange={(ev) => setTitle(ev.target.value)}
-            maxLength="100"
-          ></input>
-        </div>
-        <div className="input-container d-grid">
-          <input
-            placeholder="Channel name..."
-            onChange={(ev) => setChannelName(ev.target.value)}
-            maxLength="60"
-          ></input>
-        </div>
-        <div className="d-flex justify-content-between">
+        <form id="clear-form">
           <div className="input-container d-grid">
             <input
-              placeholder="Views..."
-              className="views-input"
-              type="number"
-              onChange={calcViews}
+              placeholder="Title..."
+              onChange={(ev) => setTitle(ev.target.value)}
+              maxLength="100"
             ></input>
           </div>
           <div className="input-container d-grid">
             <input
-              placeholder="Posted..."
-              className="posted-input"
-              type="number"
-              onChange={(ev) => setTimeAgo(ev.target.value)}
+              placeholder="Channel name..."
+              onChange={(ev) => setChannelName(ev.target.value)}
+              maxLength="60"
             ></input>
           </div>
-          <div className="input-container d-grid">
-            <select
-              className="ago-select"
-              onChange={(ev) => setIncrement(ev.target.value)}
-            >
-              <option value="minute">minutes</option>
-              <option value="hour">hours</option>
-              <option value="day">days</option>
-              <option value="month">months</option>
-              <option value="year">years</option>
-            </select>
+          <div className="d-flex justify-content-between">
+            <div className="input-container d-grid">
+              <input
+                placeholder="Views..."
+                className="views-input"
+                type="number"
+                onChange={calcViews}
+              ></input>
+            </div>
+            <div className="input-container d-grid">
+              <input
+                placeholder="Posted..."
+                className="posted-input"
+                type="number"
+                onChange={(ev) => setTimeAgo(ev.target.value)}
+              ></input>
+            </div>
+            <div className="input-container d-grid">
+              <select
+                className="ago-select"
+                onChange={(ev) => setIncrement(ev.target.value)}
+              >
+                <option value="minute">minutes</option>
+                <option value="hour">hours</option>
+                <option value="day">days</option>
+                <option value="month">months</option>
+                <option value="year">years</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div className="input-container d-grid">
-          <input
-            type="number"
-            placeholder="Duration..."
-            onChange={calcDuration}
-          ></input>
-        </div>
+          <div className="input-container d-grid">
+            <input
+              type="number"
+              placeholder="Duration..."
+              onChange={calcDuration}
+            ></input>
+          </div>
+        </form>
       </div>
       {/* <div className="info-ad-box">AD BOX #2</div> */}
     </div>

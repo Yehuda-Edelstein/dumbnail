@@ -4,24 +4,31 @@ import "./Header.scss";
 import logo from "./../../static/logo.png";
 import small from "./../../static/small-screen-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import gpt from "../../static/chatGPT/icon.png";
 
 function Header({ path, setPath, show, setShow, handleShow }) {
   useEffect(() => {
     let w = window.location.pathname;
     if (w === "/") {
-      setPath({ icon: ["fa", "home"], path: "Home" });
+      setPath({ icon: ["fa", "home"], path: "Home", img: null });
     }
     if (w === "/youtube") {
-      setPath({ icon: ["fa-brands", "youtube"], path: "YouTube" });
+      setPath({ icon: ["fa-brands", "youtube"], path: "YouTube", img: null });
     }
     if (w === "/twitter") {
-      setPath({ icon: ["fa-brands", "twitter"], path: "Twitter" });
+      setPath({ icon: ["fa-brands", "twitter"], path: "Twitter", img: null });
     }
     if (w === "/messages") {
-      setPath({ icon: ["fa", "comment"], path: "iMessage" });
+      setPath({ icon: ["fa", "comment"], path: "iMessage", img: null });
+    }
+    // if (w === "/instagram") {
+    //   setPath({ icon:x ["fa-brands", "instagram"], path: "Instagram" });
+    // }
+    if (w === "/chatGPT") {
+      setPath({ icon: null, path: "ChatGPT", img: "chatGPT/icon.png" });
     }
     if (w === "/about") {
-      setPath({ icon: null, path: "About" });
+      setPath({ icon: null, path: "About", img: null });
     }
   }, []);
 
@@ -46,6 +53,13 @@ function Header({ path, setPath, show, setShow, handleShow }) {
               {path.icon && (
                 <FontAwesomeIcon className="dropdown-icon" icon={path.icon} />
               )}
+              {path.img && (
+                <img
+                  id="dropdown-icon"
+                  src={require(`../../static/${path.img}`)}
+                  alt=""
+                />
+              )}
               <div className="current-component">{path.path}</div>
               <FontAwesomeIcon
                 className="dropdown-chevron-icon"
@@ -61,6 +75,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                     setPath({
                       icon: ["fa", "house"],
                       path: "Home",
+                      img: null,
                     });
                   }}
                   className="dumbnail-header-nav-link"
@@ -76,6 +91,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                     setPath({
                       icon: ["fa-brands", "youtube"],
                       path: "YouTube",
+                      img: null,
                     });
                   }}
                   className="dumbnail-header-nav-link"
@@ -93,6 +109,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                     setPath({
                       icon: ["fa-brands", "twitter"],
                       path: "Twitter",
+                      img: null,
                     });
                   }}
                   className="dumbnail-header-nav-link"
@@ -107,12 +124,47 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                   to="messages"
                   onClick={() => {
                     handleShow();
-                    setPath({ icon: ["fa", "comment"], path: "iMessage" });
+                    setPath({
+                      icon: ["fa", "comment"],
+                      path: "iMessage",
+                      img: null,
+                    });
                   }}
                   className="dumbnail-header-nav-link"
                 >
                   <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
                   <div>iMessage</div>
+                </Link>
+                {/* <Link
+                  to="instagram"
+                  onClick={() => {
+                    handleShow();
+                    setPath({
+                      icon: ["fa-brands", "instagram"],
+                      path: "Instagram",
+                    });
+                  }}
+                  className="dumbnail-header-nav-link"
+                >
+                  <FontAwesomeIcon
+                    className="icon"
+                    icon={["fa-brands", "instagram"]}
+                  />
+                  <div>Instagram</div>
+                </Link> */}
+                <Link
+                  to="chatGPT"
+                  className="dumbnail-header-nav-link"
+                  onClick={() => {
+                    setPath({
+                      icon: null,
+                      path: "ChatGPT",
+                      img: "chatGPT/icon.png",
+                    });
+                  }}
+                >
+                  <img className="icon" src={gpt} alt="" />
+                  <div>ChatGPT</div>
                 </Link>
                 <Link
                   to="about"
