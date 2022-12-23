@@ -45,10 +45,10 @@ function Channel({
     setChannelName("Channel");
   }
 
-  function reset() {
-    setPreviewChannelPic();
-    setSelectedChannelPic();
-  }
+  // function reset() {
+  //   setPreviewChannelPic();
+  //   setSelectedChannelPic();
+  // }
 
   return (
     <div className="channel-container">
@@ -149,7 +149,7 @@ function Channel({
             </div>
             <div className="scroll-container">
               <div className="before-overlay"></div>
-              <div className="scroll d-flex">
+              <div className="scroll">
                 {data.map((pic) => {
                   return (
                     <OverlayTrigger

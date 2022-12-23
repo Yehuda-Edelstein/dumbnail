@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import facetime from "./../../../../static/video-icon.png";
 import "./MessagePreview.scss";
 
-function MessagePreview({ messages, contact, isActive }) {
+function MessagePreview({ messages, contact }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
   // switch
   const [switchDevice, setSwitchDevice] = useState(false);
@@ -15,10 +15,7 @@ function MessagePreview({ messages, contact, isActive }) {
   const messageRef = useRef(null);
   const downloadMessage = async () => {
     try {
-      const dataUrl = await htmlToImage.toPng(messageRef.current, {
-        // backgroundColor: "white",
-      });
-      // download image
+      const dataUrl = await htmlToImage.toPng(messageRef.current, {});
       const link = document.createElement("a");
       link.download = "message.png";
       link.href = dataUrl;

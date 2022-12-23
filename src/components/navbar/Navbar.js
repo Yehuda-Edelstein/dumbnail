@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navbar.scss";
+import gpt from "../../static/chatGPT/icon.png";
 
 function Navbar({ path, setPath }) {
-  // const [current, setCurrent] = useState("");
-  // useEffect(() => {
-  //   setCurrent(window.location.pathname);
-  // }, []);
-
   return (
     <div className="dumbnail-nav-container">
       <div className="dumbnail-nav">
@@ -55,6 +51,26 @@ function Navbar({ path, setPath }) {
         >
           <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
           <div>iMessage</div>
+        </Link>
+        {/* <Link
+          to="instagram"
+          className="dumbnail-nav-link"
+          onClick={() => {
+            setPath({ icon: ["fa-brands", "instagram"], path: "Instagram" });
+          }}
+        >
+          <FontAwesomeIcon className="icon" icon={["fa-brands", "instagram"]} />
+          <div>Instagram</div>
+        </Link> */}
+        <Link
+          to="chatGPT"
+          className="dumbnail-nav-link"
+          onClick={() => {
+            setPath({ icon: null, path: "ChatGPT", img: "chatGPT/icon.png" });
+          }}
+        >
+          <img className="icon" src={gpt} alt="" />
+          <div>ChatGPT</div>
         </Link>
       </div>
       <div>

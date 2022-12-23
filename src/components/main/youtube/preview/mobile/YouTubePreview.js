@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Switch from "../../../switch/Switch";
 import Spinner from "react-bootstrap/Spinner";
+import whatever from "../../../../../static/logo.png";
 
 function YouTubePreview({
   switchDevice,
@@ -140,8 +141,8 @@ function YouTubePreview({
               )}
             </div>
             <div className="info">
-              <div className="d-flex justify-content-between title">
-                <div className="d-flex">{title}</div>
+              <div className="d-flex justify-content-between">
+                <div className="d-flex title">{title}</div>
                 <div className="d-flex">
                   <FontAwesomeIcon
                     className="mobile-options"

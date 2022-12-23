@@ -10,6 +10,45 @@
     justify-content: center;
     position: absolute;
 
+    .upload-container {
+      background-color: white;
+      border: 0.5px solid rgba(128, 128, 128, 0.75);
+      border-radius: 4px;
+      padding: 20px;
+      margin: 20px;
+      margin-bottom: 20px;
+      margin-right: 0;
+      height: fit-content;
+      max-width: 413px;
+      min-width: 290px;
+    }
+
+    // .preview {
+    //   background-color: white;
+    //   border: 0.5px solid rgba(128, 128, 128, 0.75);
+    //   border-radius: 4px;
+    //   padding: 20px;
+    //   // padding-bottom: 0;
+    //   margin: 20px;
+    //   height: fit-content;
+    //   position: sticky;
+    //   top: 90px;
+
+    //   .preview-header {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     margin: 10px 0;
+
+    //     h4 {
+    //       font-size: 20px;
+    //       text-align: center;
+    //       color: rgba(128, 128, 128, 0.5);
+    //       margin-bottom: 0;
+    //     }
+    //   }
+    // }
+
     .upload-content {
       display: flex;
       flex-direction: column;

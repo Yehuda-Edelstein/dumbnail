@@ -7,6 +7,8 @@ import Message from "../main/message/Message";
 import About from "../main/about/About";
 import "./Main.scss";
 import Home from "./home/Home";
+import Instagram from "./instagram/Instagram";
+import ChatGPT from "./chatGPT/chatGPT";
 // import Ad from "./ad/Ad";
 
 function Main({ setPath }) {
@@ -17,6 +19,8 @@ function Main({ setPath }) {
         <Route path="/youtube" element={<YouTube />} />
         <Route path="/twitter" element={<Twitter />} />
         <Route path="/messages" element={<Message />} />
+        {/* <Route path="/instagram" element={<Instagram />} /> */}
+        <Route path="/chatGPT" element={<ChatGPT />} />
         <Route path="/about" element={<About />} />
       </Routes>
       {/* <div>

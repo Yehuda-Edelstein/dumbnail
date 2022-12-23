@@ -131,6 +131,7 @@ $channel-pic-height: 38px;
     }
 
     .scroll {
+      display: flex;
       overflow-x: scroll;
       max-width: 330px;
       padding-bottom: 20px;

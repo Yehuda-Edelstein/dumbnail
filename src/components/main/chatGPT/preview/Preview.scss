@@ -1,0 +1,231 @@
+$green: rgb(16, 163, 127);
+$you: #35353f;
+$GPT: #444753;
+$border: #2e2d37;
+
+.preview {
+  min-width: 440px;
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  // padding-bottom: 0;
+  margin: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+
+  .chat-body {
+    max-height: 450px;
+    overflow: hidden;
+    .message-from-GPT,
+    .message-from-you {
+      color: white;
+      display: flex;
+      font-size: 16px;
+      border-bottom: 1px solid $border;
+      img,
+      .pic {
+        width: 30px;
+        height: 30px;
+        border-radius: 0.125rem;
+        margin: 17px;
+      }
+
+      .message {
+        max-width: 240px;
+        margin: 16px 0;
+        word-wrap: break-word;
+      }
+    }
+
+    .message-from-you {
+      background-color: $you;
+      .pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+      }
+    }
+
+    .message-from-GPT {
+      background-color: $GPT;
+      .thumbs {
+        width: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: 15px;
+        margin-right: 20px;
+        img {
+          width: 16px;
+          height: 16px;
+          margin: 0;
+        }
+
+        #rotate {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .chat-download {
+    text-align: center;
+    align-items: center;
+    // border: 1px solid black;
+    border: none;
+    background-color: $green;
+    width: 100%;
+    // margin-right: 40px;
+    color: white;
+    padding: 10px;
+    // min-width: 280px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+  }
+
+  .notes {
+    color: #aaaaaa;
+    font-size: 9px;
+    margin-top: 10px;
+
+    ul {
+      padding-left: 5px;
+      list-style: none;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .preview {
+    min-width: 100%;
+    margin: 0;
+    border-radius: 0;
+
+    .chat-body {
+      .message-from-GPT,
+      .message-from-you {
+        color: white;
+        display: flex;
+        font-size: 3.6vw;
+        border-bottom: 0.25vw solid $border;
+        img,
+        .pic {
+          width: 7vw;
+          height: 7vw;
+          border-radius: 0.125rem;
+          margin: 3.7vw;
+        }
+
+        .message {
+          max-width: 50vw;
+          margin: 3.7vw 0;
+          word-wrap: break-word;
+        }
+      }
+      .message-from-you {
+        background-color: $you;
+        .pic {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 4vw;
+        }
+      }
+
+      .message-from-GPT {
+        background-color: $GPT;
+        .thumbs {
+          width: 14.8vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-left: auto;
+          margin-top: auto;
+          margin-bottom: 3.5vw;
+          margin-right: 4vw;
+          img {
+            width: 3.7vw;
+            height: 3.7vw;
+            margin: 0;
+          }
+
+          #rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .preview {
+    min-width: 100%;
+    margin: 0;
+    border-radius: 0;
+
+    .chat-body {
+      .message-from-GPT,
+      .message-from-you {
+        color: white;
+        display: flex;
+        font-size: 11.5px;
+        border-bottom: 0.25px solid $border;
+        img,
+        .pic {
+          width: 22.5px;
+          height: 22.5px;
+          border-radius: 0.125rem;
+          margin: 12px;
+        }
+
+        .message {
+          max-width: 240px;
+          margin: 12px 0;
+          word-wrap: break-word;
+        }
+      }
+      .message-from-you {
+        background-color: $you;
+        .pic {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+        }
+      }
+
+      .message-from-GPT {
+        background-color: $GPT;
+        .thumbs {
+          width: 55px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-left: auto;
+          margin-top: auto;
+          margin-bottom: 11px;
+          margin-right: 13px;
+          img {
+            width: 12px;
+            height: 12px;
+            margin: 0;
+          }
+
+          #rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

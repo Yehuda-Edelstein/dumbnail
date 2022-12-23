@@ -51,7 +51,6 @@ function Tweet({
               placeholder="Name..."
               // className="twitter-name"
               onChange={(ev) => {
-                setIsActive(true);
                 setName(ev.target.value);
               }}
               maxLength="37"

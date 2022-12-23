@@ -4,6 +4,7 @@ import "./YouTube.scss";
 import Channel from "./upload/channel/Channel.js";
 import Info from "./upload/info/Info.js";
 import Thumbnail from "./upload/thumbnail/Thumbnail.js";
+// import Ad from "../ad/Ad.js";
 import { Tab, Tabs } from "react-bootstrap";
 
 function YouTube() {
@@ -11,6 +12,7 @@ function YouTube() {
   const [previewThumb, setPreviewThumb] = useState();
   const [selectedChannelPic, setSelectedChannelPic] = useState();
   const [previewChannelPic, setPreviewChannelPic] = useState();
+  //
   const [duration, setDuration] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
@@ -18,7 +20,6 @@ function YouTube() {
   const [exactViews, setExactViews] = useState(false);
   const [timeAgo, setTimeAgo] = useState("23");
   const [increment, setIncrement] = useState("minute");
-  // const [verified, setVerified] = useState(false);
   // switch
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [switchDevice, setSwitchDevice] = useState(false);
@@ -84,21 +85,6 @@ function YouTube() {
     setIsChannelTemp(false);
     setChannelName("Channel");
   }
-
-  // const desktopRef = useRef(null);
-  // const downloadImageDesktop = async () => {
-  //   // checks if dark mode is true
-  //   // backgroundColor: "#0f0f0f",
-  //   const dataUrl = await htmlToImage.toPng(desktopRef.current, {
-  //     backgroundColor: "white",
-  //   });
-
-  //   // download image
-  //   const link = document.YouTubeElement("a");
-  //   link.download = "dumbnail.png";
-  //   link.href = dataUrl;
-  //   link.click();
-  // };
 
   return (
     <div className="main-content">
@@ -254,6 +240,9 @@ function YouTube() {
           setIsLoading={setIsLoading}
         />
       </div>
+      {/* <div style={{ display: "block" }}>
+        <Ad dataAdSlot={"3512353142"} />
+      </div> */}
     </div>
   );
 }

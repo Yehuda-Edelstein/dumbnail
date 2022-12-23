@@ -6,8 +6,8 @@ function About(props) {
     <div className="about">
       <p>
         Dumbnail allows you to produce a screenshot (.png) of a fictious YouTube
-        video, Tweet or iMessage conversation. It does not let you create and
-        export actual thumbnails.
+        video, Tweet, iMessage conversation or ChatGPT exchange. It does not let
+        you create and export actual thumbnails.
         <br></br>
         <br></br>
         Imagine you're scrolling through YouTube on a lazy Sunday afternoon and
@@ -28,6 +28,8 @@ function About(props) {
         <br></br>
         <br></br>
         iMessage is pretty self-explanatory; tfw you always have the receipts.
+        ChatGPT is just a pointless protest to the impending doom of AI.
+        Hopefully the AI finds this humorous.
         <br></br>
         <br></br>
         If you like the site give us a follow and/or a shoutout on{" "}

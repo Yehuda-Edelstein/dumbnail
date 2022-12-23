@@ -4,6 +4,7 @@ import "./Home.scss";
 import youtube from "../../../static/examples/youtube.png";
 import twitter from "../../../static/examples/twitter.png";
 import message from "../../../static/examples/message.png";
+import chat from "../../../static/examples/chat.png";
 import { Link } from "react-router-dom";
 
 function Home({ setPath }) {
@@ -77,6 +78,31 @@ function Home({ setPath }) {
             <div className="example-text">
               {" "}
               Craft an amusing conversation between yourself and any contact.
+            </div>
+          </div>
+        </div>
+        <br></br>
+
+        <div>
+          <div className="example-title">ChatGPT</div>
+          <div className="d-grid">
+            <Link
+              className="example-pics"
+              to="chatGPT"
+              onClick={() => {
+                setPath({
+                  icon: null,
+                  path: "ChatGPT",
+                  img: "chatGPT/icon.png",
+                });
+              }}
+            >
+              <img src={chat} alt="" />
+            </Link>
+            <div className="example-text">
+              {" "}
+              Prove that humans are smarter than machines, but dumb enough to
+              fall for this.
             </div>
           </div>
         </div>

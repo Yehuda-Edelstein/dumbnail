@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1;
 
   .dumbnail-nav {
     display: flex;
@@ -37,6 +38,10 @@
       .icon {
         font-size: 1.5em;
         margin-right: 15px;
+      }
+
+      img {
+        width: 22.5px;
       }
 
       &:hover {
