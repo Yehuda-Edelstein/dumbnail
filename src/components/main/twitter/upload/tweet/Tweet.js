@@ -62,8 +62,7 @@ function Tweet({
               className="twitter-verified"
               aria-label="option 1"
               checked={verified}
-              onChange={(ev) => {
-                setIsActive(true);
+              onChange={() => {
                 setVerified(!verified);
               }}
             />

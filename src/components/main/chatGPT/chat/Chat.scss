@@ -169,6 +169,18 @@ $border: #2e2d37;
         opacity: 0.75;
       }
     }
+
+    .inactive {
+      width: fit-content;
+      padding: 4px 20px;
+      border-radius: 8px;
+      color: white;
+      background-color: $green;
+      opacity: 0.75;
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 
   .notes {

@@ -21,7 +21,6 @@ function TwitterProfile({
   selectedProf,
   previewProf,
   uploadProf,
-  setPreviewProf,
 }) {
   const data = require("../../../../../static/popular/twitter/popular.json");
 
@@ -29,6 +28,7 @@ function TwitterProfile({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // turn this into a helper function
   function createTooltip(str) {
     if (str.includes("_")) {
       return str.replace(/_/g, " ").split(".png");
@@ -154,7 +154,6 @@ function TwitterProfile({
                         className="profile"
                         key={pop.handle}
                         onClick={() => {
-                          console.log(pop);
                           setIsPopular(true);
                           setSelectedProf();
                           setPopular(pop.img);

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Photo from "./photo/Photo";
 import Info from "./info/Info";
 import Preview from "./preview/Preview";
+import { Tab, Tabs } from "react-bootstrap";
+import "./Instagram.scss";
+import Account from "./account/Account";
 
 const d = new Date();
 const m = [
@@ -22,9 +25,19 @@ const m = [
 function Instagram(props) {
   const [selectedPhoto, setSelectedPhoto] = useState();
   const [previewPhoto, setPreviewPhoto] = useState();
-  const [selectedProfileImage, setSelectedProfileImage] = useState();
-  const [previewProfileImage, setPreviewProfileImage] = useState();
+  const [selectedProfile, setSelectedProfile] = useState();
+  const [previewProfile, setPreviewProfile] = useState();
+  const [photoZoom, setPhotoZoom] = useState(100);
+  const [photoX, setPhotoX] = useState(0);
+  const [photoY, setPhotoY] = useState(0);
+  const [profileZoom, setProfileZoom] = useState(100);
+  const [profileX, setProfileX] = useState(0);
+  const [profileY, setProfileY] = useState(0);
   //
+  // may be able to get rid of this and just use popular itself as boolean
+  const [isPopular, setIsPopular] = useState(false);
+  const [popular, setPopular] = useState();
+
   const [username, setUsername] = useState("Username");
   const [location, setLocation] = useState(null);
   const [isVerified, setIsVerified] = useState(true);
@@ -55,20 +68,48 @@ function Instagram(props) {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedPhoto]);
 
-  function uploadPhoto(ev) {
-    setIsLoading(true);
-    if (!ev.target.files || ev.target.files.length === 0) {
-      setSelectedPhoto(undefined);
+  useEffect(() => {
+    if (!selectedProfile) {
+      setPreviewProfile(undefined);
       return;
     }
-    setSelectedPhoto(ev.target.files[0]);
-    setIsLoading(false);
-  }
+    const objectUrl = URL.createObjectURL(selectedProfile);
+    setPreviewProfile(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [selectedProfile]);
 
   return (
     <div className="main-content">
       <div className="upload-content">
-        <Photo />
+        <Photo
+          previewPhoto={previewPhoto}
+          selectedPhoto={selectedPhoto}
+          setPreviewPhoto={setPreviewPhoto}
+          setSelectedPhoto={setSelectedPhoto}
+          photoZoom={photoZoom}
+          photoX={photoX}
+          photoY={photoY}
+          setPhotoZoom={setPhotoZoom}
+          setPhotoX={setPhotoX}
+          setPhotoY={setPhotoY}
+        />
+        <Account
+          isPopular={isPopular}
+          setIsPopular={setIsPopular}
+          setPopular={setPopular}
+          setUsername={setUsername}
+          preview={previewProfile}
+          selected={selectedProfile}
+          setPreview={setPreviewProfile}
+          setSelected={setSelectedProfile}
+          x={profileX}
+          setX={setProfileX}
+          y={profileY}
+          setY={setProfileY}
+          zoom={profileZoom}
+          setZoom={setProfileZoom}
+        />
         <Info
           setUsername={setUsername}
           isVerified={isVerified}
@@ -82,8 +123,74 @@ function Instagram(props) {
           setIsLiked={setIsLiked}
         />
       </div>
+      <div className="content-tabs instagram-tabs">
+        <Tabs
+          defaultActiveKey="photo"
+          id="uncontrolled-tab-example"
+          className="mb-3"
+        >
+          <Tab eventKey="photo" title="Photo">
+            <Photo
+              previewPhoto={previewPhoto}
+              selectedPhoto={selectedPhoto}
+              setPreviewPhoto={setPreviewPhoto}
+              setSelectedPhoto={setSelectedPhoto}
+              photoZoom={photoZoom}
+              photoX={photoX}
+              photoY={photoY}
+              setPhotoZoom={setPhotoZoom}
+              setPhotoX={setPhotoX}
+              setPhotoY={setPhotoY}
+            />
+          </Tab>
+          <Tab eventKey="account" title="Account">
+            <Account
+              isPopular={isPopular}
+              setIsPopular={setIsPopular}
+              setPopular={setPopular}
+              setUsername={setUsername}
+              preview={previewProfile}
+              selected={selectedProfile}
+              setPreview={setPreviewProfile}
+              setSelected={setSelectedProfile}
+              x={profileX}
+              y={profileY}
+              zoom={profileZoom}
+              setX={setProfileX}
+              setY={setProfileY}
+              setZoom={setProfileZoom}
+            />
+          </Tab>
+          <Tab eventKey="info" title="Info">
+            <Info
+              setUsername={setUsername}
+              isVerified={isVerified}
+              setIsVerified={setIsVerified}
+              setLikes={setLikes}
+              setDescription={setDescription}
+              setComments={setComments}
+              setMonth={setMonth}
+              setDay={setDay}
+              setYear={setYear}
+              setIsLiked={setIsLiked}
+            />
+          </Tab>
+        </Tabs>
+      </div>
       <div>
         <Preview
+          isPopular={isPopular}
+          popular={popular}
+          photoX={photoX}
+          photoY={photoY}
+          photoZoom={photoZoom}
+          profileX={profileX}
+          profileY={profileY}
+          profileZoom={profileZoom}
+          selectedPhoto={selectedPhoto}
+          previewPhoto={previewPhoto}
+          selectedProfile={selectedProfile}
+          previewProfile={previewProfile}
           switchDevice={switchDevice}
           setSwitchDevice={setSwitchDevice}
           isDarkMode={isDarkMode}

@@ -14,6 +14,19 @@ $height: 143.42px;
   -ms-user-select: none;
   user-select: none;
 
+  .thumbnail {
+    aspect-ratio: $width / $height;
+  }
+
+  .instagram-post {
+    min-height: 212px;
+    max-height: 471px;
+  }
+
+  .user {
+    aspect-ratio: 1/1;
+  }
+
   .crop-container-body {
     display: flex;
     margin-bottom: 10px;
@@ -43,10 +56,12 @@ $height: 143.42px;
       margin: 32px 0;
     }
     .pic-container {
-      max-width: 400px;
-      aspect-ratio: calc($width / $height);
       overflow: hidden;
       background-color: black;
+
+      img {
+        width: 100%;
+      }
     }
   }
 

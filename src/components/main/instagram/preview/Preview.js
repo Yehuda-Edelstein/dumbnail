@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Switch from "../../switch/Switch";
-import { addCommas } from "../../../../helpers/Helpers";
+import { addCommas, download } from "../../../../helpers/Helpers";
 import v from "../../../../static/instagram/instagram-verified.png";
 import el from "../../../../static/instagram/instagram-elipses.png";
-import heart from "../../../../static/instagram/instagram-heart.png";
-import comment from "../../../../static/instagram/instagram-comment.png";
-import share from "../../../../static/instagram/instagram-share.png";
+import da from "../../../../static/instagram/dark-elip.png";
 import bar from "../../../../static/instagram/like-bar.png";
-
+import dark from "../../../../static/instagram/dark-bar.png";
 import "./Preview.scss";
 
 const d = new Date();
 const y = d.getFullYear();
 
 function Preview({
+  isPopular,
+  popular,
+  photoZoom,
+  photoX,
+  photoY,
+  profileZoom,
+  profileX,
+  profileY,
+  previewPhoto,
+  selectedPhoto,
+  selectedProfile,
+  previewProfile,
   switchDevice,
   setSwitchDevice,
   isDarkMode,
@@ -29,17 +39,18 @@ function Preview({
   year,
   setIsLiked,
 }) {
+  const ref = useRef(null);
   return (
-    <div className="preview">
+    <div className="instagram-post-preview instagram-post-width">
       <h5>Preview</h5>
-      <div className="preview-header">
+      <div className="instagram-post-preview-header">
         <OverlayTrigger
           key={"right"}
           placement={"right"}
           delay={{ show: "700", hide: "100" }}
           overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
         >
-          <div className="switch">
+          <div className="d-flex switch">
             <Switch
               isOn={switchDevice}
               handleToggle={() => {
@@ -53,20 +64,35 @@ function Preview({
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div className="small-screen-margin border border-dark">
+      <div className="border border-dark">
         <div
+          ref={ref}
           className={
             switchDevice
-              ? "instagram-preview-container dark"
-              : "instagram-preview-container light"
+              ? "instagram-post-preview-container dark"
+              : "instagram-post-preview-container light"
           }
         >
           <div className="post-header">
             <div className="profile-image">
-              <img
-                src={require("./../../../../static/popular/twitter/Ben_Shapiro.png")}
-                alt=""
-              />
+              {isPopular && (
+                <img
+                  src={require(`./../../../../static/popular/instagram/${popular}`)}
+                  alt=""
+                />
+              )}
+              {selectedProfile && (
+                <img
+                  src={previewProfile}
+                  alt=""
+                  style={{
+                    transform: `scale(${profileZoom}%) translate(${profileX}px, ${profileY}px)`,
+                  }}
+                />
+              )}
+              {!isPopular && !selectedProfile && (
+                <div className="account-backdrop"></div>
+              )}
             </div>
             <div className="username">
               {username}
@@ -77,19 +103,34 @@ function Preview({
               )}
             </div>
             <div>
-              <img src={el} alt="" className="post-header-options" />
+              {switchDevice ? (
+                <img src={da} alt="" className="post-header-options" />
+              ) : (
+                <img src={el} alt="" className="post-header-options" />
+              )}
             </div>
           </div>
           <div className="post-body">
-            <img
-              src={require("./../../../../static/popular/twitter/Ben_Shapiro.png")}
-              alt=""
-            />
+            {selectedPhoto ? (
+              <img
+                src={previewPhoto}
+                alt=""
+                style={{
+                  transform: `scale(${photoZoom}%) translate(${photoX}px, ${photoY}px)`,
+                }}
+              />
+            ) : (
+              <div className="upload-photo-backdrop"></div>
+            )}
           </div>
           <div className="post-footer">
             <div className="post-footer-data">
               <div className="like-bar">
-                <img src={bar} alt="" />
+                {switchDevice ? (
+                  <img src={dark} alt="" />
+                ) : (
+                  <img src={bar} alt="" />
+                )}
               </div>
             </div>
             {likes > 1 ? (
@@ -107,13 +148,21 @@ function Preview({
             ) : (
               <div className="comments">View {comments} comment</div>
             )}
-            <div className="date">
+            {/* <div className="date">
               <div className="month">{month}</div>
               <div className="day">{day}</div>
               {y !== year && <div className="year">{year}</div>}
-            </div>
+            </div> */}
           </div>
         </div>
+        <button
+          className="post-download"
+          onClick={() => {
+            download(ref, "post");
+          }}
+        >
+          DOWNLOAD
+        </button>
       </div>
     </div>
   );

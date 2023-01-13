@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Crop.scss";
 
-function Crop({ show, handleClose, img, x, setX, y, setY, zoom, setZoom }) {
+function Crop({ handleClose, img, x, setX, y, setY, zoom, setZoom, ratio }) {
   const [currentX, setCurrentX] = useState(x);
   const [currentY, setCurrentY] = useState(y);
   const [currentZoom, setCurrentZoom] = useState(zoom);
@@ -55,14 +55,13 @@ function Crop({ show, handleClose, img, x, setX, y, setY, zoom, setZoom }) {
           >
             <FontAwesomeIcon icon={["fa", "arrow-up"]} />
           </div>
-          <div className="pic-container">
+          <div className={`pic-container ${ratio}`}>
             <img
               className="pic"
               src={img}
               alt=""
               style={{
                 transform: `scale(${currentZoom}%) translate(${currentX}px, ${currentY}px)`,
-                width: "100%",
               }}
             />
           </div>

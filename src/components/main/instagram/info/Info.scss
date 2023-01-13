@@ -1,0 +1,72 @@
+.instagram-info-container {
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 20px;
+  margin-right: 0;
+  height: fit-content;
+  max-width: 413px;
+  min-width: 290px;
+
+  .instagram-post-details {
+    display: flex;
+    flex: none;
+    justify-content: space-between;
+    .instagram-post-input-container {
+      max-width: 180px;
+    }
+  }
+
+  .instagram-post-input-container {
+    min-width: 80px;
+    margin-bottom: 10px;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+
+    input,
+    textarea,
+    select {
+      padding-left: 10px;
+      font-size: 15px;
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+    }
+    input,
+    textarea {
+      background-color: rgba(128, 128, 128, 0.1);
+      resize: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      background-color: rgba(128, 128, 128, 0.25);
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+  .form-check-input {
+    height: 26.5px;
+    width: 26.5px;
+    margin-top: 0;
+    border-radius: 0 !important;
+    background-color: rgba(128, 128, 128, 0.1);
+    outline: none;
+    border: 1px dashed rgba(128, 128, 128, 0.75);
+    border-left: 0;
+  }
+
+  .form-check-input:focus {
+    box-shadow: none;
+    border: 1px dashed rgba(128, 128, 128, 0.75);
+    border-left: 0;
+  }
+
+  .form-check-input:checked {
+    background-color: rgb(193, 53, 132);
+  }
+}

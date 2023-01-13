@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 // import { OverlayTrigger, Tooltip } from "react-bootstrap";
 // import Switch from "../../switch/Switch";
 import { download } from "../../../../helpers/Helpers";
@@ -8,34 +8,11 @@ import "./Preview.scss";
 
 function Preview({ initial, color, messages }) {
   const ref = useRef(null);
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-  // const [switchDevice, setSwitchDevice] = useState(false);
 
   return (
-    <div className="preview">
+    <div className="preview chatGPT-width">
       <h5>Preview</h5>
-      {/* <div className="preview-header">
-        <OverlayTrigger
-          key={"right"}
-          placement={"right"}
-          delay={{ show: "700", hide: "100" }}
-          overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
-        >
-          <div className="switch">
-            <Switch
-              isOn={switchDevice}
-              handleToggle={() => {
-                setSwitchDevice(!switchDevice);
-                setIsDarkMode(!isDarkMode);
-              }}
-              bgOn={"rgba(16, 163, 127, .5)"}
-              bgOff={"rgba(16, 163, 127, .25)"}
-            />
-          </div>
-        </OverlayTrigger>
-        {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
-      </div> */}
-      <div className="border border-dark mt-2">
+      <div className="border border-dark chat-margin">
         <div ref={ref}>
           <div className="chat-body">
             {messages.map((m) => {

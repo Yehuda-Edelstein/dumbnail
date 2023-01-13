@@ -14,13 +14,19 @@ import ChatGPT from "./chatGPT/chatGPT";
 function Main({ setPath }) {
   return (
     <div className="main">
+      {/* <div className="banner">
+        <div class="alert alert-warning" role="alert">
+          Safari browser not currently supported, switch to Chrome.
+        </div>
+      </div> */}
       <Routes>
         <Route path="/" element={<Home setPath={setPath} />} />
-        <Route path="/youtube" element={<YouTube />} />
-        <Route path="/twitter" element={<Twitter />} />
-        <Route path="/messages" element={<Message />} />
-        {/* <Route path="/instagram" element={<Instagram />} /> */}
-        <Route path="/chatGPT" element={<ChatGPT />} />
+        <Route path="/content/thumbnail" element={<YouTube />} />
+        <Route path="/content/tweet" element={<Twitter />} />
+        {/* add LinkedIn and a posts catergory */}
+        <Route path="/content/post" element={<Instagram />} />
+        <Route path="/messaging/iMessage" element={<Message />} />
+        <Route path="/messaging/chatGPT" element={<ChatGPT />} />
         <Route path="/about" element={<About />} />
       </Routes>
       {/* <div>

@@ -1,3 +1,12 @@
+.banner {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  padding-left: 190px;
+}
+
 .main {
   display: flex;
   width: 100%;
@@ -22,32 +31,6 @@
       max-width: 413px;
       min-width: 290px;
     }
-
-    // .preview {
-    //   background-color: white;
-    //   border: 0.5px solid rgba(128, 128, 128, 0.75);
-    //   border-radius: 4px;
-    //   padding: 20px;
-    //   // padding-bottom: 0;
-    //   margin: 20px;
-    //   height: fit-content;
-    //   position: sticky;
-    //   top: 90px;
-
-    //   .preview-header {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     margin: 10px 0;
-
-    //     h4 {
-    //       font-size: 20px;
-    //       text-align: center;
-    //       color: rgba(128, 128, 128, 0.5);
-    //       margin-bottom: 0;
-    //     }
-    //   }
-    // }
 
     .upload-content {
       display: flex;

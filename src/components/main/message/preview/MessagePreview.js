@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import * as htmlToImage from "html-to-image";
+import { download } from "./../../../../helpers/Helpers";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import Switch from "./../../switch/Switch";
@@ -12,19 +12,7 @@ function MessagePreview({ messages, contact }) {
   // switch
   const [switchDevice, setSwitchDevice] = useState(false);
 
-  const messageRef = useRef(null);
-  const downloadMessage = async () => {
-    try {
-      const dataUrl = await htmlToImage.toPng(messageRef.current, {});
-      const link = document.createElement("a");
-      link.download = "message.png";
-      link.href = dataUrl;
-      link.click();
-    } catch (err) {
-      console.log("Ohhhh nooo!");
-      console.log(err);
-    }
-  };
+  const ref = useRef(null);
 
   function contactImage(str) {
     if (str) {
@@ -73,7 +61,7 @@ function MessagePreview({ messages, contact }) {
           delay={{ show: "700", hide: "100" }}
           overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
         >
-          <div className="switch">
+          <div className="d-flex switch">
             <Switch
               isOn={switchDevice}
               handleToggle={() => {
@@ -88,7 +76,7 @@ function MessagePreview({ messages, contact }) {
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
       <div className="small-screen-margin border border-dark">
-        <div ref={messageRef} className={switchDevice ? "dark" : "light"}>
+        <div ref={ref} className={switchDevice ? "dark" : "light"}>
           <div className="message-header">
             <div className="d-flex justify-content-between">
               <div>
@@ -152,9 +140,19 @@ function MessagePreview({ messages, contact }) {
           </div>
         </div>
       </div>
-      <button className="message-download" onClick={downloadMessage}>
+      <button
+        className="message-download"
+        onClick={() => {
+          download(ref, "iMessage");
+        }}
+      >
         DOWNLOAD
       </button>
+      <div className="notes">
+        <ul>
+          <li>Max height is 395px</li>
+        </ul>
+      </div>
     </div>
   );
 }
