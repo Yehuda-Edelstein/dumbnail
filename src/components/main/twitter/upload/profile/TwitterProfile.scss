@@ -257,48 +257,6 @@
   }
 }
 
-// @media screen and (max-width: 1023px) {
-//   .profile-container {
-//     .scroll {
-//       width: 370px;
-//       .overlay {
-//         bottom: 58px;
-//       }
-//       .before-overlay {
-//         bottom: 58px;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 830px) {
-//   .profile-container {
-//     padding: 10px 0;
-//     width: 100%;
-//     position: relative;
-//     .scroll {
-//       .overlay {
-//         top: 45px;
-//         right: 0;
-//         background-image: linear-gradient(
-//           to right,
-//           rgba(255, 255, 255, 0),
-//           white
-//         );
-//       }
-//       .before-overlay {
-//         top: 45px;
-//         left: 0;
-//         background-image: linear-gradient(
-//           to left,
-//           rgba(255, 255, 255, 0),
-//           white
-//         );
-//       }
-//     }
-//   }
-// }
-
 @media screen and (max-width: 450px) {
   .profile-container {
     overflow: hidden;

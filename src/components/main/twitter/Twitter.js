@@ -1,3 +1,4 @@
+// VERSION 1.0
 import React, { useState, useEffect } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import TwitterPreview from "./preview/TwitterPreview";

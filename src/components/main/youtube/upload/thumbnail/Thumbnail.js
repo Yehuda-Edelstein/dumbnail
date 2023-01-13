@@ -40,7 +40,6 @@ function Thumbnail({
     <div className="thumbnail-container">
       {show ? (
         <Crop
-          show={show}
           handleClose={handleClose}
           img={previewThumb}
           x={thumbX}
@@ -49,6 +48,7 @@ function Thumbnail({
           setY={setThumbY}
           zoom={thumbZoom}
           setZoom={setThumbZoom}
+          ratio={"thumbnail"}
         />
       ) : (
         <div>
@@ -144,7 +144,6 @@ function Thumbnail({
               <div className="before-overlay"></div>
               <div className="scroll d-flex">
                 {/* <div className="before-overlay"></div> */}
-
                 {data.map((temp) => {
                   return (
                     <div

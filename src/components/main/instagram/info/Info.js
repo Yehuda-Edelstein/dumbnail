@@ -9,34 +9,36 @@ function Info({
   setLikes,
   setDescription,
   setComments,
-  setMonth,
-  setDay,
-  setYear,
-  setIsLiked,
+  // setMonth,
+  // setDay,
+  // setYear,
+  // setIsLiked,
 }) {
   return (
-    <div className="upload-container">
-      <div>
-        <input
-          placeholder="Username..."
-          onChange={(ev) => {
-            setUsername(ev.target.value);
-          }}
-          maxLength=""
-        ></input>
+    <div className="instagram-info-container">
+      <div className="d-flex">
+        <div className="instagram-post-input-container d-grid">
+          <input
+            placeholder="Username..."
+            onChange={(ev) => {
+              setUsername(ev.target.value);
+            }}
+            maxLength=""
+          ></input>
+        </div>
+        <div className="d-grid">
+          {" "}
+          <Form.Check
+            className="instagram-verified-checkbox"
+            aria-label="option 1"
+            checked={isVerified}
+            onChange={() => {
+              setIsVerified(!isVerified);
+            }}
+          />
+        </div>
       </div>
-      <div>
-        {" "}
-        <Form.Check
-          className="twitter-verified"
-          aria-label="option 1"
-          checked={isVerified}
-          onChange={() => {
-            setIsVerified(!isVerified);
-          }}
-        />
-      </div>
-      <div>
+      <div className="instagram-post-input-container d-grid">
         <input
           placeholder="Description..."
           onChange={(ev) => {
@@ -44,25 +46,27 @@ function Info({
           }}
         ></input>
       </div>
-      <div>
-        <input
-          type="number"
-          max="8000000000"
-          placeholder="Likes..."
-          onChange={(ev) => {
-            setLikes(ev.target.value);
-          }}
-        ></input>
-      </div>
-      <div>
-        <input
-          type="number"
-          max="8000000000"
-          placeholder="Comments..."
-          onChange={(ev) => {
-            setComments(ev.target.value);
-          }}
-        ></input>
+      <div className="instagram-post-details">
+        <div className="instagram-post-input-container d-grid">
+          <input
+            type="number"
+            max="8000000000"
+            placeholder="Likes..."
+            onChange={(ev) => {
+              setLikes(ev.target.value);
+            }}
+          ></input>
+        </div>
+        <div className="instagram-post-input-container d-grid">
+          <input
+            type="number"
+            max="8000000000"
+            placeholder="Comments..."
+            onChange={(ev) => {
+              setComments(ev.target.value);
+            }}
+          ></input>
+        </div>
       </div>
     </div>
   );

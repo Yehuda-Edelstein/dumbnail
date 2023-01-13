@@ -21,6 +21,7 @@ $dm-background: rgb(0, 0, 0);
   border: 0.5px solid rgba(128, 128, 128, 0.75);
   border-radius: 4px;
   padding: 20px;
+  padding-bottom: 0;
   margin: 20px;
   height: fit-content;
   position: sticky;
@@ -83,7 +84,6 @@ $dm-background: rgb(0, 0, 0);
         height: 40px;
         border-radius: 50%;
         background-color: $lm-contact-image;
-        // font-family: "SF-Compact";
 
         span {
           align-self: center;
@@ -118,8 +118,6 @@ $dm-background: rgb(0, 0, 0);
       max-height: 418px;
       overflow: hidden;
       max-height: 395px;
-
-      // font-family: "SF-Pro";
 
       .message-text {
         font-size: 15px;
@@ -159,7 +157,6 @@ $dm-background: rgb(0, 0, 0);
           right: -4px;
           justify-content: end;
           background-color: $lm-you;
-          // background-color: green;
           border-bottom-left-radius: 12px 10px;
           padding: 7px 0;
           height: 16px;
@@ -175,9 +172,7 @@ $dm-background: rgb(0, 0, 0);
           padding: 7px 0;
           height: 18px;
           width: 10px;
-
           background-color: $lm-background;
-          // background-color: red;
         }
 
         .message-from-them {
@@ -211,7 +206,6 @@ $dm-background: rgb(0, 0, 0);
           left: -4px;
           justify-content: end;
           background-color: $lm-them;
-          // background-color: green;
           border-bottom-right-radius: 22px 10px;
           padding: 7px 0;
           height: 16px;
@@ -227,9 +221,7 @@ $dm-background: rgb(0, 0, 0);
           padding: 7px 0;
           height: 18px;
           width: 10px;
-
           background-color: $lm-background;
-          // background-color: red;
         }
       }
 
@@ -239,7 +231,6 @@ $dm-background: rgb(0, 0, 0);
         font-weight: 400;
         color: $lm-sub-message;
         margin-bottom: 5px;
-        // margin-top: 10px;
 
         .day {
           font-weight: 500;
@@ -270,9 +261,6 @@ $dm-background: rgb(0, 0, 0);
     background-color: $dm-background;
     .message-header {
       min-height: 62.5px;
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
       border-bottom: 0.25px solid $dm-message-header-bg;
       align-items: center;
       background-color: $dm-message-header-bg;
@@ -296,7 +284,6 @@ $dm-background: rgb(0, 0, 0);
         height: 40px;
         border-radius: 50%;
         background-color: $dm-contact-image;
-        // font-family: "SF-Compact";
 
         span {
           align-self: center;
@@ -331,10 +318,11 @@ $dm-background: rgb(0, 0, 0);
       padding: 7px 10px;
       max-height: 418px;
       overflow: scroll;
-      // font-family: "SF-Pro";
+      max-height: 395px;
 
       .message-text {
         font-size: 15px;
+        line-height: 18px;
         position: relative;
         word-wrap: break-word;
 
@@ -370,7 +358,6 @@ $dm-background: rgb(0, 0, 0);
           right: -4px;
           justify-content: end;
           background-color: $dm-you;
-          // background-color: green;
           border-bottom-left-radius: 12px 10px;
           padding: 7px 0;
           height: 16px;
@@ -387,7 +374,6 @@ $dm-background: rgb(0, 0, 0);
           height: 18px;
           width: 10px;
           background-color: $dm-background;
-          // background-color: red;
         }
 
         .message-from-them {
@@ -421,7 +407,6 @@ $dm-background: rgb(0, 0, 0);
           left: -4px;
           justify-content: end;
           background-color: $dm-them;
-          // background-color: green;
           border-bottom-right-radius: 22px 10px;
           padding: 7px 0;
           height: 16px;
@@ -437,9 +422,7 @@ $dm-background: rgb(0, 0, 0);
           padding: 7px 0;
           height: 18px;
           width: 10px;
-
           background-color: $dm-background;
-          // background-color: red;
         }
       }
 
@@ -449,7 +432,6 @@ $dm-background: rgb(0, 0, 0);
         font-weight: 400;
         color: $dm-sub-message;
         margin-bottom: 5px;
-        // margin-top: 10px;
 
         .day {
           font-weight: 500;
@@ -492,6 +474,17 @@ $dm-background: rgb(0, 0, 0);
       cursor: pointer;
       opacity: 0.75;
     }
+  }
+}
+
+.notes {
+  color: #aaaaaa;
+  font-size: 9px;
+  margin-top: 10px;
+
+  ul {
+    padding-left: 5px;
+    list-style: none;
   }
 }
 

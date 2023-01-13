@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import * as htmlToImage from "html-to-image";
+import { download } from "./../../../../helpers/Helpers";
 import light from "./../../../../static/twitter-verified.png";
-import dark from "./../../../../static/twitter-verified-dark.png";
+import dark from "./../../../../static/twitter/dark-verified.png";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,20 +28,7 @@ function TwitterPreview({
   profX,
   profY,
 }) {
-  const tweetRef = useRef(null);
-  const downloadTweet = async () => {
-    try {
-      const dataUrl = await htmlToImage.toPng(tweetRef.current, {});
-      // download image
-      const link = document.createElement("a");
-      link.download = "twitter.png";
-      link.href = dataUrl;
-      link.click();
-    } catch (err) {
-      console.log("Ohhhh nooo!");
-      console.log(err);
-    }
-  };
+  const ref = useRef(null);
 
   const x = profX * 0.1;
   const y = profY * 0.1;
@@ -66,7 +53,7 @@ function TwitterPreview({
           delay={{ show: "700", hide: "100" }}
           overlay={<Tooltip id={"tooltip-right"}>Toggle mode</Tooltip>}
         >
-          <div className="switch">
+          <div className="d-flex switch">
             <Switch
               isOn={switchDevice}
               handleToggle={() => {
@@ -82,7 +69,7 @@ function TwitterPreview({
       </div>
       <div className="small-screen-margin border border-dark">
         <div
-          ref={tweetRef}
+          ref={ref}
           className={
             switchDevice
               ? "twitter-preview-container dark"
@@ -139,7 +126,12 @@ function TwitterPreview({
             <div className="tweet-device">{device}</div>
           </div>
         </div>
-        <button className="twitter-download" onClick={downloadTweet}>
+        <button
+          className="twitter-download"
+          onClick={() => {
+            download(ref, "tweet");
+          }}
+        >
           DOWNLOAD
         </button>
       </div>

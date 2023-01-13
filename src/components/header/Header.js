@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import logo from "./../../static/logo.png";
@@ -7,31 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import gpt from "../../static/chatGPT/icon.png";
 
 function Header({ path, setPath, show, setShow, handleShow }) {
-  useEffect(() => {
-    let w = window.location.pathname;
-    if (w === "/") {
-      setPath({ icon: ["fa", "home"], path: "Home", img: null });
-    }
-    if (w === "/youtube") {
-      setPath({ icon: ["fa-brands", "youtube"], path: "YouTube", img: null });
-    }
-    if (w === "/twitter") {
-      setPath({ icon: ["fa-brands", "twitter"], path: "Twitter", img: null });
-    }
-    if (w === "/messages") {
-      setPath({ icon: ["fa", "comment"], path: "iMessage", img: null });
-    }
-    // if (w === "/instagram") {
-    //   setPath({ icon:x ["fa-brands", "instagram"], path: "Instagram" });
-    // }
-    if (w === "/chatGPT") {
-      setPath({ icon: null, path: "ChatGPT", img: "chatGPT/icon.png" });
-    }
-    if (w === "/about") {
-      setPath({ icon: null, path: "About", img: null });
-    }
-  }, []);
-
   return (
     <div className="header">
       <div>
@@ -83,14 +58,14 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                   <FontAwesomeIcon className="icon" icon={["fa", "house"]} />
                   <div>Home</div>
                 </Link>
-                <label>LAYOUTS</label>
+                <label>CONTENT</label>
                 <Link
-                  to="youtube"
+                  to="content/thumbnail"
                   onClick={() => {
                     handleShow();
                     setPath({
                       icon: ["fa-brands", "youtube"],
-                      path: "YouTube",
+                      path: "Thumbnail",
                       img: null,
                     });
                   }}
@@ -100,15 +75,15 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                     className="icon"
                     icon={["fa-brands", "youtube"]}
                   />
-                  <div>YouTube</div>
+                  <div>Thumbnail</div>
                 </Link>
                 <Link
-                  to="twitter"
+                  to="content/tweet"
                   onClick={() => {
                     handleShow();
                     setPath({
                       icon: ["fa-brands", "twitter"],
-                      path: "Twitter",
+                      path: "Tweet",
                       img: null,
                     });
                   }}
@@ -118,10 +93,28 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                     className="icon"
                     icon={["fa-brands", "twitter"]}
                   />
-                  <div>Twitter</div>
+                  <div>Tweet</div>
                 </Link>
                 <Link
-                  to="messages"
+                  to="content/post"
+                  onClick={() => {
+                    handleShow();
+                    setPath({
+                      icon: ["fa-brands", "instagram"],
+                      path: "Post",
+                    });
+                  }}
+                  className="dumbnail-header-nav-link"
+                >
+                  <FontAwesomeIcon
+                    className="icon"
+                    icon={["fa-brands", "instagram"]}
+                  />
+                  <div>Post</div>
+                </Link>
+                <label>MESSAGING</label>
+                <Link
+                  to="messaging/iMessage"
                   onClick={() => {
                     handleShow();
                     setPath({
@@ -135,25 +128,8 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                   <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
                   <div>iMessage</div>
                 </Link>
-                {/* <Link
-                  to="instagram"
-                  onClick={() => {
-                    handleShow();
-                    setPath({
-                      icon: ["fa-brands", "instagram"],
-                      path: "Instagram",
-                    });
-                  }}
-                  className="dumbnail-header-nav-link"
-                >
-                  <FontAwesomeIcon
-                    className="icon"
-                    icon={["fa-brands", "instagram"]}
-                  />
-                  <div>Instagram</div>
-                </Link> */}
                 <Link
-                  to="chatGPT"
+                  to="messaging/chatGPT"
                   className="dumbnail-header-nav-link"
                   onClick={() => {
                     setPath({

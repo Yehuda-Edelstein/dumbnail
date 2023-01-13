@@ -33,11 +33,6 @@ $dark-handle-gray: #717374;
     }
   }
 
-  .light,
-  .dark {
-    // border: 1px solid black;
-  }
-
   .light {
     background-color: #ffffff;
 
@@ -327,11 +322,15 @@ $dark-handle-gray: #717374;
     margin: 0;
     border-radius: 0;
     width: 100vw;
-    min-width: none;
     padding-right: 0;
 
-    .twitter-download {
+    .small-screen-margin {
+      margin-right: 20px;
       min-width: 280px;
+    }
+
+    .twitter-download {
+      min-width: 277px;
     }
 
     .twitter-preview-header {
@@ -339,11 +338,8 @@ $dark-handle-gray: #717374;
       min-width: 300px;
     }
 
-    .small-screen-margin {
-      margin-right: 20px;
-    }
     .twitter-preview-container {
-      min-width: 280px;
+      min-width: 277px;
 
       .account-info {
         .twitter-prof {

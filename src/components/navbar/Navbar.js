@@ -21,29 +21,40 @@ function Navbar({ path, setPath }) {
           <FontAwesomeIcon className="icon" icon={["fa", "house"]} />
           <div>Home</div>
         </Link>
-        <label>LAYOUTS</label>
+        <label>CONTENT</label>
         <Link
-          to="youtube"
+          to="content/thumbnail"
           className="dumbnail-nav-link"
           onClick={() => {
-            setPath({ icon: ["fa-brands", "youtube"], path: "YouTube" });
+            setPath({ icon: ["fa-brands", "youtube"], path: "Thumbnail" });
           }}
         >
           <FontAwesomeIcon className="icon" icon={["fa-brands", "youtube"]} />
-          <div>YouTube</div>
+          <div>Thumbnail</div>
         </Link>
         <Link
-          to="twitter"
+          to="content/tweet"
           className="dumbnail-nav-link"
           onClick={() => {
-            setPath({ icon: ["fa-brands", "twitter"], path: "Twitter" });
+            setPath({ icon: ["fa-brands", "twitter"], path: "Tweet" });
           }}
         >
           <FontAwesomeIcon className="icon" icon={["fa-brands", "twitter"]} />
-          <div>Twitter</div>
+          <div>Tweet</div>
         </Link>
         <Link
-          to="messages"
+          to="content/post"
+          className="dumbnail-nav-link"
+          onClick={() => {
+            setPath({ icon: ["fa-brands", "instagram"], path: "Post" });
+          }}
+        >
+          <FontAwesomeIcon className="icon" icon={["fa-brands", "instagram"]} />
+          <div>Post</div>
+        </Link>
+        <label>MESSAGING</label>
+        <Link
+          to="messaging/iMessage"
           className="dumbnail-nav-link"
           onClick={() => {
             setPath({ icon: ["fa", "comment"], path: "iMessage" });
@@ -52,18 +63,8 @@ function Navbar({ path, setPath }) {
           <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
           <div>iMessage</div>
         </Link>
-        {/* <Link
-          to="instagram"
-          className="dumbnail-nav-link"
-          onClick={() => {
-            setPath({ icon: ["fa-brands", "instagram"], path: "Instagram" });
-          }}
-        >
-          <FontAwesomeIcon className="icon" icon={["fa-brands", "instagram"]} />
-          <div>Instagram</div>
-        </Link> */}
         <Link
-          to="chatGPT"
+          to="messaging/chatGPT"
           className="dumbnail-nav-link"
           onClick={() => {
             setPath({ icon: null, path: "ChatGPT", img: "chatGPT/icon.png" });

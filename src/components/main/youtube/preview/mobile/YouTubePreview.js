@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
-import { toPng } from "html-to-image";
 import "./YouTubePreview.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Switch from "../../../switch/Switch";
 import Spinner from "react-bootstrap/Spinner";
-import whatever from "../../../../../static/logo.png";
+import { download } from "../../../../../helpers/Helpers";
 
 function YouTubePreview({
   switchDevice,
@@ -35,21 +34,7 @@ function YouTubePreview({
   isLoading,
   setIsLoading,
 }) {
-  const mobileRef = useRef(null);
-  const download = () => {
-    setIsLoading(true);
-    toPng(mobileRef.current, {})
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "youtube.png";
-        link.href = dataUrl;
-        link.click();
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const ref = useRef(null);
 
   const x = channelPicX * 0.1;
   const y = channelPicY * 0.1;
@@ -86,7 +71,7 @@ function YouTubePreview({
         }
       >
         <div
-          ref={mobileRef}
+          ref={ref}
           className={
             switchDevice
               ? "youtube-preview-container dark"
@@ -168,7 +153,12 @@ function YouTubePreview({
             </div>
           </div>
         </div>
-        <div className="youtube-download" onClick={download}>
+        <div
+          className="youtube-download"
+          onClick={() => {
+            download(ref, "thumbnail");
+          }}
+        >
           {isLoading ? (
             <div className="spinner">
               <Spinner size="sm" />

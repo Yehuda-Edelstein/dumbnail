@@ -1,0 +1,69 @@
+.instagram-tabs {
+  .nav-link.active {
+    color: rgba(193, 53, 132, 0.75) !important;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .instagram-tabs {
+    display: block;
+    background-color: white;
+    border: 0.5px solid rgba(128, 128, 128, 0.75);
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin: 20px;
+    margin-bottom: 0;
+    margin-right: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-width: 420px;
+    min-width: 320px;
+
+    .instagram-photo-container,
+    .instagram-account-container,
+    .instagram-info-container {
+      border: 0;
+      padding: 0;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      margin: 0;
+    }
+  }
+
+  .instagram-post-preview-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .instagram-tabs {
+    margin: 0;
+    border-radius: 0;
+    min-width: 100vw;
+    .instagram-photo-container,
+    .instagram-account-container,
+    .instagram-info-container {
+      min-width: none;
+      max-width: 90vw;
+      padding-right: 0;
+    }
+  }
+
+  .instagram-post-preview {
+    margin: 0;
+    margin-top: 20px;
+    border-radius: 0;
+  }
+
+  .instagram-info-container {
+    .instagram-post-details {
+      display: block;
+
+      .instagram-post-input-container {
+        max-width: none;
+      }
+    }
+  }
+}

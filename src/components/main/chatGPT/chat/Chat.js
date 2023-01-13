@@ -135,9 +135,13 @@ function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
           })}
         </div>
         <div className="new-message-container">
-          <div className="new-message" onClick={addMessage}>
-            Add Message
-          </div>
+          {messages.length <= 5 ? (
+            <div className="new-message" onClick={addMessage}>
+              Add Message
+            </div>
+          ) : (
+            <div className="inactive">Add Message</div>
+          )}
         </div>
         <div className="notes">
           <ul>
