@@ -1,6 +1,4 @@
 import React, { useRef } from "react";
-// import { OverlayTrigger, Tooltip } from "react-bootstrap";
-// import Switch from "../../switch/Switch";
 import { download } from "../../../../helpers/Helpers";
 import logo from "../../../../static/chatGPT/logo.png";
 import thumb from "../../../../static/chatGPT/thumb.png";

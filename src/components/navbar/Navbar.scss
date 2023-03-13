@@ -5,7 +5,10 @@
   border-right: 0.5px solid rgba(128, 128, 128, 0.75);
   min-height: 100%;
   position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
   top: 0;
+  bottom: 0;
   left: 0;
   display: flex;
   flex-direction: column;

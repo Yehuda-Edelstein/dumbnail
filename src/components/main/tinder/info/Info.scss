@@ -1,0 +1,34 @@
+.tinder-message-info-container {
+  .tinder-msg-info {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 0.5px solid rgba(128, 128, 128, 0.75);
+
+    .message-buttons-container {
+      img {
+        width: 20px;
+      }
+
+      .them-btn {
+        transform: scaleX(-1);
+      }
+
+      .them-btn,
+      .you-btn {
+        &:hover {
+          cursor: pointer;
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+      .active {
+        cursor: default !important;
+        opacity: 1 !important;
+        background-color: inherit !important;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+          rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+    }
+  }
+}

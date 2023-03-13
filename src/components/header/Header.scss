@@ -5,6 +5,7 @@
   // top: 0;
   z-index: 999;
   display: flex;
+  min-height: 70.72px;
   align-items: center;
   padding: 10px;
   background-color: white;
@@ -148,6 +149,9 @@
     }
     .small-screen-logo {
       display: block;
+      width: 67px;
+      height: 40px;
+      margin-top: 1px;
     }
   }
 }

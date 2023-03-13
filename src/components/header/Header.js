@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import logo from "./../../static/logo.png";
-import small from "./../../static/small-screen-logo.png";
+import small from "./../../static/sm-screen-logo-light.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import gpt from "../../static/chatGPT/icon.png";
+import tinder from "../../static/tinder/icon.png";
 
 function Header({ path, setPath, show, setShow, handleShow }) {
   return (
@@ -127,6 +128,21 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                 >
                   <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
                   <div>iMessage</div>
+                </Link>
+                <Link
+                  to="messaging/tinder"
+                  onClick={() => {
+                    handleShow();
+                    setPath({
+                      icon: null,
+                      path: "Tinder",
+                      img: "tinder/icon.png",
+                    });
+                  }}
+                  className="dumbnail-header-nav-link"
+                >
+                  <img className="icon" src={tinder} alt="" />
+                  <div>Tinder</div>
                 </Link>
                 <Link
                   to="messaging/chatGPT"

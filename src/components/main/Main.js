@@ -9,6 +9,7 @@ import "./Main.scss";
 import Home from "./home/Home";
 import Instagram from "./instagram/Instagram";
 import ChatGPT from "./chatGPT/chatGPT";
+import Tinder from "./tinder/Tinder";
 // import Ad from "./ad/Ad";
 
 function Main({ setPath }) {
@@ -26,6 +27,7 @@ function Main({ setPath }) {
         {/* add LinkedIn and a posts catergory */}
         <Route path="/content/post" element={<Instagram />} />
         <Route path="/messaging/iMessage" element={<Message />} />
+        <Route path="/messaging/tinder" element={<Tinder />} />
         <Route path="/messaging/chatGPT" element={<ChatGPT />} />
         <Route path="/about" element={<About />} />
       </Routes>

@@ -8,6 +8,11 @@ $dark-gray: #717374;
 $dark-blue: rgb(33 166 255);
 $dark-handle-gray: #717374;
 
+@font-face {
+  font-family: "Twitter";
+  src: url("../../../../static/fonts/twitter/twitter.woff") format("woff");
+}
+
 .twitter-preview {
   background-color: white;
   border: 0.5px solid rgba(128, 128, 128, 0.75);
@@ -34,6 +39,7 @@ $dark-handle-gray: #717374;
   }
 
   .light {
+    font-family: Twitter;
     background-color: #ffffff;
 
     .twitter-options {
@@ -70,6 +76,7 @@ $dark-handle-gray: #717374;
   }
 
   .dark {
+    font-family: Twitter;
     background-color: #000000;
 
     .twitter-options {

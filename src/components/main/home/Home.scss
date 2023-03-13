@@ -1,6 +1,5 @@
 .home {
-  padding: 2rem;
-  padding-top: 1em;
+  margin: 20px;
   width: 100%;
   min-width: 320px;
 
@@ -59,20 +58,7 @@
     font-size: 25px;
   }
 
-  // .example-pics {
-  //   max-width: 500px;
-
-  //   img {
-  //     max-width: 500px;
-  //     &:hover {
-  //       cursor: pointer;
-  //       opacity: 0.75;
-  //     }
-  //   }
-  // }
-
   .content-container {
-    // border: 1px solid rgba(0, 0, 0, 0.6);
     border-top: none;
     background-color: white;
     margin: 0 auto;
@@ -89,11 +75,8 @@
 @media screen and (max-width: 560px) {
   .home {
     .example-pics {
-      // width: 90vw;
-
       img {
         width: inherit;
-        // padding-right: 30px;
       }
     }
   }
@@ -102,8 +85,6 @@
 @media screen and (max-width: 320px) {
   .home {
     .example-pics {
-      // width: 290px;
-
       img {
         width: inherit;
         padding-right: 30px;

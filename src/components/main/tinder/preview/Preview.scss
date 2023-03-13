@@ -1,0 +1,113 @@
+$theme: rgb(253, 41, 123);
+$time-message: rgb(154, 154, 154);
+$them: #e6e6e6;
+$you: #13c3fe;
+
+.tinder {
+  font-family: "Roboto", "Arial", sans-serif;
+
+  .message-header {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+    .match {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0 5px 40px;
+
+      .name {
+        text-align: center;
+        font-size: 10px;
+        color: $time-message;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .message-body {
+    .matched-on {
+      font-size: 10px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: $time-message;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .from-match {
+      display: flex;
+      justify-content: space-between;
+
+      .match-pic,
+      .match-pic-backdrop {
+        margin: 0 8px;
+      }
+
+      .last-picture {
+        margin-left: 0 !important;
+      }
+
+      .tinder-msg {
+        background-color: $them;
+        padding: 7px 14px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 20px;
+        margin-bottom: 5px;
+        margin-left: 56px;
+      }
+
+      .last {
+        border-top-left-radius: 5px;
+        margin-left: 0;
+      }
+
+      svg {
+        font-size: 20px;
+        margin-right: 10px;
+        padding-top: 5px;
+        opacity: 0.1;
+      }
+    }
+
+    .from-you {
+      display: flex;
+      justify-content: flex-end;
+      .tinder-msg {
+        margin-right: 10px;
+        background-color: $you;
+        color: white;
+        padding: 7px 14px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 20px;
+        margin-bottom: 5px;
+      }
+
+      .last {
+        border-top-right-radius: 5px;
+      }
+    }
+  }
+
+  .match-pic-backdrop {
+    background-color: rgba(253, 41, 123, 0.1);
+    border: 1px dashed rgba(253, 41, 123, 0.5);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+
+  .tinder-chevron-left {
+    opacity: 0.3;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .tinder-header-icons {
+    width: 65px;
+    margin-right: 10px;
+    opacity: 0.75;
+  }
+}

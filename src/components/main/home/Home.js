@@ -1,5 +1,4 @@
 import React from "react";
-// import Ad from "./ad/Ad";
 import "./Home.scss";
 import youtube from "../../../static/examples/youtube.png";
 import twitter from "../../../static/examples/twitter.png";
@@ -46,11 +45,6 @@ function Home({ setPath }) {
                   </div>
                   <div className=" d-grid">
                     <img src={youtube} alt="" />
-                    {/* <div className="example-text">
-                {" "}
-                Design a fictional YouTube video. Choose from one of our
-                templates or get creative.
-              </div> */}
                   </div>
                 </div>
               </div>
@@ -75,9 +69,6 @@ function Home({ setPath }) {
                   </div>
                   <div className="d-grid">
                     <img src={twitter} alt="" />
-                    {/* <div className="example-text">
-              Create a fake tweet from a famous celebrity.
-            </div> */}
                   </div>
                 </div>
               </div>
@@ -100,10 +91,6 @@ function Home({ setPath }) {
                   </div>
                   <div className="d-grid">
                     <img src={message} alt="" />
-                    {/* <div className="example-text">
-              {" "}
-              Craft an amusing conversation between yourself and any contact.
-            </div> */}
                   </div>
                 </div>
               </div>
@@ -132,11 +119,6 @@ function Home({ setPath }) {
                   <div className="d-grid">
                     <img src={chat} alt="" />
                   </div>
-                  {/* <div className="example-text">
-              {" "}
-              Prove that humans are smarter than machines, but dumb enough to
-              fall for this.
-            </div> */}
                 </div>
               </div>
             </Link>
@@ -163,10 +145,6 @@ function Home({ setPath }) {
                   <div className="d-grid">
                     <img src={post} alt="" />
                   </div>
-                  {/* <div className="example-text">
-              {" "}
-              Post tooltip thingy
-            </div> */}
                 </div>
               </div>
             </Link>

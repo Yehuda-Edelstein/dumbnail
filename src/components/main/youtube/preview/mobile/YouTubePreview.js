@@ -6,6 +6,8 @@ import Switch from "../../../switch/Switch";
 import Spinner from "react-bootstrap/Spinner";
 import { download } from "../../../../../helpers/Helpers";
 
+import { domToPng } from "modern-screenshot";
+
 function YouTubePreview({
   switchDevice,
   setSwitchDevice,

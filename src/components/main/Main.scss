@@ -7,12 +7,44 @@
   padding-left: 190px;
 }
 
+.preview {
+  .preview-ref {
+    min-width: 370px;
+    max-width: 370px;
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.message-info-container {
+  background-color: white;
+  border: 0.5px solid rgba(128, 128, 128, 0.75);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  .messages-container {
+    .message-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .msg-info {
+      textarea {
+        resize: none;
+      }
+    }
+  }
+}
+
 .main {
   display: flex;
   width: 100%;
   justify-content: center;
   margin-top: 70px;
-  margin-left: 140px;
+  margin-left: 158px;
 
   .main-content {
     display: flex;

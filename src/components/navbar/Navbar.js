@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navbar.scss";
 import gpt from "../../static/chatGPT/icon.png";
+import tinder from "../../static/tinder/icon.png";
 
 function Navbar({ path, setPath }) {
   return (
@@ -62,6 +63,16 @@ function Navbar({ path, setPath }) {
         >
           <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
           <div>iMessage</div>
+        </Link>
+        <Link
+          to="messaging/tinder"
+          className="dumbnail-nav-link"
+          onClick={() => {
+            setPath({ icon: null, path: "Tinder", img: "tinder/icon.png" });
+          }}
+        >
+          <img className="icon" src={tinder} alt="" />
+          <div>Tinder</div>
         </Link>
         <Link
           to="messaging/chatGPT"
