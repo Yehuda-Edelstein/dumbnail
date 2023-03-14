@@ -17,11 +17,9 @@ People post memes to every social media, but most of them (if not all) aren't cr
 
 For the record, I'm not trying to make money off this, that isn't my intention, especially now that I'm making it open source. I just want to build something really awesome with other creative people and I think Dumbnail has the potential for it. All I need is a bit of help. 
 
-My coding isn't the best (the site is running at https://app.dumbnail.com on a DO server [should I use GH pages instead since it's free?]) and I'm slowly realizing I'm out of my league. I've done a lot of the grunt work, scaffolding and designing the basics, while also providing the vision, but now I want  others to contribute to the project as well. To fix bugs, make sure it can scale, add features, etc.
+My coding isn't the best (the site is running at https://app.dumbnail.com on a DO server [should I use GH pages instead since it's free?]) and I'm slowly realizing I'm out of my league. I've done a lot of the grunt work, scaffolding and designing the basics, while also providing the vision, but now I want  others to contribute to the project as well. To fix bugs, make sure it can scale, add features, etc. Don't get me wrong, I'm still gonna work on it, I just don't think I can accomplish all I want to do by myself.
 
-Don't get me wrong, I'm still gonna work on it, I just don't think I can accomplish all I want to do by myself.
-
-Lastly, as someone who loves the art of the meme, but who also doesn't like the idea of fake screenshots spreading misinformation, this
+Lastly, as someone who loves the art of the meme, but who also doesn't like the idea of fake screenshots spreading misinformation, I would want some way for users to check if an image was created on Dumbnail after the fact. Maybe uploading the file to check it for similiar memes created and stored in our (future) backend.
 
 ## Features
 Here are some features I want to add that I think will help beef up and legitamize the site.
@@ -32,12 +30,49 @@ Here are some features I want to add that I think will help beef up and legitami
 The truth is making this a social media/community isn't as important to me as having the best and biggest meme site out there. Meaning, what I care most about is Meme Integrity. If you want to add a Tumblr template, the colors, fonts, look should all be as close to the real thing as possible. 
 
 ## Bugs
-The only big bug right now is that downloading a screenshot doesn't work on Safari. It's something to do with the package I'm using html-to-image. I filled out an issue https://github.com/bubkoo/html-to-image/issues/348 but no one has figured out how to fix it, or if they have, I can't figure out how to implement it. 
+The only big bug right now is that downloading a screenshot doesn't work on Safari. It's something to do with the package I'm using. I filled out an issue here https://github.com/bubkoo/html-to-image/issues/348 but no one has figured out how to fix it, or, if they have, I can't figure out how to implement it. 
 
 ## Contributing
-New to open source, but I assume anyone who knows how to help will know how to contribute. I assume just make a pull request?
+I'm new to open source, but I assume anyone familiar knows how to help and will know how to contribute. I assume just make a pull request?
 
 ## Alas
-Any help would be awesome, any contribution. I want to have fun and build something cool which is why I got into software in the first place. Even editing this README would be cool too. 
+Any help would be awesome. I want to have fun and build something cool which is why I got into software in the first place. Even spellchecking this README would be great lol. 
+
+## Templates
+#### Social Media Content
+- YouTube thumbnail, posts (both feed view and detail view, with including comments as an option)
+- Tweets, Twitter trending, threads (there's a lot here)
+- Instagram posts, stories
+- Reddit posts
+- LinkedIn posts
+- Tinder bio
+- Spotify song, playlist
+
+
+#### Messaging
+- iMessage (groups and DMs
+- WhatsApp (groups and DMs)
+- Tinder
+- ChatGPT
+- Instagram DMs
+- Reddit
+- UberEats, Uber, Lyft, and similiar delivery-style apps
+- Xbox live
+
+#### Legacy Memes
+- Distracted Boyfriend
+- Change My Mind
+- Exit 12
+- Basic meme creator, with lettering, etc.
+
+#### Unique Content
+- DraftKings, Fanduel parlays and DFS
+- Wordle
+- Yugeeoh cards
+- Yearbook photos
+- Billboards
+- FaceTime
+- Google, Bing search results
+
 
 ~ Y.E.
