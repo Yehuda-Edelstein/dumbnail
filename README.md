@@ -1,4 +1,4 @@
-# Dumbnail - The Ultimate Memeshot Maker
+# Dumbnail
 I created the site to be a one-stop-shop for creating *memeshots* -- a meme in the version of a screenshot. 
 
 As of now it has YouTube thumbnails, tweets, Instagram posts, iMessage, and ChatGPT conversations. My goal is for Dumbnail to be an open-source social media with feeds, user auth, etc, all for creating different kinds of memes. 
