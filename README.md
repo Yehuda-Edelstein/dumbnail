@@ -17,7 +17,7 @@ People post memes to every social media, but most of them (if not all) aren't cr
 
 For the record, I'm not trying to make money off this, that isn't my intention, especially now that I'm making it open source. I just want to build something really awesome with other creative people and I think Dumbnail has the potential for it. All I need is a bit of help. 
 
-My coding isn't the best (the site is running at https://app.dumbnail.com on a DO server [should I use GH pages instead since it's free?]) and I'm slowly realizing I'm out of my league. I've done a lot of the grunt work, scaffolding and designing the basics, while also providing the vision, but now I want  others to contribute to the project as well. To fix bugs, make sure it can scale, add features, etc. Don't get me wrong, I'm still gonna work on it, I just don't think I can accomplish all I want to do by myself.
+My coding isn't the best (the site is running on a DO server [should I use GH pages instead since it's free?]) and I'm slowly realizing I'm out of my league. I've done a lot of the grunt work, scaffolding and designing the basics, while also providing the vision, but now I want  others to contribute to the project as well. To fix bugs, make sure it can scale, add features, etc. Don't get me wrong, I'm still gonna work on it, I just don't think I can accomplish all I want to do by myself.
 
 Lastly, as someone who loves the art of the meme, but who also doesn't like the idea of fake screenshots spreading misinformation, I would want some way for users to check if an image was created on Dumbnail after the fact. Maybe uploading the file to check it for similiar memes created and stored in our (future) backend.
 
