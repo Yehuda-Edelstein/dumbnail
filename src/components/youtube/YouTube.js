@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import YouTubePreview from "./preview/mobile/YouTubePreview.js";
-import "./YouTube.scss";
 import Channel from "./upload/channel/Channel.js";
 import Info from "./upload/info/Info.js";
 import Thumbnail from "./upload/thumbnail/Thumbnail.js";
-// import Ad from "../ad/Ad.js";
 import { Tab, Tabs } from "react-bootstrap";
+import "./YouTube.scss";
 
 function YouTube() {
   const [selectedThumb, setSelectedThumb] = useState();
   const [previewThumb, setPreviewThumb] = useState();
   const [selectedChannelPic, setSelectedChannelPic] = useState();
   const [previewChannelPic, setPreviewChannelPic] = useState();
-  //
   const [duration, setDuration] = useState("4:20");
   const [title, setTitle] = useState("Title");
   const [channelName, setChannelName] = useState("Channel");
@@ -240,9 +238,6 @@ function YouTube() {
           setIsLoading={setIsLoading}
         />
       </div>
-      {/* <div style={{ display: "block" }}>
-        <Ad dataAdSlot={"3512353142"} />
-      </div> */}
     </div>
   );
 }

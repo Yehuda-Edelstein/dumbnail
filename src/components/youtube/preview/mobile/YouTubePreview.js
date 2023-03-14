@@ -2,11 +2,9 @@ import React, { useRef } from "react";
 import "./YouTubePreview.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Switch from "../../../switch/Switch";
+import Switch from "../../../main/switch/Switch";
 import Spinner from "react-bootstrap/Spinner";
-import { download } from "../../../../../helpers/Helpers";
-
-import { domToPng } from "modern-screenshot";
+import { download } from "../../../../helpers/Helpers";
 
 function YouTubePreview({
   switchDevice,
@@ -98,7 +96,7 @@ function YouTubePreview({
               <img
                 className="template"
                 alt=""
-                src={require(`../../../../../static/temps/youtube/${template}`)}
+                src={require(`../../../../static/temps/youtube/${template}`)}
               />
             )}
           </div>
@@ -118,7 +116,7 @@ function YouTubePreview({
               {!selectedChannelPic && isChannelTemp && (
                 <div className="channel-temp">
                   <img
-                    src={require(`../../../../../static/popular/youtube/${channelTemp}`)}
+                    src={require(`../../../../static/popular/youtube/${channelTemp}`)}
                     alt=""
                   />
                 </div>

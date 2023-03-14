@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Thumbnail.scss";
-import Crop from "../../../crop/Crop";
+import Crop from "../../../main/crop/Crop";
 
 function Thumbnail({
   uploadThumbnail,
@@ -29,7 +29,7 @@ function Thumbnail({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const data = require("../../../../../static/temps/youtube/popular.json");
+  const data = require("../../../../static/temps/youtube/popular.json");
 
   function reset() {
     setPreviewThumb();
@@ -160,7 +160,7 @@ function Thumbnail({
                       <div className="temp-label">{temp.name}</div>
                       <img
                         className="border-top-0"
-                        src={require(`../../../../../static/temps/youtube/${temp.thumb}`)}
+                        src={require(`../../../../static/temps/youtube/${temp.thumb}`)}
                         alt=""
                       />
                     </div>

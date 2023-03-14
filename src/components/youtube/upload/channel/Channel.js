@@ -3,7 +3,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Channel.scss";
-import Crop from "../../../crop/Crop";
+import Crop from "../../../main/crop/Crop";
 
 function Channel({
   setPreviewChannelPic,
@@ -25,7 +25,7 @@ function Channel({
   setIsChannelTemp,
   isChannelTemp,
 }) {
-  const data = require("../../../../../static/popular/youtube/popular.json");
+  const data = require("../../../../static/popular/youtube/popular.json");
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -44,11 +44,6 @@ function Channel({
     setIsChannelTemp(false);
     setChannelName("Channel");
   }
-
-  // function reset() {
-  //   setPreviewChannelPic();
-  //   setSelectedChannelPic();
-  // }
 
   return (
     <div className="channel-container">
@@ -173,7 +168,7 @@ function Channel({
                         }}
                       >
                         <img
-                          src={require(`../../../../../static/popular/youtube/${pic}`)}
+                          src={require(`../../../../static/popular/youtube/${pic}`)}
                           alt=""
                         />
                       </div>

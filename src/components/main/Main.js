@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 // import Home from "../main/home/Home";
-import YouTube from "../main/youtube/YouTube";
+import YouTube from "..//youtube/YouTube";
 import Twitter from "../main/twitter/Twitter";
 import Message from "../main/message/Message";
 import About from "../main/about/About";
@@ -15,11 +15,6 @@ import Tinder from "./tinder/Tinder";
 function Main({ setPath }) {
   return (
     <div className="main">
-      {/* <div className="banner">
-        <div class="alert alert-warning" role="alert">
-          Safari browser not currently supported, switch to Chrome.
-        </div>
-      </div> */}
       <Routes>
         <Route path="/" element={<Home setPath={setPath} />} />
         <Route path="/content/thumbnail" element={<YouTube />} />
