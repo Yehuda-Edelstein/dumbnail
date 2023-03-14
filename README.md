@@ -27,6 +27,8 @@ Here are some features I want to add that I think will help beef up and legitami
 - A feed where users can post memes they've created or like and comment on others' posts, etc.
 - A whole bunch of templates (constantly growing) for users to create their memes. I'll leave a list of potential templates at the bottom, but feel free to create your own.
 
+BONUS: I also think it would be cool if the example memes on the home page were newly generated on each refresh through a combination of AI to write simple text and a function to determine numbers/amount of messages, etc.
+
 The truth is making this a social media/community isn't as important to me as having the best and biggest meme site out there. Meaning, what I care most about is Meme Integrity. If you want to add a Tumblr template, the colors, fonts, look should all be as close to the real thing as possible. 
 
 ## Bugs
