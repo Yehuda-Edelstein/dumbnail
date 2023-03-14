@@ -21,6 +21,11 @@ My coding isn't the best (the site is running at https://app.dumbnail.com on a D
 
 Lastly, as someone who loves the art of the meme, but who also doesn't like the idea of fake screenshots spreading misinformation, I would want some way for users to check if an image was created on Dumbnail after the fact. Maybe uploading the file to check it for similiar memes created and stored in our (future) backend.
 
+## Why Open Source?
+The thing about the meme business, especially this kind, is that the actual sites change constantly; updates, design changes, etc. Dumbnail would need to stay up to date so that the memes would be as accurate as possible (a cool feature I wanted was to keep different versions of apps [old twitter v. new twitter]). 
+
+These potentially continuous changes and updates will be more than I can handle, I assume.
+
 ## Features
 Here are some features I want to add that I think will help beef up and legitamize the site.
 - User auth, in-app messaging, friends, a network, etc.
