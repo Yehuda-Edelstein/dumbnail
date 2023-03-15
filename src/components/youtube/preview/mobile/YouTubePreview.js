@@ -32,7 +32,6 @@ function YouTubePreview({
   channelTemp,
   isChannelTemp,
   isLoading,
-  setIsLoading,
 }) {
   const ref = useRef(null);
 

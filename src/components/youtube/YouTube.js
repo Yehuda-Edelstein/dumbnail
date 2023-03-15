@@ -36,6 +36,7 @@ function YouTube() {
   // loading
   const [isLoading, setIsLoading] = useState(false);
 
+  // what are these useEffects doing?
   useEffect(() => {
     if (!selectedThumb) {
       setPreviewThumb(undefined);
@@ -46,16 +47,6 @@ function YouTube() {
 
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedThumb]);
-
-  function uploadThumbnail(ev) {
-    setIsLoading(true);
-    if (!ev.target.files || ev.target.files.length === 0) {
-      setSelectedThumb(undefined);
-      return;
-    }
-    setSelectedThumb(ev.target.files[0]);
-    setIsLoading(false);
-  }
 
   useEffect(() => {
     if (!selectedChannelPic) {
@@ -68,6 +59,7 @@ function YouTube() {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedChannelPic]);
 
+  // change this to a helper
   function uploadChannelPic(ev) {
     setIsChannelTemp(false);
     setChannelTemp();
@@ -78,36 +70,26 @@ function YouTube() {
     setSelectedChannelPic(ev.target.files[0]);
   }
 
-  function clearTemp() {
-    setIsTemplate(false);
-    setIsChannelTemp(false);
-    setChannelName("Channel");
-  }
-
   return (
-    <div className="main-content">
-      <div className="upload-content">
+    <div className="main">
+      <div className="upload-containers-grid">
         <Thumbnail
-          uploadThumbnail={uploadThumbnail}
-          clearTemp={clearTemp}
-          previewThumb={previewThumb}
           selectedThumb={selectedThumb}
-          thumbZoom={thumbZoom}
-          setThumbZoom={setThumbZoom}
-          thumbX={thumbX}
-          thumbY={thumbY}
-          setThumbX={setThumbX}
-          setThumbY={setThumbY}
+          previewThumb={previewThumb}
+          setSelectedThumb={setSelectedThumb}
+          setPreviewThumb={setPreviewThumb}
           isTemplate={isTemplate}
           setIsTemplate={setIsTemplate}
           setTemplate={setTemplate}
-          setPreviewThumb={setPreviewThumb}
-          setPreviewChannelPic={setPreviewChannelPic}
-          setChannelName={setChannelName}
-          uploadChannelPic={uploadChannelPic}
-          setSelectedThumb={setSelectedThumb}
-          setChannelTemp={setChannelTemp}
           setIsChannelTemp={setIsChannelTemp}
+          setChannelTemp={setChannelTemp}
+          setChannelName={setChannelName}
+          thumbX={thumbX}
+          thumbY={thumbY}
+          thumbZoom={thumbZoom}
+          setThumbX={setThumbX}
+          setThumbY={setThumbY}
+          setThumbZoom={setThumbZoom}
         />
         <Channel
           setPreviewChannelPic={setPreviewChannelPic}
@@ -147,26 +129,22 @@ function YouTube() {
         >
           <Tab eventKey="thumbnail" title="Thumbnail">
             <Thumbnail
-              uploadThumbnail={uploadThumbnail}
-              clearTemp={clearTemp}
-              previewThumb={previewThumb}
               selectedThumb={selectedThumb}
-              thumbZoom={thumbZoom}
-              setThumbZoom={setThumbZoom}
-              thumbX={thumbX}
-              thumbY={thumbY}
-              setThumbX={setThumbX}
-              setThumbY={setThumbY}
+              previewThumb={previewThumb}
+              setSelectedThumb={setSelectedThumb}
+              setPreviewThumb={setPreviewThumb}
               isTemplate={isTemplate}
               setIsTemplate={setIsTemplate}
               setTemplate={setTemplate}
-              setPreviewThumb={setPreviewThumb}
-              setPreviewChannelPic={setPreviewChannelPic}
-              setChannelName={setChannelName}
-              uploadChannelPic={uploadChannelPic}
-              setSelectedThumb={setSelectedThumb}
-              setChannelTemp={setChannelTemp}
               setIsChannelTemp={setIsChannelTemp}
+              setChannelTemp={setChannelTemp}
+              setChannelName={setChannelName}
+              thumbX={thumbX}
+              thumbY={thumbY}
+              thumbZoom={thumbZoom}
+              setThumbX={setThumbX}
+              setThumbY={setThumbY}
+              setThumbZoom={setThumbZoom}
             />
           </Tab>
           <Tab eventKey="channel" title="Channel">
@@ -205,39 +183,35 @@ function YouTube() {
           </Tab>
         </Tabs>
       </div>
-      <div>
-        <YouTubePreview
-          switchDevice={switchDevice}
-          setSwitchDevice={setSwitchDevice}
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
-          duration={duration}
-          title={title}
-          channelName={channelName}
-          views={views}
-          timeAgo={timeAgo}
-          increment={increment}
-          uploadThumbnail={uploadThumbnail}
-          uploadChannelPic={uploadChannelPic}
-          selectedThumb={selectedThumb}
-          previewThumb={previewThumb}
-          selectedChannelPic={selectedChannelPic}
-          previewChannelPic={previewChannelPic}
-          thumbZoom={thumbZoom}
-          setThumbZoom={setThumbZoom}
-          thumbX={thumbX}
-          thumbY={thumbY}
-          channelPicZoom={channelPicZoom}
-          channelPicX={channelPicX}
-          channelPicY={channelPicY}
-          isTemplate={isTemplate}
-          template={template}
-          channelTemp={channelTemp}
-          isChannelTemp={isChannelTemp}
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
-        />
-      </div>
+      <YouTubePreview
+        switchDevice={switchDevice}
+        setSwitchDevice={setSwitchDevice}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+        duration={duration}
+        title={title}
+        channelName={channelName}
+        views={views}
+        timeAgo={timeAgo}
+        increment={increment}
+        selectedThumb={selectedThumb}
+        previewThumb={previewThumb}
+        selectedChannelPic={selectedChannelPic}
+        previewChannelPic={previewChannelPic}
+        thumbZoom={thumbZoom}
+        setThumbZoom={setThumbZoom}
+        thumbX={thumbX}
+        thumbY={thumbY}
+        channelPicZoom={channelPicZoom}
+        channelPicX={channelPicX}
+        channelPicY={channelPicY}
+        isTemplate={isTemplate}
+        template={template}
+        channelTemp={channelTemp}
+        isChannelTemp={isChannelTemp}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
+      />
     </div>
   );
 }

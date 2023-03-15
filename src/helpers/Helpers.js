@@ -23,12 +23,20 @@ export function addCommas(int) {
 }
 
 // upload image
-export function upload(ev, setSelected) {
+// export function upload(ev, setSelected) {
+//   if (!ev.target.files || ev.target.files.length === 0) {
+//     setSelected(undefined);
+//     return;
+//   }
+//   setSelected(ev.target.files[0]);
+// }
+
+export function upload(ev) {
   if (!ev.target.files || ev.target.files.length === 0) {
-    setSelected(undefined);
-    return;
+    return undefined;
+  } else {
+    return ev.target.files[0];
   }
-  setSelected(ev.target.files[0]);
 }
 
 // create tooltip for popular accounts
