@@ -1,0 +1,28 @@
+.upload-container {
+  #clear-form {
+    margin-top: 10px;
+  }
+  .info-form {
+    input,
+    select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px;
+      padding-left: 10px;
+      font-size: 15px;
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      background-color: rgba(128, 128, 128, 0.1);
+      &:focus {
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+    }
+    select {
+      width: 100px;
+    }
+    .views-input,
+    .posted-input {
+      width: 130px;
+    }
+  }
+}

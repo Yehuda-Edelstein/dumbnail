@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Thumbnail.scss";
-import Crop from "../../../main/crop/Crop";
-import { upload } from "../../../../helpers/Helpers";
-import data from "../../../../static/temps/youtube/popular.json";
+import Crop from "../../main/crop/Crop";
+import { upload } from "../../../helpers/Helpers";
+import data from "../../../static/temps/youtube/popular.json";
 
 function Thumbnail({
   selectedThumb,
@@ -48,18 +48,20 @@ function Thumbnail({
             <h5>Thumbnail</h5>
             <div className="d-flex">
               {selectedThumb && (
-                <OverlayTrigger
-                  key={"top"}
-                  placement={"top"}
-                  delay={{ show: "700", hide: "100" }}
-                  overlay={<Tooltip id={"tooltip-top"}>Crop</Tooltip>}
-                >
-                  <FontAwesomeIcon
-                    icon={["fa", "crop"]}
-                    onClick={handleShow}
-                    className="icon-enabled"
-                  />
-                </OverlayTrigger>
+                <div>
+                  <OverlayTrigger
+                    key={"top"}
+                    placement={"top"}
+                    delay={{ show: "700", hide: "100" }}
+                    overlay={<Tooltip id={"tooltip-top"}>Crop</Tooltip>}
+                  >
+                    <FontAwesomeIcon
+                      icon={["fa", "crop"]}
+                      onClick={handleShow}
+                      className="icon-enabled"
+                    />
+                  </OverlayTrigger>
+                </div>
               )}
               <div>
                 <OverlayTrigger
@@ -139,7 +141,7 @@ function Thumbnail({
                     <div className="temp-label">{temp.name}</div>
                     <img
                       className="border-top-0"
-                      src={require(`../../../../static/temps/youtube/${temp.thumb}`)}
+                      src={require(`../../../static/temps/youtube/${temp.thumb}`)}
                       alt=""
                     />
                   </div>

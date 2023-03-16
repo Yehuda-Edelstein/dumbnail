@@ -1,6 +1,5 @@
 .home {
   margin: 20px;
-  width: 100%;
   min-width: 320px;
 
   .example-link {
@@ -69,6 +68,13 @@
       padding: 1rem;
       padding-top: 0em;
     }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  // re-centers content when sidebar is absent
+  .home {
+    left: 0;
   }
 }
 

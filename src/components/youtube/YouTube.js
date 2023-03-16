@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import YouTubePreview from "./preview/mobile/YouTubePreview.js";
-import Channel from "./upload/channel/Channel.js";
-import Info from "./upload/info/Info.js";
-import Thumbnail from "./upload/thumbnail/Thumbnail.js";
+import Channel from "./channel/Channel.js";
+import Info from "./info/Info.js";
+import Thumbnail from "./thumbnail/Thumbnail.js";
 import { Tab, Tabs } from "react-bootstrap";
 import "./YouTube.scss";
 
@@ -33,8 +33,6 @@ function YouTube() {
   const [template, setTemplate] = useState();
   const [isChannelTemp, setIsChannelTemp] = useState(false);
   const [channelTemp, setChannelTemp] = useState();
-  // loading
-  const [isLoading, setIsLoading] = useState(false);
 
   // what are these useEffects doing?
   useEffect(() => {
@@ -59,19 +57,8 @@ function YouTube() {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedChannelPic]);
 
-  // change this to a helper
-  function uploadChannelPic(ev) {
-    setIsChannelTemp(false);
-    setChannelTemp();
-    if (!ev.target.files || ev.target.files.length === 0) {
-      setSelectedChannelPic(undefined);
-      return;
-    }
-    setSelectedChannelPic(ev.target.files[0]);
-  }
-
   return (
-    <div className="main">
+    <div className="main-components">
       <div className="upload-containers-grid">
         <Thumbnail
           selectedThumb={selectedThumb}
@@ -94,7 +81,6 @@ function YouTube() {
         <Channel
           setPreviewChannelPic={setPreviewChannelPic}
           setSelectedChannelPic={setSelectedChannelPic}
-          uploadChannelPic={uploadChannelPic}
           previewChannelPic={previewChannelPic}
           selectedChannelPic={selectedChannelPic}
           channelPicZoom={channelPicZoom}
@@ -104,8 +90,6 @@ function YouTube() {
           setChannelPicX={setChannelPicX}
           setChannelPicY={setChannelPicY}
           setChannelName={setChannelName}
-          setIsTemplate={setIsTemplate}
-          setTemplate={setTemplate}
           setChannelTemp={setChannelTemp}
           isChannelTemp={isChannelTemp}
           setIsChannelTemp={setIsChannelTemp}
@@ -120,8 +104,9 @@ function YouTube() {
           setTimeAgo={setTimeAgo}
           setIncrement={setIncrement}
         />
+        <div className="bottom-container"></div>
       </div>
-      <div className="content-tabs">
+      <div className="upload-containers-tabs">
         <Tabs
           defaultActiveKey="thumbnail"
           id="uncontrolled-tab-example"
@@ -152,7 +137,6 @@ function YouTube() {
             <Channel
               setPreviewChannelPic={setPreviewChannelPic}
               setSelectedChannelPic={setSelectedChannelPic}
-              uploadChannelPic={uploadChannelPic}
               previewChannelPic={previewChannelPic}
               selectedChannelPic={selectedChannelPic}
               channelPicZoom={channelPicZoom}
@@ -209,8 +193,6 @@ function YouTube() {
         template={template}
         channelTemp={channelTemp}
         isChannelTemp={isChannelTemp}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
       />
     </div>
   );

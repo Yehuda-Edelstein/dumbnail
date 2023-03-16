@@ -3,7 +3,6 @@ import "./YouTubePreview.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Switch from "../../../main/switch/Switch";
-import Spinner from "react-bootstrap/Spinner";
 import { download } from "../../../../helpers/Helpers";
 
 function YouTubePreview({
@@ -31,17 +30,17 @@ function YouTubePreview({
   template,
   channelTemp,
   isChannelTemp,
-  isLoading,
 }) {
   const ref = useRef(null);
 
+  // scales down dimensions for channel pic
   const x = channelPicX * 0.1;
   const y = channelPicY * 0.1;
 
   return (
-    <div className="youtube-preview">
+    <div className="preview-container">
       <h5>Preview</h5>
-      <div className="youtube-preview-header">
+      <div className="preview-header">
         <OverlayTrigger
           key={"right"}
           placement={"right"}
@@ -62,19 +61,13 @@ function YouTubePreview({
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div
-        className={
-          isLoading
-            ? "small-screen-margin border border-dark loading"
-            : "small-screen-margin border border-dark"
-        }
-      >
+      <div className="border border-dark">
         <div
           ref={ref}
           className={
             switchDevice
-              ? "youtube-preview-container dark"
-              : "youtube-preview-container light"
+              ? "youtube-preview-box dark"
+              : "youtube-preview-box light"
           }
         >
           <div className={selectedThumb ? "thumbnail" : "upload"}>
@@ -158,13 +151,7 @@ function YouTubePreview({
             download(ref, "thumbnail");
           }}
         >
-          {isLoading ? (
-            <div className="spinner">
-              <Spinner size="sm" />
-            </div>
-          ) : (
-            <div className="download">DOWNLOAD</div>
-          )}
+          <div className="download">DOWNLOAD</div>
         </div>
       </div>
       <div className="notes">

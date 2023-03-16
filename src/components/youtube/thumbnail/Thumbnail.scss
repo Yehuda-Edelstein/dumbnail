@@ -7,7 +7,7 @@ $height: 176.9px;
       width: calc($width * 0.35);
       height: calc($height * 0.45);
       border: 1px dashed rgba(128, 128, 128, 0.75);
-      background-color: rgba(128, 128, 128, 0.2);
+      background-color: rgba(128, 128, 128, 0.1);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -51,7 +51,7 @@ $height: 176.9px;
     }
 
     .temp {
-      background-color: rgba(128, 128, 128, 0.2);
+      background-color: rgba(128, 128, 128, 0.1);
     }
 
     .temp,

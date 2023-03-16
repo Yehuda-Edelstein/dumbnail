@@ -3,53 +3,34 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Channel.scss";
-import Crop from "../../../main/crop/Crop";
+import Crop from "../../main/crop/Crop";
+import data from "../../../static/popular/youtube/popular.json";
+import { createTooltip, upload } from "../../../helpers/Helpers";
 
 function Channel({
-  setPreviewChannelPic,
-  setSelectedChannelPic,
   selectedChannelPic,
   previewChannelPic,
-  uploadChannelPic,
+  setSelectedChannelPic,
+  setPreviewChannelPic,
+  isChannelTemp,
+  setIsChannelTemp,
   channelPicZoom,
   setChannelPicZoom,
   channelPicX,
   channelPicY,
   setChannelPicX,
   setChannelPicY,
-  // for popular channels
   setChannelName,
-  setIsTemplate,
-  setTemplate,
   setChannelTemp,
-  setIsChannelTemp,
-  isChannelTemp,
 }) {
-  const data = require("../../../../static/popular/youtube/popular.json");
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function createTooltip(str) {
-    if (str.includes("_")) {
-      return str.replace(/_/g, " ").split(".png");
-    }
-    return str.split(".png");
-  }
-
-  function clearChannelTemp() {
-    setPreviewChannelPic();
-    setSelectedChannelPic();
-    setIsChannelTemp(false);
-    setChannelName("Channel");
-  }
-
   return (
-    <div className="channel-container">
+    <div className="upload-container">
       {show ? (
         <Crop
-          show={show}
           handleClose={handleClose}
           img={previewChannelPic}
           x={channelPicX}
@@ -61,7 +42,7 @@ function Channel({
         />
       ) : (
         <div>
-          <div className="upload-channel-header">
+          <div className="upload-container-header">
             <h5>Channel</h5>
             <div className="d-flex">
               {selectedChannelPic && (
@@ -90,8 +71,13 @@ function Channel({
                   <FontAwesomeIcon
                     icon={["fa", "circle-xmark"]}
                     onClick={
-                      selectedChannelPic || isChannelTemp
-                        ? clearChannelTemp
+                      !selectedChannelPic || !isChannelTemp
+                        ? () => {
+                            setPreviewChannelPic();
+                            setSelectedChannelPic();
+                            setIsChannelTemp(false);
+                            setChannelName("Channel");
+                          }
                         : null
                     }
                     className={
@@ -104,49 +90,28 @@ function Channel({
               </div>
             </div>
           </div>
-          <div className="upload-channel-body d-flex">
+          <div className="upload-container-body">
             <div>
-              {" "}
-              {!selectedChannelPic && (
-                <div onChange={uploadChannelPic}>
-                  <div>
-                    <div className="upload-channel-pic">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        title=""
-                        onChange={uploadChannelPic}
-                        className="hidden-input"
-                      />
-                      <div className="upload-channel-label">Upload</div>
-                      <FontAwesomeIcon icon={["fa", "upload"]} />
-                    </div>
-                  </div>
-                </div>
-              )}
-              {selectedChannelPic && (
-                <div onChange={uploadChannelPic}>
-                  <div>
-                    <div className="upload-channel-pic">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        title=""
-                        onChange={uploadChannelPic}
-                        className="hidden-input"
-                      />
-                      <div className="upload-channel-label">Upload</div>
-                      <FontAwesomeIcon icon={["fa", "upload"]} />
-                    </div>
-                  </div>
-                </div>
-              )}
+              <div className="upload-channel-pic">
+                <input
+                  type="file"
+                  accept="image/*"
+                  title=""
+                  onChange={(ev) => {
+                    setSelectedChannelPic(upload(ev));
+                  }}
+                  className="hidden-input"
+                />
+                <div className="upload-channel-label">Upload</div>
+                <FontAwesomeIcon icon={["fa", "upload"]} />
+              </div>
             </div>
             <div className="scroll-container">
               <div className="before-overlay"></div>
               <div className="scroll">
                 {data.map((pic) => {
                   return (
+                    // maybe get rid of this?
                     <OverlayTrigger
                       key={pic}
                       placement={"top"}
@@ -168,7 +133,7 @@ function Channel({
                         }}
                       >
                         <img
-                          src={require(`../../../../static/popular/youtube/${pic}`)}
+                          src={require(`../../../static/popular/youtube/${pic}`)}
                           alt=""
                         />
                       </div>

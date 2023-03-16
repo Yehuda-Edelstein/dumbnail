@@ -1,16 +1,16 @@
 .header {
   width: 100%;
-  // overflow: hidden;
   position: fixed;
-  // top: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
   display: flex;
-  min-height: 70.72px;
+  height: 70px;
   align-items: center;
   padding: 10px;
   background-color: white;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
-
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
