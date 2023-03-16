@@ -17,12 +17,18 @@
         background-color: rgba(128, 128, 128, 0.25);
       }
     }
+
+    .input {
+      // add some kind of width restriction
+    }
     select {
       width: 100px;
     }
     .views-input,
     .posted-input {
-      width: 130px;
+      max-width: 150px;
+      min-width: 91px;
+      margin-right: 5px;
     }
   }
 }

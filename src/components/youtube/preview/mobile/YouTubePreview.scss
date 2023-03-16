@@ -376,65 +376,102 @@ $desc-font: 12.5px;
   }
 }
 
-// @media screen and (max-width: 320px) {
-//   .preview-container {
-//     min-width: 320px;
-//     // .youtube-preview-header {
-//     //   min-width: 300px;
-//     // }
-//     .youtube-preview-box {
-//       .upload {
-//         .time-stamp {
-//           font-size: 10.5px;
-//         }
-//       }
-//       .upload-channel-pic,
-//       .channel-pic,
-//       .channel-temp {
-//         width: 32px;
-//         height: 32px;
-//         margin-bottom: 25px;
-//       }
+@media screen and (max-width: 450px) {
+  .preview-container {
+    min-width: 320px;
+    .youtube-preview-box {
+      .upload {
+        .time-stamp {
+          font-size: 3.111vw;
+        }
+      }
+      .upload-channel-pic,
+      .channel-pic,
+      .channel-temp {
+        width: 8.444vw;
+        height: 8.444vw;
+        margin: 2.222vw 2.222vw 5.556vw;
+      }
 
-//       .info {
-//         max-width: none;
+      .info {
+        padding-right: 5.333vw;
+        .mobile-options {
+          font-size: 2.889vw;
+        }
 
-//         .mobile-options {
-//           float: right;
-//           font-size: 10px;
-//         }
+        .title {
+          font-size: 3.733vw;
+          margin: 2.667vw 0 -0.22vw 0;
+          max-height: 3.6rem;
+          max-width: 250px;
+        }
 
-//         .title {
-//           font-family: "Roboto", "Arial", sans-serif;
-//           font-size: 13.5px;
-//           margin: 12px 0 -1px 0;
-//           max-height: 3.6rem;
-//           display: block;
-//           max-width: 250px;
-//           overflow: hidden;
-//         }
+        .details {
+          line-height: 3.333vw;
 
-//         .details {
-//           line-height: 15px;
+          .channel-name,
+          .views,
+          .time-ago {
+            font-size: 3.056vw;
+          }
 
-//           .channel-name,
-//           .views,
-//           .time-ago {
-//             font-family: "Roboto", "Arial", sans-serif;
-//             font-size: 10.5px;
-//             overflow: hidden;
-//             text-overflow: ellipsis;
-//             white-space: wrap;
-//           }
+          .bullet {
+            font-size: 2px;
+            margin: auto 4px;
+          }
+        }
+      }
+    }
+  }
+}
 
-//           .bullet {
-//             align-items: center;
-//             font-size: 2px;
-//             vertical-align: middle;
-//             margin: auto 4px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 320px) {
+  .preview-container {
+    .youtube-preview-box {
+      .upload {
+        .time-stamp {
+          font-size: 10px;
+        }
+      }
+      .upload-channel-pic,
+      .channel-pic,
+      .channel-temp {
+        width: 27px;
+        height: 27px;
+        margin: 7px 7px 17px;
+      }
+
+      .info {
+        padding-right: 17px;
+
+        .mobile-options {
+          font-size: 10px;
+        }
+
+        .title {
+          font-size: 12px;
+          margin: 8.5px 0 0 0;
+          max-height: 3.6rem;
+          max-width: 250px;
+        }
+
+        .details {
+          line-height: 10px;
+
+          .channel-name,
+          .views,
+          .time-ago {
+            font-size: 10px;
+          }
+
+          .bullet {
+            align-items: center;
+            font-size: 2px;
+            vertical-align: middle;
+            margin: auto 4px;
+          }
+        }
+      }
+    }
+  }
+}

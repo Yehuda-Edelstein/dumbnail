@@ -124,29 +124,33 @@ function Thumbnail({
                 <FontAwesomeIcon icon={["fa", "upload"]} />
               </div>
             </div>
-            <div className="temp-container">
-              {data.map((temp) => {
-                return (
-                  <div
-                    className="temp d-grid"
-                    key={temp.thumb}
-                    onClick={() => {
-                      setIsTemplate(true);
-                      setIsChannelTemp(true);
-                      setTemplate(temp.thumb);
-                      setChannelTemp(temp.thumb);
-                      setChannelName(temp.name);
-                    }}
-                  >
-                    <div className="temp-label">{temp.name}</div>
-                    <img
-                      className="border-top-0"
-                      src={require(`../../../static/temps/youtube/${temp.thumb}`)}
-                      alt=""
-                    />
-                  </div>
-                );
-              })}
+            <div className="scroll-container">
+              <div className="before-overlay"></div>
+              <div className="scroll temps">
+                {data.map((temp) => {
+                  return (
+                    <div
+                      className="temp d-grid"
+                      key={temp.thumb}
+                      onClick={() => {
+                        setIsTemplate(true);
+                        setIsChannelTemp(true);
+                        setTemplate(temp.thumb);
+                        setChannelTemp(temp.thumb);
+                        setChannelName(temp.name);
+                      }}
+                    >
+                      <div className="temp-label">{temp.name}</div>
+                      <img
+                        className="border-top-0"
+                        src={require(`../../../static/temps/youtube/${temp.thumb}`)}
+                        alt=""
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="overlay"></div>
             </div>
           </div>
         </div>

@@ -4,10 +4,11 @@
   left: 160px;
   right: 0;
   bottom: 0;
-  padding-bottom: 25px;
 
   .main-components {
     display: flex;
+    min-width: 330px;
+
     .upload-containers-grid {
       display: grid;
 
@@ -59,8 +60,16 @@
           // for any scrollable popular list
           .scroll-container {
             position: relative;
-            overflow: hidden;
-            margin-left: 0em;
+            // margin-left: 0em;
+
+            .scroll {
+              display: flex;
+              overflow-x: scroll;
+              max-width: 330px;
+              padding-bottom: 15px;
+              margin-left: 0.75em;
+            }
+
             .before-overlay {
               content: "";
               position: absolute;
@@ -112,6 +121,8 @@
       margin-right: 0;
       height: fit-content;
       width: 413px;
+      min-width: 330px;
+
       .upload-container {
         .upload-container-header {
           display: flex;
@@ -155,6 +166,14 @@
             position: relative;
             overflow: hidden;
             margin-left: 0em;
+
+            .scroll {
+              display: flex;
+              overflow-x: scroll;
+              width: 100%;
+              padding-bottom: 15px;
+              margin-left: 0.75em;
+            }
             .before-overlay {
               content: "";
               position: absolute;
@@ -198,7 +217,7 @@
       padding: 20px;
       margin: 20px;
       height: fit-content;
-      top: 80px;
+      top: 90px;
       position: sticky;
       width: 413px;
       .preview-header {
@@ -225,12 +244,12 @@
   }
 }
 
+// maybe get rid of these !importants
 @media screen and (max-width: 820px) {
   .main {
     .main-components {
       flex-direction: column;
-      width: fit-content;
-      margin: 0 auto;
+      align-items: center;
     }
   }
   // replace containers grid with tabs
@@ -239,119 +258,31 @@
   }
 
   .upload-containers-tabs {
+    margin: 20px !important;
+    margin-bottom: 0 !important;
     display: block !important;
+    width: fit-content;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .upload-container {
+  .upload-containers-tabs {
+    margin: 0 !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.75) !important;
+    .upload-container {
+      // need something here
+    }
+  }
+
+  .preview-container {
+    margin: 0 !important;
+    width: 100% !important;
+    border: none !important;
+    border-top: 0.5px solid rgba(128, 128, 128, 0.75) !important;
+    border-radius: 0 !important;
   }
 }
-
-// OLD CSS
-// .banner {
-//   position: absolute;
-//   top: 70px;
-//   width: 100%;
-//   text-align: center;
-//   padding: 50px;
-//   padding-left: 190px;
-// }
-
-// .preview {
-//   .preview-ref {
-//     min-width: 370px;
-//     max-width: 370px;
-//     .message-header {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//     }
-//   }
-// }
-
-// .message-info-container {
-//   background-color: white;
-//   border: 0.5px solid rgba(128, 128, 128, 0.75);
-//   border-radius: 4px;
-//   padding: 20px;
-//   margin: 20px;
-//   .messages-container {
-//     .message-buttons-container {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//     }
-//     .msg-info {
-//       textarea {
-//         resize: none;
-//       }
-//     }
-//   }
-// }
-
-// .main {
-//   // display: flex;
-//   // width: 100%;
-//   // justify-content: center;
-//   // margin-top: 50px;
-//   // margin-left: 158px;
-
-//   .main-content {
-//     display: flex;
-//     justify-content: center;
-//     position: absolute;
-
-//     .upload-container {
-//       // background-color: white;
-//       // border: 0.5px solid rgba(128, 128, 128, 0.75);
-//       // border-radius: 4px;
-//       // padding: 20px;
-//       // margin: 20px;
-//       // margin-bottom: 20px;
-//       // margin-right: 0;
-//       // height: fit-content;
-//       // max-width: 413px;
-//       // min-width: 290px;
-//     }
-
-//     .upload-content {
-//       display: flex;
-//       flex-direction: column;
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 1050px) {
-//   .main {
-//     margin-left: 0px;
-//   }
-// }
-
-// @media screen and (max-width: 880px) {
-//   .main {
-//     .main-content {
-//       flex-direction: column;
-//       .upload-content {
-//         display: none;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 610px) {
-//   .main {
-//     margin-left: 0;
-//   }
-// }
-
-// @media screen and (max-width: 450px) {
-//   .main {
-//     justify-content: flex-start;
-//     .main-content {
-//       margin: 0;
-//       width: fit-content;
-//       position: relative;
-//     }
-//   }
-// }
