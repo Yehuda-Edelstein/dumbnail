@@ -19,8 +19,18 @@ function YouTube() {
   const [timeAgo, setTimeAgo] = useState("23");
   const [increment, setIncrement] = useState("minute");
   // switch
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [switchDevice, setSwitchDevice] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? true
+      : false
+  );
+  const [switchDevice, setSwitchDevice] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? true
+      : false
+  );
   // crop
   const [thumbZoom, setThumbZoom] = useState(100);
   const [thumbX, setThumbX] = useState(0);

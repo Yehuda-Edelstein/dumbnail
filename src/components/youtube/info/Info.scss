@@ -1,3 +1,5 @@
+@import "./../../../index.scss";
+
 .upload-container {
   #clear-form {
     margin-top: 10px;
@@ -29,6 +31,26 @@
       max-width: 150px;
       min-width: 91px;
       margin-right: 5px;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .info-form {
+    input {
+      color: $dm-text-color;
+    }
+    select {
+      color: $dm-text-color;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .info-form {
+    color: black;
+    select {
+      color: black;
     }
   }
 }

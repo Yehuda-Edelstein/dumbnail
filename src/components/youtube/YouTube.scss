@@ -1,19 +1,51 @@
-.upload-containers-tabs {
-  display: none;
-  .nav-link.active {
-    color: rgba(255, 0, 0, 0.75) !important;
-  }
+@import "./../main/Main.scss";
 
-  .nav-link {
-    color: black !important;
-    &:hover {
-      opacity: 1 !important;
-      text-decoration: none;
+@media screen and (prefers-color-scheme: dark) {
+  .upload-containers-tabs {
+    display: none;
+    .nav-link.active {
+      color: rgba(255, 0, 0, 0.5);
+      background-color: inherit;
+      border-color: rgba(255, 255, 255, 0.2);
+      border-bottom-color: $dm-bg-upload-container;
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.3);
+
+      &:hover {
+        opacity: 0.75 !important;
+        text-decoration: none;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .nav-tabs {
+      --bs-nav-tabs-border-width: 1px;
+      --bs-nav-tabs-border-radius: 0;
+      border-color: rgba(255, 255, 255, 0.1);
     }
   }
+}
 
-  .nav-tabs {
-    --bs-nav-tabs-border-width: 1px;
-    --bs-nav-tabs-border-radius: 0;
+@media screen and (prefers-color-scheme: light) {
+  .upload-containers-tabs {
+    display: none;
+    .nav-link.active {
+      color: rgba(255, 0, 0, 0.75);
+    }
+
+    .nav-link {
+      color: black;
+      &:hover {
+        opacity: 1 !important;
+        text-decoration: none;
+      }
+    }
+
+    .nav-tabs {
+      --bs-nav-tabs-border-width: 1px;
+      --bs-nav-tabs-border-radius: 0;
+    }
   }
 }

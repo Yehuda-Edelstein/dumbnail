@@ -104,3 +104,13 @@ $height: 176.9px;
     }
   }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+  .upload-container {
+    .upload-container-body {
+      .upload-thumb {
+        color: rgba(255, 255, 255, 0.35);
+      }
+    }
+  }
+}
