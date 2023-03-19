@@ -21,7 +21,28 @@ $dm-icon-disabled: rgb(136, 136, 136);
         margin: 20px 0 0 20px;
         padding: 20px;
         max-width: 413px;
+        max-height: fit-content;
 
+        #clear-form {
+          margin-top: 10px;
+        }
+        .info-form {
+          input,
+          select,
+          textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            padding-left: 10px;
+            font-size: 15px;
+            outline: none;
+            border: 1px dashed rgba(128, 128, 128, 0.75);
+            background-color: rgba(128, 128, 128, 0.1);
+            &:focus {
+              background-color: rgba(128, 128, 128, 0.25);
+            }
+          }
+        }
         .upload-container-header {
           display: flex;
           justify-content: space-between;
@@ -55,10 +76,48 @@ $dm-icon-disabled: rgb(136, 136, 136);
           margin-top: 10px;
           display: flex;
 
+          .upload-profile-pic {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 1px dashed rgba(128, 128, 128, 0.75);
+            background-color: rgba(128, 128, 128, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.75;
+              transform: scale(101%);
+            }
+
+            .hidden-input {
+              cursor: pointer;
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            .upload-profile-label {
+              font-size: 10px;
+            }
+
+            svg {
+              font-size: 10px;
+            }
+          }
+
           // for any scrollable popular list
           .scroll-container {
             position: relative;
-            // margin-left: 0em;
 
             .scroll {
               display: flex;
@@ -66,6 +125,26 @@ $dm-icon-disabled: rgb(136, 136, 136);
               max-width: 330px;
               padding-bottom: 15px;
               margin-left: 0.75em;
+              label {
+                margin-bottom: 0.25em;
+              }
+
+              .popular {
+                margin-right: 1.25em;
+                width: 65px;
+                &:hover {
+                  cursor: pointer;
+                  opacity: 0.75;
+                  transform: scale(101%);
+                }
+
+                img {
+                  border-radius: 50%;
+                  width: 75px;
+                  height: 100%;
+                  border: 1px solid rgba(0, 0, 0, 0.6);
+                }
+              }
             }
 
             .before-overlay {
@@ -109,14 +188,48 @@ $dm-icon-disabled: rgb(136, 136, 136);
       width: 413px;
       min-width: 330px;
 
+      .nav-link.active {
+        background-color: inherit;
+      }
+
+      .nav-link {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .nav-tabs {
+        --bs-nav-tabs-border-width: 1px;
+        --bs-nav-tabs-border-radius: 0;
+      }
+
       .upload-container {
+        #clear-form {
+          margin-top: 10px;
+        }
+        .info-form {
+          input,
+          select,
+          textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            padding-left: 10px;
+            font-size: 15px;
+            outline: none;
+            border: 1px dashed rgba(128, 128, 128, 0.75);
+            background-color: rgba(128, 128, 128, 0.1);
+            &:focus {
+              background-color: rgba(128, 128, 128, 0.25);
+            }
+          }
+        }
         .upload-container-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
 
           .icon-enabled {
-            // color: black;
             border-radius: 8px;
             align-items: center;
             padding: 8px;
@@ -144,6 +257,45 @@ $dm-icon-disabled: rgb(136, 136, 136);
           margin-top: 10px;
           display: flex;
 
+          .upload-profile-pic {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 1px dashed rgba(128, 128, 128, 0.75);
+            background-color: rgba(128, 128, 128, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.75;
+              transform: scale(101%);
+            }
+
+            .hidden-input {
+              cursor: pointer;
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            .upload-profile-label {
+              font-size: 10px;
+            }
+
+            svg {
+              font-size: 10px;
+            }
+          }
+
           // for any scrollable popular list
           .scroll-container {
             position: relative;
@@ -156,6 +308,26 @@ $dm-icon-disabled: rgb(136, 136, 136);
               width: 100%;
               padding-bottom: 15px;
               margin-left: 0.75em;
+              label {
+                margin-bottom: 0.25em;
+              }
+
+              .popular {
+                margin-right: 1.25em;
+                width: 65px;
+                &:hover {
+                  cursor: pointer;
+                  opacity: 0.75;
+                  transform: scale(101%);
+                }
+
+                img {
+                  border-radius: 50%;
+                  width: 75px;
+                  height: 100%;
+                  border: 1px solid rgba(0, 0, 0, 0.6);
+                }
+              }
             }
             .before-overlay {
               content: "";
@@ -286,6 +458,16 @@ $dm-icon-disabled: rgb(136, 136, 136);
           }
 
           .upload-container-body {
+            .upload-profile-pic {
+              color: rgba(255, 255, 255, 0.35);
+              .upload-profile-label {
+                font-size: 10px;
+              }
+
+              svg {
+                font-size: 10px;
+              }
+            }
             .scroll-container {
               position: relative;
 
@@ -314,6 +496,33 @@ $dm-icon-disabled: rgb(136, 136, 136);
       .upload-containers-tabs {
         background-color: $dm-bg-upload-container;
         border: 0.5px solid rgba(128, 128, 128, 0.75);
+        .nav-link.active {
+          background-color: inherit;
+          border-color: rgba(255, 255, 255, 0.2);
+          border-bottom-color: $dm-bg-upload-container;
+
+          &:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            border-bottom-color: $dm-bg-upload-container;
+          }
+        }
+
+        .nav-link {
+          color: rgba(255, 255, 255, 0.3);
+
+          &:hover {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.05);
+          }
+        }
+
+        .nav-tabs {
+          --bs-nav-tabs-border-width: 1px;
+          --bs-nav-tabs-border-radius: 0;
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+
         .upload-container {
           background-color: $dm-bg-upload-container;
 
@@ -338,6 +547,16 @@ $dm-icon-disabled: rgb(136, 136, 136);
           }
 
           .upload-container-body {
+            .upload-profile-pic {
+              color: rgba(255, 255, 255, 0.35);
+              .upload-profile-label {
+                font-size: 10px;
+              }
+
+              svg {
+                font-size: 10px;
+              }
+            }
             .scroll-container {
               .before-overlay {
                 background-image: linear-gradient(
@@ -434,6 +653,34 @@ $dm-icon-disabled: rgb(136, 136, 136);
         background-color: white;
         border: 0.5px solid rgba(128, 128, 128, 0.75);
 
+        .nav-link.active {
+          background-color: inherit;
+          border-color: rgba(0, 0, 0, 0.2);
+          border-bottom-color: rgba(255, 255, 255);
+
+          &:hover {
+            border-bottom-color: rgba(255, 255, 255);
+            border-color: rgba(0, 0, 0, 0.2);
+            border-bottom-color: rgba(255, 255, 255);
+          }
+        }
+
+        .nav-link {
+          color: rgba(0, 0, 0, 0.5);
+
+          &:hover {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        .nav-tabs {
+          --bs-nav-tabs-border-width: 1px;
+          --bs-nav-tabs-border-radius: 0;
+          border-color: rgba(0, 0, 0, 0.2);
+        }
+
         .upload-container {
           .upload-container-header {
             .icon-enabled {
@@ -452,6 +699,15 @@ $dm-icon-disabled: rgb(136, 136, 136);
           }
 
           .upload-container-body {
+            .upload-profile-pic {
+              .upload-profile-label {
+                font-size: 10px;
+              }
+
+              svg {
+                font-size: 10px;
+              }
+            }
             .scroll-container {
               .before-overlay {
                 background-image: linear-gradient(

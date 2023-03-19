@@ -31,7 +31,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Main from "./components/main/Main";
-import Navbar from "./components/navbar/Navbar";
+import Sidebar from "./components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import ReactGA from "react-ga";
 const TRACKING_ID = "UA-251706194-1";
@@ -93,7 +93,7 @@ function App() {
           setShow(false);
         }}
       >
-        <Navbar path={path} setPath={setPath} />
+        <Sidebar path={path} setPath={setPath} />
         <Main setPath={setPath} />
       </div>
     </div>

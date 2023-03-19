@@ -38,15 +38,9 @@ export function createTooltip(str) {
   return str.split(".png");
 }
 
-export function getDate() {
-  const today = new Date();
-  const year = today.getFullYear().toString().slice(-2);
-  const date = `${today.getMonth() + 1}/${today.getDate()}/${year}`;
-  return date;
-}
-
 // convert views to youtube style
 export function nFormatter(num, digits) {
+  // maybe allow .millions for twitter component
   const lookup = [
     { value: 1, symbol: "" },
     { value: 1e3, symbol: "k" },

@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import { download } from "./../../../../helpers/Helpers";
-import light from "./../../../../static/twitter-verified.png";
-import dark from "./../../../../static/twitter/dark-verified.png";
+import { download } from "../../../helpers/Helpers";
+import light from "./../../../assets/images/twitter/twitter-verified.png";
+import dark from "./../../../assets/images/twitter/dark-verified.png";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Switch from "../../switch/Switch";
+import Switch from "../../main/switch/Switch";
 import "./TwitterPreview.scss";
 
 function TwitterPreview({
@@ -20,6 +20,7 @@ function TwitterPreview({
   time,
   date,
   device,
+  views,
   isPopular,
   popular,
   previewProf,
@@ -30,23 +31,14 @@ function TwitterPreview({
 }) {
   const ref = useRef(null);
 
+  // scales down dimensions for channel pic
   const x = profX * 0.1;
   const y = profY * 0.1;
 
-  function exact(time) {
-    let split = time.toString().split(":");
-    let hour = split[0].replace(/^0/, "");
-    let post = hour - 12;
-    let minute = split[1];
-    return hour < 12
-      ? `${hour.replace(/^0/, "12")}:${minute} AM`
-      : `${post.toString().replace(/^0/, "12")}:${minute} PM`;
-  }
-
   return (
-    <div className="twitter-preview">
+    <div className="preview-container">
       <h5>Preview</h5>
-      <div className="twitter-preview-header">
+      <div className="preview-header">
         <OverlayTrigger
           key={"right"}
           placement={"right"}
@@ -67,13 +59,13 @@ function TwitterPreview({
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div className="small-screen-margin border border-dark">
+      <div className="border border-dark">
         <div
           ref={ref}
           className={
             switchDevice
-              ? "twitter-preview-container dark"
-              : "twitter-preview-container light"
+              ? "twitter-preview-box dark"
+              : "twitter-preview-box light"
           }
         >
           <div className="account-info">
@@ -81,7 +73,7 @@ function TwitterPreview({
               {isPopular && !selectedProf && (
                 <img
                   className="twitter-popular-prof"
-                  src={require(`./../../../../static/popular/twitter/${popular}`)}
+                  src={require(`./../../../assets/images/twitter/${popular}`)}
                   alt=""
                 />
               )}
@@ -119,11 +111,14 @@ function TwitterPreview({
           </div>
           <div className="tweet">{tweet}</div>
           <div className="tweet-info">
-            <div className="tweet-time">{exact(time)}</div>
+            <div className="tweet-time">{time}</div>
             <div className="tweet-bullet"></div>
             <div className="tweet-date">{date}</div>
             <div className="tweet-bullet"></div>
-            <div className="tweet-device">{device}</div>
+            <div className="tweet-views">
+              <span className="views">{views}</span> Views
+            </div>
+            {/* <div className="tweet-device">{device}</div> */}
           </div>
         </div>
         <button

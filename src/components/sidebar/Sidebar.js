@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Navbar.scss";
+import "./Sidebar.scss";
 import gpt from "../../static/chatGPT/icon.png";
 import tinder from "../../static/tinder/icon.png";
 
-function Navbar({ path, setPath }) {
+function Sidebar({ path, setPath }) {
   return (
-    <div className="dumbnail-nav-container">
+    <div className="sidebar">
       <div className="dumbnail-nav">
         <Link
           to="/"
@@ -100,4 +100,4 @@ function Navbar({ path, setPath }) {
   );
 }
 
-export default Navbar;
+export default Sidebar;

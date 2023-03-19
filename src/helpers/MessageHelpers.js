@@ -37,9 +37,6 @@ export function lastMessage(id, messages) {
   );
 }
 
-// convert any date correctly for html inputs
-export function inputDate(d) {}
-
 // convert html date to standard mm/dd/yy
 export function date(d) {
   let arr = d.toString().split("-");

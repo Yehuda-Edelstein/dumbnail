@@ -1,31 +1,23 @@
-// VERSION 1.0
 import React, { useState, useEffect } from "react";
 import { Tab, Tabs } from "react-bootstrap";
+import { get12HourTime } from "../../helpers/DateTimeHelpers";
+import { getDate } from "../../helpers/DateTimeHelpers";
 import TwitterPreview from "./preview/TwitterPreview";
-import TwitterProfile from "./upload/profile/TwitterProfile";
-import Tweet from "./upload/tweet/Tweet";
+import TwitterProfile from "./profile/TwitterProfile";
+import Tweet from "./tweet/Tweet";
 import "./Twitter.scss";
 
-const today = new Date();
-const year = today.getFullYear().toString().slice(-2);
-const hours = today.getHours();
-const dNow = `${today.getMonth() + 1}/${today.getDate()}/${year}`;
-const tNow =
-  today.getMinutes() < 10
-    ? `${hours}:0${today.getMinutes()}`
-    : `${hours}:${today.getMinutes()}`;
-
 function Twitter(props) {
-  // is preview active
-  const [isActive, setIsActive] = useState(false);
   //   Twitter
   const [name, setName] = useState("Name");
   const [verified, setVerified] = useState(true);
   const [handle, setHandle] = useState("Handle");
   const [tweet, setTweet] = useState("This is a tweet.");
-  const [time, setTime] = useState(tNow);
-  const [date, setDate] = useState(dNow);
+  const [time, setTime] = useState(get12HourTime());
+  const [date, setDate] = useState(getDate());
+  // previous version
   const [device, setDevice] = useState("Twitter For iPhone");
+  const [views, setViews] = useState("69K");
   // const [includeLikes, setIncludeLikes] = useState(false);
   // upload
   const [selectedProf, setSelectedProf] = useState();
@@ -38,8 +30,18 @@ function Twitter(props) {
   const [popular, setPopular] = useState();
   // add likes etc. V.2
   // switch
-  const [switchDevice, setSwitchDevice] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? true
+      : false
+  );
+  const [switchDevice, setSwitchDevice] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? true
+      : false
+  );
 
   useEffect(() => {
     if (!selectedProf) {
@@ -52,25 +54,15 @@ function Twitter(props) {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedProf]);
 
-  function uploadProf(ev) {
-    setIsPopular(false);
-    if (!ev.target.files || ev.target.files.length === 0) {
-      setSelectedProf(undefined);
-      return;
-    }
-    setIsActive(true);
-    setSelectedProf(ev.target.files[0]);
-  }
   return (
-    <div className="main-content">
-      <div className="upload-content">
+    <div className="main-components">
+      <div className="upload-containers-grid">
         <TwitterProfile
           setName={setName}
           setHandle={setHandle}
           setIsPopular={setIsPopular}
           isPopular={isPopular}
           setPopular={setPopular}
-          uploadProf={uploadProf}
           previewProf={previewProf}
           setPreviewProf={setPreviewProf}
           setSelectedProf={setSelectedProf}
@@ -84,19 +76,20 @@ function Twitter(props) {
         />
         <Tweet
           setName={setName}
+          setViews={setViews}
           verified={verified}
           setVerified={setVerified}
           setHandle={setHandle}
           setTweet={setTweet}
           setDevice={setDevice}
-          setIsActive={setIsActive}
-          time={time}
           setTime={setTime}
           setDate={setDate}
           date={date}
+          time={time}
         />
+        <div className="bottom-container"></div>
       </div>
-      <div className="twitter-content-tabs">
+      <div className="upload-containers-tabs twitter">
         <Tabs
           defaultActiveKey="profile"
           id="uncontrolled-tab-example"
@@ -109,7 +102,6 @@ function Twitter(props) {
               setIsPopular={setIsPopular}
               isPopular={isPopular}
               setPopular={setPopular}
-              uploadProf={uploadProf}
               previewProf={previewProf}
               setPreviewProf={setPreviewProf}
               setSelectedProf={setSelectedProf}
@@ -122,16 +114,15 @@ function Twitter(props) {
               setProfZoom={setProfZoom}
             />
           </Tab>
-
           <Tab eventKey="tweet" title="Tweet">
             <Tweet
               setName={setName}
+              setViews={setViews}
               verified={verified}
               setVerified={setVerified}
               setHandle={setHandle}
               setTweet={setTweet}
               setDevice={setDevice}
-              setIsActive={setIsActive}
               time={time}
               setTime={setTime}
               setDate={setDate}
@@ -140,29 +131,27 @@ function Twitter(props) {
           </Tab>
         </Tabs>
       </div>
-      <div>
-        <TwitterPreview
-          switchDevice={switchDevice}
-          setSwitchDevice={setSwitchDevice}
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
-          name={name}
-          verified={verified}
-          handle={handle}
-          tweet={tweet}
-          time={time}
-          date={date}
-          device={device}
-          isActive={isActive}
-          isPopular={isPopular}
-          popular={popular}
-          previewProf={previewProf}
-          selectedProf={selectedProf}
-          profZoom={profZoom}
-          profX={profX}
-          profY={profY}
-        />
-      </div>
+      <TwitterPreview
+        switchDevice={switchDevice}
+        setSwitchDevice={setSwitchDevice}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+        name={name}
+        verified={verified}
+        handle={handle}
+        tweet={tweet}
+        time={time}
+        date={date}
+        views={views}
+        device={device}
+        isPopular={isPopular}
+        popular={popular}
+        previewProf={previewProf}
+        selectedProf={selectedProf}
+        profZoom={profZoom}
+        profX={profX}
+        profY={profY}
+      />
     </div>
   );
 }

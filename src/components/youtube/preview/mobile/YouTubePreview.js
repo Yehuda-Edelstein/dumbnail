@@ -88,7 +88,7 @@ function YouTubePreview({
               <img
                 className="template"
                 alt=""
-                src={require(`../../../../static/temps/youtube/${template}`)}
+                src={require(`../../../../assets/images/youtube/temps/${template}`)}
               />
             )}
           </div>
@@ -108,7 +108,7 @@ function YouTubePreview({
               {!selectedChannelPic && isChannelTemp && (
                 <div className="channel-temp">
                   <img
-                    src={require(`../../../../static/popular/youtube/${channelTemp}`)}
+                    src={require(`../../../../assets/images/youtube/${channelTemp}`)}
                     alt=""
                   />
                 </div>

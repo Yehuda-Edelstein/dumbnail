@@ -11,7 +11,7 @@ import {
 import { upload } from "../../../../helpers/Helpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Info.scss";
-import Crop from "../../crop/Crop";
+import Crop from "../../../crop/Crop";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 function Info({

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { upload } from "../../../../helpers/Helpers";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Crop from "../../crop/Crop";
+import Crop from "../../../crop/Crop";
 import "./Photo.scss";
 
 function Photo({

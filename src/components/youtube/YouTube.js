@@ -116,7 +116,7 @@ function YouTube() {
         />
         <div className="bottom-container"></div>
       </div>
-      <div className="upload-containers-tabs">
+      <div className="upload-containers-tabs youtube">
         <Tabs
           defaultActiveKey="thumbnail"
           id="uncontrolled-tab-example"
@@ -143,7 +143,6 @@ function YouTube() {
             />
           </Tab>
           <Tab eventKey="channel" title="Channel">
-            {" "}
             <Channel
               setPreviewChannelPic={setPreviewChannelPic}
               setSelectedChannelPic={setSelectedChannelPic}

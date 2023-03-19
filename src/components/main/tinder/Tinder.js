@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getDate } from "../../../helpers/Helpers";
+import { getDate } from "../../../helpers/DateTimeHelpers";
 import Info from "./info/Info";
 import Preview from "./preview/Preview";
 

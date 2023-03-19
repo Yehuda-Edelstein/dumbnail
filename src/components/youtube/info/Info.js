@@ -13,6 +13,7 @@ function Info({
   setTimeAgo,
   setIncrement,
 }) {
+  // maybe change these to helper functions
   function calcViews(ev) {
     if (exactViews === true) {
       setViews(
@@ -67,7 +68,7 @@ function Info({
           maxLength="100"
         ></input>
         <input
-          placeholder="Channel name..."
+          placeholder="Channel..."
           onChange={(ev) => setChannelName(ev.target.value)}
           maxLength="60"
         ></input>

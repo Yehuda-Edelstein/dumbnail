@@ -1,0 +1,67 @@
+@import "./../../../index.scss";
+
+.upload-container {
+  .info-form {
+    textarea {
+      resize: none;
+    }
+    select {
+      max-width: 85px;
+    }
+
+    .tweet-details-container {
+      margin-top: -5px;
+    }
+
+    .twitter-timepicker {
+      max-width: 120px;
+      margin-right: 5px;
+    }
+    .twitter-date-input {
+      width: 125px;
+      margin-right: 5px;
+    }
+
+    .form-check-input {
+      height: 35px;
+      width: 30px !important;
+      margin-top: 0;
+      border-radius: 0 !important;
+      background-color: rgba(128, 128, 128, 0.1);
+      outline: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      border-left: 0;
+    }
+
+    .form-check-input:focus {
+      box-shadow: none;
+      border: 1px dashed rgba(128, 128, 128, 0.75);
+      border-left: 0;
+    }
+
+    .form-check-input:checked {
+      background-color: rgb(29, 155, 240) !important;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .info-form {
+    input,
+    textarea {
+      color: $dm-text-color;
+    }
+    select {
+      color: $dm-text-color;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .info-form {
+    color: black;
+    select {
+      color: black;
+    }
+  }
+}

@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Channel.scss";
-import Crop from "../../main/crop/Crop";
-import data from "../../../static/popular/youtube/popular.json";
+import Crop from "../../crop/Crop";
 import { createTooltip, upload } from "../../../helpers/Helpers";
+import data from "../../../assets/images/youtube/popular.json";
 
 function Channel({
   selectedChannelPic,
@@ -92,7 +91,7 @@ function Channel({
           </div>
           <div className="upload-container-body">
             <div>
-              <div className="upload-channel-pic">
+              <div className="upload-profile-pic">
                 <input
                   type="file"
                   accept="image/*"
@@ -102,7 +101,7 @@ function Channel({
                   }}
                   className="hidden-input"
                 />
-                <div className="upload-channel-label">Upload</div>
+                <div className="upload-profile-label">Upload</div>
                 <FontAwesomeIcon icon={["fa", "upload"]} />
               </div>
             </div>
@@ -111,33 +110,32 @@ function Channel({
               <div className="scroll">
                 {data.map((pic) => {
                   return (
-                    // maybe get rid of this?
-                    <OverlayTrigger
+                    // <OverlayTrigger
+                    //   key={pic}
+                    //   placement={"top"}
+                    //   delay={{ show: "100", hide: "10" }}
+                    //   overlay={
+                    //     <Tooltip id={"tooltip-top"}>
+                    //       {createTooltip(pic)}
+                    //     </Tooltip>
+                    //   }
+                    // >
+                    <div
+                      className="popular"
                       key={pic}
-                      placement={"top"}
-                      delay={{ show: "100", hide: "10" }}
-                      overlay={
-                        <Tooltip id={"tooltip-top"}>
-                          {createTooltip(pic)}
-                        </Tooltip>
-                      }
+                      onClick={() => {
+                        setIsChannelTemp(true);
+                        setSelectedChannelPic();
+                        setChannelTemp(pic);
+                        setChannelName(createTooltip(pic));
+                      }}
                     >
-                      <div
-                        className="popular"
-                        key={pic}
-                        onClick={() => {
-                          setIsChannelTemp(true);
-                          setSelectedChannelPic();
-                          setChannelTemp(pic);
-                          setChannelName(createTooltip(pic));
-                        }}
-                      >
-                        <img
-                          src={require(`../../../static/popular/youtube/${pic}`)}
-                          alt=""
-                        />
-                      </div>
-                    </OverlayTrigger>
+                      <img
+                        src={require(`../../../assets/images/youtube/${pic}`)}
+                        alt=""
+                      />
+                    </div>
+                    // </OverlayTrigger>
                   );
                 })}
               </div>
