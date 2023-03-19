@@ -34,6 +34,8 @@ Here are some features I want to add that I think will help beef up and legitami
 
 BONUS: I also think it would be cool if the example memes on the home page were newly generated on each refresh through a combination of AI to write simple text and a function to determine numbers/amount of messages, etc.
 
+BONUS#2: I also think someting interesting is creating user objects for dumbnail, meaning, Elon Musk has had multiple profile images. These would all be stored in an Elon object so the most accurate memes can be made (ex: spoofing an older tweet).
+
 The truth is making this a social media/community isn't as important to me as having the best and biggest meme site out there. Meaning, what I care most about is Meme Integrity. If you want to add a Tumblr template, the colors, fonts, look should all be as close to the real thing as possible. 
 
 ## Bugs
