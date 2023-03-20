@@ -21,26 +21,27 @@
       width: 125px;
       margin-right: 5px;
     }
+    .twitter-verified {
+      .form-check-input {
+        height: 35px;
+        width: 30px !important;
+        margin-top: 0;
+        border-radius: 0 !important;
+        background-color: rgba(128, 128, 128, 0.1);
+        outline: none;
+        border: 1px dashed rgba(128, 128, 128, 0.75);
+        border-left: 0;
+      }
 
-    .form-check-input {
-      height: 35px;
-      width: 30px !important;
-      margin-top: 0;
-      border-radius: 0 !important;
-      background-color: rgba(128, 128, 128, 0.1);
-      outline: none;
-      border: 1px dashed rgba(128, 128, 128, 0.75);
-      border-left: 0;
-    }
+      .form-check-input:focus {
+        box-shadow: none;
+        border: 1px dashed rgba(128, 128, 128, 0.75);
+        border-left: 0;
+      }
 
-    .form-check-input:focus {
-      box-shadow: none;
-      border: 1px dashed rgba(128, 128, 128, 0.75);
-      border-left: 0;
-    }
-
-    .form-check-input:checked {
-      background-color: rgb(29, 155, 240) !important;
+      .form-check-input:checked {
+        background-color: rgb(29, 155, 240) !important;
+      }
     }
   }
 }

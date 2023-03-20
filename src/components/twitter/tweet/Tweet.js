@@ -73,14 +73,16 @@ function Tweet({
             }}
             maxLength="37"
           ></input>{" "}
-          <Form.Check
-            className="twitter-verified"
-            aria-label="option 1"
-            checked={verified}
-            onChange={() => {
-              setVerified(!verified);
-            }}
-          />
+          <div className="twitter-verified">
+            <Form.Check
+              className="twitter-verified"
+              aria-label="option 1"
+              checked={verified}
+              onChange={() => {
+                setVerified(!verified);
+              }}
+            />
+          </div>
         </div>
         <input
           placeholder="Handle..."

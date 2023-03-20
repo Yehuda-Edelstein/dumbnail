@@ -1,11 +1,4 @@
 [
-  { "name": "Instagram", "username": "instagram", "img": "Instagram.png" },
-  {
-    "name": "Cristiano Ronaldo",
-    "username": "cristiano",
-    "img": "Cristiano_Ronaldo.png"
-  },
-  { "name": "Lionel Messi", "username": "leomessi", "img": "Lionel_Messi.png" },
   {
     "name": "Kylie Jenner",
     "username": "kyliejenner",
@@ -21,6 +14,13 @@
     "username": "therock",
     "img": "Dwayne_Johnson.png"
   },
+  { "name": "Instagram", "username": "instagram", "img": "Instagram.png" },
+  {
+    "name": "Cristiano Ronaldo",
+    "username": "cristiano",
+    "img": "Cristiano_Ronaldo.png"
+  },
+  { "name": "Lionel Messi", "username": "leomessi", "img": "Lionel_Messi.png" },
   {
     "name": "Ariana Grande",
     "username": "arianagrande",

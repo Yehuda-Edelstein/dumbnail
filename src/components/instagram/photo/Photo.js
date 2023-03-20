@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { upload } from "../../../../helpers/Helpers";
+import { upload } from "../../../helpers/Helpers";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Crop from "../../../crop/Crop";
-import "./Photo.scss";
+import Crop from "../../crop/Crop";
 
 function Photo({
   previewPhoto,
@@ -21,16 +20,12 @@ function Photo({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function reset() {
-    setPreviewPhoto();
-    setSelectedPhoto();
-  }
+  // need good templates
 
   return (
-    <div className="instagram-photo-container">
+    <div className="upload-container">
       {show ? (
         <Crop
-          show={show}
           handleClose={handleClose}
           img={previewPhoto}
           x={photoX}
@@ -43,7 +38,7 @@ function Photo({
         />
       ) : (
         <div>
-          <div className="upload-photo-header">
+          <div className="upload-container-header">
             <h5>Photo</h5>
             <div className="d-flex">
               {selectedPhoto && (
@@ -71,7 +66,14 @@ function Photo({
                 >
                   <FontAwesomeIcon
                     icon={["fa", "circle-xmark"]}
-                    onClick={!selectedPhoto ? null : reset}
+                    onClick={
+                      !selectedPhoto
+                        ? null
+                        : () => {
+                            setPreviewPhoto();
+                            setSelectedPhoto();
+                          }
+                    }
                     className={
                       !selectedPhoto ? "icon-disabled" : "icon-enabled"
                     }
@@ -80,50 +82,21 @@ function Photo({
               </div>
             </div>
           </div>
-          <div className="upload-photo-body d-flex">
-            <div className="upload-photo-container">
-              {!selectedPhoto && (
-                <div
+          <div className="upload-container-body">
+            <div>
+              <div className="upload-photo">
+                <input
+                  type="file"
+                  accept="image/*"
+                  title=""
                   onChange={(ev) => {
-                    upload(ev, setSelectedPhoto);
+                    setSelectedPhoto(upload(ev));
                   }}
-                >
-                  <div>
-                    <div className="upload-photo">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        title=""
-                        onChange={(ev) => {
-                          upload(ev, setSelectedPhoto);
-                        }}
-                        className="hidden-input"
-                      />
-                      <div className="upload-photo-label">Upload</div>
-                      <FontAwesomeIcon icon={["fa", "upload"]} />
-                    </div>
-                  </div>
-                </div>
-              )}
-              {selectedPhoto && (
-                <div>
-                  <div>
-                    <div className="upload-photo">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={(ev) => {
-                          upload(ev, setSelectedPhoto);
-                        }}
-                        title=""
-                        className="hidden-input"
-                      />
-                      <div className="upload-photo-label">Upload</div>
-                      <FontAwesomeIcon icon={["fa", "upload"]} />
-                    </div>
-                  </div>
-                </div>
-              )}
+                  className="hidden-input"
+                />
+                <div className="upload-photo-label">Upload</div>
+                <FontAwesomeIcon icon={["fa", "upload"]} />
+              </div>
             </div>
           </div>
         </div>

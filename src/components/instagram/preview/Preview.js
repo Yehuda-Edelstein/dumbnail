@@ -1,12 +1,15 @@
 import React, { useRef } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Switch from "../../switch/Switch";
-import { addCommas, download } from "../../../../helpers/Helpers";
-import v from "../../../../static/instagram/instagram-verified.png";
-import el from "../../../../static/instagram/instagram-elipses.png";
-import da from "../../../../static/instagram/dark-elip.png";
-import bar from "../../../../static/instagram/like-bar.png";
-import dark from "../../../../static/instagram/dark-bar.png";
+import Switch from "../../main/switch/Switch";
+import { addCommas, download } from "../../../helpers/Helpers";
+import v from "./../../../assets/images/instagram/instagram-verified.png";
+import el from "./../../../assets/images/instagram/instagram-elipses.png";
+import da from "./../../../assets/images/instagram/dark-elip.png";
+import dmBar from "./../../../assets/images/instagram/dm-bar.png";
+import lmBar from "./../../../assets/images/instagram/lm-bar.png";
+import dmSave from "./../../../assets/images/instagram/dm-save.png";
+import lmSave from "./../../../assets/images/instagram/lm-save.png";
+
 import "./Preview.scss";
 
 const d = new Date();
@@ -41,9 +44,9 @@ function Preview({
 }) {
   const ref = useRef(null);
   return (
-    <div className="instagram-post-preview instagram-post-width">
+    <div className="preview-container">
       <h5>Preview</h5>
-      <div className="instagram-post-preview-header">
+      <div className="preview-header">
         <OverlayTrigger
           key={"right"}
           placement={"right"}
@@ -69,15 +72,15 @@ function Preview({
           ref={ref}
           className={
             switchDevice
-              ? "instagram-post-preview-container dark"
-              : "instagram-post-preview-container light"
+              ? "instagram-preview-box dark"
+              : "instagram-preview-box light"
           }
         >
           <div className="post-header">
             <div className="profile-image">
               {isPopular && (
                 <img
-                  src={require(`./../../../../static/popular/instagram/${popular}`)}
+                  src={require(`./../../../assets/images/instagram/${popular}`)}
                   alt=""
                 />
               )}
@@ -125,29 +128,37 @@ function Preview({
           </div>
           <div className="post-footer">
             <div className="post-footer-data">
-              <div className="like-bar">
+              <div>
                 {switchDevice ? (
-                  <img src={dark} alt="" />
+                  <div className="like-bar">
+                    <img src={dmBar} alt="" className="bar" />
+                    <img src={dmSave} alt="" className="save" />
+                  </div>
                 ) : (
-                  <img src={bar} alt="" />
+                  <div className="like-bar">
+                    <img src={lmBar} alt="" className="bar" />
+                    <img src={lmSave} alt="" className="save" />
+                  </div>
                 )}
               </div>
             </div>
-            {likes > 1 ? (
-              <div className="likes">{addCommas(likes)} likes</div>
-            ) : (
-              <div className="likes">{likes} like</div>
-            )}
-            <div className="description">
-              <span className="username">{username}</span> {description}
-            </div>
-            {comments > 1 ? (
-              <div className="comments">
-                View all {addCommas(comments)} comments
+            <div className="post-data">
+              {likes > 1 ? (
+                <div className="likes">{addCommas(likes)} likes</div>
+              ) : (
+                <div className="likes">{likes} like</div>
+              )}
+              <div className="description">
+                <span className="username">{username}</span> {description}
               </div>
-            ) : (
-              <div className="comments">View {comments} comment</div>
-            )}
+              {comments > 1 ? (
+                <div className="comments">
+                  View all {addCommas(comments)} comments
+                </div>
+              ) : (
+                <div className="comments">View {comments} comment</div>
+              )}
+            </div>
             {/* <div className="date">
               <div className="month">{month}</div>
               <div className="day">{day}</div>

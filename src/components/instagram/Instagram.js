@@ -39,23 +39,32 @@ function Instagram(props) {
   const [popular, setPopular] = useState();
 
   const [username, setUsername] = useState("Username");
-  const [location, setLocation] = useState(null);
+  // const [location, setLocation] = useState(null);
   const [isVerified, setIsVerified] = useState(true);
-  const [areFollowing, setAreFollowing] = useState(true);
-  const [hasStory, setHasStory] = useState(false);
+  // const [areFollowing, setAreFollowing] = useState(true);
+  // const [hasStory, setHasStory] = useState(false);
   const [likes, setLikes] = useState(420);
   const [description, setDescription] = useState("This is a description");
   const [comments, setComments] = useState(69);
   const [month, setMonth] = useState(m[d.getMonth()]);
   const [day, setDay] = useState(d.getDate());
   const [year, setYear] = useState(d.getFullYear());
-  const [older, setOlder] = useState(false);
+  // const [older, setOlder] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
-  //
-  const [switchDevice, setSwitchDevice] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // switch
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? true
+      : false
+  );
+  const [switchDevice, setSwitchDevice] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? true
+      : false
+  );
   // loading
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!selectedPhoto) {
@@ -80,8 +89,8 @@ function Instagram(props) {
   }, [selectedProfile]);
 
   return (
-    <div className="main-content">
-      <div className="upload-content">
+    <div className="main-components">
+      <div className="upload-containers-grid">
         <Photo
           previewPhoto={previewPhoto}
           selectedPhoto={selectedPhoto}
@@ -122,8 +131,9 @@ function Instagram(props) {
           setYear={setYear}
           setIsLiked={setIsLiked}
         />
+        <div className="bottom-container"></div>
       </div>
-      <div className="content-tabs instagram-tabs">
+      <div className="upload-containers-tabs instagram">
         <Tabs
           defaultActiveKey="photo"
           id="uncontrolled-tab-example"
@@ -177,35 +187,33 @@ function Instagram(props) {
           </Tab>
         </Tabs>
       </div>
-      <div>
-        <Preview
-          isPopular={isPopular}
-          popular={popular}
-          photoX={photoX}
-          photoY={photoY}
-          photoZoom={photoZoom}
-          profileX={profileX}
-          profileY={profileY}
-          profileZoom={profileZoom}
-          selectedPhoto={selectedPhoto}
-          previewPhoto={previewPhoto}
-          selectedProfile={selectedProfile}
-          previewProfile={previewProfile}
-          switchDevice={switchDevice}
-          setSwitchDevice={setSwitchDevice}
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
-          username={username}
-          isVerified={isVerified}
-          likes={likes}
-          description={description}
-          comments={comments}
-          month={month}
-          day={day}
-          year={year}
-          isLiked={isLiked}
-        />
-      </div>
+      <Preview
+        isPopular={isPopular}
+        popular={popular}
+        photoX={photoX}
+        photoY={photoY}
+        photoZoom={photoZoom}
+        profileX={profileX}
+        profileY={profileY}
+        profileZoom={profileZoom}
+        selectedPhoto={selectedPhoto}
+        previewPhoto={previewPhoto}
+        selectedProfile={selectedProfile}
+        previewProfile={previewProfile}
+        switchDevice={switchDevice}
+        setSwitchDevice={setSwitchDevice}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+        username={username}
+        isVerified={isVerified}
+        likes={likes}
+        description={description}
+        comments={comments}
+        month={month}
+        day={day}
+        year={year}
+        isLiked={isLiked}
+      />
     </div>
   );
 }

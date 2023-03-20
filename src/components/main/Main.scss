@@ -1,6 +1,9 @@
 $dm-bg-upload-container: rgb(28, 28, 33);
 $dm-header: #bfbfbf;
 $dm-icon-disabled: rgb(136, 136, 136);
+// upload photo dimensions
+$width: 314.5px;
+$height: 176.9px;
 
 .main {
   position: absolute;
@@ -75,6 +78,44 @@ $dm-icon-disabled: rgb(136, 136, 136);
         .upload-container-body {
           margin-top: 10px;
           display: flex;
+
+          .upload-photo {
+            width: calc($width * 0.35);
+            height: calc($height * 0.45);
+            border: 1px dashed rgba(128, 128, 128, 0.75);
+            background-color: rgba(128, 128, 128, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.75;
+              transform: scale(101%);
+            }
+
+            .hidden-input {
+              cursor: pointer;
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            .upload-photo-label {
+              font-size: 10px;
+            }
+
+            svg {
+              font-size: 10px;
+            }
+          }
 
           .upload-profile-pic {
             width: 75px;
@@ -256,6 +297,44 @@ $dm-icon-disabled: rgb(136, 136, 136);
         .upload-container-body {
           margin-top: 10px;
           display: flex;
+
+          .upload-photo {
+            width: calc($width * 0.35);
+            height: calc($height * 0.45);
+            border: 1px dashed rgba(128, 128, 128, 0.75);
+            background-color: rgba(128, 128, 128, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.75;
+              transform: scale(101%);
+            }
+
+            .hidden-input {
+              cursor: pointer;
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            .upload-photo-label {
+              font-size: 10px;
+            }
+
+            svg {
+              font-size: 10px;
+            }
+          }
 
           .upload-profile-pic {
             width: 75px;
@@ -458,6 +537,13 @@ $dm-icon-disabled: rgb(136, 136, 136);
           }
 
           .upload-container-body {
+            .upload-photo {
+              .upload-photo-label,
+              svg {
+                color: rgba(255, 255, 255, 0.35);
+              }
+            }
+
             .upload-profile-pic {
               color: rgba(255, 255, 255, 0.35);
               .upload-profile-label {
@@ -547,6 +633,12 @@ $dm-icon-disabled: rgb(136, 136, 136);
           }
 
           .upload-container-body {
+            .upload-photo {
+              .upload-photo-label,
+              svg {
+                color: rgba(255, 255, 255, 0.35);
+              }
+            }
             .upload-profile-pic {
               color: rgba(255, 255, 255, 0.35);
               .upload-profile-label {
