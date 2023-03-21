@@ -16,32 +16,7 @@ $dm-sub-message: rgb(154, 154, 154);
 $dm-contact-image: rgb(160, 165, 178);
 $dm-background: rgb(0, 0, 0);
 
-.message-preview {
-  background-color: white;
-  border: 0.5px solid rgba(128, 128, 128, 0.75);
-  border-radius: 4px;
-  padding: 20px;
-  padding-bottom: 0;
-  margin: 20px;
-  height: fit-content;
-  position: sticky;
-  top: 90px;
-
-  .message-preview-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-    min-width: 280px;
-
-    h4 {
-      font-size: 20px;
-      text-align: center;
-      color: rgba(128, 128, 128, 0.5);
-      margin-bottom: 0;
-    }
-  }
-
+.preview-container {
   .light,
   .dark {
     .message-header {
@@ -468,7 +443,6 @@ $dm-background: rgb(0, 0, 0);
     margin-right: 40px;
     color: white;
     padding: 10px;
-    min-width: 280px;
 
     &:hover {
       cursor: pointer;
@@ -489,15 +463,14 @@ $dm-background: rgb(0, 0, 0);
 }
 
 @media screen and (min-width: 451px) {
-  .message-preview {
+  .preview-container {
     max-width: 413px;
-    min-width: 370px;
     width: 413px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .message-preview {
+  .preview-container {
     margin: 0;
     border-radius: 0;
     width: 100vw;
@@ -564,7 +537,7 @@ $dm-background: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 390px) {
-  .message-preview {
+  .preview-container {
     margin: 0;
     border-radius: 0;
     width: 100vw;
@@ -582,10 +555,9 @@ $dm-background: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 320px) {
-  .message-preview {
+  .preview-container {
     margin: 0;
     border-radius: 0;
-    width: 100vw;
     min-width: 280px;
 
     .small-screen-margin {
@@ -615,6 +587,7 @@ $dm-background: rgb(0, 0, 0);
         margin-top: 10px !important;
         margin-right: 10px;
         padding-left: 2px;
+        padding-right: 2px;
         font-size: 15px !important;
         color: rgb(27, 137, 255);
         opacity: 0.9;

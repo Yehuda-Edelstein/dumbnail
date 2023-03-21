@@ -11,22 +11,17 @@ function Message(props) {
     { id: 1, from: "you", msg: "U up?", type: "text" },
     { id: 2, from: "Contact", msg: "no", type: "text" },
   ]);
-  const [isActive, setIsActive] = useState(false);
   return (
-    <div className="main-content">
-      <MessageUpload
-        messages={messages}
-        setMessages={setMessages}
-        contact={contact}
-        setContact={setContact}
-        setIsActive={setIsActive}
-      />
-
-      <MessagePreview
-        messages={messages}
-        contact={contact}
-        isActive={isActive}
-      />
+    <div className="main-components">
+      <div className="upload-message-container">
+        <MessageUpload
+          messages={messages}
+          setMessages={setMessages}
+          contact={contact}
+          setContact={setContact}
+        />
+      </div>
+      <MessagePreview messages={messages} contact={contact} />
     </div>
   );
 }

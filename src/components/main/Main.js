@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 // import Home from "../main/home/Home";
 import YouTube from "../youtube/YouTube";
 import Twitter from "../twitter/Twitter";
-import Message from "../main/message/Message";
+import Message from "../message/Message";
 import About from "../main/about/About";
 import Home from "./home/Home";
 import Instagram from "../instagram/Instagram";

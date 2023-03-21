@@ -3,10 +3,9 @@ import you from "./../../../../static/tinder/you.png";
 import them from "./../../../../static/tinder/them.png";
 import {
   deleteMessage,
-  updateFrom,
   updateMessage,
   date,
-  newMessage,
+  newTextMessage,
 } from "../../../../helpers/MessageHelpers";
 import { upload } from "../../../../helpers/Helpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -183,7 +182,7 @@ function Info({
                   src={them}
                   alt=""
                   onClick={() => {
-                    setMessages(updateFrom(m.id, "them", messages));
+                    setMessages(updateMessage(m.id, "from", "them", messages));
                   }}
                 />
                 <img
@@ -191,7 +190,7 @@ function Info({
                   src={you}
                   alt=""
                   onClick={() => {
-                    setMessages(updateFrom(m.id, "you", messages));
+                    setMessages(updateMessage(m.id, "from", "you", messages));
                   }}
                 />
                 <FontAwesomeIcon
@@ -209,7 +208,7 @@ function Info({
         <div
           className="new-message"
           onClick={() => {
-            setMessages(newMessage(messages));
+            setMessages(newTextMessage(messages));
           }}
         >
           +Message

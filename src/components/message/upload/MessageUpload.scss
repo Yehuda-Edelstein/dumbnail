@@ -1,0 +1,261 @@
+@import "./../../../index.scss";
+$you: rgb(27, 137, 255);
+$them: rgb(49, 49, 50);
+
+.upload-container {
+  .message-contact {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .upload-container-body {
+    .delivered {
+      margin-left: 10px;
+      font-weight: 500;
+      float: right;
+      margin-bottom: 10px;
+    }
+
+    .message {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      padding-bottom: 0;
+      border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+
+      .day-select {
+        max-width: 115px;
+      }
+
+      input,
+      select,
+      textarea {
+        margin-right: 15px;
+      }
+
+      .message-buttons-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .change-them-btn,
+        .change-you-btn {
+          height: 30px;
+          padding: 4px;
+          border-radius: 8px;
+          margin-right: 5px;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.75;
+            background-color: rgba(128, 128, 128, 0.25);
+          }
+        }
+        .active {
+          cursor: default !important;
+        }
+      }
+    }
+  }
+
+  .messages {
+    overflow: scroll;
+    padding-bottom: 0;
+    border-top: none;
+
+    .message-container {
+      width: 100%;
+    }
+
+    .delete-message {
+      color: black;
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+      margin-left: 5px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .new-message-container {
+    border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+    color: #dae0e6;
+    padding-top: 20px;
+  }
+  .new-messages {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .new-message,
+    .new-delivered,
+    .new-time {
+      padding: 4px 8px;
+      border: 1px solid #1f1f1f;
+      // border-radius: 20px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+
+    .new-message {
+      width: 100%;
+      margin-right: 10px;
+      background-color: rgb(27, 137, 255);
+      border: 0.5px solid #1f1f1f;
+      border-radius: 8px;
+    }
+
+    .new-delivered,
+    .new-time {
+      background-color: rgb(139, 139, 139);
+      border: 0.5px solid #1f1f1f;
+      border-radius: 8px;
+    }
+
+    .new-delivered {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .upload-container {
+    .message-contact {
+      color: $dm-text-color;
+    }
+    .upload-container-body {
+      .delivered {
+        margin-left: 10px;
+        font-weight: 500;
+        color: rgb(139, 139, 139);
+        float: right;
+      }
+
+      .message {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        padding-bottom: 0;
+        border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+
+        input,
+        textarea {
+          color: $dm-text-color;
+        }
+        select {
+          color: $dm-text-color;
+        }
+
+        .delete-message {
+          color: #a9a9a9;
+        }
+
+        .message-buttons-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .change-them-btn,
+          .change-you-btn {
+            height: 30px;
+            padding: 4px;
+            border-radius: 8px;
+            margin-right: 5px;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.75;
+              background-color: rgba(128, 128, 128, 0.25);
+            }
+          }
+          .active {
+            cursor: default !important;
+            opacity: 0.75 !important;
+            background-color: inherit !important;
+            box-shadow: rgb(140, 140, 140, 0.1) 0px 1px 3px 0px,
+              rgba(187, 214, 241, 0.15) 0px 0px 0px 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .upload-container {
+    .message-contact {
+      color: black;
+    }
+    .upload-container-body {
+      .delivered {
+        margin-left: 10px;
+        font-weight: 500;
+        color: rgb(139, 139, 139);
+        float: right;
+      }
+
+      .message {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        padding-bottom: 0;
+        border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+
+        .message-buttons-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .change-them-btn,
+          .change-you-btn {
+            height: 30px;
+            padding: 4px;
+            border-radius: 8px;
+            margin-right: 5px;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.75;
+              background-color: rgba(128, 128, 128, 0.25);
+            }
+          }
+          .active {
+            cursor: default !important;
+            opacity: 1 !important;
+            background-color: inherit !important;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+              rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          }
+        }
+      }
+    }
+    color: black;
+    select {
+      color: black;
+    }
+    .message {
+      .delete-message {
+        color: black;
+      }
+    }
+  }
+}

@@ -16,6 +16,61 @@ $height: 176.9px;
     display: flex;
     min-width: 330px;
 
+    .upload-message-container {
+      .upload-container {
+        border-radius: 4px;
+        margin: 20px 0 0 20px;
+        padding: 20px;
+        max-width: 413px;
+        width: 413px;
+
+        input,
+        select,
+        textarea {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 5px;
+          padding-left: 10px;
+          font-size: 15px;
+          outline: none;
+          border: 1px dashed rgba(128, 128, 128, 0.75);
+          background-color: rgba(128, 128, 128, 0.1);
+          &:focus {
+            background-color: rgba(128, 128, 128, 0.25);
+          }
+          resize: none;
+        }
+        .upload-container-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .icon-enabled {
+            border-radius: 8px;
+            align-items: center;
+            padding: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 300;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .icon-disabled {
+            border-radius: 8px;
+            align-items: center;
+            padding: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 300;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
     .upload-containers-grid {
       display: grid;
 
@@ -24,7 +79,6 @@ $height: 176.9px;
         margin: 20px 0 0 20px;
         padding: 20px;
         max-width: 413px;
-        max-height: fit-content;
 
         #clear-form {
           margin-top: 10px;
@@ -484,6 +538,9 @@ $height: 176.9px;
     display: block !important;
     width: fit-content;
   }
+  .upload-message-container {
+    margin-right: 20px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -494,8 +551,19 @@ $height: 176.9px;
     border: none !important;
     border-radius: 0 !important;
     border-bottom: 0.5px solid rgba(128, 128, 128, 0.75) !important;
+  }
+
+  .upload-message-container {
+    margin-right: 0 !important;
+    width: 100%;
     .upload-container {
-      // need something here
+      width: fit-content !important;
+      margin: 0 !important;
+      margin-bottom: 20px !important;
+      min-width: 100% !important;
+      border: none !important;
+      border-radius: 0 !important;
+      border-bottom: 0.5px solid rgba(128, 128, 128, 0.75) !important;
     }
   }
 
@@ -511,7 +579,8 @@ $height: 176.9px;
 @media screen and (prefers-color-scheme: dark) {
   .main {
     .main-components {
-      .upload-containers-grid {
+      .upload-containers-grid,
+      .upload-message-container {
         .upload-container {
           background-color: $dm-bg-upload-container;
           border: 0.5px solid rgba(128, 128, 128, 0.75);
@@ -694,7 +763,8 @@ $height: 176.9px;
 @media screen and (prefers-color-scheme: light) {
   .main {
     .main-components {
-      .upload-containers-grid {
+      .upload-containers-grid,
+      .upload-message-container {
         .upload-container {
           background-color: white;
           border: 0.5px solid rgba(128, 128, 128, 0.75);

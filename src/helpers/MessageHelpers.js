@@ -1,14 +1,7 @@
-export function updateFrom(id, from, messages) {
+export function updateMessage(id, key, value, messages) {
   const arr = [...messages];
-  const index = messages.findIndex((x) => x.id === id);
-  arr[index].from = from;
-  return arr;
-}
-
-export function updateMessage(id, message, messages) {
-  const arr = [...messages];
-  const index = messages.findIndex((x) => x.id === id);
-  arr[index].msg = message;
+  const obj = messages.find((x) => x.id === id);
+  obj[key] = value;
   return arr;
 }
 
@@ -20,9 +13,10 @@ export function deleteMessage(id, messages) {
   return updated;
 }
 
-export function newMessage(messages) {
+export function newTextMessage(messages) {
   const arr = [...messages];
-  const n = { id: arr.length, from: "you", msg: "" };
+  const n = { id: arr.length, from: "you", msg: "", type: "text" };
+  console.log(n);
   arr.push(n);
   return arr;
 }
@@ -44,13 +38,4 @@ export function date(d) {
   let day = arr[2].replace(/0/g, "");
   let year = arr[0].slice(2);
   return `${month}/${day}/${year}`;
-}
-
-// convert any time correctly for html inputs
-export function army(time) {
-  let split = time.toString().split(":");
-  let hour = split[0].replace(/^0/, "");
-  let minute = split[1].split(" ");
-  let m = minute[0];
-  return hour < 10 ? `0${hour}:${m}` : `${hour}:${m}`;
 }

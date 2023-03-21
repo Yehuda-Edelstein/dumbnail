@@ -1,24 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MessageUpload.scss";
-import you from "./../../../../static/you-btn.png";
-import them from "./../../../../static/them-btn.png";
+import you from "./../../../assets/images/message/you-btn.png";
+import them from "./../../../assets/images/message/them.png";
+import { convertToHTMLTime } from "../../../helpers/DateTimeHelpers";
+import {
+  deleteMessage,
+  newTextMessage,
+  updateMessage,
+} from "../../../helpers/MessageHelpers";
 
-function MessageUpload({
-  messages,
-  setMessages,
-  contact,
-  setContact,
-  setIsActive,
-}) {
-  function army(time) {
-    let split = time.toString().split(":");
-    let hour = split[0].replace(/^0/, "");
-    let minute = split[1].split(" ");
-    let m = minute[0];
-    return hour < 10 ? `0${hour}:${m}` : `${hour}:${m}`;
-  }
-
+function MessageUpload({ messages, setMessages, contact, setContact }) {
+  // maybe make these helper functions
   function updateContact(old, current) {
     const arr = [...messages];
     for (let i = 0; i < messages.length; i++) {
@@ -30,35 +23,6 @@ function MessageUpload({
     setMessages(arr);
   }
 
-  function updateMessage(id, message) {
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr[index].msg = message;
-    setMessages(arr);
-  }
-
-  function updateFrom(id, from) {
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr[index].from = from;
-    setMessages(arr);
-  }
-
-  function deleteMessage(id) {
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr.splice(index, 1);
-    const update = arr.map((obj, i) => ({ ...obj, id: i }));
-    setMessages(update);
-  }
-
-  function addMessage() {
-    const arr = [...messages];
-    const n = { id: arr.length, from: "you", msg: "", type: "text" };
-    arr.push(n);
-    setMessages(arr);
-  }
-
   function addStatus() {
     const arr = [...messages];
     const n = { id: arr.length, from: "", msg: "Delivered", type: "status" };
@@ -67,7 +31,6 @@ function MessageUpload({
   }
 
   function addTime() {
-    setIsActive(true);
     const arr = [...messages];
     const d = new Date();
     const t =
@@ -85,39 +48,23 @@ function MessageUpload({
     setMessages(arr);
   }
 
-  function updateDay(id, day) {
-    setIsActive(true);
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr[index].day = day;
-    setMessages(arr);
-  }
-
-  function updateTime(id, time) {
-    setIsActive(true);
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr[index].time = time;
-    setMessages(arr);
-  }
-
   return (
-    <div className="message-upload-container">
-      <div className="convo-header">
+    <div className="upload-container">
+      <div className="upload-container-header">
         <h5>Convo</h5>
       </div>
-      <div className="d-grid">
+      <div className="d-flex">
         <input
+          className="message-contact"
           type="text"
           placeholder="Contact..."
           onChange={(ev) => {
-            setIsActive(true);
             updateContact(contact, ev.target.value);
           }}
         />
       </div>
-      <div className="message-convo-container">
-        <div className="message-container">
+      <div className="upload-container-body">
+        <div className="message-container messages">
           {messages.map((m) => {
             return m.type === "text" ? (
               <div className="message" key={m.id}>
@@ -126,7 +73,9 @@ function MessageUpload({
                   placeholder="Message..."
                   value={m.msg}
                   onChange={(ev) => {
-                    updateMessage(m.id, ev.target.value);
+                    setMessages(
+                      updateMessage(m.id, "msg", ev.target.value, messages)
+                    );
                   }}
                 ></textarea>
                 <div className="message-buttons-container">
@@ -139,7 +88,9 @@ function MessageUpload({
                     src={them}
                     alt=""
                     onClick={() => {
-                      updateFrom(m.id, contact);
+                      setMessages(
+                        updateMessage(m.id, "from", contact, messages)
+                      );
                     }}
                   />
                   <img
@@ -151,11 +102,11 @@ function MessageUpload({
                     src={you}
                     alt=""
                     onClick={(ev) => {
-                      updateFrom(m.id, "you");
+                      setMessages(updateMessage(m.id, "from", "you", messages));
                     }}
                   />
                   <FontAwesomeIcon
-                    onClick={() => deleteMessage(m.id)}
+                    onClick={() => setMessages(deleteMessage(m.id, messages))}
                     key={m.id}
                     className="delete-message"
                     icon={["fa", "trash"]}
@@ -172,8 +123,14 @@ function MessageUpload({
                         className="day-select"
                         value={m.day}
                         onChange={(ev) => {
-                          setIsActive(true);
-                          updateDay(m.id, ev.target.value);
+                          setMessages(
+                            updateMessage(
+                              m.id,
+                              "day",
+                              ev.target.value,
+                              messages
+                            )
+                          );
                         }}
                       >
                         <option value="Today">Today</option>
@@ -187,37 +144,46 @@ function MessageUpload({
                         <option value="Saturday">Saturday</option>
                         {/* <option>Shabbos</option> */}
                       </select>
+                      {/* option for 24 hour time */}
                       <input
                         type="time"
-                        value={army(m.time)}
+                        value={convertToHTMLTime(m.time)}
                         onChange={(ev) => {
-                          setIsActive(true);
-                          updateTime(m.id, ev.target.value);
+                          setMessages(
+                            updateMessage(
+                              m.id,
+                              "time",
+                              ev.target.value,
+                              messages
+                            )
+                          );
                         }}
                       />
+                      <div className="message-buttons-container">
+                        <FontAwesomeIcon
+                          onClick={() => {
+                            setMessages(deleteMessage(m.id, messages));
+                          }}
+                          key={m.id}
+                          className="delete-message"
+                          icon={["fa", "trash"]}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div key={m.id} className="message justify-content-between">
+                    <div className="delivered">Delivered</div>
+                    <div className="message-buttons-container">
                       <FontAwesomeIcon
                         onClick={() => {
-                          setIsActive(true);
-                          deleteMessage(m.id);
+                          setMessages(deleteMessage(m.id, messages));
                         }}
                         key={m.id}
                         className="delete-message"
                         icon={["fa", "trash"]}
                       />
                     </div>
-                  </div>
-                ) : (
-                  <div key={m.id} className="message justify-content-between">
-                    <div className="delivered">Delivered</div>
-                    <FontAwesomeIcon
-                      onClick={() => {
-                        setIsActive(true);
-                        deleteMessage(m.id);
-                      }}
-                      key={m.id}
-                      className="delete-message"
-                      icon={["fa", "trash"]}
-                    />
                   </div>
                 )}
               </div>
@@ -227,7 +193,12 @@ function MessageUpload({
       </div>
       <div className="new-message-container d-flex">
         <div className="new-messages">
-          <div className="new-message" onClick={addMessage}>
+          <div
+            className="new-message"
+            onClick={() => {
+              setMessages(newTextMessage(messages));
+            }}
+          >
             +Message
           </div>
           <div className="d-flex justify-content-between">

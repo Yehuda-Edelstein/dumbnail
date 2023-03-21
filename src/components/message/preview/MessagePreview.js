@@ -1,15 +1,14 @@
 import React, { useState, useRef } from "react";
-import { download } from "./../../../../helpers/Helpers";
+import { download } from "../../../helpers/Helpers";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import Switch from "./../../switch/Switch";
+import Switch from "../../main/switch/Switch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import facetime from "./../../../../static/video-icon.png";
+import facetime from "./../../../assets/images/message/video-icon.png";
 import "./MessagePreview.scss";
 
 function MessagePreview({ messages, contact }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  // switch
   const [switchDevice, setSwitchDevice] = useState(false);
 
   const ref = useRef(null);
@@ -52,9 +51,9 @@ function MessagePreview({ messages, contact }) {
   }
 
   return (
-    <div className="message-preview">
+    <div className="preview-container">
       <h5>Preview</h5>
-      <div className="message-preview-header">
+      <div className="preview-header">
         <OverlayTrigger
           key={"right"}
           placement={"right"}
@@ -75,7 +74,7 @@ function MessagePreview({ messages, contact }) {
         </OverlayTrigger>
         {switchDevice ? <h4>[ Dark ]</h4> : <h4>[ Light ]</h4>}
       </div>
-      <div className="small-screen-margin border border-dark">
+      <div className="border border-dark">
         <div ref={ref} className={switchDevice ? "dark" : "light"}>
           <div className="message-header">
             <div className="d-flex justify-content-between">
