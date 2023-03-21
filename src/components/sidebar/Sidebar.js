@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Sidebar.scss";
-import gpt from "../../static/chatGPT/icon.png";
-import tinder from "../../static/tinder/icon.png";
+import gpt from "../../assets/images/chatGPT/icon.png";
+// import tinder from "../../assets/images/tinder/icon.png";
 
 function Sidebar({ path, setPath }) {
   return (
@@ -64,7 +64,7 @@ function Sidebar({ path, setPath }) {
           <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
           <div>iMessage</div>
         </Link>
-        <Link
+        {/* <Link
           to="messaging/tinder"
           className="dumbnail-nav-link"
           onClick={() => {
@@ -73,7 +73,7 @@ function Sidebar({ path, setPath }) {
         >
           <img className="icon" src={tinder} alt="" />
           <div>Tinder</div>
-        </Link>
+        </Link> */}
         <Link
           to="messaging/chatGPT"
           className="dumbnail-nav-link"

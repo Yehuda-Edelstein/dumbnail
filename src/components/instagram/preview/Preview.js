@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Switch from "../../main/switch/Switch";
+import Switch from "../../switch/Switch";
 import { addCommas, download } from "../../../helpers/Helpers";
 import v from "./../../../assets/images/instagram/instagram-verified.png";
 import el from "./../../../assets/images/instagram/instagram-elipses.png";
@@ -11,9 +11,6 @@ import dmSave from "./../../../assets/images/instagram/dm-save.png";
 import lmSave from "./../../../assets/images/instagram/lm-save.png";
 
 import "./Preview.scss";
-
-const d = new Date();
-const y = d.getFullYear();
 
 function Preview({
   isPopular,
@@ -174,6 +171,14 @@ function Preview({
         >
           DOWNLOAD
         </button>
+      </div>
+      <div className="notes">
+        <ul>
+          <li>1. Max zoom width is 200%</li>
+          <li>
+            2. You <em>can</em> crop the picture out of frame so be careful.
+          </li>
+        </ul>
       </div>
     </div>
   );

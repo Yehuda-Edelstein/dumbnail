@@ -4,11 +4,11 @@ import { Route, Routes } from "react-router-dom";
 import YouTube from "../youtube/YouTube";
 import Twitter from "../twitter/Twitter";
 import Message from "../message/Message";
-import About from "../main/about/About";
-import Home from "./home/Home";
+import About from "../about/About";
+import Home from "../home/Home";
 import Instagram from "../instagram/Instagram";
-import ChatGPT from "./chatGPT/chatGPT";
-import Tinder from "./tinder/Tinder";
+import ChatGPT from "../chatGPT/chatGPT";
+import Tinder from "../tinder/Tinder";
 import "./Main.scss";
 
 function Main({ setPath }) {

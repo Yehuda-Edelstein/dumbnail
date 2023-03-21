@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
-import logo from "../../../../static/chatGPT/logo.png";
+import logo from "../../../assets/images/chatGPT/logo.png";
 import "./Chat.scss";
 
 function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
@@ -52,8 +52,8 @@ function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
   }
 
   return (
-    <div className="edit-chat-container">
-      <div className="edit-chat-header">
+    <div className="upload-container">
+      <div className="upload-container-header">
         <h5>Chat</h5>
       </div>
       <div className="edit-chat">
@@ -136,7 +136,7 @@ function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
         </div>
         <div className="new-message-container">
           {messages.length <= 5 ? (
-            <div className="new-message" onClick={addMessage}>
+            <div className="tinder-new-message" onClick={addMessage}>
               Add Message
             </div>
           ) : (

@@ -58,11 +58,11 @@ export function convertTo12HourFormat(time) {
 }
 
 /**
- * Formats the given date in the format MM/DD/YY and returns the formatted date as a string.
+ * Formats the given date in the format M/DD/YY and returns the formatted date as a string.
  * @param {Date} date - The date to format.
  * @returns {string} The formatted date in the format MM/DD/YY.
  */
-export function formatDateToMMDDYY(date) {
+export function formatDateToMDDYY(date) {
   let arr = date.toString().split("-");
   let month = arr[1].replace(/0/g, "");
   let day = arr[2].replace(/0/g, "");

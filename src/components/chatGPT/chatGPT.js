@@ -15,15 +15,17 @@ function ChatGPT(props) {
   ]);
 
   return (
-    <div className="main-content">
-      <Chat
-        initial={initial}
-        setInitial={setInitial}
-        color={color}
-        setColor={setColor}
-        messages={messages}
-        setMessages={setMessages}
-      />
+    <div className="main-components">
+      <div className="upload-message-container">
+        <Chat
+          initial={initial}
+          setInitial={setInitial}
+          color={color}
+          setColor={setColor}
+          messages={messages}
+          setMessages={setMessages}
+        />
+      </div>
       <Preview initial={initial} color={color} messages={messages} />
     </div>
   );

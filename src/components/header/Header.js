@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import logo from "./../../assets/images/site/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import gpt from "../../static/chatGPT/icon.png";
-import tinder from "../../static/tinder/icon.png";
+import gpt from "../../assets/images/chatGPT/icon.png";
+// import tinder from "../../assets/images/tinder/icon.png";
 
 function Header({ path, setPath, show, setShow, handleShow }) {
   return (
@@ -30,7 +30,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
               {path.img && (
                 <img
                   id="dropdown-icon"
-                  src={require(`../../static/${path.img}`)}
+                  src={require(`../../assets/images/${path.img}`)}
                   alt=""
                 />
               )}
@@ -127,7 +127,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                   <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
                   <div>iMessage</div>
                 </Link>
-                <Link
+                {/* <Link
                   to="messaging/tinder"
                   onClick={() => {
                     handleShow();
@@ -141,7 +141,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                 >
                   <img className="icon" src={tinder} alt="" />
                   <div>Tinder</div>
-                </Link>
+                </Link> */}
                 <Link
                   to="messaging/chatGPT"
                   className="dumbnail-header-nav-link"

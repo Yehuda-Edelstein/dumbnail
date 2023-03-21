@@ -1,3 +1,5 @@
+@import "./../../index.scss";
+
 .home {
   margin: 20px;
   min-width: 320px;
@@ -50,7 +52,6 @@
 
   h1 {
     font-size: 40px;
-    font-weight: bold;
   }
 
   h3 {
@@ -96,5 +97,23 @@
         padding-right: 30px;
       }
     }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .home {
+    color: $dm-text-color;
+
+    .example {
+      .example-title {
+        color: black;
+      }
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .home {
+    color: black;
   }
 }

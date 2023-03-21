@@ -6,7 +6,7 @@ import {
   convertTo12HourFormat,
   convertToHTMLTime,
   convertToISODate,
-  formatDateToMMDDYY,
+  formatDateToMDDYY,
   get12HourTime,
 } from "../../../helpers/DateTimeHelpers";
 import { nFormatter } from "../../../helpers/Helpers";
@@ -113,7 +113,7 @@ function Tweet({
             className="twitter-date-input"
             type="date"
             onChange={(ev) => {
-              setDate(formatDateToMMDDYY(ev.target.value));
+              setDate(formatDateToMDDYY(ev.target.value));
             }}
             value={convertToISODate(date)}
           ></input>

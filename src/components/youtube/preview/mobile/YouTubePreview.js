@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "./YouTubePreview.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Switch from "../../../main/switch/Switch";
+import Switch from "../../../switch/Switch";
 import { download } from "../../../../helpers/Helpers";
 
 function YouTubePreview({

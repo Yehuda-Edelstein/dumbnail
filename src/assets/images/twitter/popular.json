@@ -153,5 +153,10 @@
     "img": "Taylor_Swift.png"
   },
   { "name": "Bill Gates", "handle": "BillGates", "img": "Bill_Gates.png" },
-  { "name": "Neymar Jr", "handle": "neymarjr", "img": "Neymar.png" }
+  { "name": "Neymar Jr", "handle": "neymarjr", "img": "Neymar.png" },
+  {
+    "name": "Awkward Bochur",
+    "handle": "emdimem_music",
+    "img": "Awkward_Bochur.png"
+  }
 ]

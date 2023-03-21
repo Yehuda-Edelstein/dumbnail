@@ -1,10 +1,8 @@
+@import "./../../index.scss";
+
 .about {
   display: flex;
-  // width: 912px;
-  // min-width: 420px;
   font-size: 15px;
-  font-weight: bold;
-  // max-width: 801px;
   height: 100%;
   padding: 2rem;
   padding-top: 1em;
@@ -21,5 +19,17 @@
   .about {
     // max-width: 436px;
     min-width: 320px;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .about {
+    color: $dm-text-color;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .about {
+    color: black;
   }
 }

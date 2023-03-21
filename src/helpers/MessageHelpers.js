@@ -16,7 +16,6 @@ export function deleteMessage(id, messages) {
 export function newTextMessage(messages) {
   const arr = [...messages];
   const n = { id: arr.length, from: "you", msg: "", type: "text" };
-  console.log(n);
   arr.push(n);
   return arr;
 }
@@ -29,13 +28,4 @@ export function lastMessage(id, messages) {
     messages[id] === messages[messages.length - 1] &&
     "last"
   );
-}
-
-// convert html date to standard mm/dd/yy
-export function date(d) {
-  let arr = d.toString().split("-");
-  let month = arr[1].replace(/0/g, "");
-  let day = arr[2].replace(/0/g, "");
-  let year = arr[0].slice(2);
-  return `${month}/${day}/${year}`;
 }

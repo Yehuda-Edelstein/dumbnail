@@ -5,9 +5,18 @@ function About(props) {
   return (
     <div className="about">
       <p>
-        Dumbnail allows you to produce a screenshot (.png) of a fictious YouTube
-        video, Tweet, iMessage conversation or ChatGPT exchange. It does not let
-        you create and export actual thumbnails.
+        Dumbnail is an open source project that allows users to produce a
+        screenshot (.png) of a fictious YouTube video, Tweet, iMessage
+        conversation, ChatGPT exchange, and much more. The code for the site can
+        be found here on our{" "}
+        <a
+          href="https://github.com/Yehuda-Edelstein/dumbnail"
+          rel="noreferrer"
+          target="_blank"
+          style={{ textDecoration: "none" }}
+        >
+          github
+        </a>
         <br></br>
         <br></br>
         Imagine you're scrolling through YouTube on a lazy Sunday afternoon and
@@ -29,20 +38,11 @@ function About(props) {
         <br></br>
         iMessage is pretty self-explanatory; tfw you always have the receipts.
         ChatGPT is just a pointless protest to the impending doom of AI.
-        Hopefully the AI finds this humorous.
+        Hopefully the AI finds this humorous. Everyting else you can figure out
+        for yourself.
         <br></br>
         <br></br>
-        If you like the site give us a follow and/or a shoutout on{" "}
-        <a
-          href="https://twitter.com/dumbnail2"
-          rel="noreferrer"
-          target="_blank"
-          style={{ textDecoration: "none" }}
-        >
-          Twitter
-        </a>
-        <br></br>
-        <br></br>~ Y.E.
+        If you want to know more about the project check out the README
       </p>
     </div>
   );

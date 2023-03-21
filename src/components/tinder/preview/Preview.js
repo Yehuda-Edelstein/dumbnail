@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
-import { download } from "./../../../../helpers/Helpers";
+import { download } from "../../../helpers/Helpers";
 import PreviewHeader from "../../previewHeader/previewHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import headerIcons from "./../../../../static/tinder/tinder-header-icons.png";
+import headerIcons from "./../../../assets/images/tinder/tinder-header-icons.png";
 import "./Preview.scss";
-import { lastMessage } from "../../../../helpers/MessageHelpers";
+import { lastMessage } from "../../../helpers/MessageHelpers";
+import { formatDateToMDDYY } from "../../../helpers/DateTimeHelpers";
 
 function Preview({
   match,
@@ -18,12 +19,15 @@ function Preview({
 }) {
   const ref = useRef(null);
 
+  const x = picX * 0.1;
+  const y = picY * 0.1;
+
   function lastPicture(id) {
     return messages[id + 1]?.from !== "them" && "last-picture";
   }
 
   return (
-    <div className="preview tinder">
+    <div className="preview-container tinder">
       <PreviewHeader needsSwitch={false} />
       <div className="border border-dark">
         <div ref={ref} className="preview-ref bg-white">
@@ -35,9 +39,15 @@ function Preview({
               />
             </div>
             <div className="match">
-              <div>
+              <div className="custom-match-pic">
                 {selectedPic ? (
-                  <img src={previewPic} alt="" className="match-pic" />
+                  <img
+                    src={previewPic}
+                    alt=""
+                    style={{
+                      transform: `scale(${picZoom}%) translate(${x}px, ${y}px)`,
+                    }}
+                  />
                 ) : (
                   <div className="match-pic-backdrop"></div>
                 )}
@@ -50,7 +60,8 @@ function Preview({
           </div>
           <div className="message-body">
             <div className="matched-on">
-              YOU MATCHED WITH {match.toUpperCase()} ON {matchedOn}
+              YOU MATCHED WITH {match.toUpperCase()} ON{" "}
+              {formatDateToMDDYY(matchedOn)}
             </div>
             {messages.map((m) => {
               return m.from === "them" ? (
@@ -58,12 +69,14 @@ function Preview({
                   <div className="d-flex">
                     <div>
                       {lastPicture(m.id) && (
-                        <div>
+                        <div className="custom-match-pic">
                           {selectedPic ? (
                             <img
                               src={previewPic}
                               alt=""
-                              className="match-pic"
+                              style={{
+                                transform: `scale(${picZoom}%) translate(${x}px, ${y}px)`,
+                              }}
                             />
                           ) : (
                             <div className="match-pic-backdrop "></div>
@@ -110,6 +123,7 @@ function Preview({
           </div>
         </div>
         <button
+          className="tinder-download"
           onClick={() => {
             download(ref, "match");
           }}

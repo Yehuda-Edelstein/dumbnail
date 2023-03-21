@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { download } from "../../../helpers/Helpers";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import Switch from "../../main/switch/Switch";
+import Switch from "../../switch/Switch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import facetime from "./../../../assets/images/message/video-icon.png";
 import "./MessagePreview.scss";

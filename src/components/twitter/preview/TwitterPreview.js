@@ -5,7 +5,7 @@ import dark from "./../../../assets/images/twitter/dark-verified.png";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Switch from "../../main/switch/Switch";
+import Switch from "../../switch/Switch";
 import "./TwitterPreview.scss";
 
 function TwitterPreview({

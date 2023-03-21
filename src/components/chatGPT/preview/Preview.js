@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
-import { download } from "../../../../helpers/Helpers";
-import logo from "../../../../static/chatGPT/logo.png";
-import thumb from "../../../../static/chatGPT/thumb.png";
+import { download } from "../../../helpers/Helpers";
+import logo from "../../../assets/images/chatGPT/logo.png";
+import thumb from "../../../assets/images/chatGPT/thumb.png";
 import "./Preview.scss";
 
 function Preview({ initial, color, messages }) {
   const ref = useRef(null);
 
   return (
-    <div className="preview chatGPT-width">
+    <div className="preview-container">
       <h5>Preview</h5>
       <div className="border border-dark chat-margin">
         <div ref={ref}>

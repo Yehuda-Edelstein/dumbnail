@@ -1,17 +1,9 @@
+@import "./../../../index.scss";
+
 $green: rgb(16, 163, 127);
 $border: #2e2d37;
 
-.edit-chat-container {
-  background-color: white;
-  border: 0.5px solid rgba(128, 128, 128, 0.75);
-  border-radius: 4px;
-  padding: 20px;
-  margin: 20px;
-  margin-right: 0;
-  margin-bottom: 0;
-  height: fit-content;
-  width: fit-content;
-
+.upload-container {
   .edit-chat {
     .image-info {
       display: flex;
@@ -34,7 +26,6 @@ $border: #2e2d37;
         display: flex;
         justify-content: center;
         align-items: center;
-        // padding: 8px;
         border-radius: 8px;
 
         .color {
@@ -157,7 +148,7 @@ $border: #2e2d37;
   .new-message-container {
     border-top: 0.5px solid rgba(46, 45, 55, 0.75);
     padding-top: 15px;
-    .new-message {
+    .tinder-new-message {
       width: fit-content;
       padding: 4px 20px;
       border-radius: 8px;
@@ -218,5 +209,68 @@ $border: #2e2d37;
     margin: 0;
     border-radius: 0;
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .upload-container {
+    .edit-chat {
+      color: $dm-text-color;
+      input,
+      textarea {
+        color: $dm-text-color;
+      }
+      select {
+        color: $dm-text-color;
+      }
+      .chat-container {
+        .message {
+          .message-buttons {
+            .message-from {
+              .from-active {
+                cursor: default;
+                opacity: 1;
+                background-color: inherit;
+                box-shadow: rgb(140, 140, 140, 0.1) 0px 1px 3px 0px,
+                  rgba(187, 214, 241, 0.15) 0px 0px 0px 1px;
+              }
+
+              .from {
+                &:hover {
+                  cursor: pointer;
+                  opacity: 0.75;
+                  background-color: rgba(128, 128, 128, 0.25);
+                }
+              }
+            }
+
+            .delete-message {
+              color: $dm-text-color;
+
+              &:hover {
+                cursor: pointer;
+                opacity: 0.75;
+                background-color: rgba(128, 128, 128, 0.25);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .upload-container {
+    .edit-chat {
+      color: black;
+      input,
+      textarea {
+        color: black;
+      }
+      select {
+        color: black;
+      }
+    }
   }
 }

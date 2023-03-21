@@ -1,10 +1,10 @@
 import React from "react";
 import "./Home.scss";
-import youtube from "../../../static/examples/youtube.png";
-import twitter from "../../../static/examples/twitter.png";
-import message from "../../../static/examples/message.png";
-import chat from "../../../static/examples/chat.png";
-import post from "../../../static/examples/post.png";
+import youtube from "../../assets/images/examples/youtube.png";
+import twitter from "../../assets/images/examples/twitter.png";
+import message from "../../assets/images/examples/message.png";
+import chat from "../../assets/images/examples/chat.png";
+import post from "../../assets/images/examples/post.png";
 import { Link } from "react-router-dom";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 

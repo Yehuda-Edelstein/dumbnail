@@ -181,183 +181,183 @@ $dm-light-gray: rgb(188, 189, 190);
   }
 }
 
-@media screen and (max-width: 885px) {
-  .preview-container {
-    .instagram-preview-box {
-      .post-header {
-        padding: 1.13vw;
+// @media screen and (max-width: 885px) {
+//   .preview-container {
+//     .instagram-preview-box {
+//       .post-header {
+//         padding: 1.13vw;
 
-        img,
-        .account-backdrop {
-          width: 3.61vw;
-          height: 3.61vw;
-          margin-right: 0.9vw;
-        }
+//         img,
+//         .account-backdrop {
+//           width: 3.61vw;
+//           height: 3.61vw;
+//           margin-right: 0.9vw;
+//         }
 
-        .username {
-          font-weight: 600;
-          font-size: 1.58vw;
-        }
+//         .username {
+//           font-weight: 600;
+//           font-size: 1.58vw;
+//         }
 
-        .instagram-verified {
-          margin-left: 0.45vw;
-          width: 1.36vw;
-          height: 1.36vw;
-          margin-bottom: 0.34vw;
-        }
+//         .instagram-verified {
+//           margin-left: 0.45vw;
+//           width: 1.36vw;
+//           height: 1.36vw;
+//           margin-bottom: 0.34vw;
+//         }
 
-        .post-header-options {
-          width: 1.36vw;
-          height: 1.36vw;
-        }
-      }
+//         .post-header-options {
+//           width: 1.36vw;
+//           height: 1.36vw;
+//         }
+//       }
 
-      .post-footer {
-        padding-bottom: 0.23vw;
-        padding-top: 0.23vw;
+//       .post-footer {
+//         padding-bottom: 0.23vw;
+//         padding-top: 0.23vw;
 
-        .post-footer-data {
-          .like-bar {
-            padding: 0 1.13vw;
-            .bar {
-              width: 12.43vw;
-            }
-            .save {
-              width: 3.39vw;
-            }
-          }
-        }
+//         .post-footer-data {
+//           .like-bar {
+//             padding: 0 1.13vw;
+//             .bar {
+//               width: 12.43vw;
+//             }
+//             .save {
+//               width: 3.39vw;
+//             }
+//           }
+//         }
 
-        .post-data {
-          padding: 0 1.8vw;
-        }
+//         .post-data {
+//           padding: 0 1.8vw;
+//         }
 
-        .likes {
-          font-size: 1.58vw;
-          margin-bottom: 0.45vw;
-        }
+//         .likes {
+//           font-size: 1.58vw;
+//           margin-bottom: 0.45vw;
+//         }
 
-        .username {
-          font-size: 1.58vw;
-        }
+//         .username {
+//           font-size: 1.58vw;
+//         }
 
-        .description {
-          max-width: 39.55vw;
-          font-size: 1.58vw;
-          line-height: 1.91vw;
-          max-height: 3.95vw;
-          margin-bottom: 0.45vw;
-          font-weight: 400;
-        }
+//         .description {
+//           max-width: 39.55vw;
+//           font-size: 1.58vw;
+//           line-height: 1.91vw;
+//           max-height: 3.95vw;
+//           margin-bottom: 0.45vw;
+//           font-weight: 400;
+//         }
 
-        .comments {
-          font-size: 1.58vw;
-          margin-bottom: 0.45vw;
-        }
+//         .comments {
+//           font-size: 1.58vw;
+//           margin-bottom: 0.45vw;
+//         }
 
-        .date {
-          font-size: 1.13vw;
+//         .date {
+//           font-size: 1.13vw;
 
-          .month {
-            margin-right: 0.28vw;
-          }
-          .day {
-            margin-right: 0.28vw;
-          }
-        }
-      }
-    }
-  }
-}
+//           .month {
+//             margin-right: 0.28vw;
+//           }
+//           .day {
+//             margin-right: 0.28vw;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-@media screen and (max-width: 820px) {
-  .preview-container {
-    .instagram-preview-box {
-      .post-header {
-        padding: 10px;
+// @media screen and (max-width: 820px) {
+//   .preview-container {
+//     .instagram-preview-box {
+//       .post-header {
+//         padding: 10px;
 
-        img,
-        .account-backdrop {
-          width: 29px;
-          height: 29px;
-          margin-right: 7px;
-        }
+//         img,
+//         .account-backdrop {
+//           width: 29px;
+//           height: 29px;
+//           margin-right: 7px;
+//         }
 
-        .username {
-          font-weight: 600;
-          font-size: 14px;
-        }
+//         .username {
+//           font-weight: 600;
+//           font-size: 14px;
+//         }
 
-        .instagram-verified {
-          margin-left: 3px;
-          width: 11px;
-          height: 11px;
-          margin-bottom: 3px;
-        }
+//         .instagram-verified {
+//           margin-left: 3px;
+//           width: 11px;
+//           height: 11px;
+//           margin-bottom: 3px;
+//         }
 
-        .post-header-options {
-          width: 11px;
-          height: 11px;
-        }
-      }
+//         .post-header-options {
+//           width: 11px;
+//           height: 11px;
+//         }
+//       }
 
-      .post-footer {
-        padding-bottom: 2px;
-        padding-top: 2px;
+//       .post-footer {
+//         padding-bottom: 2px;
+//         padding-top: 2px;
 
-        .post-footer-data {
-          .like-bar {
-            padding: 0 9px;
-            .bar {
-              width: 100px;
-            }
-            .save {
-              width: 27px;
-            }
-          }
-        }
+//         .post-footer-data {
+//           .like-bar {
+//             padding: 0 9px;
+//             .bar {
+//               width: 100px;
+//             }
+//             .save {
+//               width: 27px;
+//             }
+//           }
+//         }
 
-        .post-data {
-          padding: 0 15px;
-        }
+//         .post-data {
+//           padding: 0 15px;
+//         }
 
-        .likes {
-          font-size: 14px;
-          margin-bottom: 4px;
-        }
+//         .likes {
+//           font-size: 14px;
+//           margin-bottom: 4px;
+//         }
 
-        .username {
-          font-size: 14px;
-        }
+//         .username {
+//           font-size: 14px;
+//         }
 
-        .description {
-          max-width: 313px;
-          font-size: 14px;
-          line-height: 17px;
-          max-height: 39px;
-          margin-bottom: 4px;
-          font-weight: 400;
-        }
+//         .description {
+//           max-width: 313px;
+//           font-size: 14px;
+//           line-height: 17px;
+//           max-height: 39px;
+//           margin-bottom: 4px;
+//           font-weight: 400;
+//         }
 
-        .comments {
-          font-size: 14px;
-          margin-bottom: 4px;
-        }
+//         .comments {
+//           font-size: 14px;
+//           margin-bottom: 4px;
+//         }
 
-        .date {
-          font-size: 10px;
+//         .date {
+//           font-size: 10px;
 
-          .month {
-            margin-right: 2px;
-          }
-          .day {
-            margin-right: 2px;
-          }
-        }
-      }
-    }
-  }
-}
+//           .month {
+//             margin-right: 2px;
+//           }
+//           .day {
+//             margin-right: 2px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 @media screen and (max-width: 450px) {
   .preview-container {
