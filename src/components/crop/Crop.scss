@@ -1,0 +1,239 @@
+$width: 254.98px;
+$height: 143.42px;
+
+.crop-container {
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-size: contain;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .thumbnail {
+    aspect-ratio: $width / $height;
+  }
+
+  .instagram-post {
+    min-height: 212px;
+    max-height: 471px;
+  }
+
+  .user {
+    aspect-ratio: 1/1;
+  }
+
+  .crop-container-body {
+    display: flex;
+    margin-bottom: 10px;
+    .arrow-up,
+    .arrow-down,
+    .arrow-left,
+    .arrow-right {
+      text-align: center;
+      border-radius: 8px;
+      align-items: center;
+      padding: 4px;
+      text-decoration: none;
+      font-weight: 300;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .arrow-left,
+    .arrow-right {
+      min-width: 32px;
+      display: flex;
+      justify-content: center;
+      margin: 32px 0;
+    }
+    .pic-container {
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .crop-container-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    .icon-enabled {
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-weight: 300;
+
+      svg {
+        font-size: 1.5em;
+      }
+
+      span {
+        font-size: 1em;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .icon-disabled {
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+      opacity: 0.5;
+      svg {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .crop-container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icon-enabled {
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+
+      span {
+        font-size: 0.5em;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .icon-disabled {
+      border-radius: 8px;
+      align-items: center;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 300;
+      opacity: 0.5;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .crop-container {
+    .crop-container-body {
+      .arrow-up,
+      .arrow-down,
+      .arrow-left,
+      .arrow-right {
+        color: rgb(136, 136, 136);
+
+        &:hover {
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      .pic-container {
+        background-color: black;
+      }
+    }
+
+    .crop-container-footer {
+      .icon-enabled {
+        color: rgb(136, 136, 136);
+
+        &:hover {
+          opacity: 0.75;
+          background-color: rgba(136, 136, 136, 0.25);
+        }
+      }
+
+      .icon-disabled {
+        color: rgb(136, 136, 136);
+      }
+    }
+
+    .crop-container-header {
+      .icon-enabled {
+        color: rgb(136, 136, 136);
+
+        &:hover {
+          opacity: 0.75;
+          background-color: rgba(136, 136, 136, 0.25);
+        }
+      }
+
+      .icon-disabled {
+        color: rgb(136, 136, 136);
+      }
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .crop-container {
+    .crop-container-body {
+      .arrow-up,
+      .arrow-down,
+      .arrow-left,
+      .arrow-right {
+        color: black;
+
+        &:hover {
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      .pic-container {
+        background-color: black;
+      }
+    }
+
+    .crop-container-footer {
+      .icon-enabled {
+        color: black;
+
+        &:hover {
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      .icon-disabled {
+        color: black;
+      }
+    }
+
+    .crop-container-header {
+      .icon-enabled {
+        color: black;
+
+        &:hover {
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      .icon-disabled {
+        color: black;
+      }
+    }
+  }
+}

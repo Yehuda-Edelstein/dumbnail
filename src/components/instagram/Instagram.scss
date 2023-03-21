@@ -1,0 +1,15 @@
+@media screen and (prefers-color-scheme: dark) {
+  .instagram {
+    .nav-link.active {
+      color: rgba(193, 53, 132, 0.5) !important;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .instagram {
+    .nav-link.active {
+      color: rgba(193, 53, 132, 0.75) !important;
+    }
+  }
+}

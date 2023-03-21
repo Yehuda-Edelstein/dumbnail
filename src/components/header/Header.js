@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import logo from "./../../static/logo.png";
-import small from "./../../static/small-screen-logo.png";
+import logo from "./../../assets/images/site/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import gpt from "../../static/chatGPT/icon.png";
+import gpt from "../../assets/images/chatGPT/icon.png";
+// import tinder from "../../assets/images/tinder/icon.png";
 
 function Header({ path, setPath, show, setShow, handleShow }) {
   return (
     <div className="header">
-      <div>
+      <div className="logo-container">
         <Link
           to="/"
           onClick={() => {
@@ -18,7 +18,6 @@ function Header({ path, setPath, show, setShow, handleShow }) {
           }}
         >
           <img className="logo" src={logo} width="200" alt="" />
-          <img className="small-screen-logo" src={small} width="200" alt="" />
         </Link>
       </div>
       <div>
@@ -31,7 +30,7 @@ function Header({ path, setPath, show, setShow, handleShow }) {
               {path.img && (
                 <img
                   id="dropdown-icon"
-                  src={require(`../../static/${path.img}`)}
+                  src={require(`../../assets/images/${path.img}`)}
                   alt=""
                 />
               )}
@@ -128,6 +127,21 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                   <FontAwesomeIcon className="icon" icon={["fa", "comment"]} />
                   <div>iMessage</div>
                 </Link>
+                {/* <Link
+                  to="messaging/tinder"
+                  onClick={() => {
+                    handleShow();
+                    setPath({
+                      icon: null,
+                      path: "Tinder",
+                      img: "tinder/icon.png",
+                    });
+                  }}
+                  className="dumbnail-header-nav-link"
+                >
+                  <img className="icon" src={tinder} alt="" />
+                  <div>Tinder</div>
+                </Link> */}
                 <Link
                   to="messaging/chatGPT"
                   className="dumbnail-header-nav-link"

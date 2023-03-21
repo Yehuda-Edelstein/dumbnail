@@ -1,0 +1,35 @@
+@import "./../../index.scss";
+
+.about {
+  display: flex;
+  font-size: 15px;
+  height: 100%;
+  padding: 2rem;
+  padding-top: 1em;
+  width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .about {
+    // max-width: 801px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .about {
+    // max-width: 436px;
+    min-width: 320px;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .about {
+    color: $dm-text-color;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .about {
+    color: black;
+  }
+}

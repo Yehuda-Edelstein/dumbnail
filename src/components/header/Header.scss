@@ -1,15 +1,17 @@
+$dm-header-bg-color: rgb(30, 30, 30);
+$dm-dropdown-text-color: #a9a9a9;
+
 .header {
   width: 100%;
-  // overflow: hidden;
   position: fixed;
-  // top: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
   display: flex;
+  height: 70px;
   align-items: center;
   padding: 10px;
-  background-color: white;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
-
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -17,122 +19,102 @@
   -ms-user-select: none;
   user-select: none;
 
-  .logo {
-    width: 155px;
-    align-items: center;
-    margin-right: 20px;
-  }
-
-  .small-screen-logo {
-    display: none;
-    width: 77px;
-    height: 50.22px;
-    align-items: center;
-    margin-right: 5px;
-  }
-
-  h1 {
-    font-size: 35px;
-    align-items: center;
+  .logo-container {
+    max-height: fit-content;
+    display: flex;
+    margin: 0 20px 0 10px;
+    .logo {
+      width: 50px;
+    }
   }
 
   .dumbnail-header-nav-container {
     position: relative;
     display: none;
-    margin-top: 10px;
-    background-color: white;
-    color: black;
     min-height: 100%;
-  }
-
-  .dumbnail-header-dropdown-btn {
-    width: 150px;
-    padding: 5px 10px;
-    border: 0.5px solid rgba(0, 0, 0, 0.25);
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    .current-window {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-
-      .current-component {
-        margin-right: auto;
-      }
-    }
-
-    .dropdown-chevron-icon {
-      font-size: 10px;
-      opacity: 0.5;
-    }
-    .dropdown-icon {
-      margin-right: 10px;
-    }
-
-    img {
-      width: 22.5px;
-      margin-right: 10px;
-    }
-
-    #dropdown-icon {
-      width: 18px;
-    }
-
-    .dumbnail-header-nav {
-      position: absolute;
-      top: 35px;
-      left: 0;
-      display: flex;
-      flex-direction: column;
+    .dumbnail-header-dropdown-btn {
       width: 150px;
-      padding-top: 15px;
-      background-color: white;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
-      border: 0.5px solid rgba(0, 0, 0, 0.25);
-      border-top: none;
+      padding: 5px 10px;
 
-      label {
-        color: gray;
-        font-size: 10px;
-        margin-left: 10px;
-        margin-bottom: 5px;
-        margin-top: 5px;
+      &:hover {
+        cursor: pointer;
       }
 
-      .dumbnail-header-nav-link,
-      .dumbnail-about-nav-link {
-        color: black;
+      .current-window {
         display: flex;
+        justify-content: flex-start;
         align-items: center;
-        padding: 4px 8px;
-        width: 100%;
-        margin-bottom: 12px;
-        margin-right: 30px;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 300;
 
-        .icon {
-          font-size: 1.5em;
-          margin-right: 15px;
-        }
-
-        &:hover {
-          opacity: 0.75;
-          background-color: rgba(128, 128, 128, 0.25);
+        .current-component {
+          margin-right: auto;
         }
       }
 
-      .dumbnail-about-nav-link {
-        margin-bottom: 0;
+      .dropdown-chevron-icon {
+        font-size: 10px;
+        opacity: 0.5;
+      }
+      .dropdown-icon {
+        margin-right: 10px;
+      }
+
+      img {
+        width: 22.5px;
+        margin-right: 10px;
+      }
+
+      #dropdown-icon {
+        width: 18px;
+      }
+
+      .dumbnail-header-nav {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        padding-top: 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top: none;
+
+        label {
+          font-size: 10px;
+          margin-left: 10px;
+          margin-bottom: 5px;
+          margin-top: 5px;
+        }
+
+        .dumbnail-header-nav-link,
+        .dumbnail-about-nav-link {
+          display: flex;
+          align-items: center;
+          padding: 4px 8px;
+          width: 100%;
+          margin-bottom: 12px;
+          margin-right: 30px;
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: 300;
+
+          .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+          }
+
+          &:hover {
+          }
+        }
+
+        .dumbnail-about-nav-link {
+          margin-bottom: 0;
+        }
       }
     }
   }
 }
+
 @media screen and (max-width: 1050px) {
   .header {
     .dumbnail-header-nav-container {
@@ -141,13 +123,77 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (prefers-color-scheme: dark) {
   .header {
-    .logo {
-      display: none;
+    background-color: $dm-header-bg-color;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+
+    .dumbnail-header-nav-container {
+      background-color: $dm-header-bg-color;
+      color: $dm-dropdown-text-color;
+
+      .dumbnail-header-dropdown-btn {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .dumbnail-header-nav {
+          background-color: $dm-header-bg-color;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+
+          label {
+            color: $dm-dropdown-text-color;
+          }
+
+          .dumbnail-header-nav-link,
+          .dumbnail-about-nav-link {
+            color: $dm-dropdown-text-color;
+
+            &:hover {
+              opacity: 0.95;
+              background-color: rgba(128, 128, 128, 0.25);
+            }
+          }
+        }
+      }
     }
-    .small-screen-logo {
-      display: block;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .header {
+    background-color: white;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+
+    .dumbnail-header-nav-container {
+      background-color: white;
+      color: black;
+
+      .dumbnail-header-dropdown-btn {
+        border: 0.5px solid rgba(0, 0, 0, 0.25);
+
+        .dumbnail-header-nav {
+          background-color: white;
+          border: 0.5px solid rgba(0, 0, 0, 0.25);
+          border-top: none;
+
+          label {
+            color: gray;
+          }
+
+          .dumbnail-header-nav {
+            border: 0.5px solid rgba(0, 0, 0, 0.25);
+          }
+
+          .dumbnail-header-nav-link,
+          .dumbnail-about-nav-link {
+            color: black;
+
+            &:hover {
+              opacity: 0.75;
+              background-color: rgba(128, 128, 128, 0.25);
+            }
+          }
+        }
+      }
     }
   }
 }

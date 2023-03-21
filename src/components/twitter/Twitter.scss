@@ -1,0 +1,15 @@
+@media screen and (prefers-color-scheme: dark) {
+  .twitter {
+    .nav-link.active {
+      color: rgba(29, 155, 240, 0.5) !important;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .twitter {
+    .nav-link.active {
+      color: rgba(29, 155, 240, 0.75) !important;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@import "./../../../index.scss";
+
+.upload-container {
+  .tinder-upload-container-body {
+    display: flex;
+    margin-top: 10px;
+    .upload-profile-pic {
+      margin-right: 20px;
+    }
+
+    .tinder-match-container {
+      width: 75%;
+    }
+  }
+  .message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    padding-bottom: 0;
+    border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+
+    input,
+    select,
+    textarea {
+      margin-right: 15px;
+    }
+
+    .tinder-message-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      img {
+        width: 20px;
+      }
+
+      .them-btn {
+        transform: scaleX(-1);
+      }
+
+      .them-btn,
+      .you-btn {
+        width: 40px;
+        padding: 4px;
+        border-radius: 8px;
+        margin-right: 5px;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+      .delete-message {
+        border-radius: 8px;
+        align-items: center;
+        padding: 8px;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 300;
+        margin-left: 5px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.75;
+          background-color: rgba(128, 128, 128, 0.25);
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+  .messages {
+    overflow: scroll;
+    padding-bottom: 0;
+    border-top: none;
+
+    .message-container {
+      width: 100%;
+    }
+  }
+
+  .new-messages-container {
+    border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+    color: #dae0e6;
+    padding-top: 20px;
+
+    .new-message {
+      padding: 4px 8px;
+      background-color: rgb(27, 137, 255);
+      border: 0.5px solid #1f1f1f;
+      border-radius: 8px;
+      border: 1px solid #1f1f1f;
+      text-align: center;
+      background-color: rgb(253, 41, 123);
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .messages-container,
+  .tinder-upload-container-body {
+    input,
+    textarea {
+      color: $dm-text-color;
+    }
+    select {
+      color: $dm-text-color;
+    }
+  }
+  .message {
+    .tinder-message-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .delete-message {
+        color: #a9a9a9;
+      }
+
+      .active {
+        cursor: default !important;
+        opacity: 0.75 !important;
+        background-color: inherit !important;
+        box-shadow: rgb(140, 140, 140, 0.1) 0px 1px 3px 0px,
+          rgba(187, 214, 241, 0.15) 0px 0px 0px 1px;
+      }
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .messages-container,
+  .tinder-upload-container-body {
+    color: black;
+    select {
+      color: black;
+    }
+  }
+
+  .message {
+    .tinder-message-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .delete-message {
+        color: black;
+      }
+      .active {
+        cursor: default !important;
+        opacity: 1 !important;
+        background-color: inherit !important;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+          rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@media screen and (prefers-color-scheme: dark) {
+  .youtube {
+    .nav-link.active {
+      color: rgba(255, 0, 0, 0.5) !important;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .youtube {
+    .nav-link.active {
+      color: rgba(255, 0, 0, 0.75) !important;
+    }
+  }
+}

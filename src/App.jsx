@@ -29,9 +29,13 @@ import {
   faCircle,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Main from "./components/main/Main";
-import Navbar from "./components/navbar/Navbar";
-import { useState } from "react";
+import Sidebar from "./components/sidebar/Sidebar";
+import { useEffect, useState } from "react";
+import ReactGA from "react-ga";
+const TRACKING_ID = "UA-251706194-1";
+ReactGA.initialize(TRACKING_ID);
 
 library.add(
   faHouse,
@@ -57,10 +61,15 @@ library.add(
   faEllipsis,
   faChevronRight,
   faChevronLeft,
-  faChevronDown
+  faChevronDown,
+  faHeart
 );
 
 function App() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   const [path, setPath] = useState({
     icon: ["fa", "home"],
     path: "Home",
@@ -84,7 +93,7 @@ function App() {
           setShow(false);
         }}
       >
-        <Navbar path={path} setPath={setPath} />
+        <Sidebar path={path} setPath={setPath} />
         <Main setPath={setPath} />
       </div>
     </div>
