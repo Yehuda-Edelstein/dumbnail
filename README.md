@@ -64,6 +64,7 @@ Any help would be awesome. I want to have fun and build something cool which is 
 - Tinder
 - ChatGPT
 - Instagram DMs
+- Slack
 - Reddit
 - UberEats, Uber, Lyft, and similiar delivery-style apps
 - Xbox live
