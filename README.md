@@ -42,7 +42,7 @@ The truth is making this a social media/community isn't as important to me as ha
 The only big bug right now is that downloading a screenshot doesn't work on Safari. It's something to do with the package I'm using. I filled out an issue here https://github.com/bubkoo/html-to-image/issues/348 but no one has figured out how to fix it, or, if they have, I can't figure out how to implement it. 
 
 ## Contributing
-I'm new to open source, but I assume anyone familiar knows how to help and will know how to contribute. I assume just make a pull request?
+I'm new to open source, but I assume anyone familiar knows how to help and will know how to contribute. I assume just make a pull request? I am currently working on a Tinder component. It's not finished, but you can still see the code, it's just commented out.
 
 ## Alas
 Any help would be awesome. I want to have fun and build something cool which is why I got into software in the first place. Even spellchecking this README would be great lol. 
