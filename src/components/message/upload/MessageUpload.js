@@ -70,8 +70,7 @@ function MessageUpload({ messages, setMessages, contact, setContact }) {
               <div className="message" key={m.id}>
                 <textarea
                   rows="1"
-                  placeholder="Message..."
-                  value={m.msg}
+                  placeholder={m.msg ? `${m.msg}` : "Message..."}
                   onChange={(ev) => {
                     setMessages(
                       updateMessage(m.id, "msg", ev.target.value, messages)

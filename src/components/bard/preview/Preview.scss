@@ -1,0 +1,81 @@
+@import "./../Bard.scss";
+
+.bard-chat-header {
+  background-color: $white;
+}
+.bard-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+
+  .bard-title-div {
+    display: flex;
+    align-items: center;
+
+    .bars {
+      width: 20px;
+      margin-left: 15px;
+      opacity: 0.75;
+    }
+
+    .bard-title {
+      margin-left: 1em;
+    }
+  }
+
+  .bard-profile-div {
+    display: flex;
+    align-items: center;
+    .dots {
+      width: 15px;
+      opacity: 0.75;
+    }
+
+    .profile {
+      display: inline-block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-left: 15px;
+      padding: 0.5px;
+      border: 2px solid transparent;
+      .upload-profile-backdrop {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #e4e4e4;
+      }
+    }
+
+    .profile:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border-top: 2px solid #db4437;
+      border-right: 2px solid #4285f4;
+      border-bottom: 2px solid #0f9d58;
+      border-left: 2px solid #f4b400;
+    }
+  }
+}
+
+.bard-chat-body {
+  background-color: $bg-color;
+
+  .from-them {
+    .from-them-footer {
+      .thumbs-container {
+        svg,
+        .thumb {
+          width: 10px;
+        }
+      }
+    }
+  }
+}

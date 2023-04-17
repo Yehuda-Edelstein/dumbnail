@@ -156,6 +156,24 @@ function Header({ path, setPath, show, setShow, handleShow }) {
                   <img className="icon" src={gpt} alt="" />
                   <div>ChatGPT</div>
                 </Link>
+                {/* <Link
+                  to="messaging/bard"
+                  onClick={() => {
+                    handleShow();
+                    setPath({
+                      icon: ["fa-brands", "google"],
+                      path: "Bard",
+                      img: null,
+                    });
+                  }}
+                  className="dumbnail-header-nav-link"
+                >
+                  <FontAwesomeIcon
+                    className="icon"
+                    icon={["fa-brands", "google"]}
+                  />
+                  <div>Bard</div>
+                </Link> */}
                 <Link
                   to="about"
                   onClick={() => {
