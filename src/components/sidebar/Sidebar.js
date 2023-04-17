@@ -84,6 +84,20 @@ function Sidebar({ path, setPath }) {
           <img className="icon" src={gpt} alt="" />
           <div>ChatGPT</div>
         </Link>
+        {/* <Link
+          to="messaging/bard"
+          onClick={() => {
+            setPath({
+              icon: ["fa-brands", "google"],
+              path: "Bard",
+              img: null,
+            });
+          }}
+          className="dumbnail-nav-link"
+        >
+          <FontAwesomeIcon className="icon" icon={["fa-brands", "google"]} />
+          <div>Bard</div>
+        </Link> */}
       </div>
       <div>
         <Link

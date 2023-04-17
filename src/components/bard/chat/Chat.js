@@ -1,56 +1,29 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { ChromePicker } from "react-color";
-import logo from "../../../assets/images/chatGPT/logo.png";
-import "./Chat.scss";
+import { deleteMessage, updateMessage } from "../../../helpers/MessageHelpers";
+import Crop from "../../crop/Crop";
 
-function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
+function Chat({
+  initial,
+  setInitial,
+  color,
+  setColor,
+  messages,
+  setMessages,
+  previewPic,
+  picX,
+  picY,
+  setPicX,
+  setPicY,
+  setPicZoom,
+  picZoom,
+  selectedPic,
+  setSelectedPic,
+}) {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
-
-  function updateMessage(id, message) {
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr[index].msg = message;
-    setMessages(arr);
-  }
-
-  function deleteMessage(id) {
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr.splice(index, 1);
-    const update = arr.map((obj, i) => ({ ...obj, id: i }));
-    setMessages(update);
-  }
-
-  function addMessage() {
-    const arr = [...messages];
-    if (!arr.length) {
-      const n = {
-        id: 0,
-        from: initial,
-        msg: "",
-      };
-      arr.push(n);
-      setMessages(arr);
-      return;
-    }
-    const n = {
-      id: arr.length,
-      from: messages[arr.length - 1].from === initial ? "GPT" : initial,
-      msg: "",
-    };
-    arr.push(n);
-    setMessages(arr);
-  }
-
-  function updateFrom(id, from) {
-    const arr = [...messages];
-    const index = messages.findIndex((x) => x.id === id);
-    arr[index].from = from;
-    setMessages(arr);
-  }
-
   return (
     <div className="upload-container">
       <div className="upload-container-header">
@@ -93,25 +66,32 @@ function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
               <div className="message" key={m.id}>
                 <textarea
                   rows="1"
-                  placeholder={m.msg ? `${m.msg}` : "Message..."}
+                  placeholder="Message..."
+                  value={m.msg}
                   onChange={(ev) => {
-                    updateMessage(m.id, ev.target.value);
+                    setMessages(
+                      updateMessage(m.id, "msg", ev.target.value, messages)
+                    );
                   }}
                 ></textarea>
                 <div className="message-buttons">
                   <div className="message-from">
                     <div
-                      className={m.from === "GPT" ? "from-active" : "from"}
+                      className={m.from === "bard" ? "from-active" : "from"}
                       onClick={() => {
-                        updateFrom(m.id, "GPT");
+                        setMessages(
+                          updateMessage(m.id, "from", "bard", messages)
+                        );
                       }}
                     >
-                      <img src={logo} alt="" className="pic" />
+                      {/* <img src={logo} alt="" className="pic" /> */}
                     </div>
                     <div
                       className={m.from === initial ? "from-active" : "from"}
                       onClick={() => {
-                        updateFrom(m.id, initial);
+                        setMessages(
+                          updateMessage(m.id, "from", initial, messages)
+                        );
                       }}
                     >
                       <div
@@ -123,7 +103,7 @@ function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
                     </div>
                   </div>
                   <FontAwesomeIcon
-                    onClick={() => deleteMessage(m.id)}
+                    onClick={() => setMessages(deleteMessage(m.id, messages))}
                     key={m.id}
                     className="delete-message"
                     icon={["fa", "trash"]}
@@ -135,9 +115,7 @@ function Chat({ initial, setInitial, color, setColor, messages, setMessages }) {
         </div>
         <div className="new-message-container">
           {messages.length <= 5 ? (
-            <div className="tinder-new-message" onClick={addMessage}>
-              Add Message
-            </div>
+            <div className="bard-new-message">Add Message</div>
           ) : (
             <div className="inactive">Add Message</div>
           )}

@@ -10,6 +10,7 @@ import Instagram from "../instagram/Instagram";
 import ChatGPT from "../chatGPT/chatGPT";
 import Tinder from "../tinder/Tinder";
 import "./Main.scss";
+import Bard from "../bard/Bard";
 
 function Main({ setPath }) {
   return (
@@ -22,6 +23,7 @@ function Main({ setPath }) {
         <Route path="/messaging/iMessage" element={<Message />} />
         <Route path="/messaging/tinder" element={<Tinder />} />
         <Route path="/messaging/chatGPT" element={<ChatGPT />} />
+        {/* <Route path="/messaging/bard" element={<Bard />} /> */}
         <Route path="/about" element={<About />} />
       </Routes>
     </div>

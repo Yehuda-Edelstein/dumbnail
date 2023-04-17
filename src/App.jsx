@@ -5,6 +5,7 @@ import {
   faInstagram,
   faTwitter,
   faYoutube,
+  faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faHouse,
@@ -17,6 +18,7 @@ import {
   faMagnifyingGlassMinus,
   faMagnifyingGlassPlus,
   faRotateLeft,
+  faRotateRight,
   faTrash,
   faUpload,
   faChevronRight,
@@ -28,6 +30,8 @@ import {
   faXmark,
   faCircle,
   faChevronDown,
+  faPen,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Main from "./components/main/Main";
@@ -38,8 +42,11 @@ const TRACKING_ID = "UA-251706194-1";
 ReactGA.initialize(TRACKING_ID);
 
 library.add(
+  faBars,
+  faPen,
   faHouse,
   faYoutube,
+  faGoogle,
   faTwitter,
   faInstagram,
   faComment,
@@ -56,6 +63,7 @@ library.add(
   faMagnifyingGlassPlus,
   faMagnifyingGlassMinus,
   faRotateLeft,
+  faRotateRight,
   faUpload,
   faEllipsisVertical,
   faEllipsis,
