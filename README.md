@@ -44,6 +44,11 @@ I've done a lot of the grunt work, scaffolding and designing the basics, while a
 
 Lastly, as someone who loves the art of the meme, but who also doesn't like the idea of fake screenshots spreading misinformation, I would want some way for users to check if an image was created on Dumbnail after the fact. Maybe uploading the file to check it for similiar memes created and stored in our (future) backend.
 
+## Why Open Source?
+The thing about the meme business, especially this kind, is that the actual sites change constantly; updates, design changes, profile changes, etc. Dumbnail would need to stay up to date so that the memes would be as accurate as possible (a cool feature I wanted was to keep different versions of apps [old twitter v. new twitter]). 
+
+These potentially continuous changes and updates will be more than I can handle, I assume.
+
 ## Features
 
 Here are some features I want to add that I think will help beef up and legitamize the site.
@@ -53,6 +58,8 @@ Here are some features I want to add that I think will help beef up and legitami
 - A whole bunch of templates (constantly growing) for users to create their memes. I'll leave a list of potential templates at the bottom, but feel free to create your own.
 
 **BONUS:** I also think it would be cool if the example memes on the home page were newly generated on each refresh through a combination of AI to write simple text and a function to determine numbers/amount of messages, etc.
+
+**BONUS #2**: I also think someting interesting is creating user objects for dumbnail, meaning, Elon Musk has had multiple profile images. These would all be stored in an Elon object so the most accurate memes can be made (ex: spoofing an older tweet).
 
 ## Bugs
 
@@ -85,6 +92,7 @@ I'm new to open source, but I assume anyone familiar knows how to help and will 
 - Tinder
 - ChatGPT
 - Instagram DMs
+- Slack
 - Reddit
 - UberEats, Uber, Lyft, and similiar delivery-style apps
 - Xbox live
