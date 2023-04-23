@@ -6,8 +6,13 @@
     "img": "Donald_Trump.png"
   },
   { "name": "Ye", "handle": "kanyewest", "img": "Kanye_West.png" },
-  { "name": "Joe Biden", "handle": "JoeBiden", "img": "Joe_Biden.png" },
-  { "name": "Twitter", "handle": "Twitter", "img": "Twitter.png" },
+  { "name": "Joe Biden", "handle": "POTUS", "img": "Joe_Biden.png" },
+  {
+    "name": "Twitter",
+    "handle": "Twitter",
+    "img": "Twitter.png",
+    "company": true
+  },
   {
     "name": "Kylie Jenner",
     "handle": "KylieJenner",
@@ -21,14 +26,16 @@
   {
     "name": "The New York Times",
     "handle": "nytimes",
-    "img": "New_York_Times.png"
+    "img": "New_York_Times.png",
+    "company": true
   },
-  { "name": "CNN", "handle": "CNN", "img": "CNN.png" },
+  { "name": "CNN", "handle": "CNN", "img": "CNN.png", "company": true },
 
   {
     "name": "Barstool Sports",
     "handle": "barstoolsports",
-    "img": "Barstool_Sports.png"
+    "img": "Barstool_Sports.png",
+    "company": true
   },
   {
     "name": "Dave Portnoy",
@@ -63,7 +70,8 @@
   {
     "name": "The Babylon Bee",
     "handle": "TheBabylonBee",
-    "img": "The_Babylon_Bee.png"
+    "img": "The_Babylon_Bee.png",
+    "company": true
   },
   {
     "name": "Kevin Durant",
@@ -73,7 +81,8 @@
   {
     "name": "Netflix",
     "handle": "neftlix",
-    "img": "Netflix.png"
+    "img": "Netflix.png",
+    "company": true
   },
   {
     "name": "Ian Rapoport",
@@ -122,6 +131,18 @@
     "img": "CNN_Breaking_News.png"
   },
   {
+    "name": "Chess.com",
+    "handle": "chesscom",
+    "img": "chess.png",
+    "company": true
+  },
+  {
+    "name": "Datadog, Inc.",
+    "handle": "datadoghq",
+    "img": "datadog.png",
+    "company": true
+  },
+  {
     "name": "Kamala Harris",
     "handle": "KamalaHarris",
     "img": "Kamala_Harris.png"
@@ -143,10 +164,20 @@
   { "name": "LeBron James", "handle": "KingJames", "img": "LeBron_James.png" },
   { "name": "Joe Rogan", "handle": "joerogan", "img": "Joe_Rogan.png" },
   { "name": "Ben Shapiro", "handle": "benshapiro", "img": "Ben_Shapiro.png" },
-  { "name": "YouTube", "handle": "YouTube", "img": "YouTube.png" },
-  { "name": "ESPN", "handle": "espn", "img": "ESPN.png" },
-  { "name": "NBA", "handle": "NBA", "img": "NBA.png" },
-  { "name": "Google", "handle": "Google", "img": "Google.png" },
+  {
+    "name": "YouTube",
+    "handle": "YouTube",
+    "img": "YouTube.png",
+    "company": true
+  },
+  { "name": "ESPN", "handle": "espn", "img": "ESPN.png", "company": true },
+  { "name": "NBA", "handle": "NBA", "img": "NBA.png", "company": true },
+  {
+    "name": "Google",
+    "handle": "Google",
+    "img": "Google.png",
+    "company": true
+  },
   {
     "name": "Taylor Swift",
     "handle": "taylorswift13",
@@ -158,5 +189,10 @@
     "name": "Awkward Bochur",
     "handle": "emdimem_music",
     "img": "Awkward_Bochur.png"
+  },
+  {
+    "name": "Eliezer Yudkowsky",
+    "handle": "ESYudkowsky",
+    "img": "yud.png"
   }
 ]

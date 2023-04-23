@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { download } from "../../../helpers/Helpers";
 import light from "./../../../assets/images/twitter/twitter-verified.png";
 import dark from "./../../../assets/images/twitter/dark-verified.png";
+import gold from "./../../../assets/images/twitter/gold-checkmark.png";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,6 +16,7 @@ function TwitterPreview({
   setIsDarkMode,
   name,
   verified,
+  company,
   handle,
   tweet,
   time,
@@ -99,6 +101,10 @@ function TwitterPreview({
                   )}
                   {verified && switchDevice && (
                     <img className="verified-dark" src={dark} alt="" />
+                  )}
+
+                  {company && (
+                    <img className="verified-gold" src={gold} alt="" />
                   )}
                 </div>
                 <div className="twitter-handle">@{handle}</div>

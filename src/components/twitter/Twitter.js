@@ -11,6 +11,7 @@ function Twitter(props) {
   //   Twitter
   const [name, setName] = useState("Name");
   const [verified, setVerified] = useState(true);
+  const [company, setCompany] = useState(false);
   const [handle, setHandle] = useState("Handle");
   const [tweet, setTweet] = useState("This is a tweet.");
   const [time, setTime] = useState(get12HourTime());
@@ -73,11 +74,15 @@ function Twitter(props) {
           setProfX={setProfX}
           setProfY={setProfY}
           setProfZoom={setProfZoom}
+          setCompany={setCompany}
+          setVerified={setVerified}
         />
         <Tweet
           setName={setName}
           setViews={setViews}
           verified={verified}
+          company={company}
+          setCompany={setCompany}
           setVerified={setVerified}
           setHandle={setHandle}
           setTweet={setTweet}
@@ -112,6 +117,8 @@ function Twitter(props) {
               setProfX={setProfX}
               setProfY={setProfY}
               setProfZoom={setProfZoom}
+              setCompany={setCompany}
+              setVerified={setVerified}
             />
           </Tab>
           <Tab eventKey="tweet" title="Tweet">
@@ -127,6 +134,8 @@ function Twitter(props) {
               setTime={setTime}
               setDate={setDate}
               date={date}
+              company={company}
+              setCompany={setCompany}
             />
           </Tab>
         </Tabs>
@@ -138,6 +147,7 @@ function Twitter(props) {
         setIsDarkMode={setIsDarkMode}
         name={name}
         verified={verified}
+        company={company}
         handle={handle}
         tweet={tweet}
         time={time}

@@ -19,12 +19,14 @@ function Tweet({
   setHandle,
   verified,
   setVerified,
+  setCompany,
   setTweet,
   setDevice,
   setTime,
   setDate,
   time,
   date,
+  company,
 }) {
   // maybe change this to a helper function
   function underscore(str) {
@@ -57,6 +59,7 @@ function Tweet({
                   setTime(get12HourTime());
                   setDate(getDate());
                   setDevice("Twitter For iPhone");
+                  setCompany(false);
                 }}
                 className={"icon-enabled"}
               />
@@ -79,6 +82,18 @@ function Tweet({
               aria-label="option 1"
               checked={verified}
               onChange={() => {
+                setVerified(!verified);
+                setCompany(!company);
+              }}
+            />
+          </div>
+          <div className="twitter-company">
+            <Form.Check
+              className="twitter-company"
+              aria-label="option 1"
+              checked={company}
+              onChange={() => {
+                setCompany(!company);
                 setVerified(!verified);
               }}
             />
