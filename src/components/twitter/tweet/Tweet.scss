@@ -21,7 +21,8 @@
       width: 125px;
       margin-right: 5px;
     }
-    .twitter-verified {
+    .twitter-verified,
+    .twitter-company {
       .form-check-input {
         height: 35px;
         width: 30px !important;
@@ -38,9 +39,16 @@
         border: 1px dashed rgba(128, 128, 128, 0.75);
         border-left: 0;
       }
+    }
 
+    .twitter-verified {
       .form-check-input:checked {
         background-color: rgb(29, 155, 240) !important;
+      }
+    }
+    .twitter-company {
+      .form-check-input:checked {
+        background-color: rgb(227, 183, 25) !important;
       }
     }
   }

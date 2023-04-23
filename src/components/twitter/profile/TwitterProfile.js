@@ -21,6 +21,8 @@ function TwitterProfile({
   setProfZoom,
   selectedProf,
   previewProf,
+  setVerified,
+  setCompany,
 }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -129,6 +131,8 @@ function TwitterProfile({
                         setPopular(pop.img);
                         setName(pop.name);
                         setHandle(pop.handle);
+                        setVerified(!pop.company ? true : false);
+                        setCompany(pop.company ? true : false);
                       }}
                     >
                       <img
