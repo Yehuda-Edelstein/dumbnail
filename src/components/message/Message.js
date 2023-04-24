@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MessagePreview from "./preview/MessagePreview";
 import MessageUpload from "./upload/MessageUpload";
 import "./Message.scss";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
 
 function Message(props) {
   const [contact, setContact] = useState("Contact");
@@ -11,6 +13,13 @@ function Message(props) {
     { id: 1, from: "you", msg: "U up?", type: "text" },
     { id: 2, from: "Contact", msg: "no", type: "text" },
   ]);
+
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
   return (
     <div className="main-components">
       <div className="upload-message-container">

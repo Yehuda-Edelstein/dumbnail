@@ -5,6 +5,8 @@ import Info from "./info/Info.js";
 import Thumbnail from "./thumbnail/Thumbnail.js";
 import { Tab, Tabs } from "react-bootstrap";
 import "./YouTube.scss";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
 
 function YouTube() {
   const [selectedThumb, setSelectedThumb] = useState();
@@ -43,6 +45,13 @@ function YouTube() {
   const [template, setTemplate] = useState();
   const [isChannelTemp, setIsChannelTemp] = useState(false);
   const [channelTemp, setChannelTemp] = useState();
+
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
 
   // what are these useEffects doing?
   useEffect(() => {

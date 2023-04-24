@@ -7,8 +7,17 @@ import chat from "../../assets/images/examples/chat.png";
 import post from "../../assets/images/examples/post.png";
 import { Link } from "react-router-dom";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
+import { useEffect } from "react";
 
 function Home({ setPath }) {
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
   return (
     <div className="home">
       <h1>

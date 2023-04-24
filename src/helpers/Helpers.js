@@ -1,4 +1,5 @@
 import { toPng } from "html-to-image";
+import ReactGA from "react-ga";
 
 // download png image
 export const download = async (ref, name) => {
@@ -10,6 +11,12 @@ export const download = async (ref, name) => {
     link.download = `${name}.png`;
     link.href = dataUrl;
     link.click();
+    // add event to google analytics
+    ReactGA.event({
+      category: "Downloads",
+      action: "download",
+      label: name,
+    });
   } catch (err) {
     console.log("Ohhhh nooo!");
     console.log(err);

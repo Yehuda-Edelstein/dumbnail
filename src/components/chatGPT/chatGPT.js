@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Chat from "./chat/Chat";
 import Preview from "./preview/Preview";
 import "./chatGPT.scss";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
 
 function ChatGPT(props) {
   const random = Math.floor(Math.random() * 16777215).toString(16);
@@ -14,6 +16,12 @@ function ChatGPT(props) {
     { id: 1, from: "GPT", msg: "Shut up, nerd." },
   ]);
 
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
   return (
     <div className="main-components">
       <div className="upload-message-container">

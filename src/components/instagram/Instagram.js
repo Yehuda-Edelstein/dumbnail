@@ -5,6 +5,8 @@ import Preview from "./preview/Preview";
 import { Tab, Tabs } from "react-bootstrap";
 import "./Instagram.scss";
 import Account from "./account/Account";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
 
 const d = new Date();
 const m = [
@@ -64,7 +66,12 @@ function Instagram(props) {
       ? true
       : false
   );
-  // loading
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
 
   useEffect(() => {
     if (!selectedPhoto) {
