@@ -6,6 +6,8 @@ import TwitterPreview from "./preview/TwitterPreview";
 import TwitterProfile from "./profile/TwitterProfile";
 import Tweet from "./tweet/Tweet";
 import "./Twitter.scss";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
 
 function Twitter(props) {
   //   Twitter
@@ -43,6 +45,13 @@ function Twitter(props) {
       ? true
       : false
   );
+
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
 
   useEffect(() => {
     if (!selectedProf) {

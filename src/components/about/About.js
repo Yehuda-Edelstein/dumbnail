@@ -1,7 +1,16 @@
 import React from "react";
 import "./About.scss";
+import { useLocation } from "react-router-dom";
+import ReactGA from "react-ga";
+import { useEffect } from "react";
 
 function About(props) {
+  // track analytics
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, [location]);
   return (
     <div className="about">
       <p>
