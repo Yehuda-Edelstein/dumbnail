@@ -82,8 +82,10 @@ function Tweet({
               aria-label="option 1"
               checked={verified}
               onChange={() => {
+                if (company) {
+                  setCompany(false);
+                }
                 setVerified(!verified);
-                setCompany(!company);
               }}
             />
           </div>
@@ -93,8 +95,10 @@ function Tweet({
               aria-label="option 1"
               checked={company}
               onChange={() => {
+                if (verified) {
+                  setVerified(false);
+                }
                 setCompany(!company);
-                setVerified(!verified);
               }}
             />
           </div>
