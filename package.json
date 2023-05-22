@@ -1,7 +1,7 @@
 {
-  "name": "dumbnail",
   "version": "0.1.0",
-  "homepage": "https://Yehuda-Edelstein.github.io/dumbnail",
+  "homepage": "https://yehuda-edelstein.github.io/",
+  "name": "dumbnail",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
