@@ -31,14 +31,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack --mode production",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
