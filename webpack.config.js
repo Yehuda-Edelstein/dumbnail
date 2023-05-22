@@ -4,21 +4,12 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
   },
   resolve: {
-    modules: [".", "node_modules"],
+    modules: ["node_modules"],
     extensions: [".js", ".jsx", ".scss"],
-    fallback: {
-      util: require.resolve("util/"),
-      path: false,
-      assert: false,
-      os: false,
-      fs: false,
-      browser: false,
-      module: false,
-    },
   },
   module: {
     rules: [
@@ -52,26 +43,20 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: "file-loader?name=[path][name].[ext]!extract-loader!html-loader",
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name][ext]",
+        },
       },
     ],
-  },
-  performance: {
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
-  optimization: {
-    splitChunks: { chunks: "all" },
-  },
-  stats: {
-    excludeAssets: /\.map$/,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
       filename: "index.html",
       title: "Dumbnail",
+      favicon: "public/favicon.ico",
     }),
   ],
   mode: "production",
