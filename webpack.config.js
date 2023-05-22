@@ -67,6 +67,12 @@ module.exports = {
   stats: {
     excludeAssets: /\.map$/,
   },
-  plugins: [new HtmlWebpackPlugin({})],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+      filename: "index.html",
+      title: "Dumbnail",
+    }),
+  ],
   mode: "production",
 };
