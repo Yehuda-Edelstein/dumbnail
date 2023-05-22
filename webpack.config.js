@@ -20,6 +20,7 @@ module.exports = {
       module: false,
     },
   },
+  presets: ["@babel/preset-react"],
   module: {
     rules: [
       {
