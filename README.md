@@ -38,7 +38,7 @@ People post memes to every social media, but most of them (if not all) aren't cr
 
 <img src="https://user-images.githubusercontent.com/92326059/233871700-1d1271e7-98a1-49f6-a7d0-0c2cb07b3fcf.png" align="right" width="325px" >
 
-My coding isn't the best (the site is running at https://app.dumbnail.com on a DO server and I'm slowly realizing I'm out of my league. _should I use GH pages instead since it's free?_
+My coding isn't the best (the site is running at https://dumbnail.com on a DO server and I'm slowly realizing I'm out of my league. _should I use GH pages instead since it's free?_
 
 I've done a lot of the grunt work, scaffolding and designing the basics, while also providing the vision, but now I want others to contribute to the project as well. To fix bugs, make sure it can scale, add features, etc. Don't get me wrong, I'm still gonna work on it, I just don't think I can accomplish all I want to do by myself.
 
